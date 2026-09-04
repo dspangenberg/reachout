@@ -33,5 +33,6 @@ export default defineConfig({
         desktopEntry: { "X-GNOME-UsesNotifications": "true" },
         screenshotBaseUrl: "https://raw.githubusercontent.com/gtkx-org/gtkx/main/examples/tutorial",
         targets: ["flatpak", "deb", "rpm", "appimage"],
+        flatpak: { shouldUseRofilesFuse: false },
     },
 });
