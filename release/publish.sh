@@ -100,6 +100,95 @@ IsRuntime=false
 GPGKey=$GPG_KEY_B64
 EOF
 
+# --- 3c. App-Icon + deutsche Homepage (index.html) erzeugen ------------------
+# Damit die Pages-Root-URL statt einer 404 eine schlichte Landing-Page zeigt.
+# Die Seite wird bei jedem Release neu geschrieben (force_orphan) und die
+# Versionsnummer/das Build-Datum automatisch eingetragen.
+ICON_SRC="data/icons/hicolor/scalable/apps/$APP_ID.svg"
+if [ -f "$ICON_SRC" ]; then
+    mkdir -p "$OUT_REPO/icons"
+    cp -f "$ICON_SRC" "$OUT_REPO/icons/$APP_ID.svg"
+else
+    echo "Warnung: Icon '$ICON_SRC' nicht gefunden – Homepage ohne Logo." >&2
+fi
+
+APP_VERSION="$(grep -m1 '"version"' package.json | sed -E 's/.*"version"[[:space:]]*:[[:space:]]*"([^"]+)".*/\1/')"
+BUILD_DATE="$(date -u +%Y-%m-%d)"
+
+cat > "$OUT_REPO/index.html" <<EOF
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reach Out</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: #f6f5f4; color: #241f31; line-height: 1.55; padding: 3rem 1rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #24292f; color: #e6e6e6; }
+    code { background: #1f2429; }
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  .hero { text-align: center; margin-bottom: 2rem; }
+  .hero img { width: 96px; height: 96px; }
+  h1 { margin: .5rem 0 .2rem; font-size: 2.2rem; }
+  .tag { color: #77767b; margin: 0 0 1.2rem; }
+  @media (prefers-color-scheme: dark) { .tag { color: #9a9996; } }
+  .box {
+    background: #fff; border: 1px solid #deddda; border-radius: 12px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;
+  }
+  @media (prefers-color-scheme: dark) { .box { background: #1c2126; border-color: #3a4147; } }
+  code { background: #f0efec; padding: .15em .4em; border-radius: 6px; font-size: .95em; }
+  @media (prefers-color-scheme: dark) { code { background: #1f2429; } }
+  pre {
+    background: #2c3136; color: #e6e6e6; padding: 1rem; border-radius: 10px;
+    overflow-x: auto; font-size: .95em;
+  }
+  a { color: #3584e4; }
+  ul { margin: .5rem 0; padding-left: 1.3rem; }
+  .meta { color: #77767b; font-size: .9em; }
+  @media (prefers-color-scheme: dark) { .meta { color: #9a9996; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero">
+    <img src="$REPO_URL/icons/$APP_ID.svg" alt="Reach Out" width="96" height="96">
+    <h1>Reach Out</h1>
+    <p class="tag">Kontakt- und Aufgabenmanager für GNOME</p>
+    <p class="meta">Version $APP_VERSION &middot; Build $BUILD_DATE</p>
+  </div>
+
+  <div class="box">
+    <h2>Installation</h2>
+    <p>Füge dieses Repository als Quelle hinzu und installiere die App:</p>
+    <pre>flatpak remote-add --if-not-exists reachout \\
+  $REPO_URL/reachout.flatpakrepo
+flatpak install --user reachout $APP_ID</pre>
+    <p>Oder 1-Klick-Installation über die Referenzdatei:</p>
+    <pre><a href="$REPO_URL/reachout.flatpakref">$REPO_URL/reachout.flatpakref</a></pre>
+  </div>
+
+  <div class="box">
+    <h2>Links</h2>
+    <ul>
+      <li><a href="$REPO_URL/reachout.flatpakrepo">reachout.flatpakrepo</a> – Repo als Quelle hinzufügen</li>
+      <li><a href="$REPO_URL/reachout.flatpakref">reachout.flatpakref</a> – Install-Referenz</li>
+      <li><a href="https://github.com/dspangenberg/reachout">Quellcode auf GitHub</a></li>
+    </ul>
+  </div>
+  <p class="meta" style="text-align:center">GPG-signiertes, selbst-gehostetes Flatpak-Repository.</p>
+</main>
+</body>
+</html>
+EOF
+
 # --- 4. Repo signieren (generiert signierte `summary`) ---------------------
 echo "==> Repo signieren"
 flatpak build-update-repo "$OUT_REPO" \
@@ -111,8 +200,8 @@ echo ""
 echo "==> Fertig. Veröffentlichtes Repo: $OUT_REPO"
 echo ""
 echo "Hosten: Inhalt von '$OUT_REPO' (inkl. config, summary, summaries/,"
-echo "objects/, keyring, reachout.flatpakrepo, reachout.flatpakref) auf einen"
-echo "statischen HTTP-Server legen, z. B.:"
+echo "objects/, keyring, reachout.flatpakrepo, reachout.flatpakref, index.html,"
+echo "icons/) auf einen statischen HTTP-Server legen, z. B.:"
 echo "  rsync -av release/repo/ meinserver:/var/www/reachout/repo/"
 echo ""
 echo "Einbinden als externe Quelle (Schlüssel wird automatisch importiert):"
