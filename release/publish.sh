@@ -59,7 +59,12 @@ ostree init --repo="$OUT_REPO" --mode=archive-z2
 
 echo "==> flatpak-builder (baut aus Manifest und committet in das Repo)"
 flatpak-builder --user --disable-rofiles-fuse --repo="$OUT_REPO" --force-clean \
+    --gpg-sign="$SIGNING_KEY" --gpg-homedir="$GTKX_GPG_HOMEDIR" \
     "$BUILD_DIR" "$MANIFEST"
+
+# Öffentlichen Signier-Key in das Repo exportieren, damit Clients die
+# Commit-Signaturen ohne manuelles --gpg-import verifizieren können.
+gpg --homedir "$GTKX_GPG_HOMEDIR" --export "$SIGNING_KEY" > "$OUT_REPO/keyring"
 
 # --- 4. Repo signieren (generiert signierte `summary`) ---------------------
 echo "==> Repo signieren"
