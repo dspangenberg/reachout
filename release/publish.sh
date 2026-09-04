@@ -63,7 +63,7 @@ flatpak-builder --user --disable-rofiles-fuse --repo="$OUT_REPO" --force-clean \
 
 # --- 4. Repo signieren (generiert signierte `summary`) ---------------------
 echo "==> Repo signieren"
-flatpak build-update-repo --repo="$OUT_REPO" \
+flatpak build-update-repo "$OUT_REPO" \
     --gpg-sign="$SIGNING_KEY" --gpg-homedir="$GTKX_GPG_HOMEDIR" \
     --generate-static-deltas \
     --prune --prune-depth=3
