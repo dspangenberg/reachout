@@ -1,8 +1,15 @@
 [Flatpak Repo]
 Title=Reach Out
 Name=reachout
-Url=https://DEINE-DOMAIN.de/repo
+Url=https://dspangenberg.github.io/reachout/
 Homepage=https://github.com/dspangenberg/reachout
 Comment=Reach Out – Contact manager
 Description=Reach Out, ein Kontakt- und Aufgabenmanager für GNOME
-Icon=https://DEINE-DOMAIN.de/repo/icons/de.twiceware.reachout.png
+GPGKey=PASTE_BASE64_GPG_KEY_HERE_UNWRAPPED
+
+# Dies ist die Ausgangsvorlage. Publish.sh erzeugt die ausgelieferte
+# reachout.flatpakrepo mit dem echten, Base64-kodierten Signier-Key automatisch
+# im Repo-Ausgabeverzeichnis (release/repo).
+# Installation auf einem Endgerät (Schlüssel wird automatisch importiert):
+#   flatpak remote-add --if-not-exists reachout https://dspangenberg.github.io/reachout/reachout.flatpakrepo
+#   flatpak install --user reachout de.twiceware.reachout
