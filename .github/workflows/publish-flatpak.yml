@@ -78,6 +78,14 @@ jobs:
           echo "$GPG_KEY_ASCII" | base64 -d | gpg --batch --import
           gpg --list-secret-keys
 
+      - name: Add flathub remote for SDK resolution
+        run: |
+          set -eu
+          # gtkx baut mit 'flatpak --user install flathub org.gnome.Sdk/...'.
+          # Im Container fehlt die 'flathub'-Remote im User-Scope → einmalig anlegen.
+          flatpak remote-add --user --if-not-exists flathub \
+            https://flathub.org/repo/flathub.flatpakrepo
+
       - name: Build, sign and stage Flatpak repo
         env:
           SIGNING_KEY_FINGERPRINT: ${{ secrets.FLATPAK_GPG_FINGERPRINT }}
