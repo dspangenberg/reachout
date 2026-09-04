@@ -58,7 +58,7 @@ mkdir -p "$OUT_REPO"
 ostree init --repo="$OUT_REPO" --mode=archive-z2
 
 echo "==> flatpak-builder (baut aus Manifest und committet in das Repo)"
-flatpak-builder --user --repo="$OUT_REPO" --force-clean \
+flatpak-builder --user --disable-rofiles-fuse --repo="$OUT_REPO" --force-clean \
     "$BUILD_DIR" "$MANIFEST"
 
 # --- 4. Repo signieren (generiert signierte `summary`) ---------------------
