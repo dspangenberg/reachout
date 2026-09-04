@@ -1,0 +1,49 @@
+{
+    "name": "gtkx-reachout",
+    "version": "1.0.0",
+    "private": true,
+    "license": "EUPL-1.2",
+    "description": "Reach Out – Contact manager",
+    "type": "module",
+    "engines": {
+        "node": ">=26.7.0"
+    },
+    "scripts": {
+        "dev": "gtkx dev",
+        "build": "gtkx build",
+        "codegen": "gtkx codegen",
+        "test": "vitest run && npm run test:i18n",
+        "test:i18n": "gtkx build && vitest run --config vitest.i18n.config.ts",
+        "db:generate": "drizzle-kit generate",
+        "db:migrate": "drizzle-kit migrate",
+        "typecheck": "gtkx codegen && tsc",
+        "start": "node dist/bundle.mjs",
+        "deploy": "gtkx deploy"
+    },
+    "dependencies": {
+        "@gtkx/cairo": "^2.0.0-beta.2",
+        "@gtkx/components": "^2.0.0-beta.2",
+        "@gtkx/css": "^2.0.0-beta.2",
+        "@gtkx/forms": "^2.0.0-beta.2",
+        "@gtkx/i18n": "^2.0.0-beta.2",
+        "@gtkx/navigation": "^2.0.0-beta.2",
+        "@gtkx/react": "^2.0.0-beta.2",
+        "@gtkx/runtime": "^2.0.0-beta.2",
+        "@react-navigation/core": "^7.21.13",
+        "drizzle-orm": "1.0.0-rc.4",
+        "react": "^19.2.8",
+        "zustand": "^5.0.15"
+    },
+    "devDependencies": {
+        "@gtkx/cli": "^2.0.0-beta.2",
+        "@gtkx/config": "^2.0.0-beta.2",
+        "@gtkx/testing": "^2.0.0-beta.2",
+        "@types/node": "^26.4.0",
+        "@types/react": "^19.2.18",
+        "drizzle-kit": "1.0.0-rc.4",
+        "typescript": "^7.0.2",
+        "vitest": "^4.1.11"
+    },
+    "author": "GTKX <hello@gtkx.dev>",
+    "homepage": "https://gtkx.dev"
+}

@@ -1,0 +1,26 @@
+packages:
+  - '.'
+allowBuilds:
+  '@swc/core': true
+  esbuild: true
+  better-sqlite3: true
+minimumReleaseAgeExclude:
+  - '@gtkx/cairo@2.0.0-beta.2'
+  - '@gtkx/cli@2.0.0-beta.2'
+  - '@gtkx/codegen@2.0.0-beta.2'
+  - '@gtkx/components@2.0.0-beta.2'
+  - '@gtkx/config@2.0.0-beta.2'
+  - '@gtkx/css@2.0.0-beta.2'
+  - '@gtkx/forms@2.0.0-beta.2'
+  - '@gtkx/i18n@2.0.0-beta.2'
+  - '@gtkx/mcp@2.0.0-beta.2'
+  - '@gtkx/native-linux-arm64-gnu@2.0.0-beta.2'
+  - '@gtkx/native-linux-x64-gnu@2.0.0-beta.2'
+  - '@gtkx/native@2.0.0-beta.2'
+  - '@gtkx/navigation@2.0.0-beta.2'
+  - '@gtkx/react@2.0.0-beta.2'
+  - '@gtkx/runtime@2.0.0-beta.2'
+  - '@gtkx/testing@2.0.0-beta.2'
+  - '@gtkx/utils@2.0.0-beta.2'
+  - '@gtkx/vitest@2.0.0-beta.2'
+  - create-gtkx@2.0.0-beta.2

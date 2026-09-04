@@ -1,0 +1,437 @@
+# German translations for GTKX Tasks.
+# Copyright (C) 2026 GTKX contributors
+# This file is distributed under the same license as the gCRM package.
+# GTKX contributors, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gCRM 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-09-04 11:00+0200\n"
+"PO-Revision-Date: 2026-08-26 23:34+0200\n"
+"Last-Translator: GTKX contributors\n"
+"Language-Team: Deutsch\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: src/components/about.tsx:10
+msgid "Contact manager"
+msgstr ""
+
+#: src/components/about.tsx:21
+msgid "GTKX Contributors"
+msgstr "GTKX-Mitwirkende"
+
+#: src/components/delete-confirmation.tsx:16
+msgid "Delete Task?"
+msgstr "Aufgabe löschen?"
+
+#: src/components/delete-confirmation.tsx:17
+msgid "“{{title}}” will be permanently deleted. This cannot be undone."
+msgstr "„{{title}}“ wird dauerhaft gelöscht. Dies kann nicht rückgängig gemacht werden."
+
+#: src/components/delete-confirmation.tsx:21
+#: src/components/new-list-dialog.tsx:25
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: src/components/delete-confirmation.tsx:22
+msgid "Delete"
+msgstr "Löschen"
+
+#: src/components/dialogs.tsx:24
+msgid "“{{title}}” moved to Trash"
+msgstr "„{{title}}“ in den Papierkorb verschoben"
+
+#: src/components/dialogs.tsx:25
+msgid "Undo"
+msgstr "Rückgängig"
+
+#: src/components/main-menu.tsx:9
+msgid "Main Menu"
+msgstr "Hauptmenü"
+
+#: src/components/main-menu.tsx:13 src/components/window-actions.tsx:13
+msgid "New Task"
+msgstr "Neue Aufgabe"
+
+#: src/components/main-menu.tsx:16 src/components/preferences.tsx:22
+#: src/components/shortcuts.tsx:9
+msgid "Preferences"
+msgstr "Einstellungen"
+
+#: src/components/main-menu.tsx:17
+msgid "Keyboard Shortcuts"
+msgstr "Tastenkürzel"
+
+#: src/components/main-menu.tsx:20
+msgid "About Reach Out"
+msgstr ""
+
+#: src/components/new-list-dialog.tsx:21 src/components/window.tsx:66
+#: src/components/window.tsx:73
+msgid "New List"
+msgstr "Neue Liste"
+
+#: src/components/new-list-dialog.tsx:26
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: src/components/new-list-dialog.tsx:35
+msgid "List name"
+msgstr "Name der Liste"
+
+#: src/components/new-list-dialog.tsx:47
+msgid "Color {{color}}"
+msgstr "Farbe {{color}}"
+
+#: src/components/preferences.tsx:23 src/components/shortcuts.tsx:6
+msgid "General"
+msgstr "Allgemein"
+
+#: src/components/preferences.tsx:24
+msgid "Appearance"
+msgstr "Darstellung"
+
+#: src/components/preferences.tsx:26
+msgid "Theme"
+msgstr "Design"
+
+#: src/components/preferences.tsx:28
+msgid "Follow system"
+msgstr "System folgen"
+
+#: src/components/preferences.tsx:29
+msgid "Light"
+msgstr "Hell"
+
+#: src/components/preferences.tsx:30
+msgid "Dark"
+msgstr "Dunkel"
+
+#: src/components/preferences.tsx:38 src/components/section-nav.tsx:10
+#: src/components/shortcuts.tsx:12 src/store/selectors.ts:17
+msgid "Tasks"
+msgstr "Aufgaben"
+
+#: src/components/preferences.tsx:40
+msgid "Sort order"
+msgstr "Sortierung"
+
+#: src/components/preferences.tsx:42
+msgid "Manual"
+msgstr "Manuell"
+
+#: src/components/preferences.tsx:43
+msgid "Due date"
+msgstr "Fälligkeitsdatum"
+
+#: src/components/preferences.tsx:44 src/components/task-detail.tsx:54
+msgid "Title"
+msgstr "Titel"
+
+#: src/components/preferences.tsx:45
+msgid "Date created"
+msgstr "Erstellungsdatum"
+
+#: src/components/preferences.tsx:53
+msgid "Reminder lead time"
+msgstr "Erinnerungsvorlaufzeit"
+
+#: src/components/preferences.tsx:54
+msgid "Minutes before a task is due"
+msgstr "Minuten vor dem Fälligkeitsdatum einer Aufgabe"
+
+#: src/components/search-button.tsx:12
+msgid "Search (Ctrl+F)"
+msgstr "Suchen (Strg+F)"
+
+#: src/components/section-nav.tsx:8 src/components/window.tsx:165
+msgid "Contacts"
+msgstr ""
+
+#: src/components/section-nav.tsx:9 src/components/window.tsx:173
+msgid "Projects"
+msgstr ""
+
+#: src/components/shortcuts.tsx:7
+msgid "New task"
+msgstr "Neue Aufgabe"
+
+#: src/components/shortcuts.tsx:8
+msgid "Search tasks"
+msgstr "Aufgaben suchen"
+
+#: src/components/shortcuts.tsx:10
+msgid "Keyboard shortcuts"
+msgstr "Tastenkürzel"
+
+#: src/components/shortcuts.tsx:13 src/components/task-row.tsx:49
+msgid "Delete task"
+msgstr "Aufgabe löschen"
+
+#: src/components/shortcuts.tsx:14
+msgid "Go back"
+msgstr "Zurück"
+
+#: src/components/sidebar.tsx:24 src/store/selectors.ts:6
+msgid "All Tasks"
+msgstr "Alle Aufgaben"
+
+#: src/components/sidebar.tsx:30 src/store/selectors.ts:7
+msgid "Today"
+msgstr "Heute"
+
+#: src/components/sidebar.tsx:36 src/components/task-buttons.tsx:18
+#: src/components/task-detail.tsx:61 src/store/selectors.ts:8
+msgid "Important"
+msgstr "Wichtig"
+
+#: src/components/sidebar.tsx:50 src/store/selectors.ts:9
+msgid "Trash"
+msgstr "Papierkorb"
+
+#: src/components/task-buttons.tsx:23
+msgid "Delete (Delete)"
+msgstr "Löschen (Entf)"
+
+#: src/components/task-detail.tsx:65
+msgid "Due"
+msgstr "Fällig"
+
+#: src/components/task-detail.tsx:72
+msgid "Clear due date"
+msgstr "Fälligkeitsdatum löschen"
+
+#: src/components/task-detail.tsx:77
+msgid "Set date"
+msgstr "Datum festlegen"
+
+#: src/components/task-detail.tsx:106
+msgid "Notes"
+msgstr "Notizen"
+
+#: src/components/task-detail.tsx:134
+msgid "Created"
+msgstr "Erstellt"
+
+#: src/components/task-detail.tsx:140
+msgid "Completed"
+msgstr "Abgeschlossen"
+
+#: src/components/task-filter.tsx:17
+msgid "All"
+msgstr "Alle"
+
+#: src/components/task-filter.tsx:18
+msgid "Open"
+msgstr "Offen"
+
+#: src/components/task-filter.tsx:19
+msgid "Done"
+msgstr "Erledigt"
+
+#: src/components/task-list.tsx:35
+msgid "Search tasks…"
+msgstr "Aufgaben suchen…"
+
+#: src/components/task-list.tsx:45
+msgid "Add a task…"
+msgstr "Aufgabe hinzufügen…"
+
+#: src/components/task-row.tsx:32
+msgid "Mark complete"
+msgstr "Als erledigt markieren"
+
+#: src/components/task-row.tsx:42
+msgid "Toggle important"
+msgstr "Als wichtig markieren"
+
+#: src/components/task-title.tsx:8
+msgid "Task"
+msgstr "Aufgabe"
+
+#: src/components/window.tsx:36
+msgid "Nothing Selected"
+msgstr "Nichts ausgewählt"
+
+#: src/components/window.tsx:37
+msgid "Pick a list or a smart view in the sidebar"
+msgstr "Wählen Sie in der Seitenleiste eine Liste oder eine intelligente Ansicht"
+
+#: src/components/window.tsx:62
+msgid "Reach Out"
+msgstr ""
+
+#: src/components/window.tsx:90
+msgid "New Task (Ctrl+N)"
+msgstr "Neue Aufgabe (Strg+N)"
+
+#: src/components/window.tsx:166
+msgid "Contact management is coming soon"
+msgstr ""
+
+#: src/components/window.tsx:174
+msgid "Project management is coming soon"
+msgstr ""
+
+#: src/format.ts:18
+msgid "Today at {{time}}"
+msgstr "Heute um {{time}}"
+
+#: src/format.ts:19
+msgid "Tomorrow at {{time}}"
+msgstr "Morgen um {{time}}"
+
+#: src/format.ts:20
+msgid "Yesterday at {{time}}"
+msgstr "Gestern um {{time}}"
+
+#: src/format.ts:22
+msgid "{{count}} day ago"
+msgid_plural "{{count}} days ago"
+msgstr[0] "Vor {{count}} Tag"
+msgstr[1] "Vor {{count}} Tagen"
+
+#: src/format.ts:32
+msgid "Never"
+msgstr "Nie"
+
+#: src/notifications.ts:9
+msgid "Due {{date}}"
+msgstr "Fällig am {{date}}"
+
+#: src/notifications.ts:11
+msgid "Mark Complete"
+msgstr "Als erledigt markieren"
+
+#: src/store/seed.ts:31
+msgid "Personal"
+msgstr "Persönlich"
+
+#: src/store/seed.ts:32
+msgid "Work"
+msgstr "Arbeit"
+
+#: src/store/seed.ts:33
+msgid "Shopping"
+msgstr "Einkaufen"
+
+#: src/store/seed.ts:40
+msgid "Welcome to Tasks"
+msgstr "Willkommen bei Aufgaben"
+
+#: src/store/seed.ts:43
+msgid "This is your first task. Tick the checkbox to complete it, or open it to add notes and a due date."
+msgstr "Dies ist Ihre erste Aufgabe. Aktivieren Sie das Kontrollkästchen, um sie abzuschließen, oder öffnen Sie sie, um Notizen und ein Fälligkeitsdatum hinzuzufügen."
+
+#: src/store/seed.ts:49
+msgid "Water the plants"
+msgstr "Pflanzen gießen"
+
+#: src/store/seed.ts:54
+msgid "Prepare the weekly report"
+msgstr "Wochenbericht erstellen"
+
+#: src/store/seed.ts:55
+msgid "Review pull requests"
+msgstr "Pull-Anfragen prüfen"
+
+#: src/store/seed.ts:56
+msgid "Buy oat milk"
+msgstr "Hafermilch kaufen"
+
+#: src/store/seed.ts:60
+msgid "Order birthday gift"
+msgstr "Geburtstagsgeschenk bestellen"
+
+#: src/store/selectors.ts:109
+msgid "No Tasks Yet"
+msgstr "Noch keine Aufgaben"
+
+#: src/store/selectors.ts:110
+msgid "Add a task above to get started"
+msgstr "Fügen Sie oben eine Aufgabe hinzu, um zu beginnen"
+
+#: src/store/selectors.ts:114
+msgid "Nothing Due Today"
+msgstr "Heute nichts fällig"
+
+#: src/store/selectors.ts:115
+msgid "Tasks due today appear here"
+msgstr "Heute fällige Aufgaben erscheinen hier"
+
+#: src/store/selectors.ts:119
+msgid "No Important Tasks"
+msgstr "Keine wichtigen Aufgaben"
+
+#: src/store/selectors.ts:120
+msgid "Star a task to find it here"
+msgstr "Markieren Sie eine Aufgabe als wichtig, um sie hier zu finden"
+
+#: src/store/selectors.ts:124
+msgid "Trash Is Empty"
+msgstr "Der Papierkorb ist leer"
+
+#: src/store/selectors.ts:125
+msgid "Deleted tasks appear here"
+msgstr "Gelöschte Aufgaben erscheinen hier"
+
+#: src/store/selectors.ts:133
+msgid "No Results"
+msgstr "Keine Ergebnisse"
+
+#: src/store/selectors.ts:134
+msgid "No tasks match “{{query}}”"
+msgstr "Keine Aufgaben entsprechen „{{query}}“"
+
+#~ msgid "CRM für Gnome"
+#~ msgstr "CRM für Gnome"
+
+#~ msgid "About gCRM"
+#~ msgstr "Über gCRM"
+
+#~ msgid "Manage your tasks and to-dos"
+#~ msgstr "Verwalten Sie Ihre Aufgaben und To-dos"
+
+#~ msgid "Task;Tasks;Todo;To-do;Checklist;"
+#~ msgstr "Aufgabe;Aufgaben;To-do;To-dos;Checkliste;"
+
+#~ msgid "GTKX"
+#~ msgstr "GTKX"
+
+#~ msgid "A task manager built with GTKX, demonstrating how to build React-based GTK4 and Adwaita desktop applications."
+#~ msgstr "Eine mit GTKX erstellte Aufgabenverwaltung, die zeigt, wie man React-basierte GTK4- und Adwaita-Desktopanwendungen entwickelt."
+
+#~ msgid "It shows an adaptive sidebar layout, boxed lists, a task editor, GSettings-backed preferences, undo toasts, drag-to-reorder, desktop notifications, and local JSON persistence."
+#~ msgstr "Sie zeigt ein adaptives Seitenleisten-Layout, umrahmte Listen, einen Aufgaben-Editor, GSettings-gestützte Einstellungen, Rückgängig-Toasts, Ziehen zum Sortieren, Desktop-Benachrichtigungen und lokale JSON-Persistenz."
+
+#~ msgid "Todo"
+#~ msgstr "To-do"
+
+#~ msgid "To-do"
+#~ msgstr "To-do"
+
+#~ msgid "Checklist"
+#~ msgstr "Checkliste"
+
+#~ msgid "Browsing task lists in the sidebar"
+#~ msgstr "Aufgabenlisten in der Seitenleiste durchsuchen"
+
+#~ msgid "Editing a task"
+#~ msgstr "Bearbeiten einer Aufgabe"
+
+#~ msgid "Initial release."
+#~ msgstr "Erstveröffentlichung."
+
+#~ msgid "About Tasks"
+#~ msgstr "Über Aufgaben"
+
+#~ msgid "Task Manager"
+#~ msgstr "Aufgabenverwaltung"
+
+#~ msgid "A task manager built with GTKX to showcase React, GTK4, and Adwaita."
+#~ msgstr "Eine Aufgabenverwaltung mit GTKX zur Demonstration von React, GTK4 und Adwaita."
