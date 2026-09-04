@@ -18,6 +18,7 @@ on:
   push:
     tags:
       - "v*"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -44,6 +45,31 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Provide GIR files for codegen
+        run: |
+          set -eu
+          # 'gtkx codegen' braucht die GIR-Dateien am Host-Standardpfad
+          # (/usr/share/gir-1.0). Im Flathub-Container liegen sie nur in der
+          # installierten org.gnome.Sdk-Runtime. Wir kopieren/verlinken sie daher.
+          DEST="/usr/share/gir-1.0"
+          mkdir -p "$DEST"
+          SRC="$(find /var/lib/flatpak/runtime -type d \
+            -path '*/org.gnome.Sdk.*/*/files/share/gir-1.0' 2>/dev/null | head -n1)"
+          if [ -n "$SRC" ] && [ -d "$SRC" ]; then
+            for f in "$SRC"/*.gir; do
+              [ -e "$f" ] && ln -sf "$f" "$DEST/"
+            done
+            echo "GIR files bereitgestellt aus: $SRC ($(find "$SRC" -name '*.gir' | wc -l) .gir)"
+          else
+            # Fallback: GIRs direkt aus der SDK-Runtime holen
+            flatpak run --command=cp --filesystem=host org.gnome.Sdk -r \
+              /usr/share/gir-1.0/*.gir "$DEST/" 2>/dev/null || true
+            count=$(find "$DEST" -maxdepth 1 -name '*.gir' | wc -l)
+            echo "GIR files (Fallback): $count gesamt"
+          fi
+          test "$(find "$DEST" -maxdepth 1 -name '*.gir' | wc -l)" -gt 0 \
+            || { echo "error: keine GIR-Dateien unter $DEST gefunden" >&2; exit 1; }
 
       - name: Configure GPG signing key
         env:
