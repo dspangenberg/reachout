@@ -4,3 +4,6 @@ package-lock.json
 dist/
 build/
 *.tsbuildinfo
+
+release/repo/
+release/.signing-key
