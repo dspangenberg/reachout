@@ -61,6 +61,9 @@ jobs:
           flatpak remote-add --user --if-not-exists flathub \
             https://flathub.org/repo/flathub.flatpakrepo
 
+      - name: Install headless display dependencies
+        run: dnf install -y weston dbus util-linux
+
       - name: Lint
         run: pnpm lint
 
