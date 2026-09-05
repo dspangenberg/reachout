@@ -79,6 +79,17 @@ jobs:
       - name: Typecheck
         run: pnpm typecheck
 
+      - name: Expose GNOME runtime libraries
+        run: |
+          set -eu
+          PLAT="/var/lib/flatpak/runtime/org.gnome.Platform/x86_64/50"
+          LIB="$(find "$PLAT" -path '*/files/lib/x86_64-linux-gnu' -type d 2>/dev/null | head -n1)"
+          if [ -z "$LIB" ]; then
+            echo "error: GNOME Platform runtime libraries not found under $PLAT" >&2
+            exit 1
+          fi
+          echo "LD_LIBRARY_PATH=$LIB" >> "$GITHUB_ENV"
+
       - name: Tests
         run: pnpm test
         env:
