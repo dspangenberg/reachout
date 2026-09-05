@@ -81,3 +81,5 @@ jobs:
 
       - name: Tests
         run: pnpm test
+        env:
+          GTKX_COMPOSITOR: weston
