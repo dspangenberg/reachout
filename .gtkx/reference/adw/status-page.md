@@ -6,8 +6,6 @@ description: "A page used for empty/error states and similar use-cases."
 
 A page used for empty/error states and similar use-cases.
 
-
-
 The `AdwStatusPage` widget can have an icon, a title, a description and a
 custom widget which is displayed below them.
 
@@ -35,6 +33,20 @@ import { AdwStatusPage } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwStatusPage**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.StatusPage`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwStatusPage`.
+
+**Returns** the newly created `AdwStatusPage`
 
 ## Props
 

@@ -23,6 +23,25 @@ import { GtkBookmarkList } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`.
 
+## Static methods
+
+Static methods are called on `Gtk.BookmarkList`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(filename: string | null, attributes: string | null): Gtk.BookmarkList
+```
+
+Creates a new `GtkBookmarkList` with the given `attributes`.
+
+**Parameters**
+
+- `filename`: The bookmark file to load
+- `attributes`: The attributes to query
+
+**Returns** a new `GtkBookmarkList`
+
 ## Props
 
 `ref` receives the `Gtk.BookmarkList` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

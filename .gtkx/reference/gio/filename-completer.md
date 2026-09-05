@@ -16,6 +16,20 @@ import { GFilenameCompleter } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GFilenameCompleter**
 
+## Static methods
+
+Static methods are called on `Gio.FilenameCompleter`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.FilenameCompleter
+```
+
+Creates a new filename completer.
+
+**Returns** a `GFilenameCompleter`.
+
 ## Props
 
 `ref` receives the `Gio.FilenameCompleter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -51,7 +65,6 @@ Gets an array of completion strings for a given initial text.
 - `initialText`: text to be completed.
 
 **Returns** array of strings with possible completions for `initial_text`.
-This array must be freed by `g_strfreev()` when finished.
 
 ### `getCompletionSuffix`
 

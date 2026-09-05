@@ -19,6 +19,25 @@ import { GFileIcon } from "@gtkx/jsx/gio";
 
 Implements `GIcon`, `GLoadableIcon`.
 
+## Static methods
+
+Static methods are called on `Gio.FileIcon`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(file: Gio.File): Gio.FileIcon
+```
+
+Creates a new icon for a file.
+
+**Parameters**
+
+- `file`: a `GFile`.
+
+**Returns** a `GIcon` for the given
+  `file`, or `null` on error.
+
 ## Props
 
 `ref` receives the `Gio.FileIcon` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

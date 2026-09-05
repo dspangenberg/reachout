@@ -6,8 +6,6 @@ description: "A widget showing a loading spinner."
 
 A widget showing a loading spinner.
 
-
-
 The size of the spinner depends on the available size, never smaller than
 16×16 pixels and never larger than 64×64 pixels.
 
@@ -49,6 +47,22 @@ import { AdwSpinner } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwSpinner**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.Spinner`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwSpinner`.
+
+**Returns** the newly created `AdwSpinner`
+
+_Available since 1.6._
 
 ## Props
 

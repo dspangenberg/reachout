@@ -6,8 +6,6 @@ description: "A freeform application window."
 
 A freeform application window.
 
-
-
 `AdwApplicationWindow` is a `Gtk.ApplicationWindow` subclass providing
 the same features as `Window`.
 
@@ -42,6 +40,24 @@ import { AdwApplicationWindow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → [GtkApplicationWindow](.gtkx/reference/gtk/application-window.md) → **AdwApplicationWindow**
 
 Implements `GActionGroup`, `GActionMap`, `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Adw.ApplicationWindow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(app: Gtk.Application): Gtk.Widget
+```
+
+Creates a new `AdwApplicationWindow` for `app`.
+
+**Parameters**
+
+- `app`: an application instance
+
+**Returns** the newly created `AdwApplicationWindow`
 
 ## Props
 

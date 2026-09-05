@@ -20,6 +20,22 @@ import { AdwToggle } from "@gtkx/jsx/adw";
 
 [GObject](.gtkx/reference/gobject/object.md) → **AdwToggle**
 
+## Static methods
+
+Static methods are called on `Adw.Toggle`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Adw.Toggle
+```
+
+Creates a new `AdwToggle`.
+
+**Returns** the newly created `AdwToggle`
+
+_Available since 1.7._
+
 ## Props
 
 `ref` receives the `Adw.Toggle` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

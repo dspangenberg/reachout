@@ -7,8 +7,6 @@ description: "GtkLockButton is a widget to obtain and revoke authorizations need
 `GtkLockButton` is a widget to obtain and revoke authorizations
 needed to operate the controls.
 
-
-
 It is typically used in preference dialogs or control panels.
 
 The required authorization is represented by a `GPermission` object.
@@ -19,19 +17,13 @@ other authorization framework. To obtain a PolicyKit-based
 If the user is not currently allowed to perform the action, but can
 obtain the permission, the widget looks like this:
 
-
-
 and the user can click the button to request the permission. Depending
 on the platform, this may pop up an authentication dialog or ask the user
 to authenticate in some other way. Once the user has obtained the permission,
 the widget changes to this:
 
-
-
 and the permission can be dropped again by clicking the button. If the user
 is not able to obtain the permission at all, the widget looks like this:
-
-
 
 If the user has the permission and cannot drop it, the button is hidden.
 
@@ -53,6 +45,26 @@ import { GtkLockButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkButton](.gtkx/reference/gtk/button.md) → **GtkLockButton**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.LockButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(permission: Gio.Permission | null): Gtk.Widget
+```
+
+Creates a new lock button which reflects the `permission`.
+
+**Parameters**
+
+- `permission`: a `GPermission`
+
+**Returns** a new `GtkLockButton`
+
+> **Deprecated since 4.10.** This widget will be removed in GTK 5
 
 ## Props
 

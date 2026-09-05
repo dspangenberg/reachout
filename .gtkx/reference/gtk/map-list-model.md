@@ -44,13 +44,32 @@ import { GtkMapListModel } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`, `GtkSectionModel`.
 
+## Static methods
+
+Static methods are called on `Gtk.MapListModel`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(model: Gio.ListModel | null, mapFunc: Gtk.MapListModelMapFunc | null): Gtk.MapListModel
+```
+
+Creates a new `GtkMapListModel` for the given arguments.
+
+**Parameters**
+
+- `model`: The model to map
+- `mapFunc`: map function
+
+**Returns** a new `GtkMapListModel`
+
 ## Props
 
 `ref` receives the `Gtk.MapListModel` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
 
 ### `hasMap`
 
-`boolean` · default `false` · read-only, observe with `onNotifyHasMap` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyHasMap` · instance read with `GObject.getProperty`
 
 If a map is set for this model
 

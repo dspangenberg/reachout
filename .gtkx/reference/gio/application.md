@@ -140,6 +140,107 @@ import { GApplication } from "@gtkx/jsx/gio";
 
 Implements `GActionGroup`, `GActionMap`.
 
+## Static methods
+
+Static methods are called on `Gio.Application`, imported from `@gtkx/gi/gio`.
+
+### `getDefault`
+
+```ts
+getDefault(): Gio.Application | null
+```
+
+Returns the default `GApplication` instance for this process.
+
+Normally there is only one `GApplication` per process and it becomes
+the default when it is created.  You can exercise more control over
+this by using `g_application_set_default()`.
+
+If there is no default application then `null` is returned.
+
+**Returns** the default application for this process, or `null`
+
+_Available since 2.32._
+
+### `idIsValid`
+
+```ts
+idIsValid(applicationId: string): boolean
+```
+
+Checks if `application_id` is a valid application identifier.
+
+A valid ID is required for calls to `g_application_new()` and
+`g_application_set_application_id()`.
+
+Application identifiers follow the same format as
+[D-Bus well-known bus names](https://dbus.freedesktop.org/doc/dbus-specification.html#message-protocol-names-bus).
+For convenience, the restrictions on application identifiers are
+reproduced here:
+
+- Application identifiers are composed of 1 or more elements separated by a
+  period (`.`) character. All elements must contain at least one character.
+
+- Each element must only contain the ASCII characters `[A-Z][a-z][0-9]_-`,
+  with `-` discouraged in new application identifiers. Each element must not
+  begin with a digit.
+
+- Application identifiers must contain at least one `.` (period) character
+  (and thus at least two elements).
+
+- Application identifiers must not begin with a `.` (period) character.
+
+- Application identifiers must not exceed 255 characters.
+
+Note that the hyphen (`-`) character is allowed in application identifiers,
+but is problematic or not allowed in various specifications and APIs that
+refer to D-Bus, such as
+[Flatpak application IDs](http://docs.flatpak.org/en/latest/introduction.html#identifiers),
+the
+[`DBusActivatable` interface in the Desktop Entry Specification](https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-latest.html#dbus),
+and the convention that an application's "main" interface and object path
+resemble its application identifier and bus name. To avoid situations that
+require special-case handling, it is recommended that new application
+identifiers consistently replace hyphens with underscores.
+
+Like D-Bus interface names, application identifiers should start with the
+reversed DNS domain name of the author of the interface (in lower-case), and
+it is conventional for the rest of the application identifier to consist of
+words run together, with initial capital letters.
+
+As with D-Bus interface names, if the author's DNS domain name contains
+hyphen/minus characters they should be replaced by underscores, and if it
+contains leading digits they should be escaped by prepending an underscore.
+For example, if the owner of 7-zip.org used an application identifier for an
+archiving application, it might be named `org._7_zip.Archiver`.
+
+**Parameters**
+
+- `applicationId`: a potential application identifier
+
+**Returns** `true` if `application_id` is valid
+
+### `new`
+
+```ts
+new(applicationId: string | null, flags: Gio.ApplicationFlags): Gio.Application
+```
+
+Creates a new `GApplication` instance.
+
+If non-`null`, the application id must be valid.  See
+`g_application_id_is_valid()`.
+
+If no application ID is given then some features of `GApplication`
+(most notably application uniqueness) will be disabled.
+
+**Parameters**
+
+- `applicationId`: the application id
+- `flags`: the application flags
+
+**Returns** a new `GApplication` instance
+
 ## Props
 
 `ref` receives the `Gio.Application` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

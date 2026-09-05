@@ -282,9 +282,6 @@ UTF-8 on Windows.
 If you wish to use the return value with `GOptionContext`, you must
 use `g_option_context_parse_strv()`.
 
-The return value is `null`-terminated and should be freed using
-`g_strfreev()`.
-
 **Returns** the string array containing the arguments (the argv)
 
 _Available since 2.28._
@@ -300,9 +297,6 @@ The string may contain non-utf8 data.
 
 It is possible that the remote application did not send a working
 directory, so this may be `null`.
-
-The return value should not be modified or freed and is valid for as
-long as `cmdline` exists.
 
 **Returns** the current directory, or `null`
 
@@ -322,9 +316,6 @@ The remote application usually does not send an environment.  Use
 `G_APPLICATION_SEND_ENVIRONMENT` to affect that.  Even with this flag
 set it is possible that the environment is still not available (due
 to invocation messages from other applications).
-
-The return value should not be modified or freed and is valid for as
-long as `cmdline` exists.
 
 **Parameters**
 
@@ -349,9 +340,6 @@ The remote application usually does not send an environment.  Use
 `G_APPLICATION_SEND_ENVIRONMENT` to affect that.  Even with this flag
 set it is possible that the environment is still not available (due
 to invocation messages from other applications).
-
-The return value should not be modified or freed and is valid for as
-long as `cmdline` exists.
 
 See `g_application_command_line_getenv()` if you are only interested
 in the value of a single environment variable.

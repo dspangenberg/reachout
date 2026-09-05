@@ -19,6 +19,26 @@ import { GtkVolumeButton } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkAccessibleRange`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
 
+## Static methods
+
+Static methods are called on `Gtk.VolumeButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a `GtkVolumeButton`.
+
+The button has a range between 0.0 and 1.0, with a stepping of 0.02.
+Volume values can be obtained and modified using the functions from
+`Gtk.ScaleButton`.
+
+**Returns** a new `GtkVolumeButton`
+
+> **Deprecated since 4.10.** This widget will be removed in GTK 5
+
 ## Props
 
 `ref` receives the `Gtk.VolumeButton` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

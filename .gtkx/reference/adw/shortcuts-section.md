@@ -28,6 +28,26 @@ import { AdwShortcutsSection } from "@gtkx/jsx/adw";
 
 Implements `GListModel`, `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Adw.ShortcutsSection`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(title: string | null): Adw.ShortcutsSection
+```
+
+Creates a new `AdwShortcutsSection` with `title` as its title if provided.
+
+**Parameters**
+
+- `title`: the section title
+
+**Returns** the newly created `AdwShortcutsSection`
+
+_Available since 1.8._
+
 ## Props
 
 `ref` receives the `Adw.ShortcutsSection` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -37,6 +57,8 @@ Implements `GListModel`, `GtkBuildable`.
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [AdwShortcutsItem](.gtkx/reference/adw/shortcuts-item.md) or a subtype.
 
 ### `itemType`
 

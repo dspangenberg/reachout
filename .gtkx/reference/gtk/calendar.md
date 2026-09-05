@@ -6,8 +6,6 @@ description: "Displays a Gregorian calendar, one month at a time."
 
 Displays a Gregorian calendar, one month at a time.
 
-
-
 A `GtkCalendar` can be created with `Gtk.Calendar.new()`.
 
 The selected date can be retrieved from a `GtkCalendar` using
@@ -67,6 +65,20 @@ import { GtkCalendar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkCalendar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Calendar`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new calendar, with the current date being selected.
+
+**Returns** a newly `GtkCalendar` widget
 
 ## Props
 

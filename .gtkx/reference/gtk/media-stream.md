@@ -57,13 +57,13 @@ that the stream is in.
 
 ### `hasAudio`
 
-`boolean` · default `false` · read-only, observe with `onNotifyHasAudio` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyHasAudio` · instance read with `GObject.getProperty`
 
 Whether the stream contains audio.
 
 ### `hasVideo`
 
-`boolean` · default `false` · read-only, observe with `onNotifyHasVideo` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyHasVideo` · instance read with `GObject.getProperty`
 
 Whether the stream contains video.
 

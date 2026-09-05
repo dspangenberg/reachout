@@ -6,8 +6,6 @@ description: "Shows one of its children at a time."
 
 Shows one of its children at a time.
 
-
-
 In contrast to `GtkNotebook`, `GtkStack` does not provide a means
 for users to change the visible child. Instead, a separate widget
 such as `Gtk.StackSwitcher` or `Gtk.StackSidebar` can
@@ -62,6 +60,20 @@ import { GtkStack } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkStack**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Stack`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkStack`.
+
+**Returns** a new `GtkStack`
 
 ## Props
 

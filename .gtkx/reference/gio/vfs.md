@@ -14,6 +14,31 @@ import { GVfs } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GVfs**
 
+## Static methods
+
+Static methods are called on `Gio.Vfs`, imported from `@gtkx/gi/gio`.
+
+### `getDefault`
+
+```ts
+getDefault(): Gio.Vfs
+```
+
+Gets the default `GVfs` for the system.
+
+**Returns** a `GVfs`, which will be the local
+    file system `GVfs` if no other implementation is available.
+
+### `getLocal`
+
+```ts
+getLocal(): Gio.Vfs
+```
+
+Gets the local `GVfs` for the system.
+
+**Returns** a `GVfs`.
+
 ## Props
 
 `ref` receives the `Gio.Vfs` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -35,7 +60,6 @@ Gets a `GFile` for `path`.
 - `path`: a string containing a VFS path.
 
 **Returns** a `GFile`.
-    Free the returned object with `g_object_unref()`.
 
 ### `getFileForUri`
 
@@ -54,7 +78,6 @@ is malformed or if the URI scheme is not supported.
 - `uri`: a string containing a URI
 
 **Returns** a `GFile`.
-    Free the returned object with `g_object_unref()`.
 
 ### `getSupportedUriSchemes`
 
@@ -65,8 +88,6 @@ getSupportedUriSchemes(): string[]
 Gets a list of URI schemes supported by `vfs`.
 
 **Returns** a `null`-terminated array of strings.
-    The returned array belongs to GIO and must
-    not be freed or modified.
 
 ### `isActive`
 
@@ -94,7 +115,6 @@ be parsed by the `GVfs` module.
 - `parseName`: a string to be parsed by the VFS module.
 
 **Returns** a `GFile` for the given `parse_name`.
-    Free the returned object with `g_object_unref()`.
 
 ### `registerUriScheme`
 

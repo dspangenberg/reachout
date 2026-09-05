@@ -58,6 +58,81 @@ import { GdkPixbufLoader } from "@gtkx/jsx/gdkpixbuf";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GdkPixbufLoader**
 
+## Static methods
+
+Static methods are called on `GdkPixbuf.PixbufLoader`, imported from `@gtkx/gi/gdkpixbuf`.
+
+### `new`
+
+```ts
+new(): GdkPixbuf.PixbufLoader
+```
+
+Creates a new pixbuf loader object.
+
+**Returns** A newly-created pixbuf loader.
+
+### `newWithMimeType`
+
+```ts
+newWithMimeType(mimeType: string): GdkPixbuf.PixbufLoader
+```
+
+Creates a new pixbuf loader object that always attempts to parse
+image data as if it were an image of MIME type `mime_type`, instead of
+identifying the type automatically.
+
+This function is useful if you want an error if the image isn't the
+expected MIME type; for loading image formats that can't be reliably
+identified by looking at the data; or if the user manually forces a
+specific MIME type.
+
+The list of supported mime types depends on what image loaders
+are installed, but typically "image/png", "image/jpeg", "image/gif",
+"image/tiff" and "image/x-xpixmap" are among the supported mime types.
+To obtain the full list of supported mime types, call
+`gdk_pixbuf_format_get_mime_types()` on each of the `GdkPixbufFormat`
+structs returned by `gdk_pixbuf_get_formats()`.
+
+**Parameters**
+
+- `mimeType`: the mime type to be loaded
+
+**Returns** A newly-created pixbuf loader.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.4._
+
+### `newWithType`
+
+```ts
+newWithType(imageType: string): GdkPixbuf.PixbufLoader
+```
+
+Creates a new pixbuf loader object that always attempts to parse
+image data as if it were an image of type `image_type`, instead of
+identifying the type automatically.
+
+This function is useful if you want an error if the image isn't the
+expected type; for loading image formats that can't be reliably
+identified by looking at the data; or if the user manually forces
+a specific type.
+
+The list of supported image formats depends on what image loaders
+are installed, but typically "png", "jpeg", "gif", "tiff" and
+"xpm" are among the supported formats. To obtain the full list of
+supported image formats, call `gdk_pixbuf_format_get_name()` on each
+of the `GdkPixbufFormat` structs returned by `gdk_pixbuf_get_formats()`.
+
+**Parameters**
+
+- `imageType`: name of the image format to be loaded with the image
+
+**Returns** A newly-created pixbuf loader.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
 ## Props
 
 `ref` receives the `GdkPixbuf.PixbufLoader` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -151,8 +226,7 @@ close(): boolean
 ```
 
 Informs a pixbuf loader that no further writes with
-`gdk_pixbuf_loader_write()` will occur, so that it can free its
-internal loading structures.
+`gdk_pixbuf_loader_write()` will occur.
 
 This function also tries to parse any data that hasn't yet been parsed;
 if the remaining data is partial or corrupt, an error will be returned.
@@ -163,8 +237,7 @@ If `FALSE` is returned, `error` will be set to an error from the
 If you're just cancelling a load rather than expecting it to be finished,
 passing `NULL` for `error` to ignore it is reasonable.
 
-Remember that this function does not release a reference on the loader, so
-you will need to explicitly release any reference you hold.
+Remember that this function does not release a reference on the loader.
 
 **Returns** `TRUE` if all image data written so far was successfully
   passed out via the update_area signal

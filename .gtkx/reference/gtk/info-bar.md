@@ -6,8 +6,6 @@ description: "GtkInfoBar can be used to show messages to the user without a dial
 
 `GtkInfoBar` can be used to show messages to the user without a dialog.
 
-
-
 It is often temporarily shown at the top or bottom of a document.
 In contrast to `Gtk.Dialog`, which has an action area at the
 bottom, `GtkInfoBar` has an action area at the side.
@@ -89,6 +87,22 @@ import { GtkInfoBar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkInfoBar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.InfoBar`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkInfoBar` object.
+
+**Returns** a new `GtkInfoBar` object
+
+> **Deprecated since 4.10.**
 
 ## Props
 

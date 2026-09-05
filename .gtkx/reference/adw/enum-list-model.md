@@ -18,6 +18,24 @@ import { AdwEnumListModel } from "@gtkx/jsx/adw";
 
 Implements `GListModel`.
 
+## Static methods
+
+Static methods are called on `Adw.EnumListModel`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(enumType: bigint | AnyClass<TypedClass>): Adw.EnumListModel
+```
+
+Creates a new `AdwEnumListModel` for `enum_type`.
+
+**Parameters**
+
+- `enumType`: the type of the enum to construct the model from
+
+**Returns** the newly created `AdwEnumListModel`
+
 ## Props
 
 `ref` receives the `Adw.EnumListModel` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

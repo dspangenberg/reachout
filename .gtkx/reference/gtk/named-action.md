@@ -18,6 +18,30 @@ import { GtkNamedAction } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkShortcutAction](.gtkx/reference/gtk/shortcut-action.md) → **GtkNamedAction**
 
+## Static methods
+
+Static methods are called on `Gtk.NamedAction`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(name: string): Gtk.NamedAction
+```
+
+Creates an action that when activated, activates
+the named action on the widget.
+
+It also passes the given arguments to it.
+
+See `Gtk.Widget.insertActionGroup()` for
+how to add actions to widgets.
+
+**Parameters**
+
+- `name`: the detailed name of the action
+
+**Returns** a new `GtkShortcutAction`
+
 ## Props
 
 `ref` receives the `Gtk.NamedAction` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

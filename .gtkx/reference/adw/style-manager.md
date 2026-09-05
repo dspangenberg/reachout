@@ -23,6 +23,44 @@ import { AdwStyleManager } from "@gtkx/jsx/adw";
 
 [GObject](.gtkx/reference/gobject/object.md) → **AdwStyleManager**
 
+## Static methods
+
+Static methods are called on `Adw.StyleManager`, imported from `@gtkx/gi/adw`.
+
+### `getDefault`
+
+```ts
+getDefault(): Adw.StyleManager
+```
+
+Gets the default `AdwStyleManager` instance.
+
+It manages all `Gdk.Display` instances unless the style manager for
+that display has an override.
+
+See `StyleManager.getForDisplay()`.
+
+**Returns** the default style manager
+
+### `getForDisplay`
+
+```ts
+getForDisplay(display: Gdk.Display): Adw.StyleManager
+```
+
+Gets the `AdwStyleManager` instance managing `display`.
+
+It can be used to override styles for that specific display instead of the
+whole application.
+
+Most applications should use `StyleManager.getDefault()` instead.
+
+**Parameters**
+
+- `display`: a `GdkDisplay`
+
+**Returns** the style manager for `display`
+
 ## Props
 
 `ref` receives the `Adw.StyleManager` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -61,6 +61,31 @@ import { GdkGLContext } from "@gtkx/jsx/gdk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GdkDrawContext](.gtkx/reference/gdk/draw-context.md) → **GdkGLContext**
 
+## Static methods
+
+Static methods are called on `Gdk.GLContext`, imported from `@gtkx/gi/gdk`.
+
+### `clearCurrent`
+
+```ts
+clearCurrent(): void
+```
+
+Clears the current `GdkGLContext`.
+
+Any OpenGL call after this function returns will be ignored
+until `Gdk.GLContext.makeCurrent()` is called.
+
+### `getCurrent`
+
+```ts
+getCurrent(): Gdk.GLContext | null
+```
+
+Retrieves the current `GdkGLContext`.
+
+**Returns** the current `GdkGLContext`
+
 ## Props
 
 `ref` receives the `Gdk.GLContext` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

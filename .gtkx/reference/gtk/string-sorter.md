@@ -21,6 +21,28 @@ import { GtkStringSorter } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkSorter](.gtkx/reference/gtk/sorter.md) → **GtkStringSorter**
 
+## Static methods
+
+Static methods are called on `Gtk.StringSorter`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(expression: Gtk.Expression | null): Gtk.StringSorter
+```
+
+Creates a new string sorter that compares items using the given
+`expression`.
+
+Unless an expression is set on it, this sorter will always
+compare items as invalid.
+
+**Parameters**
+
+- `expression`: The expression to evaluate
+
+**Returns** a new `GtkStringSorter`
+
 ## Props
 
 `ref` receives the `Gtk.StringSorter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

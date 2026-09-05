@@ -55,6 +55,42 @@ import { GtkEntryCompletion } from "@gtkx/jsx/gtk";
 
 Implements `GtkBuildable`, `GtkCellLayout`.
 
+## Static methods
+
+Static methods are called on `Gtk.EntryCompletion`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.EntryCompletion
+```
+
+Creates a new `GtkEntryCompletion` object.
+
+**Returns** A newly created `GtkEntryCompletion` object
+
+> **Deprecated since 4.10.** GtkEntryCompletion will be removed in GTK 5.
+
+### `newWithArea`
+
+```ts
+newWithArea(area: Gtk.CellArea): Gtk.EntryCompletion
+```
+
+Creates a new `GtkEntryCompletion` object using the
+specified `area`.
+
+The `GtkCellArea` is used to layout cells in the underlying
+`GtkTreeViewColumn` for the drop-down menu.
+
+**Parameters**
+
+- `area`: the `GtkCellArea` used to layout cells
+
+**Returns** A newly created `GtkEntryCompletion` object
+
+> **Deprecated since 4.10.** GtkEntryCompletion will be removed in GTK 5.
+
 ## Props
 
 `ref` receives the `Gtk.EntryCompletion` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -20,13 +20,28 @@ import { GtkDropControllerMotion } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → **GtkDropControllerMotion**
 
+## Static methods
+
+Static methods are called on `Gtk.DropControllerMotion`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.EventController
+```
+
+Creates a new event controller that will handle pointer motion
+events during drag and drop.
+
+**Returns** a new `GtkDropControllerMotion`
+
 ## Props
 
 `ref` receives the `Gtk.DropControllerMotion` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
 
 ### `containsPointer`
 
-`boolean` · default `false` · read-only, observe with `onNotifyContainsPointer` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyContainsPointer` · instance read with `GObject.getProperty`
 
 Whether the pointer of a Drag-and-Drop operation is in
 the controller's widget or a descendant.
@@ -55,7 +70,7 @@ before `Gtk.DropControllerMotion.enter`, but after
 
 ### `isPointer`
 
-`boolean` · default `false` · read-only, observe with `onNotifyIsPointer` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyIsPointer` · instance read with `GObject.getProperty`
 
 Whether the pointer is in the controllers widget itself,
 as opposed to in a descendent widget.

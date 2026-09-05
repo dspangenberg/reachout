@@ -17,13 +17,7 @@ The most basic way to create a pixbuf is to wrap an existing pixel
 buffer with a `GdkPixbuf.Pixbuf` instance. You can use the
 [`ctor@GdkPixbuf.Pixbuf.new_from_data`] function to do this.
 
-Every time you create a new `GdkPixbuf` instance for some data, you
-will need to specify the destroy notification function that will be
-called when the data buffer needs to be freed; this will happen when
-a `GdkPixbuf` is finalized by the reference counting functions. If
-you have a chunk of static data compiled into your application, you
-can pass in `NULL` as the destroy notification function so that the
-data will not be freed.
+Every time you create a new `GdkPixbuf` instance for some data.
 
 The [`ctor@GdkPixbuf.Pixbuf.new`] constructor function can be used
 as a convenience to create a pixbuf with an empty buffer; this is
@@ -42,10 +36,7 @@ for it.
 
 `GdkPixbuf` structures are reference counted. This means that an
 application can share a single pixbuf among many parts of the
-code. When a piece of the program needs to use a pixbuf, it should
-acquire a reference to it by calling `g_object_ref()`; when it no
-longer needs the pixbuf, it should release the reference it acquired
-by calling `g_object_unref()`. The resources associated with a
+code. The resources associated with a
 `GdkPixbuf` will be freed when its reference count drops to zero.
 Newly-created `GdkPixbuf` instances start with a reference count
 of one.
@@ -146,6 +137,625 @@ import { GdkPixbuf } from "@gtkx/jsx/gdkpixbuf";
 [GObject](.gtkx/reference/gobject/object.md) → **GdkPixbuf**
 
 Implements `GIcon`, `GLoadableIcon`.
+
+## Static methods
+
+Static methods are called on `GdkPixbuf.Pixbuf`, imported from `@gtkx/gi/gdkpixbuf`.
+
+### `calculateRowstride`
+
+```ts
+calculateRowstride(colorspace: GdkPixbuf.Colorspace, hasAlpha: boolean, bitsPerSample: number, width: number, height: number): number
+```
+
+Calculates the rowstride that an image created with those values would
+have.
+
+This function is useful for front-ends and backends that want to check
+image values without needing to create a `GdkPixbuf`.
+
+**Parameters**
+
+- `colorspace`: Color space for image
+- `hasAlpha`: Whether the image should have transparency information
+- `bitsPerSample`: Number of bits per color sample
+- `width`: Width of image in pixels, must be > 0
+- `height`: Height of image in pixels, must be > 0
+
+**Returns** the rowstride for the given values, or -1 in case of error.
+
+_Available since 2.36.8._
+
+### `getFileInfo`
+
+```ts
+getFileInfo(filename: string): [GdkPixbuf.PixbufFormat | null, number, number]
+```
+
+Parses an image file far enough to determine its format and size.
+
+**Parameters**
+
+- `filename`: The name of the file to identify.
+
+**Returns** Tuple of:
+
+- `result`: A `GdkPixbufFormat` describing the image format of the file
+- `width`: Return location for the width of the image
+- `height`: Return location for the height of the image
+
+_Available since 2.4._
+
+### `getFileInfoAsync`
+
+```ts
+getFileInfoAsync(filename: string, cancellable?: Gio.Cancellable | null): Promise<[GdkPixbuf.PixbufFormat | null, number, number]>
+```
+
+Asynchronously parses an image file far enough to determine its
+format and size.
+
+For more details see `gdk_pixbuf_get_file_info()`, which is the synchronous
+version of this function.
+
+When the operation is finished, `callback` will be called in the
+main thread. You can then call `gdk_pixbuf_get_file_info_finish()` to
+get the result of the operation.
+
+**Parameters**
+
+- `filename`: The name of the file to identify
+- `cancellable`: optional `GCancellable` object, `NULL` to ignore
+
+**Returns** Tuple of:
+
+- `result`: A `GdkPixbufFormat` describing the image format of the file
+- `width`: Return location for the width of the image, or `NULL`
+- `height`: Return location for the height of the image, or `NULL`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.32._
+
+### `getFileInfoFinish`
+
+```ts
+getFileInfoFinish(asyncResult: Gio.AsyncResult): [GdkPixbuf.PixbufFormat | null, number, number]
+```
+
+Finishes an asynchronous pixbuf parsing operation started with
+`gdk_pixbuf_get_file_info_async()`.
+
+**Parameters**
+
+- `asyncResult`: a `GAsyncResult`
+
+**Returns** Tuple of:
+
+- `result`: A `GdkPixbufFormat` describing the image format of the file
+- `width`: Return location for the width of the image, or `NULL`
+- `height`: Return location for the height of the image, or `NULL`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.32._
+
+### `getFormats`
+
+```ts
+getFormats(): GdkPixbuf.PixbufFormat[]
+```
+
+Obtains the available information about the image formats supported
+by GdkPixbuf.
+
+**Returns** A list of
+  support image formats.
+
+_Available since 2.2._
+
+### `initModules`
+
+```ts
+initModules(path: string): boolean
+```
+
+Initalizes the gdk-pixbuf loader modules referenced by the `loaders.cache`
+file present inside that directory.
+
+This is to be used by applications that want to ship certain loaders
+in a different location from the system ones.
+
+This is needed when the OS or runtime ships a minimal number of loaders
+so as to reduce the potential attack surface of carefully crafted image
+files, especially for uncommon file types. Applications that require
+broader image file types coverage, such as image viewers, would be
+expected to ship the gdk-pixbuf modules in a separate location, bundled
+with the application in a separate directory from the OS or runtime-
+provided modules.
+
+**Parameters**
+
+- `path`: Path to directory where the `loaders.cache` is installed
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.40._
+
+### `new`
+
+```ts
+new(colorspace: GdkPixbuf.Colorspace, hasAlpha: boolean, bitsPerSample: number, width: number, height: number): GdkPixbuf.Pixbuf | null
+```
+
+Creates a new `GdkPixbuf` structure and allocates a buffer for it.
+
+If the allocation of the buffer failed, this function will return `NULL`.
+
+The buffer has an optimal rowstride. Note that the buffer is not cleared;
+you will have to fill it completely yourself.
+
+**Parameters**
+
+- `colorspace`: Color space for image
+- `hasAlpha`: Whether the image should have transparency information
+- `bitsPerSample`: Number of bits per color sample
+- `width`: Width of image in pixels, must be > 0
+- `height`: Height of image in pixels, must be > 0
+
+**Returns** A newly-created pixel buffer
+
+### `newFromBytes`
+
+```ts
+newFromBytes(data: GLib.Bytes, colorspace: GdkPixbuf.Colorspace, hasAlpha: boolean, bitsPerSample: number, width: number, height: number, rowstride: number): GdkPixbuf.Pixbuf
+```
+
+Creates a new `GdkPixbuf` out of in-memory readonly image data.
+
+Currently only RGB images with 8 bits per sample are supported.
+
+This is the `GBytes` variant of `gdk_pixbuf_new_from_data()`, useful
+for language bindings.
+
+**Parameters**
+
+- `data`: Image data in 8-bit/sample packed format inside a `GBytes`
+- `colorspace`: Colorspace for the image data
+- `hasAlpha`: Whether the data has an opacity channel
+- `bitsPerSample`: Number of bits per sample
+- `width`: Width of the image in pixels, must be > 0
+- `height`: Height of the image in pixels, must be > 0
+- `rowstride`: Distance in bytes between row starts
+
+**Returns** A newly-created pixbuf
+
+_Available since 2.32._
+
+### `newFromData`
+
+```ts
+newFromData(data: number, colorspace: GdkPixbuf.Colorspace, hasAlpha: boolean, bitsPerSample: number, width: number, height: number, rowstride: number, destroyFn: GdkPixbuf.PixbufDestroyNotify | null): GdkPixbuf.Pixbuf
+```
+
+Creates a new `GdkPixbuf` out of in-memory image data.
+
+Currently only RGB images with 8 bits per sample are supported.
+
+Since you are providing a pre-allocated pixel buffer, you must also
+specify a way to free that data.  This is done with a function of
+type `GdkPixbufDestroyNotify`.  When a pixbuf created with is
+finalized, your destroy notification function will be called, and
+it is its responsibility to free the pixel array.
+
+See also: `GdkPixbuf.Pixbuf.newFromBytes()`
+
+**Parameters**
+
+- `data`: Image data in 8-bit/sample packed format
+- `colorspace`: Colorspace for the image data
+- `hasAlpha`: Whether the data has an opacity channel
+- `bitsPerSample`: Number of bits per sample
+- `width`: Width of the image in pixels, must be > 0
+- `height`: Height of the image in pixels, must be > 0
+- `rowstride`: Distance in bytes between row starts
+- `destroyFn`: Function used to free the data when the pixbuf's reference count drops to zero
+
+**Returns** A newly-created pixbuf
+
+### `newFromFile`
+
+```ts
+newFromFile(filename: string): GdkPixbuf.Pixbuf | null
+```
+
+Creates a new pixbuf by loading an image from a file.
+
+The file format is detected automatically.
+
+If `NULL` is returned, then `error` will be set. Possible errors are:
+
+ - the file could not be opened
+ - there is no loader for the file's format
+ - there is not enough memory to allocate the image buffer
+ - the image buffer contains invalid data
+
+The error domains are `GDK_PIXBUF_ERROR` and `G_FILE_ERROR`.
+
+**Parameters**
+
+- `filename`: Name of file to load, in the GLib file name encoding
+
+**Returns** A newly-created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+### `newFromFileAtScale`
+
+```ts
+newFromFileAtScale(filename: string, width: number, height: number, preserveAspectRatio: boolean): GdkPixbuf.Pixbuf | null
+```
+
+Creates a new pixbuf by loading an image from a file.
+
+The file format is detected automatically.
+
+If `NULL` is returned, then `error` will be set. Possible errors are:
+
+ - the file could not be opened
+ - there is no loader for the file's format
+ - there is not enough memory to allocate the image buffer
+ - the image buffer contains invalid data
+
+The error domains are `GDK_PIXBUF_ERROR` and `G_FILE_ERROR`.
+
+The image will be scaled to fit in the requested size, optionally preserving
+the image's aspect ratio.
+
+When preserving the aspect ratio, a `width` of -1 will cause the image
+to be scaled to the exact given height, and a `height` of -1 will cause
+the image to be scaled to the exact given width. When not preserving
+aspect ratio, a `width` or `height` of -1 means to not scale the image
+at all in that dimension. Negative values for `width` and `height` are
+allowed since 2.8.
+
+**Parameters**
+
+- `filename`: Name of file to load, in the GLib file name encoding
+- `width`: The width the image should have or -1 to not constrain the width
+- `height`: The height the image should have or -1 to not constrain the height
+- `preserveAspectRatio`: `TRUE` to preserve the image's aspect ratio
+
+**Returns** A newly-created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.6._
+
+### `newFromFileAtSize`
+
+```ts
+newFromFileAtSize(filename: string, width: number, height: number): GdkPixbuf.Pixbuf | null
+```
+
+Creates a new pixbuf by loading an image from a file.
+
+The file format is detected automatically.
+
+If `NULL` is returned, then `error` will be set. Possible errors are:
+
+ - the file could not be opened
+ - there is no loader for the file's format
+ - there is not enough memory to allocate the image buffer
+ - the image buffer contains invalid data
+
+The error domains are `GDK_PIXBUF_ERROR` and `G_FILE_ERROR`.
+
+The image will be scaled to fit in the requested size, preserving
+the image's aspect ratio. Note that the returned pixbuf may be smaller
+than `width` x `height`, if the aspect ratio requires it. To load
+and image at the requested size, regardless of aspect ratio, use
+`GdkPixbuf.Pixbuf.newFromFileAtScale()`.
+
+**Parameters**
+
+- `filename`: Name of file to load, in the GLib file name encoding
+- `width`: The width the image should have or -1 to not constrain the width
+- `height`: The height the image should have or -1 to not constrain the height
+
+**Returns** A newly-created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.4._
+
+### `newFromInline`
+
+```ts
+newFromInline(data: Uint8Array | number[], copyPixels: boolean): GdkPixbuf.Pixbuf
+```
+
+Creates a `GdkPixbuf` from a flat representation that is suitable for
+storing as inline data in a program.
+
+This is useful if you want to ship a program with images, but don't want
+to depend on any external files.
+
+GdkPixbuf ships with a program called `gdk-pixbuf-csource`, which allows
+for conversion of `GdkPixbuf`s into such a inline representation.
+
+In almost all cases, you should pass the `--raw` option to
+`gdk-pixbuf-csource`. A sample invocation would be:
+
+```
+gdk-pixbuf-csource --raw --name=myimage_inline myimage.png
+```
+
+For the typical case where the inline pixbuf is read-only static data,
+you don't need to copy the pixel data unless you intend to write to
+it, so you can pass `FALSE` for `copy_pixels`. If you pass `--rle` to
+`gdk-pixbuf-csource`, a copy will be made even if `copy_pixels` is `FALSE`,
+so using this option is generally a bad idea.
+
+If you create a pixbuf from const inline data compiled into your
+program, it's probably safe to ignore errors and disable length checks,
+since things will always succeed:
+
+```c
+pixbuf = gdk_pixbuf_new_from_inline (-1, myimage_inline, FALSE, NULL);
+```
+
+For non-const inline data, you could get out of memory. For untrusted
+inline data located at runtime, you could have corrupt inline data in
+addition.
+
+**Parameters**
+
+- `data`: Byte data containing a serialized `GdkPixdata` structure
+- `copyPixels`: Whether to copy the pixel data, or use direct pointers `data` for the resulting pixbuf
+
+**Returns** A newly-created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+> **Deprecated since 2.32.** Use `GResource` instead.
+
+### `newFromResource`
+
+```ts
+newFromResource(resourcePath: string): GdkPixbuf.Pixbuf | null
+```
+
+Creates a new pixbuf by loading an image from an resource.
+
+The file format is detected automatically. If `NULL` is returned, then
+`error` will be set.
+
+**Parameters**
+
+- `resourcePath`: the path of the resource file
+
+**Returns** A newly-created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newFromResourceAtScale`
+
+```ts
+newFromResourceAtScale(resourcePath: string, width: number, height: number, preserveAspectRatio: boolean): GdkPixbuf.Pixbuf | null
+```
+
+Creates a new pixbuf by loading an image from an resource.
+
+The file format is detected automatically. If `NULL` is returned, then
+`error` will be set.
+
+The image will be scaled to fit in the requested size, optionally
+preserving the image's aspect ratio. When preserving the aspect ratio,
+a `width` of -1 will cause the image to be scaled to the exact given
+height, and a `height` of -1 will cause the image to be scaled to the
+exact given width. When not preserving aspect ratio, a `width` or
+`height` of -1 means to not scale the image at all in that dimension.
+
+The stream is not closed.
+
+**Parameters**
+
+- `resourcePath`: the path of the resource file
+- `width`: The width the image should have or -1 to not constrain the width
+- `height`: The height the image should have or -1 to not constrain the height
+- `preserveAspectRatio`: `TRUE` to preserve the image's aspect ratio
+
+**Returns** A newly-created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newFromStream`
+
+```ts
+newFromStream(stream: Gio.InputStream, cancellable: Gio.Cancellable | null): GdkPixbuf.Pixbuf | null
+```
+
+Creates a new pixbuf by loading an image from an input stream.
+
+The file format is detected automatically.
+
+If `NULL` is returned, then `error` will be set.
+
+The `cancellable` can be used to abort the operation from another thread.
+If the operation was cancelled, the error `G_IO_ERROR_CANCELLED` will be
+returned. Other possible errors are in the `GDK_PIXBUF_ERROR` and
+`G_IO_ERROR` domains.
+
+The stream is not closed.
+
+**Parameters**
+
+- `stream`: a `GInputStream` to load the pixbuf from
+- `cancellable`: optional `GCancellable` object, `NULL` to ignore
+
+**Returns** A newly-created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.14._
+
+### `newFromStreamAsync`
+
+```ts
+newFromStreamAsync(stream: Gio.InputStream, cancellable?: Gio.Cancellable | null): Promise<GdkPixbuf.Pixbuf | null>
+```
+
+Creates a new pixbuf by asynchronously loading an image from an input stream.
+
+For more details see `gdk_pixbuf_new_from_stream()`, which is the synchronous
+version of this function.
+
+When the operation is finished, `callback` will be called in the main thread.
+You can then call `gdk_pixbuf_new_from_stream_finish()` to get the result of
+the operation.
+
+**Parameters**
+
+- `stream`: a `GInputStream` from which to load the pixbuf
+- `cancellable`: optional `GCancellable` object, `NULL` to ignore
+
+**Returns** the newly created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.24._
+
+### `newFromStreamAtScale`
+
+```ts
+newFromStreamAtScale(stream: Gio.InputStream, width: number, height: number, preserveAspectRatio: boolean, cancellable: Gio.Cancellable | null): GdkPixbuf.Pixbuf | null
+```
+
+Creates a new pixbuf by loading an image from an input stream.
+
+The file format is detected automatically. If `NULL` is returned, then
+`error` will be set. The `cancellable` can be used to abort the operation
+from another thread. If the operation was cancelled, the error
+`G_IO_ERROR_CANCELLED` will be returned. Other possible errors are in
+the `GDK_PIXBUF_ERROR` and `G_IO_ERROR` domains.
+
+The image will be scaled to fit in the requested size, optionally
+preserving the image's aspect ratio.
+
+When preserving the aspect ratio, a `width` of -1 will cause the image to be
+scaled to the exact given height, and a `height` of -1 will cause the image
+to be scaled to the exact given width. If both `width` and `height` are
+given, this function will behave as if the smaller of the two values
+is passed as -1.
+
+When not preserving aspect ratio, a `width` or `height` of -1 means to not
+scale the image at all in that dimension.
+
+The stream is not closed.
+
+**Parameters**
+
+- `stream`: a `GInputStream` to load the pixbuf from
+- `width`: The width the image should have or -1 to not constrain the width
+- `height`: The height the image should have or -1 to not constrain the height
+- `preserveAspectRatio`: `TRUE` to preserve the image's aspect ratio
+- `cancellable`: optional `GCancellable` object, `NULL` to ignore
+
+**Returns** A newly-created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.14._
+
+### `newFromStreamAtScaleAsync`
+
+```ts
+newFromStreamAtScaleAsync(stream: Gio.InputStream, width: number, height: number, preserveAspectRatio: boolean, cancellable?: Gio.Cancellable | null): Promise<GdkPixbuf.Pixbuf | null>
+```
+
+Creates a new pixbuf by asynchronously loading an image from an input stream.
+
+For more details see `gdk_pixbuf_new_from_stream_at_scale()`, which is the synchronous
+version of this function.
+
+When the operation is finished, `callback` will be called in the main thread.
+You can then call `gdk_pixbuf_new_from_stream_finish()` to get the result of the operation.
+
+**Parameters**
+
+- `stream`: a `GInputStream` from which to load the pixbuf
+- `width`: the width the image should have or -1 to not constrain the width
+- `height`: the height the image should have or -1 to not constrain the height
+- `preserveAspectRatio`: `TRUE` to preserve the image's aspect ratio
+- `cancellable`: optional `GCancellable` object, `NULL` to ignore
+
+**Returns** the newly created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.24._
+
+### `newFromStreamFinish`
+
+```ts
+newFromStreamFinish(asyncResult: Gio.AsyncResult): GdkPixbuf.Pixbuf | null
+```
+
+Finishes an asynchronous pixbuf creation operation started with
+`gdk_pixbuf_new_from_stream_async()`.
+
+**Parameters**
+
+- `asyncResult`: a `GAsyncResult`
+
+**Returns** the newly created pixbuf
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.24._
+
+### `newFromXpmData`
+
+```ts
+newFromXpmData(data: string[]): GdkPixbuf.Pixbuf | null
+```
+
+Creates a new pixbuf by parsing XPM data in memory.
+
+This data is commonly the result of including an XPM file into a
+program's C source.
+
+**Parameters**
+
+- `data`: Pointer to inline XPM data.
+
+**Returns** A newly-created pixbuf
+
+> **Deprecated since 2.44.** Use `GdkPixbuf.Pixbuf.newFromStream()` with a `Gio.MemoryInputStream`, making sure to handle errors in case the XPM format loader is not available
+
+### `saveToStreamFinish`
+
+```ts
+saveToStreamFinish(asyncResult: Gio.AsyncResult): boolean
+```
+
+Finishes an asynchronous pixbuf save operation started with
+`gdk_pixbuf_save_to_stream_async()`.
+
+**Parameters**
+
+- `asyncResult`: a `GAsyncResult`
+
+**Returns** `TRUE` if the pixbuf was saved successfully, `FALSE` if an error was set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.24._
 
 ## Props
 

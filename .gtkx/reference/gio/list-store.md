@@ -20,6 +20,27 @@ import { GListStore } from "@gtkx/jsx/gio";
 
 Implements `GListModel`.
 
+## Static methods
+
+Static methods are called on `Gio.ListStore`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(itemType: bigint | AnyClass<TypedClass>): Gio.ListStore
+```
+
+Creates a new `GListStore` with items of type `item_type`. `item_type`
+must be a subclass of `GObject`.
+
+**Parameters**
+
+- `itemType`: the `GType` of items in the list
+
+**Returns** a new `GListStore`
+
+_Available since 2.44._
+
 ## Props
 
 `ref` receives the `Gio.ListStore` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

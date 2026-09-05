@@ -18,6 +18,29 @@ import { GtkAlternativeTrigger } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkShortcutTrigger](.gtkx/reference/gtk/shortcut-trigger.md) → **GtkAlternativeTrigger**
 
+## Static methods
+
+Static methods are called on `Gtk.AlternativeTrigger`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(first: Gtk.ShortcutTrigger, second: Gtk.ShortcutTrigger): Gtk.ShortcutTrigger
+```
+
+Creates a `GtkShortcutTrigger` that will trigger whenever
+either of the two given triggers gets triggered.
+
+Note that nesting is allowed, so if you want more than two
+alternative, create a new alternative trigger for each option.
+
+**Parameters**
+
+- `first`: The first trigger that may trigger
+- `second`: The second trigger that may trigger
+
+**Returns** a new `GtkShortcutTrigger`
+
 ## Props
 
 `ref` receives the `Gtk.AlternativeTrigger` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

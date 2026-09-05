@@ -20,6 +20,22 @@ import { GtkCellRendererAccel } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkCellRenderer](.gtkx/reference/gtk/cell-renderer.md) → [GtkCellRendererText](.gtkx/reference/gtk/cell-renderer-text.md) → **GtkCellRendererAccel**
 
+## Static methods
+
+Static methods are called on `Gtk.CellRendererAccel`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.CellRenderer
+```
+
+Creates a new `GtkCellRendererAccel`.
+
+**Returns** the new cell renderer
+
+> **Deprecated since 4.10.**
+
 ## Props
 
 `ref` receives the `Gtk.CellRendererAccel` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

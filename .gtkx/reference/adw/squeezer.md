@@ -6,9 +6,6 @@ description: "A best fit container."
 
 A best fit container.
 
-
-
-
 The `AdwSqueezer` widget is a container which only shows the first of its
 children that fits in the available size. It is convenient to offer different
 widgets to represent the same data with different levels of detail, making
@@ -32,6 +29,22 @@ import { AdwSqueezer } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwSqueezer**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.Squeezer`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwSqueezer`.
+
+**Returns** the newly created `AdwSqueezer`
+
+> **Deprecated since 1.4.** See [the migration guide](migrating-to-breakpoints.html#replace-adwsqueezer)
 
 ## Props
 

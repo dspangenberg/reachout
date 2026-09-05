@@ -20,6 +20,51 @@ import { GMemoryInputStream } from "@gtkx/jsx/gio";
 
 Implements `GPollableInputStream`, `GSeekable`.
 
+## Static methods
+
+Static methods are called on `Gio.MemoryInputStream`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.InputStream
+```
+
+Creates a new empty `GMemoryInputStream`.
+
+**Returns** a new `GInputStream`
+
+### `newFromBytes`
+
+```ts
+newFromBytes(bytes: GLib.Bytes): Gio.InputStream
+```
+
+Creates a new `GMemoryInputStream` with data from the given `bytes`.
+
+**Parameters**
+
+- `bytes`: a `GBytes`
+
+**Returns** new `GInputStream` read from `bytes`
+
+_Available since 2.34._
+
+### `newFromData`
+
+```ts
+newFromData(data: Uint8Array | number[], destroy: GLib.DestroyNotify | null): Gio.InputStream
+```
+
+Creates a new `GMemoryInputStream` with data in memory of a given size.
+
+**Parameters**
+
+- `data`: input data
+- `destroy`: function that is called to free `data`, or `null`
+
+**Returns** new `GInputStream` read from `data` of `len` bytes.
+
 ## Props
 
 `ref` receives the `Gio.MemoryInputStream` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

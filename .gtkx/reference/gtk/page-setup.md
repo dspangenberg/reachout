@@ -55,6 +55,78 @@ import { GtkPageSetup } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkPageSetup**
 
+## Static methods
+
+Static methods are called on `Gtk.PageSetup`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.PageSetup
+```
+
+Creates a new `GtkPageSetup`.
+
+**Returns** a new `GtkPageSetup`.
+
+### `newFromFile`
+
+```ts
+newFromFile(fileName: string): Gtk.PageSetup
+```
+
+Reads the page setup from the file `file_name`.
+
+Returns a new `GtkPageSetup` object with the restored
+page setup, or `null` if an error occurred.
+See `Gtk.PageSetup.toFile()`.
+
+**Parameters**
+
+- `fileName`: the filename to read the page setup from
+
+**Returns** the restored `GtkPageSetup`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+### `newFromGvariant`
+
+```ts
+newFromGvariant(variant: GLib.Variant): Gtk.PageSetup
+```
+
+Desrialize a page setup from an a{sv} variant.
+
+The variant must be in the format produced by
+`Gtk.PageSetup.toGvariant()`.
+
+**Parameters**
+
+- `variant`: an a{sv} `GVariant`
+
+**Returns** a new `GtkPageSetup` object
+
+### `newFromKeyFile`
+
+```ts
+newFromKeyFile(keyFile: GLib.KeyFile, groupName: string | null): Gtk.PageSetup
+```
+
+Reads the page setup from the group `group_name` in the key file
+`key_file`.
+
+Returns a new `GtkPageSetup` object with the restored
+page setup, or `null` if an error occurred.
+
+**Parameters**
+
+- `keyFile`: the `GKeyFile` to retrieve the page_setup from
+- `groupName`: the name of the group in the key_file to read to use the default name “Page Setup”
+
+**Returns** the restored `GtkPageSetup`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
 ## Props
 
 `ref` receives the `Gtk.PageSetup` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

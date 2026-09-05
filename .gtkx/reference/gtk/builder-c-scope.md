@@ -31,6 +31,24 @@ import { GtkBuilderCScope } from "@gtkx/jsx/gtk";
 
 Implements `GtkBuilderScope`.
 
+## Static methods
+
+Static methods are called on `Gtk.BuilderCScope`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.BuilderCScope
+```
+
+Creates a new `GtkBuilderCScope` object to use with future
+`GtkBuilder` instances.
+
+Calling this function is only necessary if you want to add
+custom callbacks via `Gtk.BuilderCScope.addCallbackSymbol()`.
+
+**Returns** a new `GtkBuilderCScope`
+
 ## Props
 
 `ref` receives the `Gtk.BuilderCScope` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -20,6 +20,40 @@ import { GDBusActionGroup } from "@gtkx/jsx/gio";
 
 Implements `GActionGroup`, `GRemoteActionGroup`.
 
+## Static methods
+
+Static methods are called on `Gio.DBusActionGroup`, imported from `@gtkx/gi/gio`.
+
+### `get`
+
+```ts
+get(connection: Gio.DBusConnection, busName: string | null, objectPath: string): Gio.DBusActionGroup
+```
+
+Obtains a `GDBusActionGroup` for the action group which is exported at
+the given `bus_name` and `object_path`.
+
+The thread default main context is taken at the time of this call.
+All signals on the menu model (and any linked models) are reported
+with respect to this context.  All calls on the returned menu model
+(and linked models) must also originate from this same context, with
+the thread default main context unchanged.
+
+This call is non-blocking.  The returned action group may or may not
+already be filled in.  The correct thing to do is connect the signals
+for the action group to monitor for changes and then to call
+`g_action_group_list_actions()` to get the initial list.
+
+**Parameters**
+
+- `connection`: A `GDBusConnection`
+- `busName`: the bus name which exports the action group or `null` if `connection` is not a message bus connection
+- `objectPath`: the object path at which the action group is exported
+
+**Returns** a `GDBusActionGroup`
+
+_Available since 2.32._
+
 ## Props
 
 `ref` receives the `Gio.DBusActionGroup` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

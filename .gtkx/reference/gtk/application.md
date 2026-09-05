@@ -107,6 +107,42 @@ import { GtkApplication } from "@gtkx/jsx/gtk";
 
 Implements `GActionGroup`, `GActionMap`.
 
+## Static methods
+
+Static methods are called on `Gtk.Application`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(applicationId: string | null, flags: Gio.ApplicationFlags): Gtk.Application
+```
+
+Creates a new application instance.
+
+When using `GtkApplication`, it is not necessary to call `Gtk.init()`
+manually. It is called as soon as the application gets registered as
+the primary instance.
+
+Concretely, `Gtk.init()` is called in the default handler for the
+`GApplication::startup` signal. Therefore, `GtkApplication` subclasses
+should always chain up in their `GIO.Application.startup()` handler
+before using any GTK API.
+
+Note that commandline arguments are not passed to `Gtk.init()`.
+
+If `application_id` is not `NULL`, then it must be valid. See
+`Gio.Application.idIsValid()`.
+
+If no application ID is given then some features (most notably application
+uniqueness) will be disabled.
+
+**Parameters**
+
+- `applicationId`: The application ID
+- `flags`: the application flags
+
+**Returns** a new `GtkApplication` instance
+
 ## Props
 
 `ref` receives the `Gtk.Application` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -128,6 +164,8 @@ The currently focused window of the application.
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [GtkWindow](.gtkx/reference/gtk/window.md) or a subtype.
 
 ### `mainOptions`
 

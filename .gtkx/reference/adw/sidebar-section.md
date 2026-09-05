@@ -78,6 +78,22 @@ import { AdwSidebarSection } from "@gtkx/jsx/adw";
 
 Implements `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Adw.SidebarSection`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Adw.SidebarSection
+```
+
+Creates a new `AdwSidebarSection`.
+
+**Returns** the newly created `AdwSidebarSection`
+
+_Available since 1.9._
+
 ## Props
 
 `ref` receives the `Adw.SidebarSection` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -87,6 +103,8 @@ Implements `GtkBuildable`.
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [AdwSidebarItem](.gtkx/reference/adw/sidebar-item.md) or a subtype.
 
 ### `items`
 

@@ -6,8 +6,6 @@ description: "Shows a \"light switch\" that has two states: on or off."
 
 Shows a "light switch" that has two states: on or off.
 
-
-
 The user can control which state should be active by clicking the
 empty area, or by dragging the slider.
 
@@ -16,8 +14,6 @@ with a delay. In this case, the slider position indicates the user's recent
 change (represented by the `Gtk.Switch.active` property), while the
 trough color indicates the present underlying state (represented by the
 `Gtk.Switch.state` property).
-
-
 
 See `Gtk.Switch.state-set` for details.
 
@@ -51,6 +47,20 @@ import { GtkSwitch } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkSwitch**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Switch`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkSwitch` widget.
+
+**Returns** the newly created `GtkSwitch` instance
 
 ## Props
 

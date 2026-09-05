@@ -41,6 +41,28 @@ import { GSocketService } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GSocketListener](.gtkx/reference/gio/socket-listener.md) → **GSocketService**
 
+## Static methods
+
+Static methods are called on `Gio.SocketService`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.SocketService
+```
+
+Creates a new `GSocketService` with no sockets to listen for.
+New listeners can be added with e.g. `g_socket_listener_add_address()`
+or `g_socket_listener_add_inet_port()`.
+
+New services are created active, there is no need to call
+`g_socket_service_start()`, unless `g_socket_service_stop()` has been
+called before.
+
+**Returns** a new `GSocketService`.
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.SocketService` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -65,9 +87,6 @@ The ::incoming signal is emitted when a new incoming connection
 to `service` needs to be handled. The handler must initiate the
 handling of `connection`, but may not block; in essence,
 asynchronous operations must be used.
-
-`connection` will be unreffed once the signal handler returns,
-so you need to ref it yourself if you are planning to use it.
 
 **Parameters**
 

@@ -6,9 +6,6 @@ description: "An adaptive dialog container."
 
 An adaptive dialog container.
 
-
-
-
 `AdwDialog` is similar to a window, but is shown within another window. It
 can be used with `Window` and `ApplicationWindow`, use
 `Dialog.present()` to show it.
@@ -67,6 +64,22 @@ import { AdwDialog } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwDialog**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Adw.Dialog`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Adw.Dialog
+```
+
+Creates a new `AdwDialog`.
+
+**Returns** the new created `AdwDialog`
+
+_Available since 1.5._
 
 ## Props
 

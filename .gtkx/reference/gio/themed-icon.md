@@ -24,6 +24,66 @@ import { GThemedIcon } from "@gtkx/jsx/gio";
 
 Implements `GIcon`.
 
+## Static methods
+
+Static methods are called on `Gio.ThemedIcon`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(iconname: string): Gio.ThemedIcon
+```
+
+Creates a new themed icon for `iconname`.
+
+**Parameters**
+
+- `iconname`: a string containing an icon name.
+
+**Returns** a new `GThemedIcon`.
+
+### `newFromNames`
+
+```ts
+newFromNames(iconnames: string[]): Gio.ThemedIcon
+```
+
+Creates a new themed icon for `iconnames`.
+
+**Parameters**
+
+- `iconnames`: an array of strings containing icon names.
+
+**Returns** a new `GThemedIcon`
+
+### `newWithDefaultFallbacks`
+
+```ts
+newWithDefaultFallbacks(iconname: string): Gio.ThemedIcon
+```
+
+Creates a new themed icon for `iconname`, and all the names
+that can be created by shortening `iconname` at '-' characters.
+
+In the following example, `icon1` and `icon2` are equivalent:
+```c
+const char *names[] = {
+  "gnome-dev-cdrom-audio",
+  "gnome-dev-cdrom",
+  "gnome-dev",
+  "gnome"
+};
+
+icon1 = g_themed_icon_new_from_names (names, 4);
+icon2 = g_themed_icon_new_with_default_fallbacks ("gnome-dev-cdrom-audio");
+```
+
+**Parameters**
+
+- `iconname`: a string containing an icon name
+
+**Returns** a new `GThemedIcon`.
+
 ## Props
 
 `ref` receives the `Gio.ThemedIcon` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -6,8 +6,6 @@ description: "A widget containing a page, as well as top and/or bottom bars."
 
 A widget containing a page, as well as top and/or bottom bars.
 
-
-
 `AdwToolbarView` has a single content widget and one or multiple top and
 bottom bars, shown at the top and bottom sides respectively.
 
@@ -53,15 +51,8 @@ for content such as [utility panes](https://developer.gnome.org/hig/patterns/con
 where some elements are adjacent to the top/bottom bars, or `TabView`,
 where each page can have a different background.
 
-
-
-
-
 `AdwToolbarView` ensures the top and bottom bars have consistent backdrop
 styles and vertical spacing. For comparison:
-
-
-
 
 Any top and bottom bars can also be dragged to move the window, equivalent
 to putting them into a `Gtk.WindowHandle`.
@@ -96,6 +87,22 @@ import { AdwToolbarView } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwToolbarView**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ToolbarView`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwToolbarView`.
+
+**Returns** the newly created `AdwToolbarView`
+
+_Available since 1.4._
 
 ## Props
 

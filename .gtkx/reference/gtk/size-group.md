@@ -24,10 +24,7 @@ particular it doesn't make a lot of sense to set
 [the expand flags]`Gtk.Widget.setHexpand()` on the widgets that
 are members of a size group.
 
-`GtkSizeGroup` objects are referenced by each widget in the size group,
-so once you have added all widgets to a `GtkSizeGroup`, you can drop
-the initial reference to the size group with
-`GObject.Object.unref()`. If the widgets in the size group are
+ If the widgets in the size group are
 subsequently destroyed, then they will be removed from the size group
 and drop their references on the size group; when all widgets have been
 removed, the size group will be freed.
@@ -118,6 +115,24 @@ import { GtkSizeGroup } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → **GtkSizeGroup**
 
 Implements `GtkBuildable`.
+
+## Static methods
+
+Static methods are called on `Gtk.SizeGroup`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(mode: Gtk.SizeGroupMode): Gtk.SizeGroup
+```
+
+Create a new `GtkSizeGroup`.
+
+**Parameters**
+
+- `mode`: the mode for the new size group.
+
+**Returns** a newly created `GtkSizeGroup`
 
 ## Props
 

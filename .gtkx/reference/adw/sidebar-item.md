@@ -47,6 +47,26 @@ import { AdwSidebarItem } from "@gtkx/jsx/adw";
 
 [GObject](.gtkx/reference/gobject/object.md) → **AdwSidebarItem**
 
+## Static methods
+
+Static methods are called on `Adw.SidebarItem`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(title: string): Adw.SidebarItem
+```
+
+Creates a new `AdwSidebarItem` with `title` as its title.
+
+**Parameters**
+
+- `title`: the item title
+
+**Returns** the newly created `AdwSidebarItem`
+
+_Available since 1.9._
+
 ## Props
 
 `ref` receives the `Adw.SidebarItem` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

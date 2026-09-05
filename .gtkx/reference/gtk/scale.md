@@ -6,8 +6,6 @@ description: "Allows to select a numeric value with a slider control."
 
 Allows to select a numeric value with a slider control.
 
-
-
 To use it, you’ll probably want to investigate the methods on its base
 class, `Gtk.Range`, in addition to the methods for `GtkScale` itself.
 To set the value of a scale, you would normally use `Gtk.Range.setValue()`.
@@ -103,6 +101,52 @@ import { GtkScale } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkRange](.gtkx/reference/gtk/range.md) → **GtkScale**
 
 Implements `GtkAccessible`, `GtkAccessibleRange`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.Scale`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(orientation: Gtk.Orientation, adjustment: Gtk.Adjustment | null): Gtk.Widget
+```
+
+Creates a new `GtkScale`.
+
+**Parameters**
+
+- `orientation`: the scale’s orientation.
+- `adjustment`: the `Gtk.Adjustment` which sets the range of the scale, or `null` to create a new adjustment.
+
+**Returns** a new `GtkScale`
+
+### `newWithRange`
+
+```ts
+newWithRange(orientation: Gtk.Orientation, min: number, max: number, step: number): Gtk.Widget
+```
+
+Creates a new scale widget with a range from `min` to `max`.
+
+The returns scale will have the given orientation and will let the
+user input a number between `min` and `max` (including `min` and `max`)
+with the increment `step`. `step` must be nonzero; it’s the distance
+the slider moves when using the arrow keys to adjust the scale
+value.
+
+Note that the way in which the precision is derived works best if
+`step` is a power of ten. If the resulting precision is not suitable
+for your needs, use `Gtk.Scale.setDigits()` to correct it.
+
+**Parameters**
+
+- `orientation`: the scale’s orientation.
+- `min`: minimum value
+- `max`: maximum value
+- `step`: step increment (tick size) used with keyboard shortcuts
+
+**Returns** a new `GtkScale`
 
 ## Props
 
@@ -210,9 +254,6 @@ getLayout(): Pango.Layout | null
 ```
 
 Gets the `PangoLayout` used to display the scale.
-
-The returned object is owned by the scale so does not need
-to be freed by the caller.
 
 **Returns** the `Pango.Layout`
   for this scale, or `null` if the `Gtk.Scale.drawValue`

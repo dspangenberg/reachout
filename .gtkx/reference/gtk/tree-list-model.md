@@ -16,6 +16,28 @@ import { GtkTreeListModel } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`.
 
+## Static methods
+
+Static methods are called on `Gtk.TreeListModel`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(root: Gio.ListModel, passthrough: boolean, autoexpand: boolean, createFunc: Gtk.TreeListModelCreateModelFunc): Gtk.TreeListModel
+```
+
+Creates a new empty `GtkTreeListModel` displaying `root`
+with all rows collapsed.
+
+**Parameters**
+
+- `root`: The `GListModel` to use as root
+- `passthrough`: `true` to pass through items from the models
+- `autoexpand`: `true` to set the autoexpand property and expand the `root` model
+- `createFunc`: function to call to create the `GListModel` for the children of an item
+
+**Returns** a newly created `GtkTreeListModel`.
+
 ## Props
 
 `ref` receives the `Gtk.TreeListModel` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

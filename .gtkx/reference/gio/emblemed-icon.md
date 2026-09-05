@@ -21,6 +21,27 @@ import { GEmblemedIcon } from "@gtkx/jsx/gio";
 
 Implements `GIcon`.
 
+## Static methods
+
+Static methods are called on `Gio.EmblemedIcon`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(icon: Gio.Icon, emblem: Gio.Emblem | null): Gio.EmblemedIcon
+```
+
+Creates a new emblemed icon for `icon` with the emblem `emblem`.
+
+**Parameters**
+
+- `icon`: a `GIcon`
+- `emblem`: a `GEmblem`, or `null`
+
+**Returns** a new `GIcon`
+
+_Available since 2.18._
+
 ## Props
 
 `ref` receives the `Gio.EmblemedIcon` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

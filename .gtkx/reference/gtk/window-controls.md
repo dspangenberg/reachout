@@ -9,8 +9,6 @@ Shows window frame controls.
 Typical window frame controls are minimize, maximize and close buttons,
 and the window icon.
 
-
-
 `GtkWindowControls` only displays start or end side of the controls (see
 `Gtk.WindowControls.side`), so it's intended to be always used
 in pair with another `GtkWindowControls` for the opposite side, for example:
@@ -64,6 +62,24 @@ import { GtkWindowControls } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkWindowControls**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.WindowControls`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(side: Gtk.PackType): Gtk.Widget
+```
+
+Creates a new `GtkWindowControls`.
+
+**Parameters**
+
+- `side`: the side
+
+**Returns** a new `GtkWindowControls`
 
 ## Props
 

@@ -6,8 +6,6 @@ description: "Switches between children using tabs."
 
 Switches between children using tabs.
 
-
-
 There are many configuration options for `GtkNotebook`. Among
 other things, you can choose on which edge the tabs appear
 (see `Gtk.Notebook.setTabPos()`), whether, if there are
@@ -130,6 +128,20 @@ import { GtkNotebook } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkNotebook**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Notebook`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkNotebook` widget with no pages.
+
+**Returns** the newly created `GtkNotebook`
 
 ## Props
 
@@ -494,7 +506,6 @@ Retrieves the text of the menu label for the page containing
 **Returns** the text of the tab label, or `null` if
   the widget does not have a menu label other than the default
   menu label, or the menu label widget is not a `GtkLabel`.
-  The string is owned by the widget and must not be freed.
 
 ### `getNPages`
 
@@ -625,8 +636,7 @@ Retrieves the text of the tab label for the page containing
 - `child`: a widget contained in a page of `notebook`
 
 **Returns** the text of the tab label, or `null` if
-  the tab label widget is not a `GtkLabel`. The string is owned
-  by the widget and must not be freed.
+  the tab label widget is not a `GtkLabel`.
 
 ### `getTabPos`
 

@@ -20,6 +20,22 @@ import { GSimpleActionGroup } from "@gtkx/jsx/gio";
 
 Implements `GActionGroup`, `GActionMap`.
 
+## Static methods
+
+Static methods are called on `Gio.SimpleActionGroup`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.SimpleActionGroup
+```
+
+Creates a new, empty, `GSimpleActionGroup`.
+
+**Returns** a new `GSimpleActionGroup`
+
+_Available since 2.28._
+
 ## Props
 
 `ref` receives the `Gio.SimpleActionGroup` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

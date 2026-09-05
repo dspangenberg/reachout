@@ -6,8 +6,6 @@ description: "A bar with contextual information."
 
 A bar with contextual information.
 
-
-
 Banners are hidden by default, use `Banner.revealed` to show them.
 
 Banners have a title, set with `Banner.title`. Titles can be marked
@@ -20,8 +18,6 @@ Banners can optionally have a button with text on it, set through
 `Banner.buttonLabel`. The button can be used with a `GAction`,
 or with the `Banner.button-clicked` signal. The button can have
 different styles, a gray style and a suggested style.
-
-
 
 ### CSS nodes
 
@@ -38,6 +34,26 @@ import { AdwBanner } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwBanner**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.Banner`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(title: string): Gtk.Widget
+```
+
+Creates a new `AdwBanner`.
+
+**Parameters**
+
+- `title`: the banner title
+
+**Returns** the newly created `AdwBanner`
+
+_Available since 1.3._
 
 ## Props
 

@@ -6,8 +6,6 @@ description: "A dialog presenting a message or a question."
 
 A dialog presenting a message or a question.
 
-
-
 Alert dialogs have a heading, a body, an optional child widget, and one or
 multiple responses, each presented as a button.
 
@@ -143,6 +141,40 @@ import { AdwAlertDialog } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [AdwDialog](.gtkx/reference/adw/dialog.md) → **AdwAlertDialog**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Adw.AlertDialog`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(heading: string | null, body: string | null): Adw.Dialog
+```
+
+Creates a new `AdwAlertDialog`.
+
+`heading` and `body` can be set to `NULL`. This can be useful if they need to
+be formatted or use markup. In that case, set them to `NULL` and call
+`AlertDialog.formatBody()` or similar methods afterwards:
+
+```c
+AdwDialog *dialog;
+
+dialog = adw_alert_dialog_new (_("Replace File?"), NULL);
+adw_alert_dialog_format_body (ADW_ALERT_DIALOG (dialog),
+                              _("A file named “%s” already exists.  Do you want to replace it?"),
+                              filename);
+```
+
+**Parameters**
+
+- `heading`: the heading
+- `body`: the body text
+
+**Returns** the newly created `AdwAlertDialog`
+
+_Available since 1.5._
 
 ## Props
 
@@ -679,8 +711,6 @@ setResponseAppearance(response: string, appearance: Adw.ResponseAppearance): voi
 ```
 
 Sets the appearance for `response`.
-
-
 
 Use `Adw.ResponseAppearance.suggested` to mark important responses such
 as the affirmative action, like the Save button in the example.

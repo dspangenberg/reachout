@@ -6,8 +6,6 @@ description: "A paginated scrolling widget."
 
 A paginated scrolling widget.
 
-
-
 The `AdwCarousel` widget can be used to display a set of pages with
 swipe-based navigation between them.
 
@@ -27,6 +25,20 @@ import { AdwCarousel } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwCarousel**
 
 Implements `AdwSwipeable`, `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.Carousel`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwCarousel`.
+
+**Returns** the newly created `AdwCarousel`
 
 ## Props
 

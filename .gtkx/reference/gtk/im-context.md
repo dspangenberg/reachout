@@ -310,8 +310,8 @@ This string should be displayed inserted at the insertion point.
 
 **Returns** Tuple of:
 
-- `str`: location to store the retrieved string. The string retrieved must be freed with `g_free()`.
-- `attrs`: location to store the retrieved attribute list. When you are done with this list, you must unreference it with `Pango.AttrList.unref()`.
+- `str`: location to store the retrieved string.
+- `attrs`: location to store the retrieved attribute list.
 - `cursorPos`: location to store position of cursor (in characters) within the preedit string.
 
 ### `getSurrounding`
@@ -338,8 +338,8 @@ function without context.
 
 **Returns** Tuple of:
 
-- `result`: `TRUE` if surrounding text was provided; in this case you must free the result stored in `text`.
-- `text`: location to store a UTF-8 encoded string of text holding context around the insertion point. If the function returns `true`, then you must free the result stored in this location with `g_free()`.
+- `result`: `TRUE` if surrounding text was provided.
+- `text`: location to store a UTF-8 encoded string of text holding context around the insertion point.
 - `cursorIndex`: location to store byte index of the insertion cursor within `text`.
 
 > **Deprecated since 4.2.** Use `Gtk.IMContext.getSurroundingWithSelection()` instead.
@@ -368,8 +368,8 @@ function without context.
 
 **Returns** Tuple of:
 
-- `result`: `TRUE` if surrounding text was provided; in this case you must free the result stored in `text`.
-- `text`: location to store a UTF-8 encoded string of text holding context around the insertion point. If the function returns `true`, then you must free the result stored in this location with `g_free()`.
+- `result`: `TRUE` if surrounding text was provided.
+- `text`: location to store a UTF-8 encoded string of text holding context around the insertion point.
 - `cursorIndex`: location to store byte index of the insertion cursor within `text`.
 - `anchorIndex`: location to store byte index of the selection bound within `text`
 

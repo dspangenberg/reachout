@@ -27,6 +27,44 @@ import { GUnixFDList } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GUnixFDList**
 
+## Static methods
+
+Static methods are called on `Gio.UnixFDList`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.UnixFDList
+```
+
+Creates a new `GUnixFDList` containing no file descriptors.
+
+**Returns** a new `GUnixFDList`
+
+_Available since 2.24._
+
+### `newFromArray`
+
+```ts
+newFromArray(fds: number[]): Gio.UnixFDList
+```
+
+Creates a new `GUnixFDList` containing the file descriptors given in
+`fds`.  The file descriptors become the property of the new list and
+may no longer be used by the caller.
+
+Each file descriptor in the array should be set to close-on-exec.
+
+If `n_fds` is -1 then `fds` must be terminated with -1.
+
+**Parameters**
+
+- `fds`: the initial list of file descriptors
+
+**Returns** a new `GUnixFDList`
+
+_Available since 2.24._
+
 ## Props
 
 `ref` receives the `Gio.UnixFDList` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -117,7 +155,7 @@ Returns the array of file descriptors that is contained in this
 object.
 
 After this call, the descriptors remain the property of `list`.  The
-caller must not close them and must not free the array.  The array is
+caller must not close them.  The array is
 valid only until `list` is changed in any way.
 
 If `length` is non-`null` then it is set to the number of file
@@ -145,7 +183,6 @@ After this call, the descriptors are no longer contained in
 `list`. Further calls will return an empty list (unless more
 descriptors have been added).
 
-The return result of this function must be freed with `g_free()`.
 The caller is also responsible for closing all of the file
 descriptors.  The file descriptors in the array are set to
 close-on-exec.

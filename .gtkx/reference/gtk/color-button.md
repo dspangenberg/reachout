@@ -7,8 +7,6 @@ description: "The GtkColorButton allows to open a color chooser dialog to change
 The `GtkColorButton` allows to open a color chooser dialog to change
 the color.
 
-
-
 It is suitable widget for selecting a color in a preference dialog.
 
 ## CSS nodes
@@ -34,6 +32,42 @@ import { GtkColorButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkColorButton**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkColorChooser`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.ColorButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new color button.
+
+This returns a widget in the form of a small button containing
+a swatch representing the current selected color. When the button
+is clicked, a color chooser dialog will open, allowing the user
+to select a color. The swatch will be updated to reflect the new
+color when the user finishes.
+
+**Returns** a new color button
+
+> **Deprecated since 4.10.** Use `Gtk.ColorDialogButton` instead
+
+### `newWithRgba`
+
+```ts
+newWithRgba(rgba: Gdk.RGBA): Gtk.Widget
+```
+
+Creates a new color button showing the given color.
+
+**Parameters**
+
+- `rgba`: A `GdkRGBA` to set the current color with
+
+**Returns** a new color button
 
 ## Props
 
@@ -170,7 +204,7 @@ getTitle(): string
 
 Gets the title of the color chooser dialog.
 
-**Returns** An internal string, do not free the return value
+**Returns** An internal string
 
 > **Deprecated since 4.10.** Use `Gtk.ColorDialogButton` instead
 

@@ -6,8 +6,6 @@ description: "Allows users to edit the displayed text by switching to an “edit
 
 Allows users to edit the displayed text by switching to an “edit mode”.
 
-
-
 `GtkEditableLabel` does not have API of its own, but it
 implements the `Gtk.Editable` interface.
 
@@ -55,6 +53,24 @@ import { GtkEditableLabel } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkEditableLabel**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkEditable`.
+
+## Static methods
+
+Static methods are called on `Gtk.EditableLabel`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(str: string): Gtk.Widget
+```
+
+Creates a new `GtkEditableLabel` widget.
+
+**Parameters**
+
+- `str`: the text for the label
+
+**Returns** the new `GtkEditableLabel`
 
 ## Props
 

@@ -29,6 +29,28 @@ import { GtkCellRendererPixbuf } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkCellRenderer](.gtkx/reference/gtk/cell-renderer.md) → **GtkCellRendererPixbuf**
 
+## Static methods
+
+Static methods are called on `Gtk.CellRendererPixbuf`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.CellRenderer
+```
+
+Creates a new `GtkCellRendererPixbuf`. Adjust rendering
+parameters using object properties. Object properties can be set
+globally (with `g_object_set()`). Also, with `GtkTreeViewColumn`, you
+can bind a property to a value in a `GtkTreeModel`. For example, you
+can bind the “pixbuf” property on the cell renderer to a pixbuf value
+in the model, thus rendering a different image in each row of the
+`GtkTreeView`.
+
+**Returns** the new cell renderer
+
+> **Deprecated since 4.10.**
+
 ## Props
 
 `ref` receives the `Gtk.CellRendererPixbuf` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

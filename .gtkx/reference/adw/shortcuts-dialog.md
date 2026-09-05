@@ -6,8 +6,6 @@ description: "A dialog that displays application's keyboard shortcuts."
 
 A dialog that displays application's keyboard shortcuts.
 
-
-
 Shortcuts are grouped into sections, represented by `ShortcutsSection`
 objects. Each section has one or more items, represented by
 `ShortcutsItem` objects.
@@ -77,8 +75,6 @@ Example of an `AdwShortcutsDialog` UI definition:
 If the `app.quit` action has the <kbd>Ctrl</kbd><kbd>Q</kbd> accelerator
 associated with it, the result will look as follows:
 
-
-
 The recommended way to use `AdwShortcutsDialog` is via `Application`'s
 automatic resource loading.
 
@@ -96,6 +92,22 @@ import { AdwShortcutsDialog } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkShortcutManager`.
 
+## Static methods
+
+Static methods are called on `Adw.ShortcutsDialog`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Adw.Dialog
+```
+
+Creates a new `AdwShortcutsDialog`.
+
+**Returns** the newly created `AdwShortcutsDialog`
+
+_Available since 1.8._
+
 ## Props
 
 `ref` receives the `Adw.ShortcutsDialog` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -105,6 +117,8 @@ Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkShortcutM
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [AdwShortcutsSection](.gtkx/reference/adw/shortcuts-section.md) or a subtype.
 
 ## Methods
 

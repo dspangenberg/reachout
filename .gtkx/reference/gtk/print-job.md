@@ -23,6 +23,27 @@ import { GtkPrintJob } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkPrintJob**
 
+## Static methods
+
+Static methods are called on `Gtk.PrintJob`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(title: string, printer: Gtk.Printer, settings: Gtk.PrintSettings, pageSetup: Gtk.PageSetup): Gtk.PrintJob
+```
+
+Creates a new `GtkPrintJob`.
+
+**Parameters**
+
+- `title`: the job title
+- `printer`: a `GtkPrinter`
+- `settings`: a `GtkPrintSettings`
+- `pageSetup`: a `GtkPageSetup`
+
+**Returns** a new `GtkPrintJob`
+
 ## Props
 
 `ref` receives the `Gtk.PrintJob` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -6,8 +6,6 @@ description: "Displays a popup when clicked."
 
 Displays a popup when clicked.
 
-
-
 This popup can be provided either as a `GtkPopover` or as an abstract
 `GMenuModel`.
 
@@ -76,6 +74,24 @@ import { GtkMenuButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkMenuButton**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.MenuButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkMenuButton` widget with downwards-pointing
+arrow as the only child.
+
+You can replace the child widget with another `GtkWidget`
+should you wish to.
+
+**Returns** The newly created `GtkMenuButton`
 
 ## Props
 

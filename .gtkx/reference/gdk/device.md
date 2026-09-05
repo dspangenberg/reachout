@@ -57,7 +57,7 @@ The `GdkDisplay` the `GdkDevice` pertains to.
 
 ### `hasBidiLayouts`
 
-`boolean` · default `false` · read-only, observe with `onNotifyHasBidiLayouts` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyHasBidiLayouts` · instance read with `GObject.getProperty`
 
 Whether the device has both right-to-left and left-to-right layouts.
 

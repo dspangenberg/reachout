@@ -6,8 +6,6 @@ description: "The GtkFontChooserDialog widget is a dialog for selecting a font."
 
 The `GtkFontChooserDialog` widget is a dialog for selecting a font.
 
-
-
 `GtkFontChooserDialog` implements the `Gtk.FontChooser` interface
 and does not provide much API of its own.
 
@@ -35,6 +33,27 @@ import { GtkFontChooserDialog } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → [GtkDialog](.gtkx/reference/gtk/dialog.md) → **GtkFontChooserDialog**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkFontChooser`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.FontChooserDialog`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(title: string | null, parent: Gtk.Window | null): Gtk.Widget
+```
+
+Creates a new `GtkFontChooserDialog`.
+
+**Parameters**
+
+- `title`: Title of the dialog
+- `parent`: Transient parent of the dialog
+
+**Returns** a new `GtkFontChooserDialog`
+
+> **Deprecated since 4.10.** Use `Gtk.FontDialog` instead
 
 ## Props
 

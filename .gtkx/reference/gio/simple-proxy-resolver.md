@@ -25,6 +25,30 @@ import { GSimpleProxyResolver } from "@gtkx/jsx/gio";
 
 Implements `GProxyResolver`.
 
+## Static methods
+
+Static methods are called on `Gio.SimpleProxyResolver`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(defaultProxy: string | null, ignoreHosts: string[] | null): Gio.ProxyResolver
+```
+
+Creates a new `GSimpleProxyResolver`. See
+`GSimpleProxyResolver.defaultProxy` and
+`GSimpleProxyResolver.ignoreHosts` for more details on how the
+arguments are interpreted.
+
+**Parameters**
+
+- `defaultProxy`: the default proxy to use, eg "socks://192.168.1.1"
+- `ignoreHosts`: an optional list of hosts/IP addresses to not use a proxy for.
+
+**Returns** a new `GSimpleProxyResolver`
+
+_Available since 2.36._
+
 ## Props
 
 `ref` receives the `Gio.SimpleProxyResolver` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

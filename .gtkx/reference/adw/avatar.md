@@ -6,8 +6,6 @@ description: "A widget displaying an image, with a generated fallback."
 
 A widget displaying an image, with a generated fallback.
 
-
-
 `AdwAvatar` is a widget that shows a round avatar.
 
 `AdwAvatar` generates an avatar with the initials of  the
@@ -38,6 +36,26 @@ import { AdwAvatar } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwAvatar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.Avatar`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(size: number, text: string | null, showInitials: boolean): Gtk.Widget
+```
+
+Creates a new `AdwAvatar`.
+
+**Parameters**
+
+- `size`: The size of the avatar
+- `text`: the text used to get the initials and color
+- `showInitials`: whether to use initials instead of an icon as fallback
+
+**Returns** the newly created `AdwAvatar`
 
 ## Props
 

@@ -6,8 +6,6 @@ description: "A dialog presenting a message or a question."
 
 A dialog presenting a message or a question.
 
-
-
 Message dialogs have a heading, a body, an optional child widget, and one or
 multiple responses, each presented as a button.
 
@@ -144,6 +142,43 @@ import { AdwMessageDialog } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → **AdwMessageDialog**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Adw.MessageDialog`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(parent: Gtk.Window | null, heading: string | null, body: string | null): Gtk.Widget
+```
+
+Creates a new `AdwMessageDialog`.
+
+`heading` and `body` can be set to `NULL`. This can be useful if they need to
+be formatted or use markup. In that case, set them to `NULL` and call
+`MessageDialog.formatBody()` or similar methods afterwards:
+
+```c
+GtkWidget *dialog;
+
+dialog = adw_message_dialog_new (parent, _("Replace File?"), NULL);
+adw_message_dialog_format_body (ADW_MESSAGE_DIALOG (dialog),
+                                _("A file named “%s” already exists.  Do you want to replace it?"),
+                                filename);
+```
+
+**Parameters**
+
+- `parent`: transient parent
+- `heading`: the heading
+- `body`: the body text
+
+**Returns** the newly created `AdwMessageDialog`
+
+> **Deprecated since 1.6.** Use `AlertDialog`.
+
+_Available since 1.2._
 
 ## Props
 
@@ -690,8 +725,6 @@ setResponseAppearance(response: string, appearance: Adw.ResponseAppearance): voi
 ```
 
 Sets the appearance for `response`.
-
-
 
 Use `Adw.ResponseAppearance.suggested` to mark important responses such
 as the affirmative action, like the Save button in the example.

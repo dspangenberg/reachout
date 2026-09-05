@@ -9,8 +9,6 @@ Shows a level indicator.
 Typical use cases are displaying the strength of a password, or
 showing the charge level of a battery.
 
-
-
 Use `Gtk.LevelBar.setValue()` to set the current value, and
 `Gtk.LevelBar.addOffsetValue()` to set the value offsets at which
 the bar will be considered in a different state. GTK will add a few
@@ -111,6 +109,35 @@ import { GtkLevelBar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkLevelBar**
 
 Implements `GtkAccessible`, `GtkAccessibleRange`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.LevelBar`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkLevelBar`.
+
+**Returns** a `GtkLevelBar`.
+
+### `newForInterval`
+
+```ts
+newForInterval(minValue: number, maxValue: number): Gtk.Widget
+```
+
+Creates a new `GtkLevelBar` for the specified interval.
+
+**Parameters**
+
+- `minValue`: a positive value
+- `maxValue`: a positive value
+
+**Returns** a `GtkLevelBar`
 
 ## Props
 

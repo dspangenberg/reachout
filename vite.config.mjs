@@ -1,7 +1,7 @@
 export default {
-    server: {
-        watch: {
-            ignored: ["**/build/**"],
-        },
-    },
-};
+  server: {
+    watch: {
+      ignored: ['**/build/**']
+    }
+  }
+}

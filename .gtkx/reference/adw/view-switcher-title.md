@@ -6,8 +6,6 @@ description: "A view switcher title."
 
 A view switcher title.
 
-
-
 A widget letting you switch between multiple views contained by a
 `ViewStack` via an `ViewSwitcher`.
 
@@ -72,6 +70,22 @@ import { AdwViewSwitcherTitle } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwViewSwitcherTitle**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ViewSwitcherTitle`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwViewSwitcherTitle`.
+
+**Returns** the newly created `AdwViewSwitcherTitle`
+
+> **Deprecated since 1.4.** See [the migration guide](migrating-to-breakpoints.html#replace-adwviewswitchertitle)
 
 ## Props
 

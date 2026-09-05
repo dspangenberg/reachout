@@ -23,6 +23,85 @@ import { GtkMediaFile } from "@gtkx/jsx/gtk";
 
 Implements `GdkPaintable`.
 
+## Static methods
+
+Static methods are called on `Gtk.MediaFile`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.MediaFile
+```
+
+Creates a new empty media file.
+
+**Returns** a new `GtkMediaFile`
+
+### `newForFile`
+
+```ts
+newForFile(file: Gio.File): Gtk.MediaFile
+```
+
+Creates a new media file to play `file`.
+
+**Parameters**
+
+- `file`: The file to play
+
+**Returns** a new `GtkMediaFile` playing `file`
+
+### `newForFilename`
+
+```ts
+newForFilename(filename: string): Gtk.MediaFile
+```
+
+Creates a new media file for the given filename.
+
+This is a utility function that converts the given `filename`
+to a `GFile` and calls `Gtk.MediaFile.newForFile()`.
+
+**Parameters**
+
+- `filename`: filename to open
+
+**Returns** a new `GtkMediaFile` playing `filename`
+
+### `newForInputStream`
+
+```ts
+newForInputStream(stream: Gio.InputStream): Gtk.MediaFile
+```
+
+Creates a new media file to play `stream`.
+
+If you want the resulting media to be seekable,
+the stream should implement the `GSeekable` interface.
+
+**Parameters**
+
+- `stream`: The stream to play
+
+**Returns** a new `GtkMediaFile`
+
+### `newForResource`
+
+```ts
+newForResource(resourcePath: string): Gtk.MediaFile
+```
+
+Creates a new new media file for the given resource.
+
+This is a utility function that converts the given `resource`
+to a `GFile` and calls `Gtk.MediaFile.newForFile()`.
+
+**Parameters**
+
+- `resourcePath`: resource path to open
+
+**Returns** a new `GtkMediaFile` playing `resource_path`
+
 ## Props
 
 `ref` receives the `Gtk.MediaFile` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

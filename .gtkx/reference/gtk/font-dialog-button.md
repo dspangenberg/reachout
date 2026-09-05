@@ -6,8 +6,6 @@ description: "Opens a font chooser dialog to select a font."
 
 Opens a font chooser dialog to select a font.
 
-
-
 It is suitable widget for selecting a font in a preference dialog.
 
 ## CSS nodes
@@ -32,6 +30,30 @@ import { GtkFontDialogButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkFontDialogButton**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.FontDialogButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(dialog: Gtk.FontDialog | null): Gtk.Widget
+```
+
+Creates a new `GtkFontDialogButton` with the
+given `GtkFontDialog`.
+
+You can pass `NULL` to this function and set a `GtkFontDialog`
+later. The button will be insensitive until that happens.
+
+**Parameters**
+
+- `dialog`: the `GtkFontDialog` to use
+
+**Returns** the new `GtkFontDialogButton`
+
+_Available since 4.10._
 
 ## Props
 

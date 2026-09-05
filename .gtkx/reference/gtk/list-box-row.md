@@ -19,6 +19,20 @@ import { GtkListBoxRow } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.ListBoxRow`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkListBoxRow`.
+
+**Returns** a new `GtkListBoxRow`
+
 ## Props
 
 `ref` receives the `Gtk.ListBoxRow` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

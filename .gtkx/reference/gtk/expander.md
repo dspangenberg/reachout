@@ -6,8 +6,6 @@ description: "Allows the user to reveal or conceal a child widget."
 
 Allows the user to reveal or conceal a child widget.
 
-
-
 This is similar to the triangles used in a `GtkTreeView`.
 
 Normally you use an expander as you would use a frame; you create
@@ -100,6 +98,45 @@ import { GtkExpander } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkExpander**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Expander`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(label: string | null): Gtk.Widget
+```
+
+Creates a new expander using `label` as the text of the label.
+
+**Parameters**
+
+- `label`: the text of the label
+
+**Returns** a new `GtkExpander` widget.
+
+### `newWithMnemonic`
+
+```ts
+newWithMnemonic(label: string | null): Gtk.Widget
+```
+
+Creates a new expander using `label` as the text of the label.
+
+If characters in `label` are preceded by an underscore, they are
+underlined. If you need a literal underscore character in a label,
+use “__” (two underscores). The first underlined character represents
+a keyboard accelerator called a mnemonic.
+
+Pressing Alt and that key activates the button.
+
+**Parameters**
+
+- `label`: the text of the label with an underscore in front of the mnemonic character
+
+**Returns** a new `GtkExpander` widget.
 
 ## Props
 
@@ -202,8 +239,7 @@ text has not been set the return value will be `null`. This will be the
 case if you create an empty button with `gtk_button_new()` to use as a
 container.
 
-**Returns** The text of the label widget. This string is owned
-  by the widget and must not be modified or freed.
+**Returns** The text of the label widget.
 
 ### `getLabelWidget`
 

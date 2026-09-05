@@ -34,6 +34,105 @@ import { GUnixSocketAddress } from "@gtkx/jsx/gio";
 
 Implements `GSocketConnectable`.
 
+## Static methods
+
+Static methods are called on `Gio.UnixSocketAddress`, imported from `@gtkx/gi/gio`.
+
+### `abstractNamesSupported`
+
+```ts
+abstractNamesSupported(): boolean
+```
+
+Checks if abstract UNIX domain socket names are supported.
+
+**Returns** `true` if supported, `false` otherwise
+
+_Available since 2.22._
+
+### `new`
+
+```ts
+new(path: string): Gio.SocketAddress
+```
+
+Creates a new `GUnixSocketAddress` for `path`.
+
+To create abstract socket addresses, on systems that support that,
+use `g_unix_socket_address_new_abstract()`.
+
+**Parameters**
+
+- `path`: the socket path
+
+**Returns** a new `GUnixSocketAddress`
+
+_Available since 2.22._
+
+### `newAbstract`
+
+```ts
+newAbstract(path: number[]): Gio.SocketAddress
+```
+
+Creates a new `G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED`
+`GUnixSocketAddress` for `path`.
+
+**Parameters**
+
+- `path`: the abstract name
+
+**Returns** a new `GUnixSocketAddress`
+
+> **Deprecated.** Use `g_unix_socket_address_new_with_type()`.
+
+### `newWithType`
+
+```ts
+newWithType(path: number[], type: Gio.UnixSocketAddressType): Gio.SocketAddress
+```
+
+Creates a new `GUnixSocketAddress` of type `type` with name `path`.
+
+If `type` is `G_UNIX_SOCKET_ADDRESS_PATH`, this is equivalent to
+calling `g_unix_socket_address_new()`.
+
+If `type` is `G_UNIX_SOCKET_ADDRESS_ANONYMOUS`, `path` and `path_len` will be
+ignored.
+
+If `path_type` is `G_UNIX_SOCKET_ADDRESS_ABSTRACT`, then `path_len`
+bytes of `path` will be copied to the socket's path, and only those
+bytes will be considered part of the name. (If `path_len` is -1,
+then `path` is assumed to be NUL-terminated.) For example, if `path`
+was "test", then calling `g_socket_address_get_native_size()` on the
+returned socket would return 7 (2 bytes of overhead, 1 byte for the
+abstract-socket indicator byte, and 4 bytes for the name "test").
+
+If `path_type` is `G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED`, then
+`path_len` bytes of `path` will be copied to the socket's path, the
+rest of the path will be padded with 0 bytes, and the entire
+zero-padded buffer will be considered the name. (As above, if
+`path_len` is -1, then `path` is assumed to be NUL-terminated.) In
+this case, `g_socket_address_get_native_size()` will always return
+the full size of a `struct sockaddr_un`, although
+`g_unix_socket_address_get_path_len()` will still return just the
+length of `path`.
+
+`G_UNIX_SOCKET_ADDRESS_ABSTRACT` is preferred over
+`G_UNIX_SOCKET_ADDRESS_ABSTRACT_PADDED` for new programs. Of course,
+when connecting to a server created by another process, you must
+use the appropriate type corresponding to how that process created
+its listening socket.
+
+**Parameters**
+
+- `path`: the name
+- `type`: a `GUnixSocketAddressType`
+
+**Returns** a new `GUnixSocketAddress`
+
+_Available since 2.26._
+
 ## Props
 
 `ref` receives the `Gio.UnixSocketAddress` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

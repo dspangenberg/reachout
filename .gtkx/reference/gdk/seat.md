@@ -111,8 +111,7 @@ Returns the devices that match the given capabilities.
 - `capabilities`: capabilities to get devices for
 
 **Returns** A list
-  of `GdkDevices`. The list must be freed with `g_list_free()`,
-  the elements are owned by GTK and must not be freed.
+  of `GdkDevices`.
 
 ### `getDisplay`
 
@@ -122,8 +121,7 @@ getDisplay(): Gdk.Display
 
 Returns the `GdkDisplay` this seat belongs to.
 
-**Returns** a `GdkDisplay`. This object
-  is owned by GTK and must not be freed.
+**Returns** a `GdkDisplay`.
 
 ### `getKeyboard`
 
@@ -134,7 +132,7 @@ getKeyboard(): Gdk.Device | null
 Returns the device that routes keyboard events.
 
 **Returns** a `GdkDevice` with keyboard
-  capabilities. This object is owned by GTK and must not be freed.
+  capabilities.
 
 ### `getPointer`
 
@@ -145,7 +143,7 @@ getPointer(): Gdk.Device | null
 Returns the device that routes pointer events.
 
 **Returns** a `GdkDevice` with pointer
-  capabilities. This object is owned by GTK and must not be freed.
+  capabilities.
 
 ### `getTools`
 
@@ -155,4 +153,4 @@ getTools(): Gdk.DeviceTool[]
 
 Returns all `GdkDeviceTools` that are known to the application.
 
-**Returns** A list of tools. Free with `g_list_free()`.
+**Returns** A list of tools.

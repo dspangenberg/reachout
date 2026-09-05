@@ -21,6 +21,22 @@ import { GtkCellRendererProgress } from "@gtkx/jsx/gtk";
 
 Implements `GtkOrientable`.
 
+## Static methods
+
+Static methods are called on `Gtk.CellRendererProgress`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.CellRenderer
+```
+
+Creates a new `GtkCellRendererProgress`.
+
+**Returns** the new cell renderer
+
+> **Deprecated since 4.10.**
+
 ## Props
 
 `ref` receives the `Gtk.CellRendererProgress` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

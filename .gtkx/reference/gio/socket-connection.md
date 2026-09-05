@@ -31,6 +31,51 @@ import { GSocketConnection } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GIOStream](.gtkx/reference/gio/io-stream.md) → **GSocketConnection**
 
+## Static methods
+
+Static methods are called on `Gio.SocketConnection`, imported from `@gtkx/gi/gio`.
+
+### `factoryLookupType`
+
+```ts
+factoryLookupType(family: Gio.SocketFamily, type: Gio.SocketType, protocolId: number): bigint
+```
+
+Looks up the `GType` to be used when creating socket connections on
+sockets with the specified `family`, `type` and `protocol_id`.
+
+If no type is registered, the `GSocketConnection` base type is returned.
+
+**Parameters**
+
+- `family`: a `GSocketFamily`
+- `type`: a `GSocketType`
+- `protocolId`: a protocol id
+
+**Returns** a `GType`
+
+_Available since 2.22._
+
+### `factoryRegisterType`
+
+```ts
+factoryRegisterType(gType: bigint | AnyClass<TypedClass>, family: Gio.SocketFamily, type: Gio.SocketType, protocol: number): void
+```
+
+Looks up the `GType` to be used when creating socket connections on
+sockets with the specified `family`, `type` and `protocol`.
+
+If no type is registered, the `GSocketConnection` base type is returned.
+
+**Parameters**
+
+- `gType`: a `GType`, inheriting from `G_TYPE_SOCKET_CONNECTION`
+- `family`: a `GSocketFamily`
+- `type`: a `GSocketType`
+- `protocol`: a protocol id
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.SocketConnection` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -121,7 +166,6 @@ getLocalAddress(): Gio.SocketAddress
 Try to get the local address of a socket connection.
 
 **Returns** a `GSocketAddress` or `null` on error.
-    Free the returned object with `g_object_unref()`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -143,7 +187,6 @@ applications to print e.g. "Connecting to example.com
 (10.42.77.3)...".
 
 **Returns** a `GSocketAddress` or `null` on error.
-    Free the returned object with `g_object_unref()`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 

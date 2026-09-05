@@ -46,6 +46,25 @@ import { GtkDropTargetAsync } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → **GtkDropTargetAsync**
 
+## Static methods
+
+Static methods are called on `Gtk.DropTargetAsync`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(formats: Gdk.ContentFormats | null, actions: Gdk.DragAction): Gtk.DropTargetAsync
+```
+
+Creates a new `GtkDropTargetAsync` object.
+
+**Parameters**
+
+- `formats`: the supported data formats
+- `actions`: the supported actions
+
+**Returns** the new `GtkDropTargetAsync`
+
 ## Props
 
 `ref` receives the `Gtk.DropTargetAsync` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

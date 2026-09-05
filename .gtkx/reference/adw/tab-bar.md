@@ -6,8 +6,6 @@ description: "A tab bar for TabView."
 
 A tab bar for `TabView`.
 
-
-
 The `AdwTabBar` widget is a tab bar that can be used with conjunction with
 `AdwTabView`. It is typically used as a top bar within `ToolbarView`.
 
@@ -57,6 +55,20 @@ import { AdwTabBar } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwTabBar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.TabBar`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Adw.TabBar
+```
+
+Creates a new `AdwTabBar`.
+
+**Returns** the newly created `AdwTabBar`
 
 ## Props
 

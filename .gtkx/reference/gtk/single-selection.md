@@ -21,6 +21,24 @@ import { GtkSingleSelection } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`, `GtkSectionModel`, `GtkSelectionModel`.
 
+## Static methods
+
+Static methods are called on `Gtk.SingleSelection`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(model: Gio.ListModel | null): Gtk.SingleSelection
+```
+
+Creates a new selection to handle `model`.
+
+**Parameters**
+
+- `model`: the `GListModel` to manage
+
+**Returns** a new `GtkSingleSelection`
+
 ## Props
 
 `ref` receives the `Gtk.SingleSelection` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

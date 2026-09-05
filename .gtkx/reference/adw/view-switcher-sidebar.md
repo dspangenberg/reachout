@@ -6,8 +6,6 @@ description: "An adaptive sidebar that controls an ViewStack."
 
 An adaptive sidebar that controls an `ViewStack`.
 
-
-
 `AdwViewSwitcherSidebar` is a view switcher implemented using a
 `Sidebar`, in a similar fashion to `Gtk.StackSidebar`.
 
@@ -20,8 +18,6 @@ sections, using the `ViewStackPage.startsSection` and
 
 Like `Sidebar`, `AdwViewSwitcherSidebar` is adaptive and can behave as
 a sidebar or a page, via the `ViewSwitcherSidebar.mode` property.
-
-
 
 Connect to the `ViewSwitcherSidebar.activated` signal to run code when
 an item has been activated. This can be used to toggle the visible pane when
@@ -54,6 +50,22 @@ import { AdwViewSwitcherSidebar } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Adw.ViewSwitcherSidebar`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwViewSwitcherSidebar`.
+
+**Returns** the newly created `AdwViewSwitcherSidebar`
+
+_Available since 1.9._
+
 ## Props
 
 `ref` receives the `Adw.ViewSwitcherSidebar` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -77,8 +89,6 @@ _Available since 1.9._
 `Adw.SidebarMode` · default `ADW_SIDEBAR_MODE_SIDEBAR`
 
 Determines the sidebar's look and behavior.
-
-
 
 If set to `Adw.SidebarMode.sidebar`, behaves like a sidebar: with a
 sidebar style and a persistent selection.
@@ -213,8 +223,6 @@ setMode(mode: Adw.SidebarMode): void
 ```
 
 Sets `self`'s look and behavior.
-
-
 
 If set to `Adw.SidebarMode.sidebar`, behaves like a sidebar: with a
 sidebar style and a persistent selection.

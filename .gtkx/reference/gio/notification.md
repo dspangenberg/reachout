@@ -63,6 +63,31 @@ import { GNotification } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GNotification**
 
+## Static methods
+
+Static methods are called on `Gio.Notification`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(title: string): Gio.Notification
+```
+
+Creates a new `GNotification` with `title` as its title.
+
+After populating `notification` with more details, it can be sent to
+the desktop shell with `g_application_send_notification()`. Changing
+any properties after this call will not have any effect until
+resending `notification`.
+
+**Parameters**
+
+- `title`: the title of the notification
+
+**Returns** a new `GNotification` instance
+
+_Available since 2.40._
+
 ## Props
 
 `ref` receives the `Gio.Notification` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

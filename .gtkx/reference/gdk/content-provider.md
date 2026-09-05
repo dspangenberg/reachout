@@ -22,6 +22,68 @@ import { GdkContentProvider } from "@gtkx/jsx/gdk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GdkContentProvider**
 
+## Static methods
+
+Static methods are called on `Gdk.ContentProvider`, imported from `@gtkx/gi/gdk`.
+
+### `newForBytes`
+
+```ts
+newForBytes(mimeType: string, bytes: GLib.Bytes): Gdk.ContentProvider
+```
+
+Create a content provider that provides the given `bytes` as data for
+the given `mime_type`.
+
+**Parameters**
+
+- `mimeType`: the mime type
+- `bytes`: a `GBytes` with the data for `mime_type`
+
+**Returns** a new `GdkContentProvider`
+
+### `newForValue`
+
+```ts
+newForValue(value: GObject.Value | JsValue): Gdk.ContentProvider
+```
+
+Create a content provider that provides the given `value`.
+
+**Parameters**
+
+- `value`: a `GValue`
+
+**Returns** a new `GdkContentProvider`
+
+### `newUnion`
+
+```ts
+newUnion(providers: Gdk.ContentProvider[] | null): Gdk.ContentProvider
+```
+
+Creates a content provider that represents all the given `providers`.
+
+Whenever data needs to be written, the union provider will try the given
+`providers` in the given order and the first one supporting a format will
+be chosen to provide it.
+
+This allows an easy way to support providing data in different formats.
+For example, an image may be provided by its file and by the image
+contents with a call such as
+```c
+gdk_content_provider_new_union ((GdkContentProvider *[2]) {
+                                  gdk_content_provider_new_typed (G_TYPE_FILE, file),
+                                  gdk_content_provider_new_typed (GDK_TYPE_TEXTURE, texture)
+                                }, 2);
+```
+
+**Parameters**
+
+- `providers`: The `GdkContentProvider`s to present the union of
+
+**Returns** a new `GdkContentProvider`
+
 ## Props
 
 `ref` receives the `Gdk.ContentProvider` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

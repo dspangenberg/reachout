@@ -26,6 +26,22 @@ import { GtkColorDialog } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkColorDialog**
 
+## Static methods
+
+Static methods are called on `Gtk.ColorDialog`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.ColorDialog
+```
+
+Creates a new `GtkColorDialog` object.
+
+**Returns** the new `GtkColorDialog`
+
+_Available since 4.10._
+
 ## Props
 
 `ref` receives the `Gtk.ColorDialog` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

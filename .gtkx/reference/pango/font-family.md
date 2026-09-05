@@ -26,7 +26,7 @@ Implements `GListModel`.
 
 ### `isMonospace`
 
-`boolean` · default `false` · read-only, observe with `onNotifyIsMonospace` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyIsMonospace` · instance read with `GObject.getProperty`
 
 Is this a monospace font
 
@@ -34,7 +34,7 @@ _Available since 1.52._
 
 ### `isVariable`
 
-`boolean` · default `false` · read-only, observe with `onNotifyIsVariable` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyIsVariable` · instance read with `GObject.getProperty`
 
 Is this a variable font
 
@@ -123,8 +123,7 @@ The name is unique among all fonts for the font backend and can
 be used in a `PangoFontDescription` to specify that a face from
 this family is desired.
 
-**Returns** the name of the family. This string is owned
-  by the family object and must not be modified or freed.
+**Returns** the name of the family.
 
 ### `isMonospace`
 
@@ -185,5 +184,4 @@ multiple faces may have the same name or characteristics.
 for enumerating faces.
 
 **Returns** location to store an array of pointers to `PangoFontFace` objects,
-  or `null`. This array should be freed with `g_free()` when it is no
-  longer needed.
+  or `null`.

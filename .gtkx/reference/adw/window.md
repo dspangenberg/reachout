@@ -6,8 +6,6 @@ description: "A freeform window."
 
 A freeform window.
 
-
-
 The `AdwWindow` widget is a subclass of `Gtk.Window` which has no
 titlebar area. Instead, `ToolbarView` can be used together with
 `HeaderBar` or `Gtk.HeaderBar` as follows:
@@ -90,6 +88,20 @@ import { AdwWindow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → **AdwWindow**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Adw.Window`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwWindow`.
+
+**Returns** the newly created `AdwWindow`
 
 ## Props
 

@@ -47,6 +47,30 @@ import { GtkFileChooserWidget } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkFileChooser`.
 
+## Static methods
+
+Static methods are called on `Gtk.FileChooserWidget`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(action: Gtk.FileChooserAction): Gtk.Widget
+```
+
+Creates a new `GtkFileChooserWidget`.
+
+This is a file chooser widget that can be embedded in custom
+windows, and it is the same widget that is used by
+`GtkFileChooserDialog`.
+
+**Parameters**
+
+- `action`: Open or save mode for the widget
+
+**Returns** a new `GtkFileChooserWidget`
+
+> **Deprecated since 4.10.** Direct use of `GtkFileChooserWidget` is deprecated
+
 ## Props
 
 `ref` receives the `Gtk.FileChooserWidget` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -6,8 +6,6 @@ description: "Uses a sidebar to switch between GtkStack pages."
 
 Uses a sidebar to switch between `GtkStack` pages.
 
-
-
 In order to use a `GtkStackSidebar`, you simply use a `GtkStack` to
 organize your UI flow, and add the sidebar to your sidebar area. You
 can use `Gtk.StackSidebar.setStack()` to connect the `GtkStackSidebar`
@@ -31,6 +29,20 @@ import { GtkStackSidebar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkStackSidebar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.StackSidebar`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkStackSidebar`.
+
+**Returns** the new `GtkStackSidebar`
 
 ## Props
 

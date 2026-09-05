@@ -6,9 +6,6 @@ description: "A widget constraining its child to a given size."
 
 A widget constraining its child to a given size.
 
-
-
-
 The `AdwClamp` widget constrains the size of the widget it contains to a
 given maximum size. It will constrain the width if it is horizontal, or the
 height if it is vertical. The expansion of the child from its minimum to its
@@ -35,6 +32,20 @@ import { AdwClamp } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwClamp**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.Clamp`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwClamp`.
+
+**Returns** the newly created `AdwClamp`
 
 ## Props
 

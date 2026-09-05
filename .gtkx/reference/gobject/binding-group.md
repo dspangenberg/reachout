@@ -22,6 +22,22 @@ import { GBindingGroup } from "@gtkx/jsx/gobject";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GBindingGroup**
 
+## Static methods
+
+Static methods are called on `GObject.BindingGroup`, imported from `@gtkx/gi/gobject`.
+
+### `new`
+
+```ts
+new(): GObject.BindingGroup
+```
+
+Creates a new `GBindingGroup`.
+
+**Returns** a new `GBindingGroup`
+
+_Available since 2.72._
+
 ## Props
 
 `ref` receives the `GObject.BindingGroup` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

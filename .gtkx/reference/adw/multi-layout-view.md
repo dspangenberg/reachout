@@ -97,6 +97,22 @@ import { AdwMultiLayoutView } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Adw.MultiLayoutView`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwMultiLayoutView`.
+
+**Returns** the newly created `AdwMultiLayoutView`
+
+_Available since 1.6._
+
 ## Props
 
 `ref` receives the `Adw.MultiLayoutView` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

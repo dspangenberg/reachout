@@ -22,6 +22,20 @@ import { GtkGestureDrag } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → [GtkGesture](.gtkx/reference/gtk/gesture.md) → [GtkGestureSingle](.gtkx/reference/gtk/gesture-single.md) → **GtkGestureDrag**
 
+## Static methods
+
+Static methods are called on `Gtk.GestureDrag`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Gesture
+```
+
+Returns a newly created `GtkGesture` that recognizes drags.
+
+**Returns** a newly created `GtkGestureDrag`
+
 ## Props
 
 `ref` receives the `Gtk.GestureDrag` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

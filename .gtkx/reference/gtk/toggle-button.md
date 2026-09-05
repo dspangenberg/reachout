@@ -6,8 +6,6 @@ description: "Shows a button which remains “pressed-in” when clicked."
 
 Shows a button which remains “pressed-in” when clicked.
 
-
-
 Clicking again will cause the toggle button to return to its normal state.
 
 A toggle button is created by calling either `Gtk.ToggleButton.new()` or
@@ -87,6 +85,53 @@ import { GtkToggleButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkButton](.gtkx/reference/gtk/button.md) → **GtkToggleButton**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.ToggleButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new toggle button.
+
+A widget should be packed into the button, as in `Gtk.Button.new()`.
+
+**Returns** a new toggle button.
+
+### `newWithLabel`
+
+```ts
+newWithLabel(label: string): Gtk.Widget
+```
+
+Creates a new toggle button with a text label.
+
+**Parameters**
+
+- `label`: a string containing the message to be placed in the toggle button.
+
+**Returns** a new toggle button.
+
+### `newWithMnemonic`
+
+```ts
+newWithMnemonic(label: string): Gtk.Widget
+```
+
+Creates a new `GtkToggleButton` containing a label.
+
+The label will be created using `Gtk.Label.newWithMnemonic()`,
+so underscores in `label` indicate the mnemonic for the button.
+
+**Parameters**
+
+- `label`: the text of the button, with an underscore in front of the mnemonic character
+
+**Returns** a new `GtkToggleButton`
 
 ## Props
 

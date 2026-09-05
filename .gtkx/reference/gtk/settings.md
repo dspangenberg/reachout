@@ -44,6 +44,38 @@ import { GtkSettings } from "@gtkx/jsx/gtk";
 
 Implements `GtkStyleProvider`.
 
+## Static methods
+
+Static methods are called on `Gtk.Settings`, imported from `@gtkx/gi/gtk`.
+
+### `getDefault`
+
+```ts
+getDefault(): Gtk.Settings | null
+```
+
+Gets the `GtkSettings` object for the default display, creating
+it if necessary.
+
+See `Gtk.Settings.getForDisplay()`.
+
+**Returns** a `GtkSettings` object. If there is
+  no default display, then returns `null`.
+
+### `getForDisplay`
+
+```ts
+getForDisplay(display: Gdk.Display): Gtk.Settings
+```
+
+Gets the `GtkSettings` object for `display`, creating it if necessary.
+
+**Parameters**
+
+- `display`: a `GdkDisplay`
+
+**Returns** a `GtkSettings` object
+
 ## Props
 
 `ref` receives the `Gtk.Settings` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

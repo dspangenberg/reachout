@@ -7,8 +7,6 @@ description: "The GtkFontButton allows to open a font chooser dialog to change t
 The `GtkFontButton` allows to open a font chooser dialog to change
 the font.
 
-
-
 It is suitable widget for selecting a font in a preference dialog.
 
 ## CSS nodes
@@ -33,6 +31,38 @@ import { GtkFontButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkFontButton**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkFontChooser`.
+
+## Static methods
+
+Static methods are called on `Gtk.FontButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new font picker widget.
+
+**Returns** a new font picker widget.
+
+> **Deprecated since 4.10.** Use `Gtk.FontDialogButton` instead
+
+### `newWithFont`
+
+```ts
+newWithFont(fontname: string): Gtk.Widget
+```
+
+Creates a new font picker widget showing the given font.
+
+**Parameters**
+
+- `fontname`: Name of font to display in font chooser dialog
+
+**Returns** a new font picker widget.
+
+> **Deprecated since 4.10.** Use `Gtk.FontDialogButton` instead
 
 ## Props
 
@@ -204,8 +234,7 @@ getTitle(): string
 
 Retrieves the title of the font chooser dialog.
 
-**Returns** an internal copy of the title string
-  which must not be freed.
+**Returns** an internal copy of the title string.
 
 > **Deprecated since 4.10.** Use `Gtk.FontDialogButton` instead
 

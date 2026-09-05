@@ -21,6 +21,28 @@ import { GDBusObjectProxy } from "@gtkx/jsx/gio";
 
 Implements `GDBusObject`.
 
+## Static methods
+
+Static methods are called on `Gio.DBusObjectProxy`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(connection: Gio.DBusConnection, objectPath: string): Gio.DBusObjectProxy
+```
+
+Creates a new `GDBusObjectProxy` for the given connection and
+object path.
+
+**Parameters**
+
+- `connection`: a `GDBusConnection`
+- `objectPath`: the object path
+
+**Returns** a new `GDBusObjectProxy`
+
+_Available since 2.30._
+
 ## Props
 
 `ref` receives the `Gio.DBusObjectProxy` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -89,7 +111,6 @@ getConnection(): Gio.DBusConnection
 
 Gets the connection that `proxy` is for.
 
-**Returns** A `GDBusConnection`. Do not free, the
-  object is owned by `proxy`.
+**Returns** A `GDBusConnection`.
 
 _Available since 2.30._

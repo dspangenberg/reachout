@@ -34,6 +34,25 @@ import { GdkCicpParams } from "@gtkx/jsx/gdk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GdkCicpParams**
 
+## Static methods
+
+Static methods are called on `Gdk.CicpParams`, imported from `@gtkx/gi/gdk`.
+
+### `new`
+
+```ts
+new(): Gdk.CicpParams
+```
+
+Creates a new `GdkCicpParams` object.
+
+The initial values of the properties are the values for "undefined"
+and need to be set before a color state object can be built.
+
+**Returns** a new `GdkCicpParams`
+
+_Available since 4.16._
+
 ## Props
 
 `ref` receives the `Gdk.CicpParams` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

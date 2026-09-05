@@ -25,6 +25,27 @@ import { GtkStringFilter } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkFilter](.gtkx/reference/gtk/filter.md) → **GtkStringFilter**
 
+## Static methods
+
+Static methods are called on `Gtk.StringFilter`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(expression: Gtk.Expression | null): Gtk.StringFilter
+```
+
+Creates a new string filter.
+
+You will want to set up the filter by providing a string to search for
+and by providing a property to look up on the item.
+
+**Parameters**
+
+- `expression`: the expression to evaluate
+
+**Returns** a new `GtkStringFilter`
+
 ## Props
 
 `ref` receives the `Gtk.StringFilter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

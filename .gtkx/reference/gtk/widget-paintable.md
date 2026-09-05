@@ -34,6 +34,24 @@ import { GtkWidgetPaintable } from "@gtkx/jsx/gtk";
 
 Implements `GdkPaintable`.
 
+## Static methods
+
+Static methods are called on `Gtk.WidgetPaintable`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(widget: Gtk.Widget | null): Gtk.WidgetPaintable
+```
+
+Creates a new widget paintable observing the given widget.
+
+**Parameters**
+
+- `widget`: a `GtkWidget`
+
+**Returns** a new `GtkWidgetPaintable`
+
 ## Props
 
 `ref` receives the `Gtk.WidgetPaintable` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

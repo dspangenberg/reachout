@@ -6,8 +6,6 @@ description: "A single-line text entry widget."
 
 A single-line text entry widget.
 
-
-
 A fairly large set of key bindings are supported by default. If the
 entered text is longer than the allocation of the widget, the widget
 will scroll so that the cursor position is visible.
@@ -101,6 +99,34 @@ import { GtkEntry } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkEntry**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkCellEditable`, `GtkConstraintTarget`, `GtkEditable`.
+
+## Static methods
+
+Static methods are called on `Gtk.Entry`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new entry.
+
+**Returns** a new `GtkEntry`.
+
+### `newWithBuffer`
+
+```ts
+newWithBuffer(buffer: Gtk.EntryBuffer): Gtk.Widget
+```
+
+Creates a new entry with the specified text buffer.
+
+**Parameters**
+
+- `buffer`: The buffer to use for the new `GtkEntry`.
+
+**Returns** a new `GtkEntry`
 
 ## Props
 
@@ -1010,9 +1036,7 @@ Retrieves the text that will be displayed when `entry`
 is empty and unfocused
 
 **Returns** a pointer to the
-  placeholder text as a string. This string points to
-  internally allocated storage in the widget and must
-  not be freed, modified or stored. If no placeholder
+  placeholder text as a string. If no placeholder
   text has been set, `null` will be returned.
 
 ### `getProgressFraction`

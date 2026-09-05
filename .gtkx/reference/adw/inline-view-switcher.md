@@ -6,15 +6,11 @@ description: "A view switcher that uses a toggle group."
 
 A view switcher that uses a toggle group.
 
-
-
 A view switcher showing pages of an `ViewStack` within an
 `ToggleGroup`, similar to `ViewSwitcher`.
 
 The toggles can display either an icon, a label or both. Use the
 `InlineViewSwitcher.displayMode` to control this.
-
-
 
 ### CSS nodes
 
@@ -25,8 +21,6 @@ The toggles can display either an icon, a label or both. Use the
 
 Like `AdwToggleGroup`, it can accept the [`.flat`](style-classes.html#flat_1)
 and [`.round`](style-classes.html#round) style classes.
-
-
 
 ### Accessibility
 
@@ -47,6 +41,22 @@ import { AdwInlineViewSwitcher } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwInlineViewSwitcher**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.InlineViewSwitcher`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwInlineViewSwitcher`.
+
+**Returns** the newly created `AdwInlineViewSwitcher`
+
+_Available since 1.7._
 
 ## Props
 

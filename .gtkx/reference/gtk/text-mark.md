@@ -46,6 +46,35 @@ import { GtkTextMark } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkTextMark**
 
+## Static methods
+
+Static methods are called on `Gtk.TextMark`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(name: string | null, leftGravity: boolean): Gtk.TextMark
+```
+
+Creates a text mark.
+
+Add it to a buffer using `Gtk.TextBuffer.addMark()`.
+If `name` is `null`, the mark is anonymous; otherwise, the mark can be
+retrieved by name using `Gtk.TextBuffer.getMark()`. If a mark
+has left gravity, and text is inserted at the mark’s current location,
+the mark will be moved to the left of the newly-inserted text. If the
+mark has right gravity (`left_gravity` = `false`), the mark will end up
+on the right of newly-inserted text. The standard left-to-right cursor
+is a mark with right gravity (when you type, the cursor stays on the
+right side of the text you’re typing).
+
+**Parameters**
+
+- `name`: mark name
+- `leftGravity`: whether the mark should have left gravity
+
+**Returns** new `GtkTextMark`
+
 ## Props
 
 `ref` receives the `Gtk.TextMark` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

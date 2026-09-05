@@ -19,6 +19,24 @@ import { GtkFlattenListModel } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`, `GtkSectionModel`.
 
+## Static methods
+
+Static methods are called on `Gtk.FlattenListModel`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(model: Gio.ListModel | null): Gtk.FlattenListModel
+```
+
+Creates a new `GtkFlattenListModel` that flattens `list`.
+
+**Parameters**
+
+- `model`: the model to be flattened
+
+**Returns** a new `GtkFlattenListModel`
+
 ## Props
 
 `ref` receives the `Gtk.FlattenListModel` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

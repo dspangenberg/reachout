@@ -17,6 +17,27 @@ import { GtkNumericSorter } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkSorter](.gtkx/reference/gtk/sorter.md) → **GtkNumericSorter**
 
+## Static methods
+
+Static methods are called on `Gtk.NumericSorter`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(expression: Gtk.Expression | null): Gtk.NumericSorter
+```
+
+Creates a new numeric sorter using the given `expression`.
+
+Smaller numbers will be sorted first. You can call
+`Gtk.NumericSorter.setSortOrder()` to change this.
+
+**Parameters**
+
+- `expression`: The expression to evaluate
+
+**Returns** a new `GtkNumericSorter`
+
 ## Props
 
 `ref` receives the `Gtk.NumericSorter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

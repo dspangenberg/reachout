@@ -56,6 +56,28 @@ import { GdkDisplayManager } from "@gtkx/jsx/gdk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GdkDisplayManager**
 
+## Static methods
+
+Static methods are called on `Gdk.DisplayManager`, imported from `@gtkx/gi/gdk`.
+
+### `get`
+
+```ts
+get(): Gdk.DisplayManager
+```
+
+Gets the singleton `GdkDisplayManager` object.
+
+When called for the first time, this function consults the
+`GDK_BACKEND` environment variable to find out which of the
+supported GDK backends to use (in case GDK has been compiled
+with multiple backends).
+
+Applications can use `setAllowedBackends()` to limit what
+backends will be used.
+
+**Returns** The global `GdkDisplayManager` singleton
+
 ## Props
 
 `ref` receives the `Gdk.DisplayManager` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

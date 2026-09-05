@@ -1,0 +1,1 @@
+ALTER TABLE `contacts` ADD `companyId` text REFERENCES contacts(id);

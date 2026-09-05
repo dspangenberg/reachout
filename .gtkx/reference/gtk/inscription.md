@@ -33,6 +33,26 @@ import { GtkInscription } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkAccessibleText`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.Inscription`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(text: string | null): Gtk.Widget
+```
+
+Creates a new `GtkInscription` with the given text.
+
+**Parameters**
+
+- `text`: The text to display.
+
+**Returns** a new `GtkInscription`
+
+_Available since 4.8._
+
 ## Props
 
 `ref` receives the `Gtk.Inscription` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

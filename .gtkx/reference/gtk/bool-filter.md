@@ -14,6 +14,24 @@ import { GtkBoolFilter } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkFilter](.gtkx/reference/gtk/filter.md) → **GtkBoolFilter**
 
+## Static methods
+
+Static methods are called on `Gtk.BoolFilter`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(expression: Gtk.Expression | null): Gtk.BoolFilter
+```
+
+Creates a new bool filter.
+
+**Parameters**
+
+- `expression`: the expression to evaluate
+
+**Returns** a new `GtkBoolFilter`
+
 ## Props
 
 `ref` receives the `Gtk.BoolFilter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

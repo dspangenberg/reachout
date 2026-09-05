@@ -23,6 +23,108 @@ import { GInetAddress } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GInetAddress**
 
+## Static methods
+
+Static methods are called on `Gio.InetAddress`, imported from `@gtkx/gi/gio`.
+
+### `newAny`
+
+```ts
+newAny(family: Gio.SocketFamily): Gio.InetAddress
+```
+
+Creates a `GInetAddress` for the "any" address (unassigned/"don't
+care") for `family`.
+
+**Parameters**
+
+- `family`: the address family
+
+**Returns** a new `GInetAddress` corresponding to the "any" address
+for `family`.
+
+_Available since 2.22._
+
+### `newFromBytes`
+
+```ts
+newFromBytes(bytes: number, family: Gio.SocketFamily): Gio.InetAddress
+```
+
+Creates a new `GInetAddress` from the given `family` and `bytes`.
+`bytes` should be 4 bytes for `G_SOCKET_FAMILY_IPV4` and 16 bytes for
+`G_SOCKET_FAMILY_IPV6`.
+
+**Parameters**
+
+- `bytes`: raw address data
+- `family`: the address family of `bytes`
+
+**Returns** a new `GInetAddress` corresponding to `family` and `bytes`.
+
+_Available since 2.22._
+
+### `newFromBytesWithIpv6Info`
+
+```ts
+newFromBytesWithIpv6Info(bytes: number, family: Gio.SocketFamily, flowinfo: number, scopeId: number): Gio.InetAddress
+```
+
+Creates a new `Gio.InetAddress` from the given `family`, `bytes`
+and `scope_id`.
+
+`bytes` must be 4 bytes for `Gio.SocketFamily.IPV4` and 16 bytes for
+`Gio.SocketFamily.IPV6`.
+
+**Parameters**
+
+- `bytes`: raw address data
+- `family`: the address family of `bytes`
+- `scopeId`: the scope-id of the address
+
+**Returns** a new internet address corresponding to
+  `family`, `bytes` and `scope_id`
+
+_Available since 2.86._
+
+### `newFromString`
+
+```ts
+newFromString(string: string): Gio.InetAddress | null
+```
+
+Parses `string` as an IP address and creates a new `GInetAddress`.
+
+If `address` is an IPv6 address, it can also contain a scope ID
+(separated from the address by a `%`). Note that currently this
+behavior is platform specific. This may change in a future release.
+
+**Parameters**
+
+- `string`: a string representation of an IP address
+
+**Returns** a new `GInetAddress` corresponding
+to `string`, or `null` if `string` could not be parsed.
+
+_Available since 2.22._
+
+### `newLoopback`
+
+```ts
+newLoopback(family: Gio.SocketFamily): Gio.InetAddress
+```
+
+Creates a `GInetAddress` for the loopback address for `family`.
+
+**Parameters**
+
+- `family`: the address family
+
+**Returns** a new `GInetAddress` corresponding to the loopback address
+for `family`.
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.InetAddress` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -353,7 +455,6 @@ toString(): string
 
 Converts `address` to string form.
 
-**Returns** a representation of `address` as a string, which should be
-freed after use.
+**Returns** a representation of `address` as a string.
 
 _Available since 2.22._

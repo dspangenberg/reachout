@@ -24,6 +24,20 @@ import { AdwPreferencesRow } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Adw.PreferencesRow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwPreferencesRow`.
+
+**Returns** the newly created `AdwPreferencesRow`
+
 ## Props
 
 `ref` receives the `Adw.PreferencesRow` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

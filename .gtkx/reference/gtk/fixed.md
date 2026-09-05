@@ -52,6 +52,20 @@ import { GtkFixed } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.Fixed`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkFixed`.
+
+**Returns** a new `GtkFixed`.
+
 ## Props
 
 `ref` receives the `Gtk.Fixed` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

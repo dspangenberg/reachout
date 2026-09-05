@@ -6,8 +6,6 @@ description: "A lines indicator for Carousel."
 
 A lines indicator for `Carousel`.
 
-
-
 The `AdwCarouselIndicatorLines` widget shows a set of lines for each page of
 a given `Carousel`. The carousel's active page is shown as another line
 that moves between them to match the carousel's position.
@@ -28,6 +26,20 @@ import { AdwCarouselIndicatorLines } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwCarouselIndicatorLines**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.CarouselIndicatorLines`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwCarouselIndicatorLines`.
+
+**Returns** the newly created `AdwCarouselIndicatorLines`
 
 ## Props
 

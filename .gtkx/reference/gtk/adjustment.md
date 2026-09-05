@@ -24,6 +24,29 @@ import { GtkAdjustment } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → **GtkAdjustment**
 
+## Static methods
+
+Static methods are called on `Gtk.Adjustment`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(value: number, lower: number, upper: number, stepIncrement: number, pageIncrement: number, pageSize: number): Gtk.Adjustment
+```
+
+Creates a new `GtkAdjustment`.
+
+**Parameters**
+
+- `value`: the initial value
+- `lower`: the minimum value
+- `upper`: the maximum value
+- `stepIncrement`: the step increment
+- `pageIncrement`: the page increment
+- `pageSize`: the page size
+
+**Returns** a new `GtkAdjustment`
+
 ## Props
 
 `ref` receives the `Gtk.Adjustment` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

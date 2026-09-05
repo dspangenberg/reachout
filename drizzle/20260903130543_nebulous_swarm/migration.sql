@@ -1,10 +1,10 @@
-CREATE TABLE `lists` (
+CREATE TABLE IF NOT EXISTS `lists` (
 	`id` text PRIMARY KEY,
 	`name` text NOT NULL,
 	`color` text NOT NULL
 );
 --> statement-breakpoint
-CREATE TABLE `tasks` (
+CREATE TABLE IF NOT EXISTS `tasks` (
 	`id` text PRIMARY KEY,
 	`listId` text NOT NULL,
 	`title` text NOT NULL,

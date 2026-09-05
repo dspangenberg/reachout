@@ -39,7 +39,7 @@ getConnection(): Gio.DBusConnection
 
 Gets the `GDBusConnection` the method was invoked on.
 
-**Returns** A `GDBusConnection`. Do not free, it is owned by `invocation`.
+**Returns** A `GDBusConnection`.
 
 _Available since 2.26._
 
@@ -61,7 +61,7 @@ been redirected to the method call handler then
 "org.freedesktop.DBus.Properties" will be returned.  See
 `GDBusInterfaceVTable` for more information.
 
-**Returns** A string. Do not free, it is owned by `invocation`.
+**Returns** A string.
 
 _Available since 2.26._
 
@@ -81,7 +81,7 @@ and [client]`Gio.DBusConnection#an-example-for-file-descriptor-passing`
 for an example of how to use this low-level API to send and receive
 UNIX file descriptors.
 
-**Returns** `GDBusMessage`. Do not free, it is owned by `invocation`.
+**Returns** `GDBusMessage`.
 
 _Available since 2.26._
 
@@ -98,7 +98,7 @@ has been redirected to the method call handler then `null` will be
 returned.  See `g_dbus_method_invocation_get_property_info()` and
 `GDBusInterfaceVTable` for more information.
 
-**Returns** A `GDBusMethodInfo` or `null`. Do not free, it is owned by `invocation`.
+**Returns** A `GDBusMethodInfo` or `null`.
 
 _Available since 2.26._
 
@@ -110,7 +110,7 @@ getMethodName(): string
 
 Gets the name of the method that was invoked.
 
-**Returns** A string. Do not free, it is owned by `invocation`.
+**Returns** A string.
 
 _Available since 2.26._
 
@@ -122,7 +122,7 @@ getObjectPath(): string
 
 Gets the object path the method was invoked on.
 
-**Returns** A string. Do not free, it is owned by `invocation`.
+**Returns** A string.
 
 _Available since 2.26._
 
@@ -135,7 +135,7 @@ getParameters(): GLib.Variant
 Gets the parameters of the method invocation. If there are no input
 parameters then this will return a GVariant with 0 children rather than NULL.
 
-**Returns** A `GVariant` tuple. Do not unref this because it is owned by `invocation`.
+**Returns** A `GVariant` tuple.
 
 _Available since 2.26._
 
@@ -172,7 +172,7 @@ Gets the bus name that invoked the method.
 This can return `null` if not specified by the caller, e.g. on peer-to-peer
 connections.
 
-**Returns** A string. Do not free, it is owned by `invocation`.
+**Returns** A string.
 
 _Available since 2.26._
 
@@ -261,7 +261,6 @@ else
   g_dbus_method_invocation_return_value (invocation,
                                          g_variant_new ("(s)", result_string));
 
-// Do not free @invocation here; returning a value does that
 ```
 
 This method will take ownership of `invocation`. See

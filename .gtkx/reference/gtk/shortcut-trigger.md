@@ -24,6 +24,39 @@ import { GtkShortcutTrigger } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkShortcutTrigger**
 
+## Static methods
+
+Static methods are called on `Gtk.ShortcutTrigger`, imported from `@gtkx/gi/gtk`.
+
+### `parseString`
+
+```ts
+parseString(string: string): Gtk.ShortcutTrigger | null
+```
+
+Tries to parse the given string into a trigger.
+
+On success, the parsed trigger is returned.
+When parsing failed, `null` is returned.
+
+The accepted strings are:
+
+  - `never`, for `GtkNeverTrigger`
+  - a string parsed by `gtk_accelerator_parse()`, for a `GtkKeyvalTrigger`, e.g. `<Control>C`
+  - underscore, followed by a single character, for `GtkMnemonicTrigger`, e.g. `_l`
+  - two valid trigger strings, separated by a `|` character, for a
+    `GtkAlternativeTrigger`: `<Control>q|<Control>w`
+
+Note that you will have to escape the `<` and `>` characters when specifying
+triggers in XML files, such as GtkBuilder ui files. Use `&lt;` instead of
+`<` and `&gt;` instead of `>`.
+
+**Parameters**
+
+- `string`: the string to parse
+
+**Returns** a new `GtkShortcutTrigger`
+
 ## Props
 
 `ref` receives the `Gtk.ShortcutTrigger` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

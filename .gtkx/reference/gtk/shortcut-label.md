@@ -20,6 +20,26 @@ import { GtkShortcutLabel } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.ShortcutLabel`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(accelerator: string): Gtk.Widget
+```
+
+Creates a new `GtkShortcutLabel` with `accelerator` set.
+
+**Parameters**
+
+- `accelerator`: the initial accelerator
+
+**Returns** a newly-allocated `GtkShortcutLabel`
+
+> **Deprecated since 4.18.** This widget will be removed in GTK 5
+
 ## Props
 
 `ref` receives the `Gtk.ShortcutLabel` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

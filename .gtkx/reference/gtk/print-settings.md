@@ -24,6 +24,80 @@ import { GtkPrintSettings } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkPrintSettings**
 
+## Static methods
+
+Static methods are called on `Gtk.PrintSettings`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.PrintSettings
+```
+
+Creates a new `GtkPrintSettings` object.
+
+**Returns** a new `GtkPrintSettings` object
+
+### `newFromFile`
+
+```ts
+newFromFile(fileName: string): Gtk.PrintSettings
+```
+
+Reads the print settings from `file_name`.
+
+Returns a new `GtkPrintSettings` object with the restored settings,
+or `null` if an error occurred. If the file could not be loaded then
+error is set to either a `GFileError` or `GKeyFileError`.
+
+See `Gtk.PrintSettings.toFile()`.
+
+**Parameters**
+
+- `fileName`: the filename to read the settings from
+
+**Returns** the restored `GtkPrintSettings`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+### `newFromGvariant`
+
+```ts
+newFromGvariant(variant: GLib.Variant): Gtk.PrintSettings
+```
+
+Deserialize print settings from an a{sv} variant.
+
+The variant must be in the format produced by
+`Gtk.PrintSettings.toGvariant()`.
+
+**Parameters**
+
+- `variant`: an a{sv} `GVariant`
+
+**Returns** a new `GtkPrintSettings` object
+
+### `newFromKeyFile`
+
+```ts
+newFromKeyFile(keyFile: GLib.KeyFile, groupName: string | null): Gtk.PrintSettings
+```
+
+Reads the print settings from the group `group_name` in `key_file`.
+
+Returns a new `GtkPrintSettings` object with the restored settings,
+or `null` if an error occurred. If the file could not be loaded then
+error is set to either `GFileError` or `GKeyFileError`.
+
+**Parameters**
+
+- `keyFile`: the `GKeyFile` to retrieve the settings from
+- `groupName`: the name of the group to use, or `null` to use the default “Print Settings”
+
+**Returns** the restored `GtkPrintSettings`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
 ## Props
 
 `ref` receives the `Gtk.PrintSettings` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -289,8 +363,7 @@ getPageRanges(): Gtk.PageRange[]
 Gets the value of `GTK_PRINT_SETTINGS_PAGE_RANGES`.
 
 **Returns** an array
-  of `GtkPageRange`s. Use `g_free()` to free the array when
-  it is no longer needed.
+  of `GtkPageRange`s.
 
 ### `getPageSet`
 

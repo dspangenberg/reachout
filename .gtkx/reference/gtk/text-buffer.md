@@ -22,6 +22,24 @@ import { GtkTextBuffer } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkTextBuffer**
 
+## Static methods
+
+Static methods are called on `Gtk.TextBuffer`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(table: Gtk.TextTagTable | null): Gtk.TextBuffer
+```
+
+Creates a new text buffer.
+
+**Parameters**
+
+- `table`: a tag table, or `null` to create a new one
+
+**Returns** a new text buffer
+
 ## Props
 
 `ref` receives the `Gtk.TextBuffer` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -1214,7 +1232,7 @@ not. E.g. see `Gtk.TextBuffer.getSlice()` and
 
 Consider `Gtk.TextBuffer.createChildAnchor()` as a more
 convenient alternative to this function. The buffer will add a
-reference to the anchor, so you can unref it after insertion.
+reference to the anchor.
 
 **Parameters**
 

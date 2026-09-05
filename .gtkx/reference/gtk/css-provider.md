@@ -43,6 +43,20 @@ import { GtkCssProvider } from "@gtkx/jsx/gtk";
 
 Implements `GtkStyleProvider`.
 
+## Static methods
+
+Static methods are called on `Gtk.CssProvider`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.CssProvider
+```
+
+Returns a newly created `GtkCssProvider`.
+
+**Returns** A new `GtkCssProvider`
+
 ## Props
 
 `ref` receives the `Gtk.CssProvider` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

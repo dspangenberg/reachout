@@ -31,6 +31,111 @@ by `G_ADD_PRIVATE()`.
 import { GObject } from "@gtkx/jsx/gobject";
 ```
 
+## Static methods
+
+Static methods are called on `GObject.Object`, imported from `@gtkx/gi/gobject`.
+
+### `compatControl`
+
+```ts
+compatControl(what: number, data: bigint | null): number
+```
+
+### `interfaceFindProperty`
+
+```ts
+interfaceFindProperty(gIface: GObject.TypeInterface, propertyName: string): GObject.ParamSpec
+```
+
+Find the `GParamSpec` with the given name for an
+interface. Generally, the interface vtable passed in as `g_iface`
+will be the default vtable from `g_type_default_interface_ref()`, or,
+if you know the interface has already been loaded,
+`g_type_default_interface_peek()`.
+
+**Parameters**
+
+- `gIface`: any interface vtable for the interface, or the default vtable for the interface
+- `propertyName`: name of a property to look up.
+
+**Returns** the `GParamSpec` for the property of the
+         interface with the name `property_name`, or `null` if no
+         such property exists.
+
+_Available since 2.4._
+
+### `interfaceInstallProperty`
+
+```ts
+interfaceInstallProperty(gIface: GObject.TypeInterface, pspec: GObject.ParamSpec): void
+```
+
+Add a property to an interface; this is only useful for interfaces
+that are added to GObject-derived types. Adding a property to an
+interface forces all objects classes with that interface to have a
+compatible property. The compatible property could be a newly
+created `GParamSpec`, but normally
+`g_object_class_override_property()` will be used so that the object
+class only needs to provide an implementation and inherits the
+property description, default value, bounds, and so forth from the
+interface property.
+
+This function is meant to be called from the interface's default
+vtable initialization function (the `class_init` member of
+`GTypeInfo`.) It must not be called after after `class_init` has
+been called for any object types implementing this interface.
+
+If `pspec` is a floating reference, it will be consumed.
+
+**Parameters**
+
+- `gIface`: any interface vtable for the interface, or the default vtable for the interface.
+- `pspec`: the `GParamSpec` for the new property
+
+_Available since 2.4._
+
+### `interfaceListProperties`
+
+```ts
+interfaceListProperties(gIface: GObject.TypeInterface): GObject.ParamSpec[]
+```
+
+Lists the properties of an interface.Generally, the interface
+vtable passed in as `g_iface` will be the default vtable from
+`g_type_default_interface_ref()`, or, if you know the interface has
+already been loaded, `g_type_default_interface_peek()`.
+
+**Parameters**
+
+- `gIface`: any interface vtable for the interface, or the default vtable for the interface
+
+**Returns** a
+  pointer to an array of pointers to `GParamSpec`
+  structures. The paramspecs are owned by GLib.
+
+_Available since 2.4._
+
+### `newv`
+
+```ts
+newv(objectType: bigint | AnyClass<TypedClass>, parameters: GObject.Parameter[]): GObject.Object
+```
+
+Creates a new instance of a `GObject` subtype and sets its properties.
+
+Construction parameters (see `G_PARAM_CONSTRUCT`, `G_PARAM_CONSTRUCT_ONLY`)
+which are not explicitly specified are set to their default values.
+
+**Parameters**
+
+- `objectType`: the type id of the `GObject` subtype to instantiate
+- `parameters`: an array of `GParameter`
+
+**Returns** a new instance of
+`object_type`
+
+> **Deprecated since 2.54.** Use `g_object_new_with_properties()` instead. deprecated. See `GParameter` for more information.
+
 ## Props
 
 `ref` receives the `GObject.Object` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -191,8 +296,7 @@ The `value` can be:
  - a `GValue` initialized with a type to which the expected type
    of the property can be transformed
 
-In general, a copy is made of the property contents and the caller is
-responsible for freeing the memory by calling `g_value_unset()`.
+In general, a copy is made of the property contents.
 
 Note that `g_object_get_property()` is really intended for language
 bindings, `g_object_get()` is much more convenient for C programming.

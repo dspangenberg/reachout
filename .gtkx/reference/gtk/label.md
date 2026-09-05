@@ -8,8 +8,6 @@ Displays a small amount of text.
 
 Most labels are used to label another widget (such as an `Entry`).
 
-
-
 ### Shortcuts and Gestures
 
 `GtkLabel` supports the following keyboard shortcuts, when the cursor is
@@ -227,6 +225,53 @@ import { GtkLabel } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkLabel**
 
 Implements `GtkAccessible`, `GtkAccessibleHypertext`, `GtkAccessibleText`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Label`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(str: string | null): Gtk.Widget
+```
+
+Creates a new label with the given text inside it.
+
+You can pass `NULL` to get an empty label widget.
+
+**Parameters**
+
+- `str`: the text of the label
+
+**Returns** the new label
+
+### `newWithMnemonic`
+
+```ts
+newWithMnemonic(str: string | null): Gtk.Widget
+```
+
+Creates a new label with the given text inside it, and a mnemonic.
+
+If characters in `str` are preceded by an underscore, they are
+underlined. If you need a literal underscore character in a label, use
+'__' (two underscores). The first underlined character represents a
+keyboard accelerator called a mnemonic. The mnemonic key can be used
+to activate another widget, chosen automatically, or explicitly using
+`Gtk.Label.setMnemonicWidget()`.
+
+If `Gtk.Label.setMnemonicWidget()` is not called, then the first
+activatable ancestor of the label will be chosen as the mnemonic
+widget. For instance, if the label is inside a button or menu item,
+the button or menu item will automatically become the mnemonic widget
+and be activated by the mnemonic.
+
+**Parameters**
+
+- `str`: the text of the label, with an underscore in front of the mnemonic character
+
+**Returns** the new label
 
 ## Props
 
@@ -624,9 +669,6 @@ Gets the Pango layout used to display the label.
 
 The layout is useful to e.g. convert text positions to pixel
 positions, in combination with `Gtk.Label.getLayoutOffsets()`.
-The returned layout is owned by the `label` so need not be
-freed by the caller. The `label` is free to recreate its layout
-at any time, so it should be considered read-only.
 
 **Returns** the `Pango.Layout` for this label
 

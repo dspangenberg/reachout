@@ -9,8 +9,6 @@ Displays an icon-size spinning animation.
 It is often used as an alternative to a `Gtk.ProgressBar`
 for displaying indefinite activity, instead of actual progress.
 
-
-
 To start the animation, use `Gtk.Spinner.start()`, to stop it
 use `Gtk.Spinner.stop()`.
 
@@ -33,6 +31,20 @@ import { GtkSpinner } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkSpinner**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Spinner`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Returns a new spinner widget. Not yet started.
+
+**Returns** a new `GtkSpinner`
 
 ## Props
 

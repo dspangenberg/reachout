@@ -7,8 +7,6 @@ description: "A GtkComboBoxText is a simple variant of GtkComboBox for text-only
 A `GtkComboBoxText` is a simple variant of `GtkComboBox` for text-only
 use cases.
 
-
-
 `GtkComboBoxText` hides the model-view complexity of `GtkComboBox`.
 
 To create a `GtkComboBoxText`, use `Gtk.ComboBoxText.new()` or
@@ -72,6 +70,34 @@ import { GtkComboBoxText } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkCellEditable`, `GtkCellLayout`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.ComboBoxText`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkComboBoxText`.
+
+**Returns** A new `GtkComboBoxText`
+
+> **Deprecated since 4.10.** Use `Gtk.DropDown`
+
+### `newWithEntry`
+
+```ts
+newWithEntry(): Gtk.Widget
+```
+
+Creates a new `GtkComboBoxText` with an entry.
+
+**Returns** a new `GtkComboBoxText`
+
+> **Deprecated since 4.10.** Use `Gtk.DropDown`
+
 ## Props
 
 `ref` receives the `Gtk.ComboBoxText` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -132,7 +158,6 @@ be an item from the list).
 
 **Returns** a newly allocated
   string containing the currently active text.
-  Must be freed with `g_free()`.
 
 > **Deprecated since 4.10.** Use `Gtk.DropDown`
 

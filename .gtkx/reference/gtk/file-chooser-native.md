@@ -163,6 +163,30 @@ import { GtkFileChooserNative } from "@gtkx/jsx/gtk";
 
 Implements `GtkFileChooser`.
 
+## Static methods
+
+Static methods are called on `Gtk.FileChooserNative`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(title: string | null, parent: Gtk.Window | null, action: Gtk.FileChooserAction, acceptLabel: string | null, cancelLabel: string | null): Gtk.FileChooserNative
+```
+
+Creates a new `GtkFileChooserNative`.
+
+**Parameters**
+
+- `title`: Title of the native
+- `parent`: Transient parent of the native
+- `action`: Open or save mode for the dialog
+- `acceptLabel`: text to go in the accept button, or `null` for the default
+- `cancelLabel`: text to go in the cancel button, or `null` for the default
+
+**Returns** a new `GtkFileChooserNative`
+
+> **Deprecated since 4.10.** Use `Gtk.FileDialog` instead
+
 ## Props
 
 `ref` receives the `Gtk.FileChooserNative` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -6,8 +6,6 @@ description: "A combined button and dropdown widget."
 
 A combined button and dropdown widget.
 
-
-
 `AdwSplitButton` is typically used to present a set of actions in a menu,
 but allow access to one of them with a single click.
 
@@ -58,6 +56,20 @@ import { AdwSplitButton } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwSplitButton**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.SplitButton`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwSplitButton`.
+
+**Returns** the newly created `AdwSplitButton`
 
 ## Props
 

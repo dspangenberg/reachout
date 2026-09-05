@@ -6,8 +6,6 @@ description: "Allows drawing with cairo."
 
 Allows drawing with cairo.
 
-
-
 It’s essentially a blank widget; you can draw on it. After
 creating a drawing area, the application may want to connect to:
 
@@ -92,6 +90,20 @@ import { GtkDrawingArea } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkDrawingArea**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.DrawingArea`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new drawing area.
+
+**Returns** a new `GtkDrawingArea`
 
 ## Props
 

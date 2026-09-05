@@ -6,8 +6,6 @@ description: "A Gtk.ListBoxRow with an embedded text entry."
 
 A `Gtk.ListBoxRow` with an embedded text entry.
 
-
-
 `AdwEntryRow` has a title that doubles as placeholder text. It shows an icon
 indicating that it's editable and can receive additional widgets before or
 after the editable part.
@@ -47,6 +45,22 @@ import { AdwEntryRow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkListBoxRow](.gtkx/reference/gtk/list-box-row.md) → [AdwPreferencesRow](.gtkx/reference/adw/preferences-row.md) → **AdwEntryRow**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`, `GtkEditable`.
+
+## Static methods
+
+Static methods are called on `Adw.EntryRow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwEntryRow`.
+
+**Returns** the newly created `AdwEntryRow`
+
+_Available since 1.2._
 
 ## Props
 

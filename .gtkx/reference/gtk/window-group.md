@@ -13,9 +13,7 @@ A window can be a member in at most one window group at a time.
 Windows that have not been explicitly assigned to a group are
 implicitly treated like windows of the default window group.
 
-`GtkWindowGroup` objects are referenced by each window in the group,
-so once you have added all windows to a `GtkWindowGroup`, you can drop
-the initial reference to the window group with `g_object_unref()`. If the
+ If the
 windows in the window group are subsequently destroyed, then they will
 be removed from the window group and drop their references on the window
 group; when all window have been removed, the window group will be
@@ -28,6 +26,23 @@ import { GtkWindowGroup } from "@gtkx/jsx/gtk";
 ## Hierarchy
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkWindowGroup**
+
+## Static methods
+
+Static methods are called on `Gtk.WindowGroup`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.WindowGroup
+```
+
+Creates a new `GtkWindowGroup` object.
+
+Modality of windows only affects windows
+within the same `GtkWindowGroup`.
+
+**Returns** a new `GtkWindowGroup`.
 
 ## Props
 

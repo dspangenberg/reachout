@@ -73,6 +73,22 @@ import { GdkDmabufTextureBuilder } from "@gtkx/jsx/gdk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GdkDmabufTextureBuilder**
 
+## Static methods
+
+Static methods are called on `Gdk.DmabufTextureBuilder`, imported from `@gtkx/gi/gdk`.
+
+### `new`
+
+```ts
+new(): Gdk.DmabufTextureBuilder
+```
+
+Creates a new texture builder.
+
+**Returns** the new `GdkTextureBuilder`
+
+_Available since 4.14._
+
 ## Props
 
 `ref` receives the `Gdk.DmabufTextureBuilder` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

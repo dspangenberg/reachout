@@ -28,6 +28,20 @@ import { GtkGestureLongPress } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → [GtkGesture](.gtkx/reference/gtk/gesture.md) → [GtkGestureSingle](.gtkx/reference/gtk/gesture-single.md) → **GtkGestureLongPress**
 
+## Static methods
+
+Static methods are called on `Gtk.GestureLongPress`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Gesture
+```
+
+Returns a newly created `GtkGesture` that recognizes long presses.
+
+**Returns** a newly created `GtkGestureLongPress`.
+
 ## Props
 
 `ref` receives the `Gtk.GestureLongPress` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

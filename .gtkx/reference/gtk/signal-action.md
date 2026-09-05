@@ -17,6 +17,27 @@ import { GtkSignalAction } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkShortcutAction](.gtkx/reference/gtk/shortcut-action.md) → **GtkSignalAction**
 
+## Static methods
+
+Static methods are called on `Gtk.SignalAction`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(signalName: string): Gtk.SignalAction
+```
+
+Creates an action that when activated, emits the given action signal
+on the provided widget.
+
+It will also unpack the args into arguments passed to the signal.
+
+**Parameters**
+
+- `signalName`: name of the signal to emit
+
+**Returns** a new `GtkShortcutAction`
+
 ## Props
 
 `ref` receives the `Gtk.SignalAction` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

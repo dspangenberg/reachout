@@ -6,8 +6,6 @@ description: "A page-based navigation container."
 
 A page-based navigation container.
 
-
-
 `AdwNavigationView` presents one child at a time, similar to
 `Gtk.Stack`.
 
@@ -146,8 +144,6 @@ Example of an `AdwNavigationView` UI definition:
 </object>
 ```
 
-
-
 ### CSS nodes
 
 `AdwNavigationView` has a single CSS node with the name `navigation-view`.
@@ -168,6 +164,22 @@ import { AdwNavigationView } from "@gtkx/jsx/adw";
 
 Implements `AdwSwipeable`, `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Adw.NavigationView`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwNavigationView`.
+
+**Returns** the new created `AdwNavigationView`
+
+_Available since 1.4._
+
 ## Props
 
 `ref` receives the `Adw.NavigationView` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -187,6 +199,8 @@ _Available since 1.4._
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [AdwNavigationPage](.gtkx/reference/adw/navigation-page.md) or a subtype.
 
 ### `hhomogeneous`
 

@@ -9,8 +9,6 @@ Displays the progress of a long-running operation.
 `GtkProgressBar` provides a visual clue that processing is underway.
 It can be used in two different modes: percentage mode and activity mode.
 
-
-
 When an application can determine how much work needs to take place
 (e.g. read a fixed number of bytes from a file) and can monitor its
 progress, it can use the `GtkProgressBar` in percentage mode and the
@@ -61,6 +59,20 @@ import { GtkProgressBar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkProgressBar**
 
 Implements `GtkAccessible`, `GtkAccessibleRange`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.ProgressBar`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkProgressBar`.
+
+**Returns** a `GtkProgressBar`.
 
 ## Props
 

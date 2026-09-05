@@ -6,8 +6,6 @@ description: "A widget for displaying both trees and lists Widget that displays 
 
 A widget for displaying both trees and lists
 
-
-
 Widget that displays any object that implements the `Gtk.TreeModel` interface.
 
 Please refer to the [tree widget conceptual overview](section-tree-widget.html)
@@ -104,6 +102,38 @@ import { GtkTreeView } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkTreeView**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkScrollable`.
+
+## Static methods
+
+Static methods are called on `Gtk.TreeView`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkTreeView` widget.
+
+**Returns** A newly created `GtkTreeView` widget.
+
+> **Deprecated since 4.10.** Use `Gtk.ListView` or `Gtk.ColumnView` instead
+
+### `newWithModel`
+
+```ts
+newWithModel(model: Gtk.TreeModel): Gtk.Widget
+```
+
+Creates a new `GtkTreeView` widget with the model initialized to `model`.
+
+**Parameters**
+
+- `model`: the model.
+
+**Returns** A newly created `GtkTreeView` widget.
+
+> **Deprecated since 4.10.** Use `Gtk.ListView` or `Gtk.ColumnView` instead
 
 ## Props
 
@@ -805,7 +835,6 @@ getColumns(): Gtk.TreeViewColumn[]
 ```
 
 Returns a `GList` of all the `GtkTreeViewColumn`s currently in `tree_view`.
-The returned list must be freed with g_list_free ().
 
 **Returns** A list of `GtkTreeViewColumn`s
 
@@ -820,9 +849,6 @@ getCursor(): [Gtk.TreePath | null, Gtk.TreeViewColumn | null]
 Fills in `path` and `focus_column` with the current path and focus column.  If
 the cursor isn’t currently set, then *`path` will be `null`.  If no column
 currently has focus, then *`focus_column` will be `null`.
-
-The returned `GtkTreePath` must be freed with `gtk_tree_path_free()` when
-you are done with it.
 
 **Returns** Tuple of:
 
@@ -1033,8 +1059,7 @@ That is, `x` and `y` are relative to an events coordinates. Widget-relative
 coordinates must be converted using
 `gtk_tree_view_convert_widget_to_bin_window_coords()`. It is primarily for
 things like popup menus. If `path` is non-`null`, then it will be filled
-with the `GtkTreePath` at that point.  This path should be freed with
-`gtk_tree_path_free()`.  If `column` is non-`null`, then it will be filled
+with the `GtkTreePath` at that point.  If `column` is non-`null`, then it will be filled
 with the column at that point.  `cell_x` and `cell_y` return the coordinates
 relative to the cell background (i.e. the `background_area` passed to
 `gtk_cell_renderer_render()`).  This function is only meaningful if
@@ -1193,8 +1218,6 @@ getVisibleRange(): [boolean, Gtk.TreePath, Gtk.TreePath]
 
 Sets `start_path` and `end_path` to be the first and last visible path.
 Note that there may be invisible paths in between.
-
-The paths should be freed with `gtk_tree_path_free()` after use.
 
 **Returns** Tuple of:
 

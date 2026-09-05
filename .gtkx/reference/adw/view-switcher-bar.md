@@ -6,8 +6,6 @@ description: "A view switcher action bar."
 
 A view switcher action bar.
 
-
-
 An action bar letting you switch between multiple views contained in a
 `ViewStack`, via an `ViewSwitcher`. It is designed to be put at
 the bottom of a window and to be revealed only on really narrow windows, e.g.
@@ -73,6 +71,20 @@ import { AdwViewSwitcherBar } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwViewSwitcherBar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ViewSwitcherBar`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwViewSwitcherBar`.
+
+**Returns** the newly created `AdwViewSwitcherBar`
 
 ## Props
 

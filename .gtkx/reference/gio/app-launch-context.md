@@ -16,6 +16,22 @@ import { GAppLaunchContext } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GAppLaunchContext**
 
+## Static methods
+
+Static methods are called on `Gio.AppLaunchContext`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.AppLaunchContext
+```
+
+Creates a new application launch context. This is not normally used,
+instead you instantiate a subclass of this, such as
+[`GdkAppLaunchContext`](https://docs.gtk.org/gdk4/class.AppLaunchContext.html).
+
+**Returns** a launch context.
+
 ## Props
 
 `ref` receives the `Gio.AppLaunchContext` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -44,6 +44,31 @@ import { AdwSpringAnimation } from "@gtkx/jsx/adw";
 
 [GObject](.gtkx/reference/gobject/object.md) → [AdwAnimation](.gtkx/reference/adw/animation.md) → **AdwSpringAnimation**
 
+## Static methods
+
+Static methods are called on `Adw.SpringAnimation`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(widget: Gtk.Widget, from: number, to: number, springParams: Adw.SpringParams, target: Adw.AnimationTarget): Adw.Animation
+```
+
+Creates a new `AdwSpringAnimation` on `widget`.
+
+The animation will animate `target` from `from` to `to` with the dynamics of a
+spring described by `spring_params`.
+
+**Parameters**
+
+- `widget`: a widget to create animation on
+- `from`: a value to animate from
+- `to`: a value to animate to
+- `springParams`: physical parameters of the spring
+- `target`: a target value to animate
+
+**Returns** the newly created animation
+
 ## Props
 
 `ref` receives the `Adw.SpringAnimation` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

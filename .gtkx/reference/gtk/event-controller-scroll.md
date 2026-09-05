@@ -46,6 +46,24 @@ import { GtkEventControllerScroll } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → **GtkEventControllerScroll**
 
+## Static methods
+
+Static methods are called on `Gtk.EventControllerScroll`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(flags: Gtk.EventControllerScrollFlags): Gtk.EventController
+```
+
+Creates a new event controller that will handle scroll events.
+
+**Parameters**
+
+- `flags`: flags affecting the controller behavior
+
+**Returns** a new `GtkEventControllerScroll`
+
 ## Props
 
 `ref` receives the `Gtk.EventControllerScroll` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

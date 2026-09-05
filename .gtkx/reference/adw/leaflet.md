@@ -6,9 +6,6 @@ description: "An adaptive container acting like a box or a stack."
 
 An adaptive container acting like a box or a stack.
 
-
-
-
 The `AdwLeaflet` widget can display its children like a `Gtk.Box` does
 or like a `Gtk.Stack` does, adapting to size changes by switching
 between the two modes.
@@ -41,6 +38,22 @@ import { AdwLeaflet } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwLeaflet**
 
 Implements `AdwSwipeable`, `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.Leaflet`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwLeaflet`.
+
+**Returns** the new created `AdwLeaflet`
+
+> **Deprecated since 1.4.** See [the migration guide](migrating-to-breakpoints.html#replace-adwleaflet)
 
 ## Props
 

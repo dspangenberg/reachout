@@ -18,6 +18,30 @@ import { GtkATContext } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkATContext**
 
+## Static methods
+
+Static methods are called on `Gtk.ATContext`, imported from `@gtkx/gi/gtk`.
+
+### `create`
+
+```ts
+create(accessibleRole: Gtk.AccessibleRole, accessible: Gtk.Accessible, display: Gdk.Display): Gtk.ATContext | null
+```
+
+Creates a new `GtkATContext` instance for the given accessible role,
+accessible instance, and display connection.
+
+The `GtkATContext` implementation being instantiated will depend on the
+platform.
+
+**Parameters**
+
+- `accessibleRole`: the accessible role used by the `GtkATContext`
+- `accessible`: the `GtkAccessible` implementation using the `GtkATContext`
+- `display`: the `GdkDisplay` used by the `GtkATContext`
+
+**Returns** the `GtkATContext`
+
 ## Props
 
 `ref` receives the `Gtk.ATContext` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -787,8 +787,7 @@ used to interact with renderers from `GtkCellArea`
 subclasses.
 
 **Returns** The current `GtkTreePath` string for the current
-attributes applied to `area`. This string belongs to the area and
-should not be freed.
+attributes applied to `area`.
 
 ### `getEditedCell`
 
@@ -864,7 +863,6 @@ Gets the focus sibling cell renderers for `renderer`.
 - `renderer`: the `GtkCellRenderer` expected to have focus
 
 **Returns** A `GList` of `GtkCellRenderer`s.
-      The returned list is internal and should not be freed.
 
 > **Deprecated since 4.10.**
 

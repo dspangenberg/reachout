@@ -27,6 +27,38 @@ import { GtkTreeViewColumn } from "@gtkx/jsx/gtk";
 
 Implements `GtkBuildable`, `GtkCellLayout`.
 
+## Static methods
+
+Static methods are called on `Gtk.TreeViewColumn`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.TreeViewColumn
+```
+
+Creates a new `GtkTreeViewColumn`.
+
+**Returns** A newly created `GtkTreeViewColumn`.
+
+> **Deprecated since 4.10.** Use GtkColumnView instead
+
+### `newWithArea`
+
+```ts
+newWithArea(area: Gtk.CellArea): Gtk.TreeViewColumn
+```
+
+Creates a new `GtkTreeViewColumn` using `area` to render its cells.
+
+**Parameters**
+
+- `area`: the `GtkCellArea` that the newly created column should use to layout cells.
+
+**Returns** A newly created `GtkTreeViewColumn`.
+
+> **Deprecated since 4.10.** Use GtkColumnView instead
+
 ## Props
 
 `ref` receives the `Gtk.TreeViewColumn` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -466,8 +498,7 @@ getTitle(): string
 
 Returns the title of the widget.
 
-**Returns** the title of the column. This string should not be
-modified or freed.
+**Returns** the title of the column.
 
 > **Deprecated since 4.10.** Use GtkColumnView instead
 

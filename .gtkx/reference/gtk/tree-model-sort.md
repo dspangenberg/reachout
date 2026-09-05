@@ -113,6 +113,24 @@ import { GtkTreeModelSort } from "@gtkx/jsx/gtk";
 
 Implements `GtkTreeDragSource`, `GtkTreeModel`, `GtkTreeSortable`.
 
+## Static methods
+
+Static methods are called on `Gtk.TreeModelSort`, imported from `@gtkx/gi/gtk`.
+
+### `newWithModel`
+
+```ts
+newWithModel(childModel: Gtk.TreeModel): Gtk.TreeModelSort
+```
+
+Creates a new `GtkTreeModelSort`, with `child_model` as the child model.
+
+**Parameters**
+
+- `childModel`: A `GtkTreeModel`
+
+**Returns** A new `GtkTreeModelSort`.
+
 ## Props
 
 `ref` receives the `Gtk.TreeModelSort` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

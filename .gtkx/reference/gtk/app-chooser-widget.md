@@ -40,6 +40,27 @@ import { GtkAppChooserWidget } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkAppChooser`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.AppChooserWidget`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(contentType: string): Gtk.Widget
+```
+
+Creates a new `GtkAppChooserWidget` for applications
+that can handle content of the given type.
+
+**Parameters**
+
+- `contentType`: the content type to show applications for
+
+**Returns** a newly created `GtkAppChooserWidget`
+
+> **Deprecated since 4.10.** This widget will be removed in GTK 5
+
 ## Props
 
 `ref` receives the `Gtk.AppChooserWidget` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

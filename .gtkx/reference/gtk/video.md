@@ -6,8 +6,6 @@ description: "Shows a GtkMediaStream with media controls."
 
 Shows a `GtkMediaStream` with media controls.
 
-
-
 The controls are available separately as `Gtk.MediaControls`.
 If you just want to display a video without controls, you can treat it
 like any other paintable and for example put it into a `Gtk.Picture`.
@@ -28,6 +26,82 @@ import { GtkVideo } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkVideo**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Video`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new empty `GtkVideo`.
+
+**Returns** a new `GtkVideo`
+
+### `newForFile`
+
+```ts
+newForFile(file: Gio.File | null): Gtk.Widget
+```
+
+Creates a `GtkVideo` to play back the given `file`.
+
+**Parameters**
+
+- `file`: a `GFile`
+
+**Returns** a new `GtkVideo`
+
+### `newForFilename`
+
+```ts
+newForFilename(filename: string | null): Gtk.Widget
+```
+
+Creates a `GtkVideo` to play back the given `filename`.
+
+This is a utility function that calls `Gtk.Video.newForFile()`,
+See that function for details.
+
+**Parameters**
+
+- `filename`: filename to play back
+
+**Returns** a new `GtkVideo`
+
+### `newForMediaStream`
+
+```ts
+newForMediaStream(stream: Gtk.MediaStream | null): Gtk.Widget
+```
+
+Creates a `GtkVideo` to play back the given `stream`.
+
+**Parameters**
+
+- `stream`: a `GtkMediaStream`
+
+**Returns** a new `GtkVideo`
+
+### `newForResource`
+
+```ts
+newForResource(resourcePath: string | null): Gtk.Widget
+```
+
+Creates a `GtkVideo` to play back the resource at the
+given `resource_path`.
+
+This is a utility function that calls `Gtk.Video.newForFile()`.
+
+**Parameters**
+
+- `resourcePath`: resource path to play back
+
+**Returns** a new `GtkVideo`
 
 ## Props
 

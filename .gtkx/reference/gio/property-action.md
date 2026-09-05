@@ -69,6 +69,35 @@ import { GPropertyAction } from "@gtkx/jsx/gio";
 
 Implements `GAction`.
 
+## Static methods
+
+Static methods are called on `Gio.PropertyAction`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(name: string, object: GObject.Object, propertyName: string): Gio.PropertyAction
+```
+
+Creates a `GAction` corresponding to the value of property
+`property_name` on `object`.
+
+The property must be existent and readable and writable (and not
+construct-only).
+
+This function takes a reference on `object` and doesn't release it
+until the action is destroyed.
+
+**Parameters**
+
+- `name`: the name of the action to create
+- `object`: the object that has the property to wrap
+- `propertyName`: the name of the property
+
+**Returns** a new `GPropertyAction`
+
+_Available since 2.38._
+
 ## Props
 
 `ref` receives the `Gio.PropertyAction` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -24,6 +24,64 @@ import { GVolumeMonitor } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GVolumeMonitor**
 
+## Static methods
+
+Static methods are called on `Gio.VolumeMonitor`, imported from `@gtkx/gi/gio`.
+
+### `adoptOrphanMount`
+
+```ts
+adoptOrphanMount(mount: Gio.Mount): Gio.Volume
+```
+
+This function should be called by any `GVolumeMonitor`
+implementation when a new `GMount` object is created that is not
+associated with a `GVolume` object. It must be called just before
+emitting the `mount_added` signal.
+
+If the return value is not `null`, the caller must associate the
+returned `GVolume` object with the `GMount`. This involves returning
+it in its `g_mount_get_volume()` implementation. The caller must
+also listen for the "removed" signal on the returned object
+and give up its reference when handling that signal
+
+Similarly, if implementing `g_volume_monitor_adopt_orphan_mount()`,
+the implementor must take a reference to `mount` and return it in
+its `g_volume_get_mount()` implemented. Also, the implementor must
+listen for the "unmounted" signal on `mount` and give up its
+reference upon handling that signal.
+
+There are two main use cases for this function.
+
+One is when implementing a user space file system driver that reads
+blocks of a block device that is already represented by the native
+volume monitor (for example a CD Audio file system driver). Such
+a driver will generate its own `GMount` object that needs to be
+associated with the `GVolume` object that represents the volume.
+
+The other is for implementing a `GVolumeMonitor` whose sole purpose
+is to return `GVolume` objects representing entries in the users
+"favorite servers" list or similar.
+
+**Parameters**
+
+- `mount`: a `GMount` object to find a parent for
+
+**Returns** the `GVolume` object that is the parent for `mount` or `null`
+if no wants to adopt the `GMount`.
+
+> **Deprecated since 2.20.** Instead of using this function, `GVolumeMonitor` implementations should instead create shadow mounts with the URI of the mount they intend to adopt. See the proxy volume monitor in gvfs for an example of this. Also see `g_mount_is_shadowed()`, `g_mount_shadow()` and `g_mount_unshadow()` functions.
+
+### `get`
+
+```ts
+get(): Gio.VolumeMonitor
+```
+
+Gets the volume monitor used by gio.
+
+**Returns** a reference to the `GVolumeMonitor` used by gio.
+
 ## Props
 
 `ref` receives the `Gio.VolumeMonitor` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -205,9 +263,6 @@ getConnectedDrives(): Gio.Drive[]
 
 Gets a list of drives connected to the system.
 
-The returned list should be freed with `g_list_free()`, after
-its elements have been unreffed with `g_object_unref()`.
-
 **Returns** a `GList` of connected `GDrive` objects.
 
 ### `getMountForUuid`
@@ -223,7 +278,6 @@ Finds a `GMount` object by its UUID (see `g_mount_get_uuid()`)
 - `uuid`: the UUID to look for
 
 **Returns** a `GMount` or `null` if no such mount is available.
-    Free the returned object with `g_object_unref()`.
 
 ### `getMounts`
 
@@ -232,9 +286,6 @@ getMounts(): Gio.Mount[]
 ```
 
 Gets a list of the mounts on the system.
-
-The returned list should be freed with `g_list_free()`, after
-its elements have been unreffed with `g_object_unref()`.
 
 **Returns** a `GList` of `GMount` objects.
 
@@ -251,7 +302,6 @@ Finds a `GVolume` object by its UUID (see `g_volume_get_uuid()`)
 - `uuid`: the UUID to look for
 
 **Returns** a `GVolume` or `null` if no such volume is available.
-    Free the returned object with `g_object_unref()`.
 
 ### `getVolumes`
 
@@ -260,8 +310,5 @@ getVolumes(): Gio.Volume[]
 ```
 
 Gets a list of the volumes on the system.
-
-The returned list should be freed with `g_list_free()`, after
-its elements have been unreffed with `g_object_unref()`.
 
 **Returns** a `GList` of `GVolume` objects.

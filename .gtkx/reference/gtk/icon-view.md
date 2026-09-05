@@ -6,8 +6,6 @@ description: "GtkIconView is a widget which displays data in a grid of icons."
 
 `GtkIconView` is a widget which displays data in a grid of icons.
 
-
-
 `GtkIconView` provides an alternative view on a `GtkTreeModel`.
 It displays the model as a grid of icons with labels. Like
 `Gtk.TreeView`, it allows to select one or multiple items
@@ -41,6 +39,55 @@ import { GtkIconView } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkIconView**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkCellLayout`, `GtkConstraintTarget`, `GtkScrollable`.
+
+## Static methods
+
+Static methods are called on `Gtk.IconView`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkIconView` widget
+
+**Returns** A newly created `GtkIconView` widget
+
+> **Deprecated since 4.10.** Use `Gtk.GridView` instead
+
+### `newWithArea`
+
+```ts
+newWithArea(area: Gtk.CellArea): Gtk.Widget
+```
+
+Creates a new `GtkIconView` widget using the
+specified `area` to layout cells inside the icons.
+
+**Parameters**
+
+- `area`: the `GtkCellArea` to use to layout cells
+
+**Returns** A newly created `GtkIconView` widget
+
+> **Deprecated since 4.10.** Use `Gtk.GridView` instead
+
+### `newWithModel`
+
+```ts
+newWithModel(model: Gtk.TreeModel): Gtk.Widget
+```
+
+Creates a new `GtkIconView` widget with the model `model`.
+
+**Parameters**
+
+- `model`: The model.
+
+**Returns** A newly created `GtkIconView` widget.
+
+> **Deprecated since 4.10.** Use `Gtk.GridView` instead
 
 ## Props
 
@@ -493,8 +540,6 @@ Fills in `path` and `cell` with the current cursor path and cell.
 If the cursor isn’t currently set, then *`path` will be `null`.
 If no cell currently has focus, then *`cell` will be `null`.
 
-The returned `GtkTreePath` must be freed with `gtk_tree_path_free()`.
-
 **Returns** Tuple of:
 
 - `result`: `true` if the cursor is set.
@@ -734,19 +779,6 @@ planning on modifying the model after calling this function, you may
 want to convert the returned list into a list of `GtkTreeRowReferences`.
 To do this, you can use `gtk_tree_row_reference_new()`.
 
-To free the return value, use `g_list_free_full`:
-
-```c
-GtkWidget *icon_view = gtk_icon_view_new ();
-// Use icon_view
-
-GList *list = gtk_icon_view_get_selected_items (GTK_ICON_VIEW (icon_view));
-
-// use list
-
-g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);
-```
-
 **Returns** A `GList` containing a `GtkTreePath` for each selected row.
 
 > **Deprecated since 4.10.** Use `Gtk.GridView` instead
@@ -841,8 +873,6 @@ getVisibleRange(): [boolean, Gtk.TreePath, Gtk.TreePath]
 
 Sets `start_path` and `end_path` to be the first and last visible path.
 Note that there may be invisible paths in between.
-
-Both paths should be freed with `gtk_tree_path_free()` after use.
 
 **Returns** Tuple of:
 

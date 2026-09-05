@@ -26,6 +26,24 @@ import { AdwSwipeTracker } from "@gtkx/jsx/adw";
 
 Implements `GtkOrientable`.
 
+## Static methods
+
+Static methods are called on `Adw.SwipeTracker`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(swipeable: Adw.Swipeable): Adw.SwipeTracker
+```
+
+Creates a new `AdwSwipeTracker` for `widget`.
+
+**Parameters**
+
+- `swipeable`: a widget to add the tracker on
+
+**Returns** the newly created `AdwSwipeTracker`
+
 ## Props
 
 `ref` receives the `Adw.SwipeTracker` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

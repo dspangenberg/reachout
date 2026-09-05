@@ -33,6 +33,28 @@ import { GtkViewport } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkScrollable`.
 
+## Static methods
+
+Static methods are called on `Gtk.Viewport`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(hadjustment: Gtk.Adjustment | null, vadjustment: Gtk.Adjustment | null): Gtk.Widget
+```
+
+Creates a new `GtkViewport`.
+
+The new viewport uses the given adjustments, or default
+adjustments if none are given.
+
+**Parameters**
+
+- `hadjustment`: horizontal adjustment
+- `vadjustment`: vertical adjustment
+
+**Returns** a new `GtkViewport`
+
 ## Props
 
 `ref` receives the `Gtk.Viewport` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

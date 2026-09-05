@@ -14,6 +14,30 @@ import { GdkPixbufSimpleAnim } from "@gtkx/jsx/gdkpixbuf";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GdkPixbufAnimation](.gtkx/reference/gdkpixbuf/pixbuf-animation.md) → **GdkPixbufSimpleAnim**
 
+## Static methods
+
+Static methods are called on `GdkPixbuf.PixbufSimpleAnim`, imported from `@gtkx/gi/gdkpixbuf`.
+
+### `new`
+
+```ts
+new(width: number, height: number, rate: number): GdkPixbuf.PixbufSimpleAnim
+```
+
+Creates a new, empty animation.
+
+**Parameters**
+
+- `width`: the width of the animation
+- `height`: the height of the animation
+- `rate`: the speed of the animation, in frames per second
+
+**Returns** a newly allocated `GdkPixbufSimpleAnim`
+
+> **Deprecated since 2.44.** Use a different image loading library for animatable assets
+
+_Available since 2.8._
+
 ## Props
 
 `ref` receives the `GdkPixbuf.PixbufSimpleAnim` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

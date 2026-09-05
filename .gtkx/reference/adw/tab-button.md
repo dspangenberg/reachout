@@ -6,8 +6,6 @@ description: "A button that displays the number of TabView pages."
 
 A button that displays the number of `TabView` pages.
 
-
-
 `AdwTabButton` is a button that displays the number of pages in a given
 `AdwTabView`, as well as whether one of the inactive pages needs attention.
 
@@ -41,6 +39,22 @@ import { AdwTabButton } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwTabButton**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.TabButton`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwTabButton`.
+
+**Returns** the newly created `AdwTabButton`
+
+_Available since 1.3._
 
 ## Props
 

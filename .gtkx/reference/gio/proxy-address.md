@@ -18,6 +18,37 @@ import { GProxyAddress } from "@gtkx/jsx/gio";
 
 Implements `GSocketConnectable`.
 
+## Static methods
+
+Static methods are called on `Gio.ProxyAddress`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(inetaddr: Gio.InetAddress, port: number, protocol: string, destHostname: string, destPort: number, username: string | null, password: string | null): Gio.SocketAddress
+```
+
+Creates a new `GProxyAddress` for `inetaddr` with `protocol` that should
+tunnel through `dest_hostname` and `dest_port`.
+
+(Note that this method doesn't set the `GProxyAddress.uri` or
+`GProxyAddress.destinationProtocol` fields; use `g_object_new()`
+directly if you want to set those.)
+
+**Parameters**
+
+- `inetaddr`: The proxy server `GInetAddress`.
+- `port`: The proxy server port.
+- `protocol`: The proxy protocol to support, in lower case (e.g. socks, http).
+- `destHostname`: The destination hostname the proxy should tunnel to.
+- `destPort`: The destination port to tunnel to.
+- `username`: The username to authenticate to the proxy server (or `null`).
+- `password`: The password to authenticate to the proxy server (or `null`).
+
+**Returns** a new `GProxyAddress`
+
+_Available since 2.26._
+
 ## Props
 
 `ref` receives the `Gio.ProxyAddress` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

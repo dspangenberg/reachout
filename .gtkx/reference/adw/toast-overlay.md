@@ -6,8 +6,6 @@ description: "A widget showing toasts above its content."
 
 A widget showing toasts above its content.
 
-
-
 Much like `Gtk.Overlay`, `AdwToastOverlay` is a container with a single
 main child, on top of which it can display a `Toast`, overlaid.
 Toasts can be shown with `ToastOverlay.addToast()`.
@@ -53,6 +51,20 @@ import { AdwToastOverlay } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwToastOverlay**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ToastOverlay`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwToastOverlay`.
+
+**Returns** the new created `AdwToastOverlay`
 
 ## Props
 

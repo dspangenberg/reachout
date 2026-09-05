@@ -20,6 +20,226 @@ import { GTlsCertificate } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GTlsCertificate**
 
+## Static methods
+
+Static methods are called on `Gio.TlsCertificate`, imported from `@gtkx/gi/gio`.
+
+### `listNewFromFile`
+
+```ts
+listNewFromFile(file: string): Gio.TlsCertificate[]
+```
+
+Creates one or more `GTlsCertificates` from the PEM-encoded
+data in `file`. If `file` cannot be read or parsed, the function will
+return `null` and set `error`. If `file` does not contain any
+PEM-encoded certificates, this will return an empty list and not
+set `error`.
+
+**Parameters**
+
+- `file`: file containing PEM-encoded certificates to import
+
+**Returns** a
+`GList` containing `GTlsCertificate` objects.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.28._
+
+### `newFromFile`
+
+```ts
+newFromFile(file: string): Gio.TlsCertificate
+```
+
+Creates a `GTlsCertificate` from the data in `file`.
+
+As of 2.72, if the filename ends in `.p12` or `.pfx` the data is loaded by
+`g_tls_certificate_new_from_pkcs12()` otherwise it is loaded by
+`g_tls_certificate_new_from_pem()`. See those functions for
+exact details.
+
+If `file` cannot be read or parsed, the function will return `null` and
+set `error`.
+
+**Parameters**
+
+- `file`: file containing a certificate to import
+
+**Returns** the new certificate, or `null` on error
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.28._
+
+### `newFromFiles`
+
+```ts
+newFromFiles(certFile: string, keyFile: string): Gio.TlsCertificate
+```
+
+Creates a `GTlsCertificate` from the PEM-encoded data in `cert_file`
+and `key_file`. The returned certificate will be the first certificate
+found in `cert_file`. As of GLib 2.44, if `cert_file` contains more
+certificates it will try to load a certificate chain. All
+certificates will be verified in the order found (top-level
+certificate should be the last one in the file) and the
+`GTlsCertificate.issuer` property of each certificate will be set
+accordingly if the verification succeeds. If any certificate in the
+chain cannot be verified, the first certificate in the file will
+still be returned.
+
+If either file cannot be read or parsed, the function will return
+`null` and set `error`. Otherwise, this behaves like
+`g_tls_certificate_new_from_pem()`.
+
+**Parameters**
+
+- `certFile`: file containing one or more PEM-encoded certificates to import
+- `keyFile`: file containing a PEM-encoded private key to import
+
+**Returns** the new certificate, or `null` on error
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.28._
+
+### `newFromFileWithPassword`
+
+```ts
+newFromFileWithPassword(file: string, password: string): Gio.TlsCertificate
+```
+
+Creates a `GTlsCertificate` from the data in `file`.
+
+If `file` cannot be read or parsed, the function will return `null` and
+set `error`.
+
+Any unknown file types will error with `G_IO_ERROR_NOT_SUPPORTED`.
+Currently only `.p12` and `.pfx` files are supported.
+See `g_tls_certificate_new_from_pkcs12()` for more details.
+
+**Parameters**
+
+- `file`: file containing a certificate to import
+- `password`: password for PKCS `12` files
+
+**Returns** the new certificate, or `null` on error
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.72._
+
+### `newFromPem`
+
+```ts
+newFromPem(data: string, length: number): Gio.TlsCertificate
+```
+
+Creates a `GTlsCertificate` from the PEM-encoded data in `data`. If
+`data` includes both a certificate and a private key, then the
+returned certificate will include the private key data as well. (See
+the `GTlsCertificate.privateKeyPem` property for information about
+supported formats.)
+
+The returned certificate will be the first certificate found in
+`data`. As of GLib 2.44, if `data` contains more certificates it will
+try to load a certificate chain. All certificates will be verified in
+the order found (top-level certificate should be the last one in the
+file) and the `GTlsCertificate.issuer` property of each certificate
+will be set accordingly if the verification succeeds. If any
+certificate in the chain cannot be verified, the first certificate in
+the file will still be returned.
+
+**Parameters**
+
+- `data`: PEM-encoded certificate data
+- `length`: the length of `data`, or -1 if it's 0-terminated.
+
+**Returns** the new certificate, or `null` if `data` is invalid
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.28._
+
+### `newFromPkcs11Uris`
+
+```ts
+newFromPkcs11Uris(pkcs11Uri: string, privateKeyPkcs11Uri: string | null): Gio.TlsCertificate
+```
+
+Creates a `GTlsCertificate` from a
+[PKCS \`11`](https://docs.oasis-open.org/pkcs11/pkcs11-base/v3.0/os/pkcs11-base-v3.0-os.html) URI.
+
+An example `pkcs11_uri` would be `pkcs11:model=Model;manufacturer=Manufacture;serial=1;token=My%20Client%20Certificate;id=%01`
+
+Where the token’s layout is:
+
+```
+Object 0:
+  URL: pkcs11:model=Model;manufacturer=Manufacture;serial=1;token=My%20Client%20Certificate;id=%01;object=private%20key;type=private
+  Type: Private key (RSA-2048)
+  ID: 01
+
+Object 1:
+  URL: pkcs11:model=Model;manufacturer=Manufacture;serial=1;token=My%20Client%20Certificate;id=%01;object=Certificate%20for%20Authentication;type=cert
+  Type: X.509 Certificate (RSA-2048)
+  ID: 01
+```
+
+In this case the certificate and private key would both be detected and used as expected.
+`pkcs_uri` may also just reference an X.509 certificate object and then optionally
+`private_key_pkcs11_uri` allows using a private key exposed under a different URI.
+
+Note that the private key is not accessed until usage and may fail or require a PIN later.
+
+**Parameters**
+
+- `pkcs11Uri`: A PKCS \`11` URI
+- `privateKeyPkcs11Uri`: A PKCS \`11` URI
+
+**Returns** the new certificate, or `null` on error
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.68._
+
+### `newFromPkcs12`
+
+```ts
+newFromPkcs12(data: Uint8Array | number[], password: string | null): Gio.TlsCertificate
+```
+
+Creates a `GTlsCertificate` from the data in `data`. It must contain
+a certificate and matching private key.
+
+If extra certificates are included they will be verified as a chain
+and the `GTlsCertificate.issuer` property will be set.
+All other data will be ignored.
+
+You can pass as single password for all of the data which will be
+used both for the PKCS `12` container as well as encrypted
+private keys. If decryption fails it will error with
+`G_TLS_ERROR_BAD_CERTIFICATE_PASSWORD`.
+
+This constructor requires support in the current `GTlsBackend`.
+If support is missing it will error with
+`G_IO_ERROR_NOT_SUPPORTED`.
+
+Other parsing failures will error with `G_TLS_ERROR_BAD_CERTIFICATE`.
+
+**Parameters**
+
+- `data`: DER-encoded PKCS `12` format certificate data
+- `password`: optional password for encrypted certificate data
+
+**Returns** the new certificate, or `null` if `data` is invalid
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.72._
+
 ## Props
 
 `ref` receives the `Gio.TlsCertificate` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

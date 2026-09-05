@@ -47,6 +47,107 @@ import { GdkCursor } from "@gtkx/jsx/gdk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GdkCursor**
 
+## Static methods
+
+Static methods are called on `Gdk.Cursor`, imported from `@gtkx/gi/gdk`.
+
+### `newFromCallback`
+
+```ts
+newFromCallback(callback: Gdk.CursorGetTextureCallback, fallback: Gdk.Cursor | null): Gdk.Cursor | null
+```
+
+Creates a new callback-based cursor object.
+
+Cursors of this kind produce textures for the cursor
+image on demand, when the `callback` is called.
+
+**Parameters**
+
+- `callback`: the `GdkCursorGetTextureCallback`
+- `fallback`: the `GdkCursor` to fall back to when this one cannot be supported
+
+**Returns** a new `GdkCursor`
+
+_Available since 4.16._
+
+### `newFromName`
+
+```ts
+newFromName(name: string, fallback: Gdk.Cursor | null): Gdk.Cursor | null
+```
+
+Creates a new cursor by looking up `name` in the current cursor
+theme.
+
+A recommended set of cursor names that will work across different
+platforms can be found in the CSS specification:
+
+| | | |
+| --- | --- | --- |
+|                               | "none"          | No cursor |
+| ![](default_cursor.png)       | "default"       | The default cursor |
+| ![](help_cursor.png)          | "help"          | Help is available |
+| ![](pointer_cursor.png)       | "pointer"       | Indicates a link or interactive element |
+| ![](context_menu_cursor.png)  |"context-menu"   | A context menu is available |
+| ![](progress_cursor.png)      | "progress"      | Progress indicator |
+| ![](wait_cursor.png)          | "wait"          | Busy cursor |
+| ![](cell_cursor.png)          | "cell"          | Cell(s) may be selected |
+| ![](crosshair_cursor.png)     | "crosshair"     | Simple crosshair |
+| ![](text_cursor.png)          | "text"          | Text may be selected |
+| ![](vertical_text_cursor.png) | "vertical-text" | Vertical text may be selected |
+| ![](alias_cursor.png)         | "alias"         | DND: Something will be linked |
+| ![](copy_cursor.png)          | "copy"          | DND: Something will be copied |
+| ![](move_cursor.png)          | "move"          | DND: Something will be moved |
+| ![](dnd_ask_cursor.png)       | "dnd-ask"       | DND: User can choose action to be carried out |
+| ![](no_drop_cursor.png)       | "no-drop"       | DND: Can't drop here |
+| ![](not_allowed_cursor.png)   | "not-allowed"   | DND: Action will not be carried out |
+| ![](grab_cursor.png)          | "grab"          | DND: Something can be grabbed |
+| ![](grabbing_cursor.png)      | "grabbing"      | DND: Something is being grabbed |
+| ![](n_resize_cursor.png)      | "n-resize"      | Resizing: Move north border |
+| ![](e_resize_cursor.png)      | "e-resize"      | Resizing: Move east border |
+| ![](s_resize_cursor.png)      | "s-resize"      | Resizing: Move south border |
+| ![](w_resize_cursor.png)      | "w-resize"      | Resizing: Move west border |
+| ![](ne_resize_cursor.png)     | "ne-resize"     | Resizing: Move north-east corner |
+| ![](nw_resize_cursor.png)     | "nw-resize"     | Resizing: Move north-west corner |
+| ![](sw_resize_cursor.png)     | "sw-resize"     | Resizing: Move south-west corner |
+| ![](se_resize_cursor.png)     | "se-resize"     | Resizing: Move south-east corner |
+| ![](col_resize_cursor.png)    | "col-resize"    | Resizing: Move an item or border horizontally |
+| ![](row_resize_cursor.png)    | "row-resize"    | Resizing: Move an item or border vertically |
+| ![](ew_resize_cursor.png)     | "ew-resize"     | Moving: Something can be moved horizontally |
+| ![](ns_resize_cursor.png)     | "ns-resize"     | Moving: Something can be moved vertically |
+| ![](nesw_resize_cursor.png)   | "nesw-resize"   | Moving: Something can be moved diagonally, north-east to south-west |
+| ![](nwse_resize_cursor.png)   | "nwse-resize"   | Moving: something can be moved diagonally, north-west to south-east |
+| ![](all_resize_cursor.png)    | "all-resize"    | Moving: Something can be moved in any direction |
+| ![](all_scroll_cursor.png)    | "all-scroll"    | Can scroll in any direction |
+| ![](zoom_in_cursor.png)       | "zoom-in"       | Zoom in |
+| ![](zoom_out_cursor.png)      | "zoom-out"      | Zoom out |
+
+**Parameters**
+
+- `name`: the name of the cursor
+- `fallback`: `null` or the `GdkCursor` to fall back to when this one cannot be supported
+
+**Returns** a new `GdkCursor`, or `null` if there is no
+  cursor with the given name
+
+### `newFromTexture`
+
+```ts
+newFromTexture(texture: Gdk.Texture, hotspotX: number, hotspotY: number, fallback: Gdk.Cursor | null): Gdk.Cursor
+```
+
+Creates a new cursor from a `GdkTexture`.
+
+**Parameters**
+
+- `texture`: the texture providing the pixel data
+- `hotspotX`: the horizontal offset of the “hotspot” of the cursor
+- `hotspotY`: the vertical offset of the “hotspot” of the cursor
+- `fallback`: the `GdkCursor` to fall back to when this one cannot be supported
+
+**Returns** a new `GdkCursor`
+
 ## Props
 
 `ref` receives the `Gdk.Cursor` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

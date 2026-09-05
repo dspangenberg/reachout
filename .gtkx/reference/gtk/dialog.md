@@ -7,8 +7,6 @@ description: "Dialogs are a convenient way to prompt the user for a small amount
 Dialogs are a convenient way to prompt the user for a small amount
 of input.
 
-
-
 Typical uses are to display a message, ask a question, or anything else
 that does not require extensive effort on the user’s part.
 
@@ -137,6 +135,26 @@ import { GtkDialog } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → **GtkDialog**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.Dialog`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new dialog box.
+
+Widgets should not be packed into the `GtkWindow`
+directly, but into the `content_area` and `action_area`,
+as described above.
+
+**Returns** the new dialog as a `GtkWidget`
+
+> **Deprecated since 4.10.** Use `Gtk.Window` instead
 
 ## Props
 

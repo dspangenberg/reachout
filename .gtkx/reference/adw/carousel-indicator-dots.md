@@ -6,8 +6,6 @@ description: "A dots indicator for Carousel."
 
 A dots indicator for `Carousel`.
 
-
-
 The `AdwCarouselIndicatorDots` widget shows a set of dots for each page of a
 given `Carousel`. The dot representing the carousel's active page is
 larger and more opaque than the others, the transition to the active and
@@ -29,6 +27,20 @@ import { AdwCarouselIndicatorDots } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwCarouselIndicatorDots**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.CarouselIndicatorDots`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwCarouselIndicatorDots`.
+
+**Returns** the newly created `AdwCarouselIndicatorDots`
 
 ## Props
 

@@ -28,6 +28,22 @@ import { GSocketClient } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GSocketClient**
 
+## Static methods
+
+Static methods are called on `Gio.SocketClient`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.SocketClient
+```
+
+Creates a new `GSocketClient` with the default options.
+
+**Returns** a `GSocketClient`.
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.SocketClient` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -585,7 +601,7 @@ Gets the local address of the socket client.
 
 See `g_socket_client_set_local_address()` for details.
 
-**Returns** a `GSocketAddress` or `null`. Do not free.
+**Returns** a `GSocketAddress` or `null`.
 
 _Available since 2.22._
 

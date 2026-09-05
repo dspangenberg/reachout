@@ -28,6 +28,41 @@ import { GBufferedInputStream } from "@gtkx/jsx/gio";
 
 Implements `GSeekable`.
 
+## Static methods
+
+Static methods are called on `Gio.BufferedInputStream`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(baseStream: Gio.InputStream): Gio.InputStream
+```
+
+Creates a new `Gio.InputStream` from the given `base_stream`, with
+a buffer set to the default size (4 kilobytes).
+
+**Parameters**
+
+- `baseStream`: a `Gio.InputStream`
+
+**Returns** a `Gio.InputStream` for the given `base_stream`.
+
+### `newSized`
+
+```ts
+newSized(baseStream: Gio.InputStream, size: number): Gio.InputStream
+```
+
+Creates a new `Gio.BufferedInputStream` from the given `base_stream`,
+with a buffer set to `size`.
+
+**Parameters**
+
+- `baseStream`: a `Gio.InputStream`
+- `size`: a `gsize`
+
+**Returns** a `Gio.InputStream`.
+
 ## Props
 
 `ref` receives the `Gio.BufferedInputStream` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -79,6 +79,27 @@ import { GtkColumnView } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkScrollable`.
 
+## Static methods
+
+Static methods are called on `Gtk.ColumnView`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(model: Gtk.SelectionModel | null): Gtk.Widget
+```
+
+Creates a new `GtkColumnView`.
+
+You most likely want to call `Gtk.ColumnView.appendColumn()`
+to add columns next.
+
+**Parameters**
+
+- `model`: the list model to use
+
+**Returns** a new `GtkColumnView`
+
 ## Props
 
 `ref` receives the `Gtk.ColumnView` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -88,6 +109,8 @@ Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkScrollabl
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [GtkColumnViewColumn](.gtkx/reference/gtk/column-view-column.md) or a subtype.
 
 ### `columns`
 

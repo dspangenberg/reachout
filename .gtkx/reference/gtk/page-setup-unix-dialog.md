@@ -7,8 +7,6 @@ description: "Presents a page setup dialog for platforms which don’t provide a
 Presents a page setup dialog for platforms which don’t provide
 a native page setup dialog, like Unix.
 
-
-
 It can be used very much like any other GTK dialog, at the
 cost of the portability offered by the high-level printing
 API in `Gtk.PrintOperation`.
@@ -27,6 +25,25 @@ import { GtkPageSetupUnixDialog } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → [GtkDialog](.gtkx/reference/gtk/dialog.md) → **GtkPageSetupUnixDialog**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.PageSetupUnixDialog`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(title: string | null, parent: Gtk.Window | null): Gtk.Widget
+```
+
+Creates a new page setup dialog.
+
+**Parameters**
+
+- `title`: the title of the dialog
+- `parent`: transient parent of the dialog
+
+**Returns** the new `GtkPageSetupUnixDialog`
 
 ## Props
 

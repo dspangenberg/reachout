@@ -29,7 +29,7 @@ application code.
 To close a `GFileEnumerator`, use `Gio.FileEnumerator.close()`, or
 its asynchronous version, `Gio.FileEnumerator.closeAsync()`. Once
 a `GFileEnumerator` is closed, no further actions may be performed
-on it, and it should be freed with `GObject.Object.unref()`.
+on it.
 
 ```tsx
 import { GFileEnumerator } from "@gtkx/jsx/gio";
@@ -198,7 +198,7 @@ In contrast, with this function, a `false` return from
 
 Another crucial difference is that the references for `out_info` and
 `out_child` are owned by `direnum` (they are cached as hidden
-properties).  You must not unref them in your own code.  This makes
+properties).  This makes
 memory management significantly easier for C code in combination
 with loops.
 
@@ -206,25 +206,6 @@ Finally, this function optionally allows retrieving a `GFile` as
 well.
 
 You must specify at least one of `out_info` or `out_child`.
-
-The code pattern for correctly using `g_file_enumerator_iterate()` from C
-is:
-
-```
-direnum = g_file_enumerate_children (file, ...);
-while (TRUE)
-  {
-    GFileInfo *info;
-    if (!g_file_enumerator_iterate (direnum, &info, NULL, cancellable, error))
-      goto out;
-    if (!info)
-      break;
-    ... do stuff with "info"; do not unref it! ...
-  }
-
-out:
-  g_object_unref (direnum); // Note: frees the last @info
-```
 
 **Parameters**
 
@@ -262,8 +243,7 @@ be unset.
 - `cancellable`: optional `GCancellable` object, `null` to ignore.
 
 **Returns** A `GFileInfo` or `null` on error
-   or end of enumerator.  Free the returned object with
-   `g_object_unref()` when no longer needed.
+   or end of enumerator.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -344,9 +324,7 @@ priority is `G_PRIORITY_DEFAULT`.
 - `ioPriority`: the [I/O priority](iface.AsyncResult.html#io-priority) of the request
 - `cancellable`: optional `GCancellable` object, `null` to ignore.
 
-**Returns** a `GList` of `GFileInfos`. You must free the list with
-    `g_list_free()` and unref the infos with `g_object_unref()` when you're
-    done with them.
+**Returns** a `GList` of `GFileInfos`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -362,9 +340,7 @@ Finishes the asynchronous operation started with `g_file_enumerator_next_files_a
 
 - `result`: a `GAsyncResult`.
 
-**Returns** a `GList` of `GFileInfos`. You must free the list with
-    `g_list_free()` and unref the infos with `g_object_unref()` when you're
-    done with them.
+**Returns** a `GList` of `GFileInfos`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 

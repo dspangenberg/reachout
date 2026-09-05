@@ -36,6 +36,22 @@ import { GtkTextTagTable } from "@gtkx/jsx/gtk";
 
 Implements `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Gtk.TextTagTable`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.TextTagTable
+```
+
+Creates a new `GtkTextTagTable`.
+
+The table contains no tags by default.
+
+**Returns** a new `GtkTextTagTable`
+
 ## Props
 
 `ref` receives the `Gtk.TextTagTable` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

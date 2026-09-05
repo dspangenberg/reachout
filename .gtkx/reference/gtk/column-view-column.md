@@ -25,6 +25,35 @@ import { GtkColumnViewColumn } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkColumnViewColumn**
 
+## Static methods
+
+Static methods are called on `Gtk.ColumnViewColumn`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(title: string | null, factory: Gtk.ListItemFactory | null): Gtk.ColumnViewColumn
+```
+
+Creates a new `GtkColumnViewColumn` that uses the given `factory` for
+mapping items to widgets.
+
+You most likely want to call `Gtk.ColumnView.appendColumn()` next.
+
+The function takes ownership of the argument, so you can write code like:
+
+```c
+column = gtk_column_view_column_new (_("Name"),
+  gtk_builder_list_item_factory_new_from_resource ("/name.ui"));
+```
+
+**Parameters**
+
+- `title`: Title to use for this column
+- `factory`: The factory to populate items with
+
+**Returns** a new `GtkColumnViewColumn` using the given `factory`
+
 ## Props
 
 `ref` receives the `Gtk.ColumnViewColumn` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

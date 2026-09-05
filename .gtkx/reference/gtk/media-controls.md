@@ -6,8 +6,6 @@ description: "Shows controls for video playback."
 
 Shows controls for video playback.
 
-
-
 Usually, `GtkMediaControls` is used as part of `Gtk.Video`.
 
 ```tsx
@@ -19,6 +17,24 @@ import { GtkMediaControls } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkMediaControls**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.MediaControls`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(stream: Gtk.MediaStream | null): Gtk.Widget
+```
+
+Creates a new `GtkMediaControls` managing the `stream` passed to it.
+
+**Parameters**
+
+- `stream`: a `GtkMediaStream` to manage
+
+**Returns** a new `GtkMediaControls`
 
 ## Props
 

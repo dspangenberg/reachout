@@ -6,8 +6,6 @@ description: "A dialog for choosing a color."
 
 A dialog for choosing a color.
 
-
-
 `GtkColorChooserDialog` implements the `Gtk.ColorChooser` interface
 and does not provide much API of its own.
 
@@ -35,6 +33,27 @@ import { GtkColorChooserDialog } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → [GtkDialog](.gtkx/reference/gtk/dialog.md) → **GtkColorChooserDialog**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkColorChooser`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.ColorChooserDialog`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(title: string | null, parent: Gtk.Window | null): Gtk.Widget
+```
+
+Creates a new `GtkColorChooserDialog`.
+
+**Parameters**
+
+- `title`: Title of the dialog
+- `parent`: Transient parent of the dialog
+
+**Returns** a new `GtkColorChooserDialog`
+
+> **Deprecated since 4.10.** Use `Gtk.ColorDialog` instead
 
 ## Props
 

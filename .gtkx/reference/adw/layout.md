@@ -18,6 +18,26 @@ import { AdwLayout } from "@gtkx/jsx/adw";
 
 Implements `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Adw.Layout`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(content: Gtk.Widget): Adw.Layout
+```
+
+Creates a new `AdwLayout` that contains `content`.
+
+**Parameters**
+
+- `content`: the content widget to use
+
+**Returns** a new `AdwLayout`
+
+_Available since 1.6._
+
 ## Props
 
 `ref` receives the `Adw.Layout` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

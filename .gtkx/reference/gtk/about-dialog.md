@@ -13,8 +13,6 @@ documenters, translators and artists who have worked on the program.
 An about dialog is typically opened when the user selects the `About`
 option from the `Help` menu. All parts of the dialog are optional.
 
-
-
 About dialogs often contain links and email addresses. `GtkAboutDialog`
 displays these as clickable links. By default, it calls `Gtk.FileLauncher.launch()`
 when a user clicks one. The behaviour can be overridden with the
@@ -66,6 +64,20 @@ import { GtkAboutDialog } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → **GtkAboutDialog**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.AboutDialog`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkAboutDialog`.
+
+**Returns** a newly created `GtkAboutDialog`
 
 ## Props
 

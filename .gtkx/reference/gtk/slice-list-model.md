@@ -22,6 +22,29 @@ import { GtkSliceListModel } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`, `GtkSectionModel`.
 
+## Static methods
+
+Static methods are called on `Gtk.SliceListModel`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(model: Gio.ListModel | null, offset: number, size: number): Gtk.SliceListModel
+```
+
+Creates a new slice model.
+
+It presents the slice from `offset` to offset + `size`
+of the given `model`.
+
+**Parameters**
+
+- `model`: The model to use
+- `offset`: the offset of the slice
+- `size`: maximum size of the slice
+
+**Returns** A new `GtkSliceListModel`
+
 ## Props
 
 `ref` receives the `Gtk.SliceListModel` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

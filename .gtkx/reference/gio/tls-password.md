@@ -17,6 +17,25 @@ import { GTlsPassword } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GTlsPassword**
 
+## Static methods
+
+Static methods are called on `Gio.TlsPassword`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(flags: Gio.TlsPasswordFlags, description: string): Gio.TlsPassword
+```
+
+Create a new `GTlsPassword` object.
+
+**Parameters**
+
+- `flags`: the password flags
+- `description`: description of what the password is for
+
+**Returns** The newly allocated password object
+
 ## Props
 
 `ref` receives the `Gio.TlsPassword` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

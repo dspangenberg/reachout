@@ -21,6 +21,38 @@ import { PangoCoverage } from "@gtkx/jsx/pango";
 
 [GObject](.gtkx/reference/gobject/object.md) → **PangoCoverage**
 
+## Static methods
+
+Static methods are called on `Pango.Coverage`, imported from `@gtkx/gi/pango`.
+
+### `fromBytes`
+
+```ts
+fromBytes(bytes: Uint8Array | number[]): Pango.Coverage | null
+```
+
+Convert data generated from `Pango.Coverage.toBytes()`
+back to a `PangoCoverage`.
+
+**Parameters**
+
+- `bytes`: binary data representing a `PangoCoverage`
+
+**Returns** a newly allocated `PangoCoverage`
+
+> **Deprecated since 1.44.** This returns `null`
+
+### `new`
+
+```ts
+new(): Pango.Coverage
+```
+
+Create a new `PangoCoverage`
+
+**Returns** the newly allocated `PangoCoverage`, initialized
+  to `PANGO_COVERAGE_NONE` with a reference count of one.
+
 ## Props
 
 `ref` receives the `Pango.Coverage` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -38,8 +70,7 @@ copy(): Pango.Coverage
 Copy an existing `PangoCoverage`.
 
 **Returns** the newly allocated `PangoCoverage`,
-  with a reference count of one, which should be freed with
-  `Pango.Coverage.unref()`.
+  with a reference count of one.
 
 ### `get`
 
@@ -92,6 +123,6 @@ toBytes(): Uint8Array
 
 Convert a `PangoCoverage` structure into a flat binary format.
 
-**Returns** location to store result (must be freed with `g_free()`)
+**Returns** location to store result
 
 > **Deprecated since 1.44.** This returns `null`

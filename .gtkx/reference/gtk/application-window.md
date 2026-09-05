@@ -84,6 +84,24 @@ import { GtkApplicationWindow } from "@gtkx/jsx/gtk";
 
 Implements `GActionGroup`, `GActionMap`, `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
 
+## Static methods
+
+Static methods are called on `Gtk.ApplicationWindow`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(application: Gtk.Application): Gtk.Widget
+```
+
+Creates a new `GtkApplicationWindow`.
+
+**Parameters**
+
+- `application`: an application
+
+**Returns** a newly created `GtkApplicationWindow`
+
 ## Props
 
 `ref` receives the `Gtk.ApplicationWindow` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

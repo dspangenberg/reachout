@@ -26,6 +26,22 @@ import { GtkPrintDialog } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkPrintDialog**
 
+## Static methods
+
+Static methods are called on `Gtk.PrintDialog`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.PrintDialog
+```
+
+Creates a new `GtkPrintDialog` object.
+
+**Returns** the new `GtkPrintDialog`
+
+_Available since 4.14._
+
 ## Props
 
 `ref` receives the `Gtk.PrintDialog` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -225,8 +241,7 @@ written to the returned output stream. Otherwise, `NULL` is returned.
 
 The overall results of the print operation will be returned in the
 `Gio.OutputStream.close()` call, so if you are interested in the
-results, you need to explicitly close the output stream (it will be
-closed automatically if you just unref it). Be aware that the close
+results. Be aware that the close
 call may not be instant as it operation will for the printer to finish
 printing.
 

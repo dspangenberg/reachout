@@ -6,8 +6,6 @@ description: "Used by text widgets to let users insert Emoji characters."
 
 Used by text widgets to let users insert Emoji characters.
 
-
-
 `GtkEmojiChooser` emits the `Gtk.EmojiChooser.emoji-picked`
 signal when an Emoji is selected.
 
@@ -54,6 +52,20 @@ import { GtkEmojiChooser } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkPopover](.gtkx/reference/gtk/popover.md) → **GtkEmojiChooser**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.EmojiChooser`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkEmojiChooser`.
+
+**Returns** a new `GtkEmojiChooser`
 
 ## Props
 

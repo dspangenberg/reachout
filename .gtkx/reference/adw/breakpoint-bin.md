@@ -6,8 +6,6 @@ description: "A widget that changes layout based on available size."
 
 A widget that changes layout based on available size.
 
-
-
 `AdwBreakpointBin` provides a way to use breakpoints without `Window`,
 `ApplicationWindow` or `Dialog`. It can be useful for limiting
 breakpoints to a single page and similar purposes. Most applications
@@ -124,6 +122,22 @@ import { AdwBreakpointBin } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwBreakpointBin**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.BreakpointBin`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwBreakpointBin`.
+
+**Returns** the newly created `AdwBreakpointBin`
+
+_Available since 1.4._
 
 ## Props
 

@@ -119,8 +119,7 @@ getTitle(): string | null
 Gets the title of the `GtkNativeDialog`.
 
 **Returns** the title of the dialog, or `null` if none has
-   been set explicitly. The returned string is owned by the widget
-   and must not be modified or freed.
+   been set explicitly.
 
 ### `getTransientFor`
 

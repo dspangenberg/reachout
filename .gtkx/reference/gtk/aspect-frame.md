@@ -29,6 +29,27 @@ import { GtkAspectFrame } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.AspectFrame`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(xalign: number, yalign: number, ratio: number, obeyChild: boolean): Gtk.Widget
+```
+
+Create a new `GtkAspectFrame`.
+
+**Parameters**
+
+- `xalign`: Horizontal alignment of the child within the parent. Ranges from 0.0 (left aligned) to 1.0 (right aligned)
+- `yalign`: Vertical alignment of the child within the parent. Ranges from 0.0 (top aligned) to 1.0 (bottom aligned)
+- `ratio`: The desired aspect ratio.
+- `obeyChild`: If `true`, `ratio` is ignored, and the aspect ratio is taken from the requistion of the child.
+
+**Returns** the new `GtkAspectFrame`.
+
 ## Props
 
 `ref` receives the `Gtk.AspectFrame` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -17,6 +17,151 @@ import { GMenuItem } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GMenuItem**
 
+## Static methods
+
+Static methods are called on `Gio.MenuItem`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(label: string | null, detailedAction: string | null): Gio.MenuItem
+```
+
+Creates a new `GMenuItem`.
+
+If `label` is non-`null` it is used to set the "label" attribute of the
+new item.
+
+If `detailed_action` is non-`null` it is used to set the "action" and
+possibly the "target" attribute of the new item.  See
+`g_menu_item_set_detailed_action()` for more information.
+
+**Parameters**
+
+- `label`: the section label, or `null`
+- `detailedAction`: the detailed action string, or `null`
+
+**Returns** a new `GMenuItem`
+
+_Available since 2.32._
+
+### `newFromModel`
+
+```ts
+newFromModel(model: Gio.MenuModel, itemIndex: number): Gio.MenuItem
+```
+
+Creates a `GMenuItem` as an exact copy of an existing menu item in a
+`GMenuModel`.
+
+`item_index` must be valid (ie: be sure to call
+`g_menu_model_get_n_items()` first).
+
+**Parameters**
+
+- `model`: a `GMenuModel`
+- `itemIndex`: the index of an item in `model`
+
+**Returns** a new `GMenuItem`.
+
+_Available since 2.34._
+
+### `newSection`
+
+```ts
+newSection(label: string | null, section: Gio.MenuModel): Gio.MenuItem
+```
+
+Creates a new `GMenuItem` representing a section.
+
+This is a convenience API around `g_menu_item_new()` and
+`g_menu_item_set_section()`.
+
+The effect of having one menu appear as a section of another is
+exactly as it sounds: the items from `section` become a direct part of
+the menu that `menu_item` is added to.
+
+Visual separation is typically displayed between two non-empty
+sections.  If `label` is non-`null` then it will be incorporated into
+this visual indication.  This allows for labeled subsections of a
+menu.
+
+As a simple example, consider a typical "Edit" menu from a simple
+program.  It probably contains an "Undo" and "Redo" item, followed by
+a separator, followed by "Cut", "Copy" and "Paste".
+
+This would be accomplished by creating three `GMenu` instances.  The
+first would be populated with the "Undo" and "Redo" items, and the
+second with the "Cut", "Copy" and "Paste" items.  The first and
+second menus would then be added as submenus of the third.  In XML
+format, this would look something like the following:
+```
+<menu id='edit-menu'>
+  <section>
+    <item label='Undo'/>
+    <item label='Redo'/>
+  </section>
+  <section>
+    <item label='Cut'/>
+    <item label='Copy'/>
+    <item label='Paste'/>
+  </section>
+</menu>
+```
+
+The following example is exactly equivalent.  It is more illustrative
+of the exact relationship between the menus and items (keeping in
+mind that the 'link' element defines a new menu that is linked to the
+containing one).  The style of the second example is more verbose and
+difficult to read (and therefore not recommended except for the
+purpose of understanding what is really going on).
+```
+<menu id='edit-menu'>
+  <item>
+    <link name='section'>
+      <item label='Undo'/>
+      <item label='Redo'/>
+    </link>
+  </item>
+  <item>
+    <link name='section'>
+      <item label='Cut'/>
+      <item label='Copy'/>
+      <item label='Paste'/>
+    </link>
+  </item>
+</menu>
+```
+
+**Parameters**
+
+- `label`: the section label, or `null`
+- `section`: a `GMenuModel` with the items of the section
+
+**Returns** a new `GMenuItem`
+
+_Available since 2.32._
+
+### `newSubmenu`
+
+```ts
+newSubmenu(label: string | null, submenu: Gio.MenuModel): Gio.MenuItem
+```
+
+Creates a new `GMenuItem` representing a submenu.
+
+This is a convenience API around `g_menu_item_new()` and
+`g_menu_item_set_submenu()`.
+
+**Parameters**
+
+- `label`: the section label, or `null`
+- `submenu`: a `GMenuModel` with the items of the submenu
+
+**Returns** a new `GMenuItem`
+
+_Available since 2.32._
+
 ## Props
 
 `ref` receives the `Gio.MenuItem` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

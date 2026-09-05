@@ -19,6 +19,25 @@ import { GtkMultiSorter } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`, `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Gtk.MultiSorter`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.MultiSorter
+```
+
+Creates a new multi sorter.
+
+This sorter compares items by trying each of the sorters
+in turn, until one returns non-zero. In particular, if
+no sorter has been added to it, it will always compare
+items as equal.
+
+**Returns** a new `GtkMultiSorter`
+
 ## Props
 
 `ref` receives the `Gtk.MultiSorter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

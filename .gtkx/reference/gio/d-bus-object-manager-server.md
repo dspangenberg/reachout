@@ -38,6 +38,32 @@ import { GDBusObjectManagerServer } from "@gtkx/jsx/gio";
 
 Implements `GDBusObjectManager`.
 
+## Static methods
+
+Static methods are called on `Gio.DBusObjectManagerServer`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(objectPath: string): Gio.DBusObjectManagerServer
+```
+
+Creates a new `GDBusObjectManagerServer` object.
+
+The returned server isn't yet exported on any connection. To do so,
+use `g_dbus_object_manager_server_set_connection()`. Normally you
+want to export all of your objects before doing so to avoid
+[InterfacesAdded](http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-objectmanager)
+signals being emitted.
+
+**Parameters**
+
+- `objectPath`: The object path to export the manager object at.
+
+**Returns** A `GDBusObjectManagerServer` object.
+
+_Available since 2.30._
+
 ## Props
 
 `ref` receives the `Gio.DBusObjectManagerServer` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -189,8 +215,7 @@ getConnection(): Gio.DBusConnection | null
 Gets the `GDBusConnection` used by `manager`.
 
 **Returns** A `GDBusConnection` object or `null` if
-  `manager` isn't exported on a connection. The returned object should
-  be freed with `g_object_unref()`.
+  `manager` isn't exported on a connection.
 
 _Available since 2.30._
 

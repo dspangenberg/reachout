@@ -29,6 +29,29 @@ import { AdwTimedAnimation } from "@gtkx/jsx/adw";
 
 [GObject](.gtkx/reference/gobject/object.md) → [AdwAnimation](.gtkx/reference/adw/animation.md) → **AdwTimedAnimation**
 
+## Static methods
+
+Static methods are called on `Adw.TimedAnimation`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(widget: Gtk.Widget, from: number, to: number, duration: number, target: Adw.AnimationTarget): Adw.Animation
+```
+
+Creates a new `AdwTimedAnimation` on `widget` to animate `target` from `from`
+to `to`.
+
+**Parameters**
+
+- `widget`: a widget to create animation on
+- `from`: a value to animate from
+- `to`: a value to animate to
+- `duration`: a duration for the animation
+- `target`: a target value to animate
+
+**Returns** the newly created animation
+
 ## Props
 
 `ref` receives the `Adw.TimedAnimation` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

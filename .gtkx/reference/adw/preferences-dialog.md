@@ -6,8 +6,6 @@ description: "A dialog showing application's preferences."
 
 A dialog showing application's preferences.
 
-
-
 The `AdwPreferencesDialog` widget presents an application's preferences
 gathered into pages and groups. The preferences are searchable by the user.
 
@@ -34,6 +32,22 @@ import { AdwPreferencesDialog } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkShortcutManager`.
 
+## Static methods
+
+Static methods are called on `Adw.PreferencesDialog`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Adw.Dialog
+```
+
+Creates a new `AdwPreferencesDialog`.
+
+**Returns** the newly created `AdwPreferencesDialog`
+
+_Available since 1.5._
+
 ## Props
 
 `ref` receives the `Adw.PreferencesDialog` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -43,6 +57,8 @@ Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkShortcutM
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [AdwPreferencesPage](.gtkx/reference/adw/preferences-page.md) or a subtype.
 
 ### `searchEnabled`
 

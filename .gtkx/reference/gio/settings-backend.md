@@ -36,6 +36,50 @@ import { GSettingsBackend } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GSettingsBackend**
 
+## Static methods
+
+Static methods are called on `Gio.SettingsBackend`, imported from `@gtkx/gi/gio`.
+
+### `flattenTree`
+
+```ts
+flattenTree(tree: GLib.Tree): [string, string[], GLib.Variant[]]
+```
+
+Calculate the longest common prefix of all keys in a tree and write
+out an array of the key names relative to that prefix and,
+optionally, the value to store at each of those keys.
+
+**Parameters**
+
+- `tree`: a `GTree` containing the changes
+
+**Returns** Tuple of:
+
+- `path`: the location to save the path
+- `keys`: the location to save the relative keys
+- `values`: the location to save the values, or `null`
+
+_Available since 2.26._
+
+### `getDefault`
+
+```ts
+getDefault(): Gio.SettingsBackend
+```
+
+Returns the default `GSettingsBackend`. It is possible to override
+the default by setting the `GSETTINGS_BACKEND` environment variable
+to the name of a settings backend.
+
+The user gets a reference to the backend.
+
+**Returns** the default `GSettingsBackend`,
+    which will be a dummy (memory) settings backend if no other settings
+    backend is available.
+
+_Available since 2.28._
+
 ## Props
 
 `ref` receives the `Gio.SettingsBackend` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

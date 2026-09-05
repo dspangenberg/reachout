@@ -7,8 +7,6 @@ description: "Arranges three children in a row, keeping the middle child centere
 Arranges three children in a row, keeping the middle child
 centered as well as possible.
 
-
-
 To add children to `GtkCenterBox`, use `Gtk.CenterBox.setStartWidget()`,
 `Gtk.CenterBox.setCenterWidget()` and
 `Gtk.CenterBox.setEndWidget()`.
@@ -49,6 +47,20 @@ import { GtkCenterBox } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkCenterBox**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.CenterBox`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkCenterBox`.
+
+**Returns** the new `GtkCenterBox`
 
 ## Props
 

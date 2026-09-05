@@ -19,6 +19,29 @@ import { GtkIconPaintable } from "@gtkx/jsx/gtk";
 
 Implements `GdkPaintable`, `GtkSymbolicPaintable`.
 
+## Static methods
+
+Static methods are called on `Gtk.IconPaintable`, imported from `@gtkx/gi/gtk`.
+
+### `newForFile`
+
+```ts
+newForFile(file: Gio.File, size: number, scale: number): Gtk.IconPaintable
+```
+
+Creates a `GtkIconPaintable` for a file with a given size and scale.
+
+The icon can then be rendered by using it as a `GdkPaintable`.
+
+**Parameters**
+
+- `file`: a `GFile`
+- `size`: desired icon size, in application pixels
+- `scale`: the desired scale
+
+**Returns** a `GtkIconPaintable` containing
+  for the icon.
+
 ## Props
 
 `ref` receives the `Gtk.IconPaintable` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -39,7 +62,7 @@ The icon name that was chosen during lookup.
 
 ### `isSymbolic`
 
-`boolean` · default `false` · instance read with `GObject.getObjectProperty` · instance write with `GObject.setObjectProperty` · deprecated since 4.20
+`boolean` · default `false` · instance read with `GObject.getProperty` · instance write with `GObject.setProperty` · deprecated since 4.20
 
 Whether the icon is symbolic or not.
 

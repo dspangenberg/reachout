@@ -6,8 +6,6 @@ description: "Surrounds its child with a decorative frame and an optional label.
 
 Surrounds its child with a decorative frame and an optional label.
 
-
-
 If present, the label is drawn inside the top edge of the frame.
 The horizontal position of the label can be controlled with
 `Gtk.Frame.setLabelAlign()`.
@@ -55,6 +53,26 @@ import { GtkFrame } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkFrame**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Frame`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(label: string | null): Gtk.Widget
+```
+
+Creates a new `GtkFrame`, with optional label `label`.
+
+If `label` is `null`, the label is omitted.
+
+**Parameters**
+
+- `label`: the text to use as the label of the frame
+
+**Returns** a new `GtkFrame` widget
 
 ## Props
 
@@ -111,7 +129,6 @@ is returned.
 
 **Returns** the text in the label, or `null` if there
    was no label widget or the label widget was not a `GtkLabel`.
-   This string is owned by GTK and must not be modified or freed.
 
 ### `getLabelAlign`
 

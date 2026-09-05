@@ -6,8 +6,6 @@ description: "A group of exclusive toggles."
 
 A group of exclusive toggles.
 
-
-
 `AdwToggleGroup` presents a set of exclusive toggles, represented as
 `Toggle` objects. Each toggle can display an icon, a label, an icon
 and a label, or a custom child.
@@ -73,16 +71,10 @@ The hidden separators use the `.hidden` style class.
 `AdwToggleGroup` can use the [`.flat`](style-classes.html#flat_1) style class
 to remove its background and make it look like a group of buttons.
 
-
-
 It can also use the [`.round`](style-classes.html#round) style class to make
 its toggles and the group itself rounded.
 
-
-
 They can also be combined with each other.
-
-
 
 ### Accessibility
 
@@ -100,6 +92,22 @@ import { AdwToggleGroup } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwToggleGroup**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.ToggleGroup`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwToggleGroup`.
+
+**Returns** the newly created `AdwToggleGroup`
+
+_Available since 1.7._
 
 ## Props
 
@@ -149,6 +157,8 @@ _Available since 1.7._
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [AdwToggle](.gtkx/reference/adw/toggle.md) or a subtype.
 
 ### `homogeneous`
 

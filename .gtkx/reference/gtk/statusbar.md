@@ -7,8 +7,6 @@ description: "A GtkStatusbar widget is usually placed along the bottom of an app
 A `GtkStatusbar` widget is usually placed along the bottom of an application's
 main `Gtk.Window`.
 
-
-
 A `GtkStatusBar` may provide a regular commentary of the application's
 status (as is usually the case in a web browser, for example), or may be
 used to simply output a message when the status changes, (when an upload
@@ -52,6 +50,22 @@ import { GtkStatusbar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkStatusbar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Statusbar`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkStatusbar` ready for messages.
+
+**Returns** the new `GtkStatusbar`
+
+> **Deprecated since 4.10.** This widget will be removed in GTK 5
 
 ## Props
 

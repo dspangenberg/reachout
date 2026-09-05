@@ -6,8 +6,6 @@ description: "An ActionRow with an embedded spin button."
 
 An `ActionRow` with an embedded spin button.
 
-
-
 Example of an `AdwSpinRow` UI definition:
 
 ```xml
@@ -48,6 +46,56 @@ import { AdwSpinRow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkListBoxRow](.gtkx/reference/gtk/list-box-row.md) → [AdwPreferencesRow](.gtkx/reference/adw/preferences-row.md) → [AdwActionRow](.gtkx/reference/adw/action-row.md) → **AdwSpinRow**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`, `GtkEditable`.
+
+## Static methods
+
+Static methods are called on `Adw.SpinRow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(adjustment: Gtk.Adjustment | null, climbRate: number, digits: number): Gtk.Widget
+```
+
+Creates a new `AdwSpinRow`.
+
+**Parameters**
+
+- `adjustment`: the adjustment that this spin row should use
+- `climbRate`: the rate the value changes when holding a button or key
+- `digits`: the number of decimal places to display
+
+**Returns** the newly created `AdwSpinRow`
+
+_Available since 1.4._
+
+### `newWithRange`
+
+```ts
+newWithRange(min: number, max: number, step: number): Gtk.Widget
+```
+
+Creates a new `AdwSpinRow` with the given properties.
+
+This is a convenience constructor that allows creation of a numeric
+`AdwSpinRow` without manually creating an adjustment. The value is initially
+set to the minimum value and a page increment of 10 * `step` is the default.
+The precision of the spin row is equivalent to the precisions of `step`.
+
+::: note
+    The way in which the precision is derived works best if `step` is a power
+    of ten. If the resulting precision is not suitable for your needs, use
+    `SpinRow.setDigits()` to correct it.
+
+**Parameters**
+
+- `min`: minimum allowable value
+- `max`: maximum allowable value
+- `step`: increment added or subtracted by spinning the widget
+
+**Returns** the new `AdwSpinRow`
+
+_Available since 1.4._
 
 ## Props
 

@@ -32,6 +32,23 @@ import { GResolver } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GResolver**
 
+## Static methods
+
+Static methods are called on `Gio.Resolver`, imported from `@gtkx/gi/gio`.
+
+### `getDefault`
+
+```ts
+getDefault(): Gio.Resolver
+```
+
+Gets the default `GResolver`. `GResolver` may use its reference count as a hint about how
+many threads it should allocate for concurrent DNS resolutions.
+
+**Returns** the default `GResolver`.
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.Resolver` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -194,9 +211,7 @@ address, it may be easier to create a `GNetworkAddress` and use its
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a non-empty `GList`
-of `GInetAddress`, or `null` on error. You
-must unref each of the addresses and free the list when you are
-done with it. (You can use `g_resolver_free_addresses()` to do this.)
+of `GInetAddress`, or `null` on error.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -268,9 +283,7 @@ results with `G_RESOLVER_NAME_LOOKUP_FLAGS_IPV4_ONLY`.
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a non-empty `GList`
-of `GInetAddress`, or `null` on error. You
-must unref each of the addresses and free the list when you are
-done with it. (You can use `g_resolver_free_addresses()` to do this.)
+of `GInetAddress`, or `null` on error.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -350,9 +363,7 @@ operation, in which case `error` (if non-`null`) will be set to
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a non-empty `GList` of
-`GVariant`, or `null` on error. You must free each of the records and the list
-when you are done with it. (You can use `g_list_free_full()` with
-`g_variant_unref()` to do this.)
+`GVariant`, or `null` on error.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -376,9 +387,7 @@ Begins asynchronously performing a DNS lookup for the given
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a non-empty `GList` of
-`GVariant`, or `null` on error. You must free each of the records and the list
-when you are done with it. (You can use `g_list_free_full()` with
-`g_variant_unref()` to do this.)
+`GVariant`, or `null` on error.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -404,9 +413,7 @@ a value from `GResolverError`. If the operation was cancelled,
 - `result`: the result passed to your `GAsyncReadyCallback`
 
 **Returns** a non-empty `GList` of
-`GVariant`, or `null` on error. You must free each of the records and the list
-when you are done with it. (You can use `g_list_free_full()` with
-`g_variant_unref()` to do this.)
+`GVariant`, or `null` on error.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -448,9 +455,7 @@ interface.
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a non-empty `GList` of
-`GSrvTarget`, or `null` on error. You must free each of the targets and the
-list when you are done with it. (You can use `g_resolver_free_targets()` to do
-this.)
+`GSrvTarget`, or `null` on error.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 

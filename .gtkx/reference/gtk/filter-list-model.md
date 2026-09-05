@@ -25,6 +25,26 @@ import { GtkFilterListModel } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`, `GtkSectionModel`.
 
+## Static methods
+
+Static methods are called on `Gtk.FilterListModel`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(model: Gio.ListModel | null, filter: Gtk.Filter | null): Gtk.FilterListModel
+```
+
+Creates a new `GtkFilterListModel` that will filter `model` using the given
+`filter`.
+
+**Parameters**
+
+- `model`: the model to sort
+- `filter`: filter
+
+**Returns** a new `GtkFilterListModel`
+
 ## Props
 
 `ref` receives the `Gtk.FilterListModel` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

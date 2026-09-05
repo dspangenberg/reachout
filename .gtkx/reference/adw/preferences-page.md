@@ -6,8 +6,6 @@ description: "A page from PreferencesDialog."
 
 A page from `PreferencesDialog`.
 
-
-
 The `AdwPreferencesPage` widget gathers preferences groups into a single page
 of a preferences window.
 
@@ -29,6 +27,20 @@ import { AdwPreferencesPage } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Adw.PreferencesPage`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwPreferencesPage`.
+
+**Returns** the newly created `AdwPreferencesPage`
+
 ## Props
 
 `ref` receives the `Adw.PreferencesPage` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -46,6 +58,8 @@ _Available since 1.7._
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [AdwPreferencesGroup](.gtkx/reference/adw/preferences-group.md) or a subtype.
 
 ### `description`
 

@@ -17,6 +17,24 @@ import { GDataOutputStream } from "@gtkx/jsx/gio";
 
 Implements `GSeekable`.
 
+## Static methods
+
+Static methods are called on `Gio.DataOutputStream`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(baseStream: Gio.OutputStream): Gio.DataOutputStream
+```
+
+Creates a new data output stream for `base_stream`.
+
+**Parameters**
+
+- `baseStream`: a `GOutputStream`.
+
+**Returns** `GDataOutputStream`.
+
 ## Props
 
 `ref` receives the `Gio.DataOutputStream` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

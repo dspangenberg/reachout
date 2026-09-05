@@ -21,6 +21,27 @@ import { GTcpWrapperConnection } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GIOStream](.gtkx/reference/gio/io-stream.md) → [GSocketConnection](.gtkx/reference/gio/socket-connection.md) → [GTcpConnection](.gtkx/reference/gio/tcp-connection.md) → **GTcpWrapperConnection**
 
+## Static methods
+
+Static methods are called on `Gio.TcpWrapperConnection`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(baseIoStream: Gio.IOStream, socket: Gio.Socket): Gio.SocketConnection
+```
+
+Wraps `base_io_stream` and `socket` together as a `GSocketConnection`.
+
+**Parameters**
+
+- `baseIoStream`: the `GIOStream` to wrap
+- `socket`: the `GSocket` associated with `base_io_stream`
+
+**Returns** the new `GSocketConnection`.
+
+_Available since 2.28._
+
 ## Props
 
 `ref` receives the `Gio.TcpWrapperConnection` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

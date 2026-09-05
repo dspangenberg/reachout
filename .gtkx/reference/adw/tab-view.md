@@ -56,6 +56,20 @@ import { AdwTabView } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Adw.TabView`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Adw.TabView
+```
+
+Creates a new `AdwTabView`.
+
+**Returns** the newly created `AdwTabView`
+
 ## Props
 
 `ref` receives the `Adw.TabView` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

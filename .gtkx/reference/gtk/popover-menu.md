@@ -6,8 +6,6 @@ description: "A subclass of GtkPopover that implements menu behavior."
 
 A subclass of `GtkPopover` that implements menu behavior.
 
-
-
 `GtkPopoverMenu` treats its children like menus and allows switching
 between them. It can open submenus as traditional, nested submenus,
 or in a more touch-friendly sliding fashion.
@@ -130,6 +128,57 @@ import { GtkPopoverMenu } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkPopover](.gtkx/reference/gtk/popover.md) → **GtkPopoverMenu**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.PopoverMenu`, imported from `@gtkx/gi/gtk`.
+
+### `newFromModel`
+
+```ts
+newFromModel(model: Gio.MenuModel | null): Gtk.Widget
+```
+
+Creates a `GtkPopoverMenu` and populates it according to `model`.
+
+The created buttons are connected to actions found in the
+`GtkApplicationWindow` to which the popover belongs - typically
+by means of being attached to a widget that is contained within
+the `GtkApplicationWindow`s widget hierarchy.
+
+Actions can also be added using `Gtk.Widget.insertActionGroup()`
+on the menus attach widget or on any of its parent widgets.
+
+This function creates menus with sliding submenus.
+See `Gtk.PopoverMenu.newFromModelFull()` for a way
+to control this.
+
+**Parameters**
+
+- `model`: a `GMenuModel`
+
+**Returns** the new `GtkPopoverMenu`
+
+### `newFromModelFull`
+
+```ts
+newFromModelFull(model: Gio.MenuModel, flags: Gtk.PopoverMenuFlags): Gtk.Widget
+```
+
+Creates a `GtkPopoverMenu` and populates it according to `model`.
+
+The created buttons are connected to actions found in the
+action groups that are accessible from the parent widget.
+This includes the `GtkApplicationWindow` to which the popover
+belongs. Actions can also be added using `Gtk.Widget.insertActionGroup()`
+on the parent widget or on any of its parent widgets.
+
+**Parameters**
+
+- `model`: a `GMenuModel`
+- `flags`: flags that affect how the menu is created
+
+**Returns** the new `GtkPopoverMenu`
 
 ## Props
 

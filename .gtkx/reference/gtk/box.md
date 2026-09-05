@@ -6,8 +6,6 @@ description: "Arranges child widgets into a single row or column."
 
 Arranges child widgets into a single row or column.
 
-
-
 Whether it is a row or column depends on the value of its
 `Gtk.Orientable.orientation` property. Within the other
 dimension, all children are allocated the same size. The
@@ -48,6 +46,25 @@ import { GtkBox } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkBox**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.Box`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(orientation: Gtk.Orientation, spacing: number): Gtk.Widget
+```
+
+Creates a new box.
+
+**Parameters**
+
+- `orientation`: the box’s orientation
+- `spacing`: the number of pixels to place between children
+
+**Returns** a new `GtkBox`.
 
 ## Props
 

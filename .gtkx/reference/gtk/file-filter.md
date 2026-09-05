@@ -61,6 +61,50 @@ import { GtkFileFilter } from "@gtkx/jsx/gtk";
 
 Implements `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Gtk.FileFilter`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.FileFilter
+```
+
+Creates a new `GtkFileFilter` with no rules added to it.
+
+Such a filter doesn’t accept any files, so is not
+particularly useful until you add rules with
+`Gtk.FileFilter.addMimeType()`,
+`Gtk.FileFilter.addPattern()`,
+`Gtk.FileFilter.addSuffix()` or
+`Gtk.FileFilter.addPixbufFormats()`.
+
+To create a filter that accepts any file, use:
+```c
+GtkFileFilter *filter = gtk_file_filter_new ();
+gtk_file_filter_add_pattern (filter, "*");
+```
+
+**Returns** a new `GtkFileFilter`
+
+### `newFromGvariant`
+
+```ts
+newFromGvariant(variant: GLib.Variant): Gtk.FileFilter
+```
+
+Deserialize a file filter from a `GVariant`.
+
+The variant must be in the format produced by
+`Gtk.FileFilter.toGvariant()`.
+
+**Parameters**
+
+- `variant`: an `a{sv}` `GVariant`
+
+**Returns** a new `GtkFileFilter` object
+
 ## Props
 
 `ref` receives the `Gtk.FileFilter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -35,6 +35,20 @@ import { GMountOperation } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GMountOperation**
 
+## Static methods
+
+Static methods are called on `Gio.MountOperation`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.MountOperation
+```
+
+Creates a new mount operation.
+
+**Returns** a `GMountOperation`.
+
 ## Props
 
 `ref` receives the `Gio.MountOperation` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

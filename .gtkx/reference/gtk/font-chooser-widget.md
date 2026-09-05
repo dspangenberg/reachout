@@ -34,6 +34,22 @@ import { GtkFontChooserWidget } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkFontChooser`.
 
+## Static methods
+
+Static methods are called on `Gtk.FontChooserWidget`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkFontChooserWidget`.
+
+**Returns** a new `GtkFontChooserWidget`
+
+> **Deprecated since 4.10.** Direct use of `GtkFontChooserWidget` is deprecated.
+
 ## Props
 
 `ref` receives the `Gtk.FontChooserWidget` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -21,13 +21,27 @@ import { GtkEventControllerFocus } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → **GtkEventControllerFocus**
 
+## Static methods
+
+Static methods are called on `Gtk.EventControllerFocus`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.EventController
+```
+
+Creates a new event controller that will handle focus events.
+
+**Returns** a new `GtkEventControllerFocus`
+
 ## Props
 
 `ref` receives the `Gtk.EventControllerFocus` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
 
 ### `containsFocus`
 
-`boolean` · default `false` · read-only, observe with `onNotifyContainsFocus` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyContainsFocus` · instance read with `GObject.getProperty`
 
 `true` if focus is contained in the controllers widget.
 
@@ -40,7 +54,7 @@ before `Gtk.EventControllerFocus.enter` or
 
 ### `isFocus`
 
-`boolean` · default `false` · read-only, observe with `onNotifyIsFocus` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyIsFocus` · instance read with `GObject.getProperty`
 
 `true` if focus is in the controllers widget itself,
 as opposed to in a descendent widget.

@@ -27,8 +27,14 @@ src/hooks/use-sort-order.ts
 src/index.tsx
 src/navigation.ts
 src/notifications.ts
+src/store/contacts.ts
+src/store/data/contacts.ts
+src/store/data/lists.ts
+src/store/data/seed.ts
+src/store/data/tasks.ts
 src/store/index.ts
 src/store/lists.ts
+src/store/migrations.ts
 src/store/schema.ts
 src/store/seed.ts
 src/store/selectors.ts

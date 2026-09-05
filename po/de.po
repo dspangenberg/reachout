@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gCRM 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-04 11:00+0200\n"
+"POT-Creation-Date: 2026-09-05 18:08+0200\n"
 "PO-Revision-Date: 2026-08-26 23:34+0200\n"
 "Last-Translator: GTKX contributors\n"
 "Language-Team: Deutsch\n"
@@ -16,10 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-#: src/components/about.tsx:10
-msgid "Contact manager"
-msgstr ""
 
 #: src/components/about.tsx:21
 msgid "GTKX Contributors"
@@ -71,8 +67,7 @@ msgstr "Tastenkürzel"
 msgid "About Reach Out"
 msgstr ""
 
-#: src/components/new-list-dialog.tsx:21 src/components/window.tsx:66
-#: src/components/window.tsx:73
+#: src/components/new-list-dialog.tsx:21 src/components/window.tsx:67
 msgid "New List"
 msgstr "Neue Liste"
 
@@ -80,11 +75,11 @@ msgstr "Neue Liste"
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: src/components/new-list-dialog.tsx:35
+#: src/components/new-list-dialog.tsx:34
 msgid "List name"
 msgstr "Name der Liste"
 
-#: src/components/new-list-dialog.tsx:47
+#: src/components/new-list-dialog.tsx:43
 msgid "Color {{color}}"
 msgstr "Farbe {{color}}"
 
@@ -149,11 +144,11 @@ msgstr "Minuten vor dem Fälligkeitsdatum einer Aufgabe"
 msgid "Search (Ctrl+F)"
 msgstr "Suchen (Strg+F)"
 
-#: src/components/section-nav.tsx:8 src/components/window.tsx:165
+#: src/components/section-nav.tsx:8 src/components/window.tsx:154
 msgid "Contacts"
 msgstr ""
 
-#: src/components/section-nav.tsx:9 src/components/window.tsx:173
+#: src/components/section-nav.tsx:9 src/components/window.tsx:162
 msgid "Projects"
 msgstr ""
 
@@ -214,11 +209,11 @@ msgstr "Datum festlegen"
 msgid "Notes"
 msgstr "Notizen"
 
-#: src/components/task-detail.tsx:134
+#: src/components/task-detail.tsx:128
 msgid "Created"
 msgstr "Erstellt"
 
-#: src/components/task-detail.tsx:140
+#: src/components/task-detail.tsx:132
 msgid "Completed"
 msgstr "Abgeschlossen"
 
@@ -266,15 +261,15 @@ msgstr "Wählen Sie in der Seitenleiste eine Liste oder eine intelligente Ansich
 msgid "Reach Out"
 msgstr ""
 
-#: src/components/window.tsx:90
+#: src/components/window.tsx:82
 msgid "New Task (Ctrl+N)"
 msgstr "Neue Aufgabe (Strg+N)"
 
-#: src/components/window.tsx:166
+#: src/components/window.tsx:155
 msgid "Contact management is coming soon"
 msgstr ""
 
-#: src/components/window.tsx:174
+#: src/components/window.tsx:163
 msgid "Project management is coming soon"
 msgstr ""
 
@@ -324,67 +319,67 @@ msgstr "Einkaufen"
 msgid "Welcome to Tasks"
 msgstr "Willkommen bei Aufgaben"
 
-#: src/store/seed.ts:43
+#: src/store/seed.ts:42
 msgid "This is your first task. Tick the checkbox to complete it, or open it to add notes and a due date."
 msgstr "Dies ist Ihre erste Aufgabe. Aktivieren Sie das Kontrollkästchen, um sie abzuschließen, oder öffnen Sie sie, um Notizen und ein Fälligkeitsdatum hinzuzufügen."
 
-#: src/store/seed.ts:49
+#: src/store/seed.ts:47
 msgid "Water the plants"
 msgstr "Pflanzen gießen"
 
-#: src/store/seed.ts:54
+#: src/store/seed.ts:52
 msgid "Prepare the weekly report"
 msgstr "Wochenbericht erstellen"
 
-#: src/store/seed.ts:55
+#: src/store/seed.ts:53
 msgid "Review pull requests"
 msgstr "Pull-Anfragen prüfen"
 
-#: src/store/seed.ts:56
+#: src/store/seed.ts:54
 msgid "Buy oat milk"
 msgstr "Hafermilch kaufen"
 
-#: src/store/seed.ts:60
+#: src/store/seed.ts:58
 msgid "Order birthday gift"
 msgstr "Geburtstagsgeschenk bestellen"
 
-#: src/store/selectors.ts:109
+#: src/store/selectors.ts:104
 msgid "No Tasks Yet"
 msgstr "Noch keine Aufgaben"
 
-#: src/store/selectors.ts:110
+#: src/store/selectors.ts:105
 msgid "Add a task above to get started"
 msgstr "Fügen Sie oben eine Aufgabe hinzu, um zu beginnen"
 
-#: src/store/selectors.ts:114
+#: src/store/selectors.ts:109
 msgid "Nothing Due Today"
 msgstr "Heute nichts fällig"
 
-#: src/store/selectors.ts:115
+#: src/store/selectors.ts:110
 msgid "Tasks due today appear here"
 msgstr "Heute fällige Aufgaben erscheinen hier"
 
-#: src/store/selectors.ts:119
+#: src/store/selectors.ts:114
 msgid "No Important Tasks"
 msgstr "Keine wichtigen Aufgaben"
 
-#: src/store/selectors.ts:120
+#: src/store/selectors.ts:115
 msgid "Star a task to find it here"
 msgstr "Markieren Sie eine Aufgabe als wichtig, um sie hier zu finden"
 
-#: src/store/selectors.ts:124
+#: src/store/selectors.ts:119
 msgid "Trash Is Empty"
 msgstr "Der Papierkorb ist leer"
 
-#: src/store/selectors.ts:125
+#: src/store/selectors.ts:120
 msgid "Deleted tasks appear here"
 msgstr "Gelöschte Aufgaben erscheinen hier"
 
-#: src/store/selectors.ts:133
+#: src/store/selectors.ts:128
 msgid "No Results"
 msgstr "Keine Ergebnisse"
 
-#: src/store/selectors.ts:134
+#: src/store/selectors.ts:129
 msgid "No tasks match “{{query}}”"
 msgstr "Keine Aufgaben entsprechen „{{query}}“"
 

@@ -52,6 +52,45 @@ import { GtkStyleContext } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkStyleContext**
 
+## Static methods
+
+Static methods are called on `Gtk.StyleContext`, imported from `@gtkx/gi/gtk`.
+
+### `addProviderForDisplay`
+
+```ts
+addProviderForDisplay(display: Gdk.Display, provider: Gtk.StyleProvider, priority: number): void
+```
+
+Adds a global style provider to `display`, which will be used
+in style construction for all `GtkStyleContexts` under `display`.
+
+GTK uses this to make styling information from `GtkSettings`
+available.
+
+Note: If both priorities are the same, A `GtkStyleProvider`
+added through `Gtk.StyleContext.addProvider()` takes
+precedence over another added through this function.
+
+**Parameters**
+
+- `display`: a `GdkDisplay`
+- `provider`: a `GtkStyleProvider`
+- `priority`: the priority of the style provider. The lower it is, the earlier it will be used in the style construction. Typically this will be in the range between `GTK_STYLE_PROVIDER_PRIORITY_FALLBACK` and `GTK_STYLE_PROVIDER_PRIORITY_USER`
+
+### `removeProviderForDisplay`
+
+```ts
+removeProviderForDisplay(display: Gdk.Display, provider: Gtk.StyleProvider): void
+```
+
+Removes `provider` from the global style providers list in `display`.
+
+**Parameters**
+
+- `display`: a `GdkDisplay`
+- `provider`: a `GtkStyleProvider`
+
 ## Props
 
 `ref` receives the `Gtk.StyleContext` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

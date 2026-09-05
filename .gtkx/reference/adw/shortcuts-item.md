@@ -31,6 +31,44 @@ import { AdwShortcutsItem } from "@gtkx/jsx/adw";
 
 [GObject](.gtkx/reference/gobject/object.md) → **AdwShortcutsItem**
 
+## Static methods
+
+Static methods are called on `Adw.ShortcutsItem`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(title: string, accelerator: string): Adw.ShortcutsItem
+```
+
+Creates a new `AdwShortcutsItem` with `title` and `accelerator`.
+
+**Parameters**
+
+- `title`: the shortcut title
+- `accelerator`: the shortcut accelerator
+
+**Returns** the newly created `AdwShortcutsItem`
+
+_Available since 1.8._
+
+### `newFromAction`
+
+```ts
+newFromAction(title: string, actionName: string): Adw.ShortcutsItem
+```
+
+Creates a new `AdwShortcutsItem` with `title` and `action_name`.
+
+**Parameters**
+
+- `title`: the shortcut title
+- `actionName`: the shortcut action name
+
+**Returns** the newly created `AdwShortcutsItem`
+
+_Available since 1.8._
+
 ## Props
 
 `ref` receives the `Adw.ShortcutsItem` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

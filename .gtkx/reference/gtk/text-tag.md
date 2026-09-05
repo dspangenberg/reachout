@@ -31,6 +31,24 @@ import { GtkTextTag } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkTextTag**
 
+## Static methods
+
+Static methods are called on `Gtk.TextTag`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(name: string | null): Gtk.TextTag
+```
+
+Creates a `GtkTextTag`.
+
+**Parameters**
+
+- `name`: tag name
+
+**Returns** a new `GtkTextTag`
+
 ## Props
 
 `ref` receives the `Gtk.TextTag` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

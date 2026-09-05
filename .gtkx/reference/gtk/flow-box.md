@@ -6,8 +6,6 @@ description: "Puts child widgets in a reflowing grid."
 
 Puts child widgets in a reflowing grid.
 
-
-
 For instance, with the horizontal orientation, the widgets will be
 arranged from left to right, starting a new row under the previous
 row when necessary. Reducing the width in this case will require more
@@ -71,6 +69,20 @@ import { GtkFlowBox } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkFlowBox**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.FlowBox`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a `GtkFlowBox`.
+
+**Returns** a new `GtkFlowBox`
 
 ## Props
 
@@ -428,7 +440,6 @@ getSelectedChildren(): Gtk.FlowBoxChild[]
 Creates a list of all selected children.
 
 **Returns** A `GList` containing the `GtkWidget` for each selected child.
-  Free with `g_list_free()` when done.
 
 ### `getSelectionMode`
 

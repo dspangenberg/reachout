@@ -57,6 +57,33 @@ import { GtkGridView } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`, `GtkScrollable`.
 
+## Static methods
+
+Static methods are called on `Gtk.GridView`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(model: Gtk.SelectionModel | null, factory: Gtk.ListItemFactory | null): Gtk.Widget
+```
+
+Creates a new `GtkGridView` that uses the given `factory` for
+mapping items to widgets.
+
+The function takes ownership of the
+arguments, so you can write code like
+```c
+grid_view = gtk_grid_view_new (create_model (),
+  gtk_builder_list_item_factory_new_from_resource ("/resource.ui"));
+```
+
+**Parameters**
+
+- `model`: the model to use
+- `factory`: The factory to populate items with
+
+**Returns** a new `GtkGridView` using the given `model` and `factory`
+
 ## Props
 
 `ref` receives the `Gtk.GridView` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

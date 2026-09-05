@@ -28,6 +28,26 @@ import { GtkShortcut } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkShortcut**
 
+## Static methods
+
+Static methods are called on `Gtk.Shortcut`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(trigger: Gtk.ShortcutTrigger | null, action: Gtk.ShortcutAction | null): Gtk.Shortcut
+```
+
+Creates a new `GtkShortcut` that is triggered by
+`trigger` and then activates `action`.
+
+**Parameters**
+
+- `trigger`: The trigger that will trigger the shortcut
+- `action`: The action that will be activated upon triggering
+
+**Returns** a new `GtkShortcut`
+
 ## Props
 
 `ref` receives the `Gtk.Shortcut` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

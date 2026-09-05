@@ -21,6 +21,43 @@ import { GEmblem } from "@gtkx/jsx/gio";
 
 Implements `GIcon`.
 
+## Static methods
+
+Static methods are called on `Gio.Emblem`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(icon: Gio.Icon): Gio.Emblem
+```
+
+Creates a new emblem for `icon`.
+
+**Parameters**
+
+- `icon`: a GIcon containing the icon.
+
+**Returns** a new `GEmblem`.
+
+_Available since 2.18._
+
+### `newWithOrigin`
+
+```ts
+newWithOrigin(icon: Gio.Icon, origin: Gio.EmblemOrigin): Gio.Emblem
+```
+
+Creates a new emblem for `icon`.
+
+**Parameters**
+
+- `icon`: a GIcon containing the icon.
+- `origin`: a GEmblemOrigin enum defining the emblem's origin
+
+**Returns** a new `GEmblem`.
+
+_Available since 2.18._
+
 ## Props
 
 `ref` receives the `Gio.Emblem` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -53,8 +90,7 @@ getIcon(): Gio.Icon
 
 Gives back the icon from `emblem`.
 
-**Returns** a `GIcon`. The returned object belongs to
-         the emblem and should not be modified or freed.
+**Returns** a `GIcon`.
 
 _Available since 2.18._
 

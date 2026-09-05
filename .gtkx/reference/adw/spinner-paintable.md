@@ -6,8 +6,6 @@ description: "A paintable showing a loading spinner."
 
 A paintable showing a loading spinner.
 
-
-
 `AdwSpinnerPaintable` size varies depending on the available space, but is
 capped at 64×64 pixels.
 
@@ -42,6 +40,26 @@ import { AdwSpinnerPaintable } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → **AdwSpinnerPaintable**
 
 Implements `GdkPaintable`, `GtkSymbolicPaintable`.
+
+## Static methods
+
+Static methods are called on `Adw.SpinnerPaintable`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(widget: Gtk.Widget | null): Adw.SpinnerPaintable
+```
+
+Creates a new `AdwSpinnerPaintable` for `widget`.
+
+**Parameters**
+
+- `widget`: the widget used for frame clock
+
+**Returns** the newly created `AdwSpinnerPaintable`
+
+_Available since 1.6._
 
 ## Props
 

@@ -6,8 +6,6 @@ description: "Opens a color chooser dialog to select a color."
 
 Opens a color chooser dialog to select a color.
 
-
-
 It is suitable widget for selecting a color in a preference dialog.
 
 ## CSS nodes
@@ -33,6 +31,30 @@ import { GtkColorDialogButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkColorDialogButton**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.ColorDialogButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(dialog: Gtk.ColorDialog | null): Gtk.Widget
+```
+
+Creates a new `GtkColorDialogButton` with the
+given `GtkColorDialog`.
+
+You can pass `NULL` to this function and set a `GtkColorDialog`
+later. The button will be insensitive until that happens.
+
+**Parameters**
+
+- `dialog`: the `GtkColorDialog` to use
+
+**Returns** the new `GtkColorDialogButton`
+
+_Available since 4.10._
 
 ## Props
 

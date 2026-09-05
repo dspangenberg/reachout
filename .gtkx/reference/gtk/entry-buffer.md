@@ -23,6 +23,27 @@ import { GtkEntryBuffer } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkEntryBuffer**
 
+## Static methods
+
+Static methods are called on `Gtk.EntryBuffer`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(initialChars: string | null, nInitialChars: number): Gtk.EntryBuffer
+```
+
+Create a new `GtkEntryBuffer` object.
+
+Optionally, specify initial text to set in the buffer.
+
+**Parameters**
+
+- `initialChars`: initial buffer text
+- `nInitialChars`: number of characters in `initial_chars`, or -1
+
+**Returns** A new `GtkEntryBuffer` object.
+
 ## Props
 
 `ref` receives the `Gtk.EntryBuffer` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -180,8 +201,7 @@ The memory pointer returned by this call will not change
 unless this object emits a signal, or is finalized.
 
 **Returns** a pointer to the contents of the widget as a
-  string. This string points to internally allocated storage
-  in the buffer and must not be freed, modified or stored.
+  string.
 
 ### `insertText`
 

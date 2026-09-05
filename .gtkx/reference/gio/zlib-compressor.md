@@ -17,6 +17,27 @@ import { GZlibCompressor } from "@gtkx/jsx/gio";
 
 Implements `GConverter`.
 
+## Static methods
+
+Static methods are called on `Gio.ZlibCompressor`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(format: Gio.ZlibCompressorFormat, level: number): Gio.ZlibCompressor
+```
+
+Creates a compressor.
+
+**Parameters**
+
+- `format`: the format to use for the compressed data
+- `level`: compression level (`0`-`9`), `-1` for default
+
+**Returns** a new `Gio.ZlibCompressor`
+
+_Available since 2.24._
+
 ## Props
 
 `ref` receives the `Gio.ZlibCompressor` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

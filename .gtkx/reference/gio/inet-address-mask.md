@@ -21,6 +21,52 @@ import { GInetAddressMask } from "@gtkx/jsx/gio";
 
 Implements `GInitable`.
 
+## Static methods
+
+Static methods are called on `Gio.InetAddressMask`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(addr: Gio.InetAddress, length: number): Gio.InetAddressMask
+```
+
+Creates a new `GInetAddressMask` representing all addresses whose
+first `length` bits match `addr`.
+
+**Parameters**
+
+- `addr`: a `GInetAddress`
+- `length`: number of bits of `addr` to use
+
+**Returns** a new `GInetAddressMask`, or `null` on error
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.32._
+
+### `newFromString`
+
+```ts
+newFromString(maskString: string): Gio.InetAddressMask
+```
+
+Parses `mask_string` as an IP address and (optional) length, and
+creates a new `GInetAddressMask`. The length, if present, is
+delimited by a "/". If it is not present, then the length is
+assumed to be the full length of the address.
+
+**Parameters**
+
+- `maskString`: an IP address or address/length string
+
+**Returns** a new `GInetAddressMask` corresponding to `string`, or `null`
+on error.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.32._
+
 ## Props
 
 `ref` receives the `Gio.InetAddressMask` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

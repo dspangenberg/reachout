@@ -46,8 +46,6 @@ items contain references to other menus.
 
 ### A menu example
 
-
-
 Notice that the separators visible in the [example](`an`-example-menu)
 appear nowhere in the [menu model](`a`-menu-example). This is because
 separators are not explicitly represented in the menu model. Instead,
@@ -291,8 +289,6 @@ iterateItemAttributes(itemIndex: number): Gio.MenuAttributeIter
 Creates a `GMenuAttributeIter` to iterate over the attributes of
 the item at position `item_index` in `model`.
 
-You must free the iterator with `g_object_unref()` when you are done.
-
 **Parameters**
 
 - `itemIndex`: the index of the item
@@ -309,8 +305,6 @@ iterateItemLinks(itemIndex: number): Gio.MenuLinkIter
 
 Creates a `GMenuLinkIter` to iterate over the links of the item at
 position `item_index` in `model`.
-
-You must free the iterator with `g_object_unref()` when you are done.
 
 **Parameters**
 

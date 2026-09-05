@@ -34,6 +34,50 @@ import { GUnixCredentialsMessage } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GSocketControlMessage](.gtkx/reference/gio/socket-control-message.md) → **GUnixCredentialsMessage**
 
+## Static methods
+
+Static methods are called on `Gio.UnixCredentialsMessage`, imported from `@gtkx/gi/gio`.
+
+### `isSupported`
+
+```ts
+isSupported(): boolean
+```
+
+Checks if passing `GCredentials` on a `GSocket` is supported on this platform.
+
+**Returns** `true` if supported, `false` otherwise
+
+_Available since 2.26._
+
+### `new`
+
+```ts
+new(): Gio.SocketControlMessage
+```
+
+Creates a new `GUnixCredentialsMessage` with credentials matching the current processes.
+
+**Returns** a new `GUnixCredentialsMessage`
+
+_Available since 2.26._
+
+### `newWithCredentials`
+
+```ts
+newWithCredentials(credentials: Gio.Credentials): Gio.SocketControlMessage
+```
+
+Creates a new `GUnixCredentialsMessage` holding `credentials`.
+
+**Parameters**
+
+- `credentials`: A `GCredentials` object.
+
+**Returns** a new `GUnixCredentialsMessage`
+
+_Available since 2.26._
+
 ## Props
 
 `ref` receives the `Gio.UnixCredentialsMessage` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -58,6 +102,6 @@ getCredentials(): Gio.Credentials
 
 Gets the credentials stored in `message`.
 
-**Returns** A `GCredentials` instance. Do not free, it is owned by `message`.
+**Returns** A `GCredentials` instance.
 
 _Available since 2.26._

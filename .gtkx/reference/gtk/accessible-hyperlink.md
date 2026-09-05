@@ -22,6 +22,30 @@ import { GtkAccessibleHyperlink } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`.
 
+## Static methods
+
+Static methods are called on `Gtk.AccessibleHyperlink`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(parent: Gtk.AccessibleHypertext, index: number, uri: string, bounds: Gtk.AccessibleTextRange): Gtk.AccessibleHyperlink
+```
+
+Creates an accessible object that represents a hyperlink.
+
+This is meant to be used with an implementation of the
+`Gtk.AccessibleHypertext` interface.
+
+**Parameters**
+
+- `parent`: the parent
+- `index`: the index of this link in the parent
+- `uri`: the uri
+- `bounds`: the text range that the link occupies (or 0, 0)
+
+_Available since 4.22._
+
 ## Props
 
 `ref` receives the `Gtk.AccessibleHyperlink` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

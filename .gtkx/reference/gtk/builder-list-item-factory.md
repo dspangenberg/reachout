@@ -44,6 +44,42 @@ import { GtkBuilderListItemFactory } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkListItemFactory](.gtkx/reference/gtk/list-item-factory.md) → **GtkBuilderListItemFactory**
 
+## Static methods
+
+Static methods are called on `Gtk.BuilderListItemFactory`, imported from `@gtkx/gi/gtk`.
+
+### `newFromBytes`
+
+```ts
+newFromBytes(scope: Gtk.BuilderScope | null, bytes: GLib.Bytes): Gtk.ListItemFactory
+```
+
+Creates a new `GtkBuilderListItemFactory` that instantiates widgets
+using `bytes` as the data to pass to `GtkBuilder`.
+
+**Parameters**
+
+- `scope`: A scope to use when instantiating
+- `bytes`: the `GBytes` containing the UI definition to instantiate
+
+**Returns** a new `GtkBuilderListItemFactory`
+
+### `newFromResource`
+
+```ts
+newFromResource(scope: Gtk.BuilderScope | null, resourcePath: string): Gtk.ListItemFactory
+```
+
+Creates a new `GtkBuilderListItemFactory` that instantiates widgets
+using data read from the given `resource_path` to pass to `GtkBuilder`.
+
+**Parameters**
+
+- `scope`: A scope to use when instantiating
+- `resourcePath`: valid path to a resource that contains the UI definition
+
+**Returns** a new `GtkBuilderListItemFactory`
+
 ## Props
 
 `ref` receives the `Gtk.BuilderListItemFactory` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -6,8 +6,6 @@ description: "GtkMessageDialog presents a dialog with some message text."
 
 `GtkMessageDialog` presents a dialog with some message text.
 
-
-
 It’s simply a convenience widget; you could construct the equivalent of
 `GtkMessageDialog` from `GtkDialog` without too much effort, but
 `GtkMessageDialog` saves typing.

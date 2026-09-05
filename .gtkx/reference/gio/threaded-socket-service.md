@@ -31,6 +31,27 @@ import { GThreadedSocketService } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GSocketListener](.gtkx/reference/gio/socket-listener.md) → [GSocketService](.gtkx/reference/gio/socket-service.md) → **GThreadedSocketService**
 
+## Static methods
+
+Static methods are called on `Gio.ThreadedSocketService`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(maxThreads: number): Gio.SocketService
+```
+
+Creates a new `GThreadedSocketService` with no listeners. Listeners
+must be added with one of the `GSocketListener` "add" methods.
+
+**Parameters**
+
+- `maxThreads`: the maximal number of threads to execute concurrently handling incoming clients, -1 means no limit
+
+**Returns** a new `GSocketService`.
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.ThreadedSocketService` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

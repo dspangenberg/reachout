@@ -18,6 +18,21 @@ import { GtkGestureZoom } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → [GtkGesture](.gtkx/reference/gtk/gesture.md) → **GtkGestureZoom**
 
+## Static methods
+
+Static methods are called on `Gtk.GestureZoom`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Gesture
+```
+
+Returns a newly created `GtkGesture` that recognizes
+pinch/zoom gestures.
+
+**Returns** a newly created `GtkGestureZoom`
+
 ## Props
 
 `ref` receives the `Gtk.GestureZoom` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -25,6 +25,28 @@ import { GtkTreeListRowSorter } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkSorter](.gtkx/reference/gtk/sorter.md) → **GtkTreeListRowSorter**
 
+## Static methods
+
+Static methods are called on `Gtk.TreeListRowSorter`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(sorter: Gtk.Sorter | null): Gtk.TreeListRowSorter
+```
+
+Create a special-purpose sorter that applies the sorting
+of `sorter` to the levels of a `GtkTreeListModel`.
+
+Note that this sorter relies on `Gtk.TreeListModel.passthrough`
+being `false` as it can only sort `Gtk.TreeListRow`s.
+
+**Parameters**
+
+- `sorter`: a `GtkSorter`
+
+**Returns** a new `GtkTreeListRowSorter`
+
 ## Props
 
 `ref` receives the `Gtk.TreeListRowSorter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

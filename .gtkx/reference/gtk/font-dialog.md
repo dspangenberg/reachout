@@ -26,6 +26,22 @@ import { GtkFontDialog } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkFontDialog**
 
+## Static methods
+
+Static methods are called on `Gtk.FontDialog`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.FontDialog
+```
+
+Creates a new `GtkFontDialog` object.
+
+**Returns** the new `GtkFontDialog`
+
+_Available since 4.10._
+
 ## Props
 
 `ref` receives the `Gtk.FontDialog` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -63,6 +63,28 @@ import { GIOStream } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GIOStream**
 
+## Static methods
+
+Static methods are called on `Gio.IOStream`, imported from `@gtkx/gi/gio`.
+
+### `spliceFinish`
+
+```ts
+spliceFinish(result: Gio.AsyncResult): boolean
+```
+
+Finishes an asynchronous io stream splice operation.
+
+**Parameters**
+
+- `result`: a `GAsyncResult`.
+
+**Returns** `true` on success, `false` otherwise.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.28._
+
 ## Props
 
 `ref` receives the `Gio.IOStream` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -211,7 +233,6 @@ Gets the input stream for this object. This is used
 for reading.
 
 **Returns** a `GInputStream`, owned by the `GIOStream`.
-Do not free.
 
 _Available since 2.22._
 
@@ -225,7 +246,6 @@ Gets the output stream for this object. This is used for
 writing.
 
 **Returns** a `GOutputStream`, owned by the `GIOStream`.
-Do not free.
 
 _Available since 2.22._
 

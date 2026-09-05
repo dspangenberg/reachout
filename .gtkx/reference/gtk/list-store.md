@@ -60,7 +60,6 @@ enum {
                           -1);
 
       // As the store will keep a copy of the string internally,
-      // we free some_data.
       g_free (some_data);
     }
 
@@ -159,6 +158,28 @@ import { GtkListStore } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → **GtkListStore**
 
 Implements `GtkBuildable`, `GtkTreeDragDest`, `GtkTreeDragSource`, `GtkTreeModel`, `GtkTreeSortable`.
+
+## Static methods
+
+Static methods are called on `Gtk.ListStore`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(types: (bigint | AnyClass<TypedClass>)[]): Gtk.ListStore
+```
+
+Creates a new `GtkListStore`.
+
+This function is meant to be used by language bindings.
+
+**Parameters**
+
+- `types`: an array of `GType` types for the columns, from first to last
+
+**Returns** a new `GtkListStore`
+
+> **Deprecated since 4.10.** Use `Gio.ListStore` instead
 
 ## Props
 

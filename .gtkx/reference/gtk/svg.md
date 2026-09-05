@@ -24,7 +24,6 @@ be paused using `Gtk.Svg.pause()`.
 
 To set the current state, use `Gtk.Svg.setState()`.
 
-
 ### Error handling
 
 Loading an SVG into `GtkSvg` will always produce a (possibly empty)
@@ -38,7 +37,6 @@ For parsing errors in the `GTK_SVG_ERROR` domain, the functions
 `Gtk.SvgError.getStart()`, `Gtk.SvgError.getEnd()`,
 `Gtk.SvgError.getElement()` and `Gtk.SvgError.getAttribute()`
 can be used to obtain information about where the error occurred.
-
 
 ### The supported subset of SVG
 
@@ -61,7 +59,6 @@ is limited, and the `min` and `max` attributes are not supported.
 
 Lastly, there is only minimal CSS support (the style attribute,
 but not `<style>`), and no interactivity.
-
 
 ### SVG Extensions
 
@@ -154,6 +151,54 @@ import { GtkSvg } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → **GtkSvg**
 
 Implements `GdkPaintable`, `GtkSymbolicPaintable`.
+
+## Static methods
+
+Static methods are called on `Gtk.Svg`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Svg
+```
+
+Creates a new, empty SVG paintable.
+
+**Returns** the paintable
+
+_Available since 4.22._
+
+### `newFromBytes`
+
+```ts
+newFromBytes(bytes: GLib.Bytes): Gtk.Svg
+```
+
+Parses the SVG data in `bytes` and creates a paintable.
+
+**Parameters**
+
+- `bytes`: the data
+
+**Returns** the paintable
+
+_Available since 4.22._
+
+### `newFromResource`
+
+```ts
+newFromResource(path: string): Gtk.Svg
+```
+
+Parses the SVG data in the resource and creates a paintable.
+
+**Parameters**
+
+- `path`: the resource path
+
+**Returns** the paintable
+
+_Available since 4.22._
 
 ## Props
 

@@ -48,6 +48,28 @@ import { GtkTreeStore } from "@gtkx/jsx/gtk";
 
 Implements `GtkBuildable`, `GtkTreeDragDest`, `GtkTreeDragSource`, `GtkTreeModel`, `GtkTreeSortable`.
 
+## Static methods
+
+Static methods are called on `Gtk.TreeStore`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(types: (bigint | AnyClass<TypedClass>)[]): Gtk.TreeStore
+```
+
+Creates a new tree store.
+
+This constructor is meant for language bindings.
+
+**Parameters**
+
+- `types`: an array of `GType` types for the columns, from first to last
+
+**Returns** a new `GtkTreeStore`
+
+> **Deprecated since 4.10.** Use `Gtk.TreeListModel` instead
+
 ## Props
 
 `ref` receives the `Gtk.TreeStore` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

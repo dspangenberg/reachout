@@ -6,8 +6,6 @@ description: "Creates a custom titlebar for a window."
 
 Creates a custom titlebar for a window.
 
-
-
 `GtkHeaderBar` is similar to a horizontal `GtkCenterBox`. It allows
 children to be placed at the start or the end. In addition, it allows
 the window title to be displayed. The title will be centered with respect
@@ -85,6 +83,20 @@ import { GtkHeaderBar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkHeaderBar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.HeaderBar`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkHeaderBar` widget.
+
+**Returns** a new `GtkHeaderBar`
 
 ## Props
 

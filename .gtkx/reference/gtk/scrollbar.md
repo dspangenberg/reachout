@@ -6,8 +6,6 @@ description: "Shows a horizontal or vertical scrollbar."
 
 Shows a horizontal or vertical scrollbar.
 
-
-
 Its position and movement are controlled by the adjustment that is passed to
 or created by `Gtk.Scrollbar.new()`. See `Gtk.Adjustment` for more
 details. The `Gtk.Adjustment.value` field sets the position of the
@@ -56,6 +54,25 @@ import { GtkScrollbar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkScrollbar**
 
 Implements `GtkAccessible`, `GtkAccessibleRange`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.Scrollbar`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(orientation: Gtk.Orientation, adjustment: Gtk.Adjustment | null): Gtk.Widget
+```
+
+Creates a new scrollbar with the given orientation.
+
+**Parameters**
+
+- `orientation`: the scrollbar’s orientation.
+- `adjustment`: the `Gtk.Adjustment` to use, or `null` to create a new adjustment.
+
+**Returns** the new `GtkScrollbar`.
 
 ## Props
 

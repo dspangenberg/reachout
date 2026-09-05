@@ -128,12 +128,6 @@ planning on modifying the model after calling this function, you may
 want to convert the returned list into a list of `GtkTreeRowReference`s.
 To do this, you can use `gtk_tree_row_reference_new()`.
 
-To free the return value, use:
-
-```c
-g_list_free_full (list, (GDestroyNotify) gtk_tree_path_free);
-```
-
 **Returns** Tuple of:
 
 - `result`: A `GList` containing a `GtkTreePath` for each selected row.

@@ -6,8 +6,6 @@ description: "A helper widget for setting a window's title and subtitle."
 
 A helper widget for setting a window's title and subtitle.
 
-
-
 `AdwWindowTitle` shows a title and subtitle. It's intended to be used as the
 title child of `Gtk.HeaderBar` or `HeaderBar`.
 
@@ -24,6 +22,25 @@ import { AdwWindowTitle } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwWindowTitle**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.WindowTitle`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(title: string, subtitle: string): Gtk.Widget
+```
+
+Creates a new `AdwWindowTitle`.
+
+**Parameters**
+
+- `title`: a title
+- `subtitle`: a subtitle
+
+**Returns** the newly created `AdwWindowTitle`
 
 ## Props
 

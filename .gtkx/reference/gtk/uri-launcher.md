@@ -26,6 +26,26 @@ import { GtkUriLauncher } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkUriLauncher**
 
+## Static methods
+
+Static methods are called on `Gtk.UriLauncher`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(uri: string | null): Gtk.UriLauncher
+```
+
+Creates a new `GtkUriLauncher` object.
+
+**Parameters**
+
+- `uri`: the uri to open
+
+**Returns** the new `GtkUriLauncher`
+
+_Available since 4.10._
+
 ## Props
 
 `ref` receives the `Gtk.UriLauncher` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

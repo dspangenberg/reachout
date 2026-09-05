@@ -6,8 +6,6 @@ description: "A EntryRow tailored for entering secrets."
 
 A `EntryRow` tailored for entering secrets.
 
-
-
 It does not show its contents in clear text, does not allow to copy it to the
 clipboard, and shows a warning when Caps Lock is engaged. If the underlying
 platform allows it, `AdwPasswordEntryRow` will also place the text in a
@@ -32,6 +30,22 @@ import { AdwPasswordEntryRow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkListBoxRow](.gtkx/reference/gtk/list-box-row.md) → [AdwPreferencesRow](.gtkx/reference/adw/preferences-row.md) → [AdwEntryRow](.gtkx/reference/adw/entry-row.md) → **AdwPasswordEntryRow**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`, `GtkEditable`.
+
+## Static methods
+
+Static methods are called on `Adw.PasswordEntryRow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwPasswordEntryRow`.
+
+**Returns** the newly created `AdwPasswordEntryRow`
+
+_Available since 1.2._
 
 ## Props
 

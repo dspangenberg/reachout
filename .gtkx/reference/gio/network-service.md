@@ -24,6 +24,30 @@ import { GNetworkService } from "@gtkx/jsx/gio";
 
 Implements `GSocketConnectable`.
 
+## Static methods
+
+Static methods are called on `Gio.NetworkService`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(service: string, protocol: string, domain: string): Gio.NetworkService
+```
+
+Creates a new `GNetworkService` representing the given `service`,
+`protocol`, and `domain`. This will initially be unresolved; use the
+`GSocketConnectable` interface to resolve it.
+
+**Parameters**
+
+- `service`: the service type to look up (eg, "ldap")
+- `protocol`: the networking protocol to use for `service` (eg, "tcp")
+- `domain`: the DNS domain to look up the service in
+
+**Returns** a new `GNetworkService`
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.NetworkService` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

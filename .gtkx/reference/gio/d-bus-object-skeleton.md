@@ -22,6 +22,26 @@ import { GDBusObjectSkeleton } from "@gtkx/jsx/gio";
 
 Implements `GDBusObject`.
 
+## Static methods
+
+Static methods are called on `Gio.DBusObjectSkeleton`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(objectPath: string): Gio.DBusObjectSkeleton
+```
+
+Creates a new `GDBusObjectSkeleton`.
+
+**Parameters**
+
+- `objectPath`: An object path.
+
+**Returns** A `GDBusObjectSkeleton`.
+
+_Available since 2.30._
+
 ## Props
 
 `ref` receives the `Gio.DBusObjectSkeleton` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

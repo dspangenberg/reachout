@@ -16,6 +16,25 @@ import { GtkSelectionFilterModel } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`.
 
+## Static methods
+
+Static methods are called on `Gtk.SelectionFilterModel`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(model: Gtk.SelectionModel | null): Gtk.SelectionFilterModel
+```
+
+Creates a new `GtkSelectionFilterModel` that will include the
+selected items from the underlying selection model.
+
+**Parameters**
+
+- `model`: the selection model to filter
+
+**Returns** a new `GtkSelectionFilterModel`
+
 ## Props
 
 `ref` receives the `Gtk.SelectionFilterModel` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

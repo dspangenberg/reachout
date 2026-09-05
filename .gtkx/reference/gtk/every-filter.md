@@ -18,6 +18,26 @@ import { GtkEveryFilter } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`, `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Gtk.EveryFilter`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.EveryFilter
+```
+
+Creates a new empty "every" filter.
+
+Use `Gtk.MultiFilter.append()` to add filters to it.
+
+This filter matches an item if each of the filters added to it
+matches the item. In particular, this means that if no filter
+has been added to it, the filter matches every item.
+
+**Returns** a new `GtkEveryFilter`
+
 ## Props
 
 `ref` receives the `Gtk.EveryFilter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

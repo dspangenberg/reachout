@@ -6,8 +6,6 @@ description: "Allows the user to choose an item from a list of options."
 
 Allows the user to choose an item from a list of options.
 
-
-
 The `GtkDropDown` displays the [selected]`Gtk.DropDown.selected`
 choice.
 
@@ -69,6 +67,43 @@ import { GtkDropDown } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkDropDown**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.DropDown`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(model: Gio.ListModel | null, expression: Gtk.Expression | null): Gtk.Widget
+```
+
+Creates a new `GtkDropDown`.
+
+You may want to call `Gtk.DropDown.setFactory()`
+to set up a way to map its items to widgets.
+
+**Parameters**
+
+- `model`: the model to use
+- `expression`: the expression to use
+
+**Returns** a new `GtkDropDown`
+
+### `newFromStrings`
+
+```ts
+newFromStrings(strings: string[]): Gtk.Widget
+```
+
+Creates a new `GtkDropDown` that is populated with
+the strings.
+
+**Parameters**
+
+- `strings`: The strings to put in the dropdown
+
+**Returns** a new `GtkDropDown`
 
 ## Props
 

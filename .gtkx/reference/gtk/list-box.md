@@ -6,8 +6,6 @@ description: "Shows a vertical list."
 
 Shows a vertical list.
 
-
-
 A `GtkListBox` only contains `GtkListBoxRow` children. These rows can
 by dynamically sorted and filtered, and headers can be added dynamically
 depending on the row content. It also allows keyboard and mouse navigation
@@ -78,6 +76,20 @@ import { GtkListBox } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkListBox**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.ListBox`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkListBox` container.
+
+**Returns** a new `GtkListBox`
 
 ## Props
 
@@ -410,7 +422,6 @@ getSelectedRows(): Gtk.ListBoxRow[]
 Creates a list of all selected children.
 
 **Returns** A `GList` containing the `GtkWidget` for each selected child.
-  Free with `g_list_free()` when done.
 
 ### `getSelectionMode`
 

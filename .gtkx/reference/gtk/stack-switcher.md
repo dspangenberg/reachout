@@ -6,8 +6,6 @@ description: "Shows a row of buttons to switch between GtkStack pages."
 
 Shows a row of buttons to switch between `GtkStack` pages.
 
-
-
 It acts as a controller for the associated `GtkStack`.
 
 All the content for the buttons comes from the properties of the stacks
@@ -46,6 +44,20 @@ import { GtkStackSwitcher } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkStackSwitcher**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.StackSwitcher`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Create a new `GtkStackSwitcher`.
+
+**Returns** a new `GtkStackSwitcher`.
 
 ## Props
 

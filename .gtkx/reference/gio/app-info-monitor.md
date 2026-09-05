@@ -54,6 +54,31 @@ import { GAppInfoMonitor } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GAppInfoMonitor**
 
+## Static methods
+
+Static methods are called on `Gio.AppInfoMonitor`, imported from `@gtkx/gi/gio`.
+
+### `get`
+
+```ts
+get(): Gio.AppInfoMonitor
+```
+
+Gets the `GAppInfoMonitor` for the current thread-default main
+context.
+
+The `GAppInfoMonitor` will emit a “changed” signal in the
+thread-default main context whenever the list of installed
+applications (as reported by `g_app_info_get_all()`) may have changed.
+
+The `GAppInfoMonitor.changed` signal will only be emitted once until
+`g_app_info_get_all()` (or another `g_app_info_*()` function) is called. Doing
+so will re-arm the signal ready to notify about the next change.
+
+**Returns** a reference to a `GAppInfoMonitor`
+
+_Available since 2.40._
+
 ## Props
 
 `ref` receives the `Gio.AppInfoMonitor` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

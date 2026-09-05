@@ -17,6 +17,20 @@ import { GtkEventControllerLegacy } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → **GtkEventControllerLegacy**
 
+## Static methods
+
+Static methods are called on `Gtk.EventControllerLegacy`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.EventController
+```
+
+Creates a new legacy event controller.
+
+**Returns** the newly created event controller.
+
 ## Props
 
 `ref` receives the `Gtk.EventControllerLegacy` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

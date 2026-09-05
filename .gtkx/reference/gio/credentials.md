@@ -50,6 +50,23 @@ import { GCredentials } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GCredentials**
 
+## Static methods
+
+Static methods are called on `Gio.Credentials`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.Credentials
+```
+
+Creates a new `GCredentials` object with credentials matching the
+the current process.
+
+**Returns** A `GCredentials`.
+
+_Available since 2.26._
+
 ## Props
 
 `ref` receives the `Gio.Credentials` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -176,6 +193,6 @@ Creates a human-readable textual representation of `credentials`
 that can be used in logging and debug messages. The format of the
 returned string may change in future GLib release.
 
-**Returns** A string that should be freed with `g_free()`.
+**Returns** A string.
 
 _Available since 2.26._

@@ -34,6 +34,26 @@ import { GSignalGroup } from "@gtkx/jsx/gobject";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GSignalGroup**
 
+## Static methods
+
+Static methods are called on `GObject.SignalGroup`, imported from `@gtkx/gi/gobject`.
+
+### `new`
+
+```ts
+new(targetType: bigint | AnyClass<TypedClass>): GObject.SignalGroup
+```
+
+Creates a new `GSignalGroup` for target instances of `target_type`.
+
+**Parameters**
+
+- `targetType`: the `GType` of the target instance.
+
+**Returns** a new `GSignalGroup`
+
+_Available since 2.72._
+
 ## Props
 
 `ref` receives the `GObject.SignalGroup` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

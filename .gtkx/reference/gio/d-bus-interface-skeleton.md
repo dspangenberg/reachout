@@ -137,7 +137,7 @@ getConnection(): Gio.DBusConnection | null
 Gets the first connection that `interface_` is exported on, if any.
 
 **Returns** A `GDBusConnection` or `null` if `interface_` is
-not exported anywhere. Do not free, the object belongs to `interface_`.
+not exported anywhere.
 
 _Available since 2.30._
 
@@ -150,9 +150,7 @@ getConnections(): Gio.DBusConnection[]
 Gets a list of the connections that `interface_` is exported on.
 
 **Returns** A list of
-  all the connections that `interface_` is exported on. The returned
-  list should be freed with `g_list_free()` after each element has
-  been freed with `g_object_unref()`.
+  all the connections that `interface_` is exported on.
 
 _Available since 2.32._
 
@@ -178,7 +176,7 @@ getInfo(): Gio.DBusInterfaceInfo
 Gets D-Bus introspection information for the D-Bus interface
 implemented by `interface_`.
 
-**Returns** A `GDBusInterfaceInfo` (never `null`). Do not free.
+**Returns** A `GDBusInterfaceInfo` (never `null`).
 
 _Available since 2.30._
 
@@ -191,7 +189,7 @@ getObjectPath(): string | null
 Gets the object path that `interface_` is exported on, if any.
 
 **Returns** A string owned by `interface_` or `null` if `interface_` is not exported
-anywhere. Do not free, the string belongs to `interface_`.
+anywhere.
 
 _Available since 2.30._
 
@@ -205,7 +203,6 @@ Gets all D-Bus properties for `interface_`.
 
 **Returns** A `GVariant` of type
 ['a{sv}'](../glib/gvariant-text-format.html#dictionaries-and-dictionary-entries).
-Free with `g_variant_unref()`.
 
 _Available since 2.30._
 

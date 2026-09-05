@@ -7,8 +7,6 @@ description: "A GtkComboBox is a widget that allows the user to choose from a li
 A `GtkComboBox` is a widget that allows the user to choose from a list of
 valid choices.
 
-
-
 The `GtkComboBox` displays the selected choice; when activated, the
 `GtkComboBox` displays a popup which allows the user to make a new choice.
 
@@ -76,6 +74,72 @@ import { GtkComboBox } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkComboBox**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkCellEditable`, `GtkCellLayout`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.ComboBox`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new empty `GtkComboBox`.
+
+**Returns** A new `GtkComboBox`
+
+> **Deprecated since 4.10.** Use `Gtk.DropDown`
+
+### `newWithEntry`
+
+```ts
+newWithEntry(): Gtk.Widget
+```
+
+Creates a new empty `GtkComboBox` with an entry.
+
+In order to use a combo box with entry, you need to tell it
+which column of the model contains the text for the entry
+by calling `Gtk.ComboBox.setEntryTextColumn()`.
+
+**Returns** A new `GtkComboBox`
+
+> **Deprecated since 4.10.** Use `Gtk.DropDown`
+
+### `newWithModel`
+
+```ts
+newWithModel(model: Gtk.TreeModel): Gtk.Widget
+```
+
+Creates a new `GtkComboBox` with a model.
+
+**Parameters**
+
+- `model`: a `GtkTreeModel`
+
+**Returns** A new `GtkComboBox`
+
+> **Deprecated since 4.10.** Use `Gtk.DropDown`
+
+### `newWithModelAndEntry`
+
+```ts
+newWithModelAndEntry(model: Gtk.TreeModel): Gtk.Widget
+```
+
+Creates a new empty `GtkComboBox` with an entry and a model.
+
+See also `Gtk.ComboBox.newWithEntry()`.
+
+**Parameters**
+
+- `model`: A `GtkTreeModel`
+
+**Returns** A new `GtkComboBox`
+
+> **Deprecated since 4.10.** Use `Gtk.DropDown`
 
 ## Props
 
@@ -379,10 +443,6 @@ Returns the ID of the active row of `combo_box`.
 This value is taken from the active row and the column specified
 by the `Gtk.ComboBox.idColumn` property of `combo_box`
 (see `Gtk.ComboBox.setIdColumn()`).
-
-The returned value is an interned string which means that you can
-compare the pointer by value to other interned strings and that you
-must not free it.
 
 If the `Gtk.ComboBox.idColumn` property of `combo_box` is
 not set, or if no row is active, or if the active row has a `null`

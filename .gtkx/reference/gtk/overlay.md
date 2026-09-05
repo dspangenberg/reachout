@@ -6,8 +6,6 @@ description: "Places “overlay” widgets on top of a single main child."
 
 Places “overlay” widgets on top of a single main child.
 
-
-
 The position of each overlay widget is determined by its
 `Gtk.Widget.halign` and `Gtk.Widget.valign`
 properties. E.g. a widget with both alignments set to `GTK_ALIGN_START`
@@ -45,6 +43,20 @@ import { GtkOverlay } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkOverlay**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Overlay`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkOverlay`.
+
+**Returns** a new `GtkOverlay` object.
 
 ## Props
 

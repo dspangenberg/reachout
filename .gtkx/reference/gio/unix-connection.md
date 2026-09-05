@@ -64,9 +64,6 @@ Other ways to exchange credentials with a foreign peer includes the
 
 - `cancellable`: A `GCancellable` or `null`.
 
-**Returns** Received credentials on success (free with
-`g_object_unref()`), `null` if `error` is set.
-
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
 _Available since 2.26._
@@ -90,7 +87,6 @@ When the operation is finished, `callback` will be called. You can then call
 - `cancellable`: optional `GCancellable` object, `null` to ignore.
 
 **Returns** a `GCredentials`, or `null` on error.
-    Free the returned object with `g_object_unref()`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -110,7 +106,6 @@ Finishes an asynchronous receive credentials operation started with
 - `result`: a `GAsyncResult`.
 
 **Returns** a `GCredentials`, or `null` on error.
-    Free the returned object with `g_object_unref()`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 

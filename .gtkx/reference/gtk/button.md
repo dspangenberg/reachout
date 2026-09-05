@@ -6,8 +6,6 @@ description: "Calls a callback function when the button is clicked."
 
 Calls a callback function when the button is clicked.
 
-
-
 The `GtkButton` widget can hold any valid child widget. That is, it can hold
 almost any other standard `GtkWidget`. The most commonly used child is the
 `GtkLabel`.
@@ -49,6 +47,74 @@ import { GtkButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkButton**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Button`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkButton` widget.
+
+To add a child widget to the button, use `Gtk.Button.setChild()`.
+
+**Returns** The newly created `GtkButton` widget.
+
+### `newFromIconName`
+
+```ts
+newFromIconName(iconName: string): Gtk.Widget
+```
+
+Creates a new button containing an icon from the current icon theme.
+
+If the icon name isn’t known, a “broken image” icon will be
+displayed instead. If the current icon theme is changed, the icon
+will be updated appropriately.
+
+**Parameters**
+
+- `iconName`: an icon name
+
+**Returns** a new `GtkButton` displaying the themed icon
+
+### `newWithLabel`
+
+```ts
+newWithLabel(label: string): Gtk.Widget
+```
+
+Creates a `GtkButton` widget with a `GtkLabel` child.
+
+**Parameters**
+
+- `label`: The text you want the `GtkLabel` to hold
+
+**Returns** The newly created `GtkButton` widget
+
+### `newWithMnemonic`
+
+```ts
+newWithMnemonic(label: string): Gtk.Widget
+```
+
+Creates a new `GtkButton` containing a label.
+
+If characters in `label` are preceded by an underscore, they are underlined.
+If you need a literal underscore character in a label, use “__” (two
+underscores). The first underlined character represents a keyboard
+accelerator called a mnemonic. Pressing <kbd>Alt</kbd> and that key
+activates the button.
+
+**Parameters**
+
+- `label`: The text of the button, with an underscore in front of the mnemonic character
+
+**Returns** a new `GtkButton`
 
 ## Props
 
@@ -206,8 +272,7 @@ If the label text has not been set with `Gtk.Button.setLabel()`
 the return value will be `null`. This will be the case if you create
 an empty button with `Gtk.Button.new()` to use as a container.
 
-**Returns** The text of the label widget. This string is owned
-by the widget and must not be modified or freed.
+**Returns** The text of the label widget.
 
 ### `getUseUnderline`
 

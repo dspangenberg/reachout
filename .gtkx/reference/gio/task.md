@@ -537,6 +537,87 @@ import { GTask } from "@gtkx/jsx/gio";
 
 Implements `GAsyncResult`.
 
+## Static methods
+
+Static methods are called on `Gio.Task`, imported from `@gtkx/gi/gio`.
+
+### `isValid`
+
+```ts
+isValid(result: Gio.AsyncResult, sourceObject: GObject.Object | null): boolean
+```
+
+Checks that `result` is a `GTask`, and that `source_object` is its
+source object (or that `source_object` is `null` and `result` has no
+source object). This can be used in `g_return_if_fail()` checks.
+
+**Parameters**
+
+- `result`: A `GAsyncResult`
+- `sourceObject`: the source object expected to be associated with the task
+
+**Returns** `true` if `result` and `source_object` are valid, `false`
+if not
+
+_Available since 2.36._
+
+### `new`
+
+```ts
+new(sourceObject: GObject.Object | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): Gio.Task
+```
+
+Creates a `GTask` acting on `source_object`, which will eventually be
+used to invoke `callback` in the current thread-default main context
+(see `GLib.MainContext.pushThreadDefault()`).
+
+Call this in the "start" method of your asynchronous method, and
+pass the `GTask` around throughout the asynchronous operation. You
+can use `g_task_set_task_data()` to attach task-specific data to the
+object, which you can retrieve later via `g_task_get_task_data()`.
+
+By default, if `cancellable` is cancelled, then the return value of
+the task will always be `G_IO_ERROR_CANCELLED`, even if the task had
+already completed before the cancellation. This allows for
+simplified handling in cases where cancellation may imply that
+other objects that the task depends on have been destroyed. If you
+do not want this behavior, you can use
+`g_task_set_check_cancellable()` to change it.
+
+**Parameters**
+
+- `sourceObject`: the `GObject` that owns this task, or `null`.
+- `cancellable`: optional `GCancellable` object, `null` to ignore.
+- `callback`: a `GAsyncReadyCallback`.
+
+**Returns** a `GTask`.
+
+_Available since 2.36._
+
+### `reportError`
+
+```ts
+reportError(sourceObject: GObject.Object | null, callback: Gio.AsyncReadyCallback | null, sourceTag: bigint | null, error: GLib.Error): void
+```
+
+Creates a `GTask` and then immediately calls `g_task_return_error()`
+on it. Use this in the wrapper function of an asynchronous method
+when you want to avoid even calling the virtual method. You can
+then use `g_async_result_is_tagged()` in the finish method wrapper to
+check if the result there is tagged as having been created by the
+wrapper method, and deal with it appropriately if so.
+
+See also `g_task_report_new_error()`.
+
+**Parameters**
+
+- `sourceObject`: the `GObject` that owns this task, or `null`.
+- `callback`: a `GAsyncReadyCallback`.
+- `sourceTag`: an opaque pointer indicating the source of this task
+- `error`: error to report
+
+_Available since 2.36._
+
 ## Props
 
 `ref` receives the `Gio.Task` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

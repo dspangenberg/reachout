@@ -6,8 +6,6 @@ description: "A toplevel window which can contain other widgets."
 
 A toplevel window which can contain other widgets.
 
-
-
 Windows normally have decorations that are under the control
 of the windowing system and allow the user to manipulate the window
 (resize it, move it, close it,...).
@@ -85,6 +83,133 @@ import { GtkWindow } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkWindow**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.Window`, imported from `@gtkx/gi/gtk`.
+
+### `getDefaultIconName`
+
+```ts
+getDefaultIconName(): string | null
+```
+
+Returns the fallback icon name for windows.
+
+The returned string is owned by GTK and should not
+be modified. It is only valid until the next call to
+`Gtk.Window.setDefaultIconName()`.
+
+**Returns** the fallback icon name for windows
+
+### `getToplevels`
+
+```ts
+getToplevels(): Gio.ListModel
+```
+
+Returns the list of all existing toplevel windows.
+
+If you want to iterate through the list and perform actions involving
+callbacks that might destroy the widgets or add new ones, be aware that
+the list of toplevels will change and emit the "items-changed" signal.
+
+**Returns** the list
+  of toplevel widgets
+
+### `listToplevels`
+
+```ts
+listToplevels(): Gtk.Widget[]
+```
+
+Returns the list of all existing toplevel windows.
+
+The widgets in the list are not individually referenced.
+
+**Returns** list of
+  toplevel widgets
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkWindow`.
+
+To get an undecorated window (without window borders),
+use `Gtk.Window.setDecorated()`.
+
+All top-level windows created by this function are stored
+in an internal top-level window list. This list can be obtained
+from `Gtk.Window.listToplevels()`. Due to GTK keeping a
+reference to the window internally, this function does not
+return a reference to the caller.
+
+**Returns** a new `GtkWindow`
+
+### `setAutoStartupNotification`
+
+```ts
+setAutoStartupNotification(setting: boolean): void
+```
+
+Sets whether the window should request startup notification.
+
+By default, after showing the first window, GTK calls
+`Gdk.Toplevel.setStartupId()`. Call this function
+to disable the automatic startup notification. You might do this
+if your first window is a splash screen, and you want to delay
+notification until after your real main window has been shown,
+for example.
+
+In that example, you would disable startup notification
+temporarily, show your splash screen, then re-enable it so that
+showing the main window would automatically result in notification.
+
+**Parameters**
+
+- `setting`: true to automatically do startup notification
+
+### `setDefaultIconName`
+
+```ts
+setDefaultIconName(name: string): void
+```
+
+Sets an icon to be used as fallback.
+
+The fallback icon is used for windows that
+haven't had `Gtk.Window.setIconName()`
+called on them.
+
+**Parameters**
+
+- `name`: the name of the themed icon
+
+### `setInteractiveDebugging`
+
+```ts
+setInteractiveDebugging(enable: boolean): void
+```
+
+Opens or closes the [interactive debugger](running.html#interactive-debugging).
+
+The debugger offers access to the widget hierarchy of the application
+and to useful debugging tools.
+
+This function allows applications that already use
+<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd>
+(or <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>)
+for their own key shortcuts to add a different shortcut to open the Inspector.
+
+If you are not overriding the default key shortcuts for the Inspector,
+you should not use this function.
+
+**Parameters**
+
+- `enable`: true to enable interactive debugging
 
 ## Props
 
@@ -218,7 +343,7 @@ See `Gtk.IconTheme` for more details.
 
 ### `isActive`
 
-`boolean` · default `false` · read-only, observe with `onNotifyIsActive` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyIsActive` · instance read with `GObject.getProperty`
 
 Whether the toplevel is the currently active window.
 

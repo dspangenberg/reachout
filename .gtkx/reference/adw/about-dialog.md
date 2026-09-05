@@ -6,8 +6,6 @@ description: "A dialog showing information about the application."
 
 A dialog showing information about the application.
 
-
-
 an about dialog is typically opened when the user activates the `About …`
 item in the application's primary menu. All parts of the dialog are optional.
 
@@ -106,8 +104,6 @@ specified. To add a email address, use a string like
 `Edgar Allan Poe <edgar@poe.com>`. To specify a website with a title, use a
 string like `The GNOME Project https://www.gnome.org`:
 
-
-
 ### Legal
 
 The Legal page displays the copyright and licensing information for the
@@ -180,6 +176,59 @@ import { AdwAboutDialog } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [AdwDialog](.gtkx/reference/adw/dialog.md) → **AdwAboutDialog**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Adw.AboutDialog`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Adw.Dialog
+```
+
+Creates a new `AdwAboutDialog`.
+
+**Returns** the newly created `AdwAboutDialog`
+
+_Available since 1.5._
+
+### `newFromAppdata`
+
+```ts
+newFromAppdata(resourcePath: string, releaseNotesVersion: string | null): Adw.Dialog
+```
+
+Creates a new `AdwAboutDialog` using AppStream metadata.
+
+This automatically sets the following properties with the following AppStream
+values:
+
+* `AboutDialog.applicationIcon` is set from the `<id>`
+* `AboutDialog.applicationName` is set from the `<name>`
+* `AboutDialog.developerName` is set from the `<name>` within
+     `<developer>`
+* `AboutDialog.version` is set from the version of the latest release
+* `AboutDialog.website` is set from the `<url type="homepage">`
+* `AboutDialog.supportUrl` is set from the `<url type="help">`
+* `AboutDialog.issueUrl` is set from the `<url type="bugtracker">`
+* `AboutDialog.licenseType` is set from the `<project_license>`.
+    If the license type retrieved from AppStream is not listed in
+    `Gtk.License`, it will be set to `Gtk.License.custom`.
+
+If `release_notes_version` is not `NULL`,
+`AboutDialog.releaseNotesVersion` is set to match it, while
+`AboutDialog.releaseNotes` is set from the AppStream release
+description for that version.
+
+**Parameters**
+
+- `resourcePath`: The resource to use
+- `releaseNotesVersion`: The version to retrieve release notes for
+
+**Returns** the newly created `AdwAboutDialog`
+
+_Available since 1.5._
 
 ## Props
 

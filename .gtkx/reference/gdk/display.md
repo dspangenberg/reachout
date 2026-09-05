@@ -27,6 +27,41 @@ import { GdkDisplay } from "@gtkx/jsx/gdk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GdkDisplay**
 
+## Static methods
+
+Static methods are called on `Gdk.Display`, imported from `@gtkx/gi/gdk`.
+
+### `getDefault`
+
+```ts
+getDefault(): Gdk.Display | null
+```
+
+Gets the default `GdkDisplay`.
+
+This is a convenience function for:
+
+    gdk_display_manager_get_default_display (gdk_display_manager_get ())
+
+**Returns** a `GdkDisplay`, or `null` if
+  there is no default display
+
+### `open`
+
+```ts
+open(displayName: string | null): Gdk.Display | null
+```
+
+Opens a display.
+
+If opening the display fails, `NULL` is returned.
+
+**Parameters**
+
+- `displayName`: the name of the display to open
+
+**Returns** a `GdkDisplay`
+
 ## Props
 
 `ref` receives the `Gdk.Display` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -302,8 +337,7 @@ getName(): string
 
 Gets the name of the display.
 
-**Returns** a string representing the display name. This string is owned
-  by GDK and should not be modified or freed.
+**Returns** a string representing the display name.
 
 ### `getPrimaryClipboard`
 
@@ -425,8 +459,6 @@ When a keycode is pressed by the user, the keyval from
 this list of entries is selected by considering the effective
 keyboard group and level.
 
-Free the returned arrays with `g_free()`.
-
 **Parameters**
 
 - `keycode`: a keycode
@@ -456,8 +488,6 @@ Hebrew to English modes, for example.
 
 `GdkEventKey` contains a `group` field that indicates the active
 keyboard group. The level is computed from the modifier mask.
-
-The returned array should be freed with `g_free()`.
 
 **Parameters**
 

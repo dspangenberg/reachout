@@ -6,8 +6,6 @@ description: "An adaptive view switcher."
 
 An adaptive view switcher.
 
-
-
 An adaptive view switcher designed to switch between multiple views
 contained in a `ViewStack` in a similar fashion to
 `Gtk.StackSwitcher`.
@@ -82,6 +80,20 @@ import { AdwViewSwitcher } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwViewSwitcher**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ViewSwitcher`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwViewSwitcher`.
+
+**Returns** the newly created `AdwViewSwitcher`
 
 ## Props
 

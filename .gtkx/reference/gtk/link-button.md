@@ -6,8 +6,6 @@ description: "A button with a hyperlink."
 
 A button with a hyperlink.
 
-
-
 It is useful to show quick links to resources.
 
 A link button is created by calling either `Gtk.LinkButton.new()` or
@@ -53,6 +51,39 @@ import { GtkLinkButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkButton](.gtkx/reference/gtk/button.md) → **GtkLinkButton**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.LinkButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(uri: string): Gtk.Widget
+```
+
+Creates a new `GtkLinkButton` with the URI as its text.
+
+**Parameters**
+
+- `uri`: a valid URI
+
+**Returns** a new link button widget.
+
+### `newWithLabel`
+
+```ts
+newWithLabel(uri: string, label: string | null): Gtk.Widget
+```
+
+Creates a new `GtkLinkButton` containing a label.
+
+**Parameters**
+
+- `uri`: a valid URI
+- `label`: the text of the button
+
+**Returns** a new link button widget.
 
 ## Props
 
@@ -107,8 +138,7 @@ getUri(): string
 
 Retrieves the URI of the `GtkLinkButton`.
 
-**Returns** a valid URI. The returned string is owned by the link button
-  and should not be modified or freed.
+**Returns** a valid URI.
 
 ### `getVisited`
 

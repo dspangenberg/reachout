@@ -6,8 +6,6 @@ description: "A widget that displays a keyboard shortcut."
 
 A widget that displays a keyboard shortcut.
 
-
-
 The shown shortcut can be set using the `ShortcutLabel.accelerator`
 property.
 
@@ -62,6 +60,26 @@ import { AdwShortcutLabel } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwShortcutLabel**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ShortcutLabel`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(accelerator: string): Gtk.Widget
+```
+
+Creates a new `AdwShortcutLabel` showing `accelerator`.
+
+**Parameters**
+
+- `accelerator`: the accelerator to show
+
+**Returns** the newly created `AdwShortcutLabel`
+
+_Available since 1.8._
 
 ## Props
 

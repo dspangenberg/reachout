@@ -6,8 +6,6 @@ description: "Adaptive sidebar widget."
 
 Adaptive sidebar widget.
 
-
-
 `AdwSidebar` contains `SidebarSection` objects, which in turn contain
 `SidebarItem` objects.
 
@@ -40,8 +38,6 @@ a split view.
 See also: `ViewSwitcherSidebar`.
 
 ### Modes
-
-
 
 `AdwSidebar` is adaptive and can act as either a regular sidebar, or a page
 of boxed lists.
@@ -227,6 +223,22 @@ import { AdwSidebar } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Adw.Sidebar`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwSidebar`.
+
+**Returns** the newly created `AdwSidebar`
+
+_Available since 1.9._
+
 ## Props
 
 `ref` receives the `Adw.Sidebar` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -236,6 +248,8 @@ Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [AdwSidebarSection](.gtkx/reference/adw/sidebar-section.md) or a subtype.
 
 ### `dropPreload`
 
@@ -296,8 +310,6 @@ _Available since 1.9._
 `Adw.SidebarMode` · default `ADW_SIDEBAR_MODE_SIDEBAR`
 
 Determines the sidebar's look and behavior.
-
-
 
 If set to `Adw.SidebarMode.sidebar`, behaves like a sidebar: with a
 sidebar style and a persistent selection.
@@ -777,8 +789,6 @@ setMode(mode: Adw.SidebarMode): void
 ```
 
 Sets `self`'s look and behavior.
-
-
 
 If set to `Adw.SidebarMode.sidebar`, behaves like a sidebar: with a
 sidebar style and a persistent selection.

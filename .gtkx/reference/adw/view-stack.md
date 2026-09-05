@@ -77,6 +77,20 @@ import { AdwViewStack } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Adw.ViewStack`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwViewStack`.
+
+**Returns** the newly created `AdwViewStack`
+
 ## Props
 
 `ref` receives the `Adw.ViewStack` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -20,6 +20,25 @@ import { GConverterInputStream } from "@gtkx/jsx/gio";
 
 Implements `GPollableInputStream`.
 
+## Static methods
+
+Static methods are called on `Gio.ConverterInputStream`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(baseStream: Gio.InputStream, converter: Gio.Converter): Gio.InputStream
+```
+
+Creates a new converter input stream for the `base_stream`.
+
+**Parameters**
+
+- `baseStream`: a `GInputStream`
+- `converter`: a `GConverter`
+
+**Returns** a new `GInputStream`.
+
 ## Props
 
 `ref` receives the `Gio.ConverterInputStream` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

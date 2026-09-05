@@ -59,8 +59,7 @@ attribute that has just been advanced to.  At this point,
 return the same values again.
 
 The value returned in `name` remains valid for as long as the iterator
-remains at the current position.  The value returned in `value` must
-be unreffed using `g_variant_unref()` when it is no longer in use.
+remains at the current position.
 
 **Returns** Tuple of:
 

@@ -19,6 +19,22 @@ import { GtkFlowBoxChild } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.FlowBoxChild`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkFlowBoxChild`.
+
+This should only be used as a child of a `GtkFlowBox`.
+
+**Returns** a new `GtkFlowBoxChild`
+
 ## Props
 
 `ref` receives the `Gtk.FlowBoxChild` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

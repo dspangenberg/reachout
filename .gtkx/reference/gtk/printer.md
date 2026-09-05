@@ -22,6 +22,26 @@ import { GtkPrinter } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkPrinter**
 
+## Static methods
+
+Static methods are called on `Gtk.Printer`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(name: string, backend: Gtk.PrintBackend, virtual: boolean): Gtk.Printer
+```
+
+Creates a new `GtkPrinter`.
+
+**Parameters**
+
+- `name`: the name of the printer
+- `backend`: a `GtkPrintBackend`
+- `virtual`: whether the printer is virtual
+
+**Returns** a new `GtkPrinter`
+
 ## Props
 
 `ref` receives the `Gtk.Printer` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -34,13 +54,13 @@ import { GtkPrinter } from "@gtkx/jsx/gtk";
 
 ### `acceptsPdf`
 
-`boolean` · default `false` · construct-only · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · construct-only · instance read with `GObject.getProperty`
 
 `true` if this printer can accept PDF.
 
 ### `acceptsPs`
 
-`boolean` · default `true` · construct-only · instance read with `GObject.getObjectProperty`
+`boolean` · default `true` · construct-only · instance read with `GObject.getProperty`
 
 `true` if this printer can accept PostScript.
 
@@ -52,7 +72,7 @@ Icon name to use for the printer.
 
 ### `isVirtual`
 
-`boolean` · default `false` · construct-only · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · construct-only · instance read with `GObject.getProperty`
 
 `false` if this represents a real hardware device.
 

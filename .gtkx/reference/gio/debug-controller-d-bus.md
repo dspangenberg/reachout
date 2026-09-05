@@ -127,6 +127,36 @@ import { GDebugControllerDBus } from "@gtkx/jsx/gio";
 
 Implements `GDebugController`, `GInitable`.
 
+## Static methods
+
+Static methods are called on `Gio.DebugControllerDBus`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(connection: Gio.DBusConnection, cancellable: Gio.Cancellable | null): Gio.DebugControllerDBus | null
+```
+
+Create a new `GDebugControllerDBus` and synchronously initialize it.
+
+Initializing the object will export the debug object on `connection`. The
+object will remain registered until the last reference to the
+`GDebugControllerDBus` is dropped.
+
+Initialization may fail if registering the object on `connection` fails.
+
+**Parameters**
+
+- `connection`: a `GDBusConnection` to register the debug object on
+- `cancellable`: a `GCancellable`, or `null`
+
+**Returns** a new `GDebugControllerDBus`, or `null`
+  on failure
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.72._
+
 ## Props
 
 `ref` receives the `Gio.DebugControllerDBus` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

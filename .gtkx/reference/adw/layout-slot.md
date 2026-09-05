@@ -23,6 +23,26 @@ import { AdwLayoutSlot } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Adw.LayoutSlot`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(id: string): Gtk.Widget
+```
+
+Creates a new `AdwLayoutSlot` with its ID set to `id`.
+
+**Parameters**
+
+- `id`: the slot ID
+
+**Returns** a new `AdwLayoutSlot`
+
+_Available since 1.6._
+
 ## Props
 
 `ref` receives the `Adw.LayoutSlot` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

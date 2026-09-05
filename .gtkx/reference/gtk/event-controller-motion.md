@@ -21,13 +21,27 @@ import { GtkEventControllerMotion } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → **GtkEventControllerMotion**
 
+## Static methods
+
+Static methods are called on `Gtk.EventControllerMotion`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.EventController
+```
+
+Creates a new event controller that will handle motion events.
+
+**Returns** a new `GtkEventControllerMotion`
+
 ## Props
 
 `ref` receives the `Gtk.EventControllerMotion` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
 
 ### `containsPointer`
 
-`boolean` · default `false` · read-only, observe with `onNotifyContainsPointer` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyContainsPointer` · instance read with `GObject.getProperty`
 
 Whether the pointer is in the controllers widget or a descendant.
 
@@ -39,7 +53,7 @@ before `Gtk.EventControllerMotion.enter`, but after
 
 ### `isPointer`
 
-`boolean` · default `false` · read-only, observe with `onNotifyIsPointer` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyIsPointer` · instance read with `GObject.getProperty`
 
 Whether the pointer is in the controllers widget itself,
 as opposed to in a descendent widget.

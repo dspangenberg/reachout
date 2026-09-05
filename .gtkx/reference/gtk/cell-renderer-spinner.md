@@ -27,6 +27,23 @@ import { GtkCellRendererSpinner } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkCellRenderer](.gtkx/reference/gtk/cell-renderer.md) → **GtkCellRendererSpinner**
 
+## Static methods
+
+Static methods are called on `Gtk.CellRendererSpinner`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.CellRenderer
+```
+
+Returns a new cell renderer which will show a spinner to indicate
+activity.
+
+**Returns** a new `GtkCellRenderer`
+
+> **Deprecated since 4.10.**
+
 ## Props
 
 `ref` receives the `Gtk.CellRendererSpinner` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

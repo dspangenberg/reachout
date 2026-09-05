@@ -50,6 +50,8 @@ styles from it. This can be used to add custom styles to the application.
     - `prefers-contrast: more` for styles used only when the system high
       contrast preference is enabled.
 
+> **GTKX JSX:** The automatic `shortcuts-dialog.ui` behavior described above does not apply to GTKX applications because JSX is the interface definition and GTKX does not load `.ui` definitions. Define the action, accelerator, and `AdwShortcutsDialog` in JSX as shown in [Menus, Accelerators, and Shortcuts](https://gtkx.dev/v2/tutorial/actions-menus-shortcuts).
+
 ```tsx
 import { AdwApplication } from "@gtkx/jsx/adw";
 ```
@@ -59,6 +61,31 @@ import { AdwApplication } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GApplication](.gtkx/reference/gio/application.md) → [GtkApplication](.gtkx/reference/gtk/application.md) → **AdwApplication**
 
 Implements `GActionGroup`, `GActionMap`.
+
+## Static methods
+
+Static methods are called on `Adw.Application`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(applicationId: string | null, flags: Gio.ApplicationFlags): Adw.Application
+```
+
+Creates a new `AdwApplication`.
+
+If `application_id` is not `NULL`, then it must be valid. See
+`Gio.Application.idIsValid()`.
+
+If no application ID is given then some features (most notably application
+uniqueness) will be disabled.
+
+**Parameters**
+
+- `applicationId`: The application ID
+- `flags`: The application flags
+
+**Returns** the newly created `AdwApplication`
 
 ## Props
 

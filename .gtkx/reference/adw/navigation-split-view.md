@@ -6,9 +6,6 @@ description: "A widget presenting sidebar and content side by side or as a navig
 
 A widget presenting sidebar and content side by side or as a navigation view.
 
-
-
-
 `AdwNavigationSplitView` has two `NavigationPage` children: sidebar and
 content, and displays them side by side.
 
@@ -143,6 +140,22 @@ import { AdwNavigationSplitView } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Adw.NavigationSplitView`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwNavigationSplitView`.
+
+**Returns** the newly created `AdwNavigationSplitView`
+
+_Available since 1.4._
+
 ## Props
 
 `ref` receives the `Adw.NavigationSplitView` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -152,6 +165,8 @@ Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [AdwNavigationPage](.gtkx/reference/adw/navigation-page.md) or a subtype.
 
 ### `collapsed`
 

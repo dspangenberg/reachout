@@ -6,8 +6,6 @@ description: "A Gtk.ListBoxRow that looks like a button."
 
 A `Gtk.ListBoxRow` that looks like a button.
 
-
-
 The `AdwButtonRow` widget has a title and two icons: before and after the
 title.
 
@@ -31,8 +29,6 @@ The [`.suggested-action`](style-classes.html#suggested-action) style class
 makes `AdwButtonRow` use accent color for its background. It should be used
 very sparingly to denote important buttons.
 
-
-
 The [`.destructive-action`](style-classes.html#destructive-action) style
 makes the row use destructive colors. It can be used to draw attention to the
 potentially damaging consequences of using it. This style acts as a warning
@@ -49,6 +45,22 @@ import { AdwButtonRow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkListBoxRow](.gtkx/reference/gtk/list-box-row.md) → [AdwPreferencesRow](.gtkx/reference/adw/preferences-row.md) → **AdwButtonRow**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ButtonRow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwButtonRow`.
+
+**Returns** the newly created `AdwButtonRow`
+
+_Available since 1.6._
 
 ## Props
 

@@ -6,8 +6,6 @@ description: "Arranges its child widgets in rows and columns."
 
 Arranges its child widgets in rows and columns.
 
-
-
 It supports arbitrary positions and horizontal/vertical spans.
 
 Children are added using `Gtk.Grid.attach()`. They can span multiple
@@ -97,6 +95,20 @@ import { GtkGrid } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkGrid**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.Grid`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new grid widget.
+
+**Returns** the new `GtkGrid`
 
 ## Props
 

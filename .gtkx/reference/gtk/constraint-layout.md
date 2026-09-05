@@ -178,6 +178,20 @@ import { GtkConstraintLayout } from "@gtkx/jsx/gtk";
 
 Implements `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Gtk.ConstraintLayout`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.LayoutManager
+```
+
+Creates a new `GtkConstraintLayout` layout manager.
+
+**Returns** the newly created `GtkConstraintLayout`
+
 ## Props
 
 `ref` receives the `Gtk.ConstraintLayout` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

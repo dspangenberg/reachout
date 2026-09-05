@@ -6,9 +6,6 @@ description: "A widget presenting sidebar and content side by side or as an over
 
 A widget presenting sidebar and content side by side or as an overlay.
 
-
-
-
 `AdwOverlaySplitView` has two children: sidebar and content, and displays
 them side by side.
 
@@ -141,6 +138,22 @@ import { AdwOverlaySplitView } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwOverlaySplitView**
 
 Implements `AdwSwipeable`, `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.OverlaySplitView`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwOverlaySplitView`.
+
+**Returns** the newly created `AdwOverlaySplitView`
+
+_Available since 1.4._
 
 ## Props
 

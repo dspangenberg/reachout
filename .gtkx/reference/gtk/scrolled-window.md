@@ -6,8 +6,6 @@ description: "Makes its child scrollable."
 
 Makes its child scrollable.
 
-
-
 It does so using either internally added scrollbars or externally
 associated adjustments, and optionally draws a frame around the child.
 
@@ -91,6 +89,20 @@ import { GtkScrolledWindow } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkScrolledWindow**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.ScrolledWindow`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new scrolled window.
+
+**Returns** a new scrolled window
 
 ## Props
 

@@ -6,8 +6,6 @@ description: "GtkAssistant is used to represent a complex as a series of steps."
 
 `GtkAssistant` is used to represent a complex as a series of steps.
 
-
-
 Each step consists of one or more pages. `GtkAssistant` guides the user
 through the pages, and controls the page flow to collect the data needed
 for the operation.
@@ -52,6 +50,22 @@ import { GtkAssistant } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → **GtkAssistant**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.Assistant`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkAssistant`.
+
+**Returns** a newly created `GtkAssistant`
+
+> **Deprecated since 4.10.** This widget will be removed in GTK 5
 
 ## Props
 

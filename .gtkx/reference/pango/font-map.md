@@ -124,8 +124,7 @@ that system may have it's own way of create a `PangoContext`.
 For instance, the GTK toolkit has, among others,
 `gtk_widget_get_pango_context()`. Use those instead.
 
-**Returns** the newly allocated `PangoContext`,
-  which should be freed with `g_object_unref()`.
+**Returns** the newly allocated `PangoContext`.
 
 _Available since 1.22._
 
@@ -183,7 +182,6 @@ for enumerating families.
 
 **Returns** location to
   store a pointer to an array of `PangoFontFamily` *.
-  This array should be freed with `g_free()`.
 
 ### `loadFont`
 

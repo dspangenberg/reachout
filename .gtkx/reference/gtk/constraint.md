@@ -28,6 +28,51 @@ import { GtkConstraint } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkConstraint**
 
+## Static methods
+
+Static methods are called on `Gtk.Constraint`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(target: Gtk.ConstraintTarget | null, targetAttribute: Gtk.ConstraintAttribute, relation: Gtk.ConstraintRelation, source: Gtk.ConstraintTarget | null, sourceAttribute: Gtk.ConstraintAttribute, multiplier: number, constant: number, strength: number): Gtk.Constraint
+```
+
+Creates a new constraint representing a relation between a layout
+attribute on a source and a layout attribute on a target.
+
+**Parameters**
+
+- `target`: the target of the constraint
+- `targetAttribute`: the attribute of `target` to be set
+- `relation`: the relation equivalence between `target_attribute` and `source_attribute`
+- `source`: the source of the constraint
+- `sourceAttribute`: the attribute of `source` to be read
+- `multiplier`: a multiplication factor to be applied to `source_attribute`
+- `constant`: a constant factor to be added to `source_attribute`
+- `strength`: the strength of the constraint
+
+**Returns** the newly created constraint
+
+### `newConstant`
+
+```ts
+newConstant(target: Gtk.ConstraintTarget | null, targetAttribute: Gtk.ConstraintAttribute, relation: Gtk.ConstraintRelation, constant: number, strength: number): Gtk.Constraint
+```
+
+Creates a new constraint representing a relation between a layout
+attribute on a target and a constant value.
+
+**Parameters**
+
+- `target`: a the target of the constraint
+- `targetAttribute`: the attribute of `target` to be set
+- `relation`: the relation equivalence between `target_attribute` and `constant`
+- `constant`: a constant factor to be set on `target_attribute`
+- `strength`: the strength of the constraint
+
+**Returns** the newly created constraint
+
 ## Props
 
 `ref` receives the `Gtk.Constraint` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

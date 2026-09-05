@@ -21,9 +21,7 @@ A `GtkBuilder` holds a reference to all objects that it has constructed
 and drops these references when it is finalized. This finalization can
 cause the destruction of non-widget objects or widgets which are not
 contained in a toplevel window. For toplevel windows constructed by a
-builder, it is the responsibility of the user to call
-`Gtk.Window.destroy()` to get rid of them and all the widgets
-they contain.
+builder.
 
 The functions `Gtk.Builder.getObject()` and
 `Gtk.Builder.getObjects()` can be used to access the widgets in
@@ -370,6 +368,82 @@ import { GtkBuilder } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkBuilder**
 
+## Static methods
+
+Static methods are called on `Gtk.Builder`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Builder
+```
+
+Creates a new empty builder object.
+
+This function is only useful if you intend to make multiple calls
+to `Gtk.Builder.addFromFile()`, `Gtk.Builder.addFromResource()`
+or `Gtk.Builder.addFromString()` in order to merge multiple UI
+descriptions into a single builder.
+
+**Returns** a new (empty) `GtkBuilder` object
+
+### `newFromFile`
+
+```ts
+newFromFile(filename: string): Gtk.Builder
+```
+
+Parses the UI definition in the file `filename`.
+
+If there is an error opening the file or parsing the description then
+the program will be aborted. You should only ever attempt to parse
+user interface descriptions that are shipped as part of your program.
+
+**Parameters**
+
+- `filename`: filename of user interface description file
+
+**Returns** a `GtkBuilder` containing the described interface
+
+### `newFromResource`
+
+```ts
+newFromResource(resourcePath: string): Gtk.Builder
+```
+
+Parses the UI definition at `resource_path`.
+
+If there is an error locating the resource or parsing the
+description, then the program will be aborted.
+
+**Parameters**
+
+- `resourcePath`: a `GResource` resource path
+
+**Returns** a `GtkBuilder` containing the described interface
+
+### `newFromString`
+
+```ts
+newFromString(string: string, length: number): Gtk.Builder
+```
+
+Parses the UI definition in `string`.
+
+If `string` is `null`-terminated, then `length` should be -1.
+If `length` is not -1, then it is the length of `string`.
+
+If there is an error parsing `string` then the program will be
+aborted. You should not attempt to parse user interface description
+from untrusted sources.
+
+**Parameters**
+
+- `string`: a user interface (XML) description
+- `length`: the length of `string`, or -1
+
+**Returns** a `GtkBuilder` containing the interface described by `string`
+
 ## Props
 
 `ref` receives the `Gtk.Builder` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -681,8 +755,7 @@ counts of the returned objects.
 
 **Returns** a
   newly-allocated `GSList` containing all the objects
-  constructed by the `GtkBuilder instance`. It should be
-  freed by `g_slist_free()`
+  constructed by the `GtkBuilder instance`.
 
 ### `getScope`
 

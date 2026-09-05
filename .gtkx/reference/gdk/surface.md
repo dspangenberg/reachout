@@ -22,6 +22,42 @@ import { GdkSurface } from "@gtkx/jsx/gdk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GdkSurface**
 
+## Static methods
+
+Static methods are called on `Gdk.Surface`, imported from `@gtkx/gi/gdk`.
+
+### `newPopup`
+
+```ts
+newPopup(parent: Gdk.Surface, autohide: boolean): Gdk.Surface
+```
+
+Create a new popup surface.
+
+The surface will be attached to `parent` and can be positioned
+relative to it using `Gdk.Popup.present()`.
+
+**Parameters**
+
+- `parent`: the parent surface to attach the surface to
+- `autohide`: whether to hide the surface on outside clicks
+
+**Returns** a new `GdkSurface`
+
+### `newToplevel`
+
+```ts
+newToplevel(display: Gdk.Display): Gdk.Surface
+```
+
+Creates a new toplevel surface.
+
+**Parameters**
+
+- `display`: the display to create the surface on
+
+**Returns** the new `GdkSurface`
+
 ## Props
 
 `ref` receives the `Gdk.Surface` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -227,9 +263,7 @@ or any other error occurs.
 - `width`: width of the new surface
 - `height`: height of the new surface
 
-**Returns** a pointer to the newly allocated surface. The caller
-  owns the surface and should call `cairo_surface_destroy()` when done
-  with it.
+**Returns** a pointer to the newly allocated surface.
 
 > **Deprecated since 4.12.** Create a suitable cairo image surface yourself
 

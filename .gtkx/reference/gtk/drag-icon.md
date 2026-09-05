@@ -26,6 +26,70 @@ import { GtkDragIcon } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`.
 
+## Static methods
+
+Static methods are called on `Gtk.DragIcon`, imported from `@gtkx/gi/gtk`.
+
+### `createWidgetForValue`
+
+```ts
+createWidgetForValue(value: GObject.Value | JsValue): Gtk.Widget | null
+```
+
+Creates a widget that can be used as a drag icon for the given
+`value`.
+
+Supported types include strings, `GdkRGBA` and `GtkTextBuffer`.
+If GTK does not know how to create a widget for a given value,
+it will return `null`.
+
+This method is used to set the default drag icon on drag-and-drop
+operations started by `GtkDragSource`, so you don't need to set
+a drag icon using this function there.
+
+**Parameters**
+
+- `value`: a `GValue`
+
+**Returns** A new `GtkWidget`
+  for displaying `value` as a drag icon.
+
+### `getForDrag`
+
+```ts
+getForDrag(drag: Gdk.Drag): Gtk.Widget
+```
+
+Gets the `GtkDragIcon` in use with `drag`.
+
+If no drag icon exists yet, a new one will be created
+and shown.
+
+**Parameters**
+
+- `drag`: a `GdkDrag`
+
+**Returns** the `GtkDragIcon`
+
+### `setFromPaintable`
+
+```ts
+setFromPaintable(drag: Gdk.Drag, paintable: Gdk.Paintable, hotX: number, hotY: number): void
+```
+
+Creates a `GtkDragIcon` that shows `paintable`, and associates
+it with the drag operation.
+
+The hotspot position on the paintable is aligned with the
+hotspot of the cursor.
+
+**Parameters**
+
+- `drag`: a `GdkDrag`
+- `paintable`: a `GdkPaintable` to display
+- `hotX`: X coordinate of the hotspot
+- `hotY`: Y coordinate of the hotspot
+
 ## Props
 
 `ref` receives the `Gtk.DragIcon` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

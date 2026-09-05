@@ -20,6 +20,49 @@ import { GInetSocketAddress } from "@gtkx/jsx/gio";
 
 Implements `GSocketConnectable`.
 
+## Static methods
+
+Static methods are called on `Gio.InetSocketAddress`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(address: Gio.InetAddress, port: number): Gio.SocketAddress
+```
+
+Creates a new `GInetSocketAddress` for `address` and `port`.
+
+**Parameters**
+
+- `address`: a `GInetAddress`
+- `port`: a port number
+
+**Returns** a new `GInetSocketAddress`
+
+_Available since 2.22._
+
+### `newFromString`
+
+```ts
+newFromString(address: string, port: number): Gio.SocketAddress | null
+```
+
+Creates a new `GInetSocketAddress` for `address` and `port`.
+
+If `address` is an IPv6 address, it can also contain a scope ID
+(separated from the address by a `%`). Note that currently this
+behavior is platform specific. This may change in a future release.
+
+**Parameters**
+
+- `address`: the string form of an IP address
+- `port`: a port number
+
+**Returns** a new `GInetSocketAddress`,
+or `null` if `address` cannot be parsed.
+
+_Available since 2.40._
+
 ## Props
 
 `ref` receives the `Gio.InetSocketAddress` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

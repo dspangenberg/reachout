@@ -6,8 +6,6 @@ description: "A Gtk.ListBoxRow used to represent two states."
 
 A `Gtk.ListBoxRow` used to represent two states.
 
-
-
 The `AdwSwitchRow` widget contains a `Gtk.Switch` that allows the user
 to select between two states: "on" or "off". When activated, the row will
 invert its active state.
@@ -43,6 +41,22 @@ import { AdwSwitchRow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkListBoxRow](.gtkx/reference/gtk/list-box-row.md) → [AdwPreferencesRow](.gtkx/reference/adw/preferences-row.md) → [AdwActionRow](.gtkx/reference/adw/action-row.md) → **AdwSwitchRow**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.SwitchRow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwSwitchRow`.
+
+**Returns** the newly created `AdwSwitchRow`
+
+_Available since 1.4._
 
 ## Props
 

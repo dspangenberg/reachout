@@ -6,8 +6,6 @@ description: "The GtkAppChooserButton lets the user select an application."
 
 The `GtkAppChooserButton` lets the user select an application.
 
-
-
 Initially, a `GtkAppChooserButton` selects the first application
 in its list, which will either be the most-recently used application
 or, if `Gtk.AppChooserButton.showDefaultItem` is `true`, the
@@ -43,6 +41,27 @@ import { GtkAppChooserButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkAppChooserButton**
 
 Implements `GtkAccessible`, `GtkAppChooser`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.AppChooserButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(contentType: string): Gtk.Widget
+```
+
+Creates a new `GtkAppChooserButton` for applications
+that can handle content of the given type.
+
+**Parameters**
+
+- `contentType`: the content type to show applications for
+
+**Returns** a newly created `GtkAppChooserButton`
+
+> **Deprecated since 4.10.** This widget will be removed in GTK 5
 
 ## Props
 

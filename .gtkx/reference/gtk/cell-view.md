@@ -36,6 +36,97 @@ import { GtkCellView } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkCellLayout`, `GtkConstraintTarget`, `GtkOrientable`.
 
+## Static methods
+
+Static methods are called on `Gtk.CellView`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkCellView` widget.
+
+**Returns** A newly created `GtkCellView` widget.
+
+> **Deprecated since 4.10.**
+
+### `newWithContext`
+
+```ts
+newWithContext(area: Gtk.CellArea, context: Gtk.CellAreaContext): Gtk.Widget
+```
+
+Creates a new `GtkCellView` widget with a specific `GtkCellArea`
+to layout cells and a specific `GtkCellAreaContext`.
+
+Specifying the same context for a handful of cells lets
+the underlying area synchronize the geometry for those cells,
+in this way alignments with cellviews for other rows are
+possible.
+
+**Parameters**
+
+- `area`: the `GtkCellArea` to layout cells
+- `context`: the `GtkCellAreaContext` in which to calculate cell geometry
+
+**Returns** A newly created `GtkCellView` widget.
+
+> **Deprecated since 4.10.**
+
+### `newWithMarkup`
+
+```ts
+newWithMarkup(markup: string): Gtk.Widget
+```
+
+Creates a new `GtkCellView` widget, adds a `GtkCellRendererText`
+to it, and makes it show `markup`. The text can be marked up with
+the [Pango text markup language](https://docs.gtk.org/Pango/pango_markup.html).
+
+**Parameters**
+
+- `markup`: the text to display in the cell view
+
+**Returns** A newly created `GtkCellView` widget.
+
+> **Deprecated since 4.10.**
+
+### `newWithText`
+
+```ts
+newWithText(text: string): Gtk.Widget
+```
+
+Creates a new `GtkCellView` widget, adds a `GtkCellRendererText`
+to it, and makes it show `text`.
+
+**Parameters**
+
+- `text`: the text to display in the cell view
+
+**Returns** A newly created `GtkCellView` widget.
+
+> **Deprecated since 4.10.**
+
+### `newWithTexture`
+
+```ts
+newWithTexture(texture: Gdk.Texture): Gtk.Widget
+```
+
+Creates a new `GtkCellView` widget, adds a `GtkCellRendererPixbuf`
+to it, and makes it show `texture`.
+
+**Parameters**
+
+- `texture`: the image to display in the cell view
+
+**Returns** A newly created `GtkCellView` widget.
+
+> **Deprecated since 4.10.**
+
 ## Props
 
 `ref` receives the `Gtk.CellView` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

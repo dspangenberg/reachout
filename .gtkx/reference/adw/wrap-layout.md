@@ -6,8 +6,6 @@ description: "A box-like layout that can wrap into multiple lines."
 
 A box-like layout that can wrap into multiple lines.
 
-
-
 `AdwWrapLayout` is similar to `Gtk.BoxLayout`, but can wrap lines when
 the widgets cannot fit otherwise. Unlike `Gtk.FlowBox`, the children
 aren't arranged into a grid and behave more like words in a wrapping label.
@@ -63,6 +61,22 @@ import { AdwWrapLayout } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GtkLayoutManager](.gtkx/reference/gtk/layout-manager.md) → **AdwWrapLayout**
 
 Implements `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.WrapLayout`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.LayoutManager
+```
+
+Creates a new `AdwWrapLayout`.
+
+**Returns** the newly created `AdwWrapLayout`
+
+_Available since 1.7._
 
 ## Props
 

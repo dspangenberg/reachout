@@ -21,9 +21,7 @@ The `Animation.done` signal can be used to perform an action after
 the animation ends, for example hiding a widget after animating its
 `Gtk.Widget.opacity` to 0.
 
-`AdwAnimation` will be kept alive while the animation is playing. As such,
-it's safe to create an animation, start it and immediately unref it:
-A fire-and-forget animation:
+`AdwAnimation` will be kept alive while the animation is playing.
 
 ```c
 static void

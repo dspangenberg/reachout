@@ -18,6 +18,24 @@ import { PangoFontsetSimple } from "@gtkx/jsx/pango";
 
 [GObject](.gtkx/reference/gobject/object.md) → [PangoFontset](.gtkx/reference/pango/fontset.md) → **PangoFontsetSimple**
 
+## Static methods
+
+Static methods are called on `Pango.FontsetSimple`, imported from `@gtkx/gi/pango`.
+
+### `new`
+
+```ts
+new(language: Pango.Language): Pango.FontsetSimple
+```
+
+Creates a new `PangoFontsetSimple` for the given language.
+
+**Parameters**
+
+- `language`: a `PangoLanguage` tag
+
+**Returns** the newly allocated `PangoFontsetSimple`
+
 ## Props
 
 `ref` receives the `Pango.FontsetSimple` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -55,6 +55,39 @@ import { GtkShortcutController } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`, `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Gtk.ShortcutController`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.EventController
+```
+
+Creates a new shortcut controller.
+
+**Returns** a newly created shortcut controller
+
+### `newForModel`
+
+```ts
+newForModel(model: Gio.ListModel): Gtk.EventController
+```
+
+Creates a new shortcut controller that takes its shortcuts from
+the given list model.
+
+A controller created by this function does not let you add or
+remove individual shortcuts using the shortcut controller api,
+but you can change the contents of the model.
+
+**Parameters**
+
+- `model`: a `GListModel` containing shortcuts
+
+**Returns** a newly created shortcut controller
+
 ## Props
 
 `ref` receives the `Gtk.ShortcutController` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

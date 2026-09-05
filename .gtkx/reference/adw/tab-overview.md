@@ -6,8 +6,6 @@ description: "A tab overview for TabView."
 
 A tab overview for `TabView`.
 
-
-
 `AdwTabOverview` is a widget that can display tabs from an `AdwTabView` in a
 grid.
 
@@ -89,6 +87,22 @@ import { AdwTabOverview } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwTabOverview**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.TabOverview`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwTabOverview`.
+
+**Returns** the newly created `AdwTabOverview`
+
+_Available since 1.3._
 
 ## Props
 

@@ -6,8 +6,6 @@ description: "Displays a GdkPaintable."
 
 Displays a `GdkPaintable`.
 
-
-
 Many convenience functions are provided to make pictures simple to use.
 For example, if you want to load an image from a file, and then display
 it, there’s a convenience function to do this:
@@ -60,6 +58,113 @@ import { GtkPicture } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkPicture**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Picture`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new empty `GtkPicture` widget.
+
+**Returns** a newly created `GtkPicture` widget.
+
+### `newForFile`
+
+```ts
+newForFile(file: Gio.File | null): Gtk.Widget
+```
+
+Creates a new `GtkPicture` displaying the given `file`.
+
+If the file isn’t found or can’t be loaded, the resulting
+`GtkPicture` is empty.
+
+If you need to detect failures to load the file, use an
+image loading framework such as libglycin to load the file
+yourself, then create the `GtkPicture` from the texture.
+
+**Parameters**
+
+- `file`: a `GFile`
+
+**Returns** a new `GtkPicture`
+
+### `newForFilename`
+
+```ts
+newForFilename(filename: string | null): Gtk.Widget
+```
+
+Creates a new `GtkPicture` displaying the file `filename`.
+
+This is a utility function that calls `Gtk.Picture.newForFile()`.
+See that function for details.
+
+**Parameters**
+
+- `filename`: a filename
+
+**Returns** a new `GtkPicture`
+
+### `newForPaintable`
+
+```ts
+newForPaintable(paintable: Gdk.Paintable | null): Gtk.Widget
+```
+
+Creates a new `GtkPicture` displaying `paintable`.
+
+The `GtkPicture` will track changes to the `paintable` and update
+its size and contents in response to it.
+
+**Parameters**
+
+- `paintable`: a `GdkPaintable`
+
+**Returns** a new `GtkPicture`
+
+### `newForPixbuf`
+
+```ts
+newForPixbuf(pixbuf: GdkPixbuf.Pixbuf | null): Gtk.Widget
+```
+
+Creates a new `GtkPicture` displaying `pixbuf`.
+
+This is a utility function that calls `Gtk.Picture.newForPaintable()`,
+See that function for details.
+
+The pixbuf must not be modified after passing it to this function.
+
+**Parameters**
+
+- `pixbuf`: a `GdkPixbuf`
+
+**Returns** a new `GtkPicture`
+
+> **Deprecated since 4.12.** Use `Gtk.Picture.newForPaintable()` and `Gdk.Texture.newForPixbuf()` instead
+
+### `newForResource`
+
+```ts
+newForResource(resourcePath: string | null): Gtk.Widget
+```
+
+Creates a new `GtkPicture` displaying the resource at `resource_path`.
+
+This is a utility function that calls `Gtk.Picture.newForFile()`.
+See that function for details.
+
+**Parameters**
+
+- `resourcePath`: resource path to play back
+
+**Returns** a new `GtkPicture`
 
 ## Props
 

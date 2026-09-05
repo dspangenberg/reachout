@@ -9,8 +9,6 @@ A single-line text entry widget for use as a search entry.
 The main API for interacting with a `GtkSearchEntry` as entry
 is the `GtkEditable` interface.
 
-
-
 It will show an inactive symbolic “find” icon when the search
 entry is empty, and a symbolic “clear” icon when there is text.
 Clicking on the “clear” icon will empty the search entry.
@@ -66,6 +64,20 @@ import { GtkSearchEntry } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkSearchEntry**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkEditable`.
+
+## Static methods
+
+Static methods are called on `Gtk.SearchEntry`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a `GtkSearchEntry`.
+
+**Returns** a new `GtkSearchEntry`
 
 ## Props
 

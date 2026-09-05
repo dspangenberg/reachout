@@ -278,7 +278,7 @@ getGroup(): Gtk.Gesture[]
 Returns all gestures in the group of `gesture`
 
 **Returns** The list
-  of `GtkGesture`s, free with `g_list_free()`
+  of `GtkGesture`s
 
 ### `getLastEvent`
 
@@ -340,9 +340,7 @@ Returns the list of `GdkEventSequences` currently being interpreted
 by `gesture`.
 
 **Returns** A list
-  of `GdkEventSequence`, the list elements are owned by GTK and must
-  not be freed or modified, the list itself must be deleted
-  through `g_list_free()`
+  of `GdkEventSequence`
 
 ### `getSequenceState`
 

@@ -35,6 +35,34 @@ import { GSocketControlMessage } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GSocketControlMessage**
 
+## Static methods
+
+Static methods are called on `Gio.SocketControlMessage`, imported from `@gtkx/gi/gio`.
+
+### `deserialize`
+
+```ts
+deserialize(level: number, type: number, data: Uint8Array | number[]): Gio.SocketControlMessage | null
+```
+
+Tries to deserialize a socket control message of a given
+`level` and `type`. This will ask all known (to GType) subclasses
+of `GSocketControlMessage` if they can understand this kind
+of message and if so deserialize it into a `GSocketControlMessage`.
+
+If there is no implementation for this kind of control message, `null`
+will be returned.
+
+**Parameters**
+
+- `level`: a socket level
+- `type`: a socket control message type for the given `level`
+- `data`: pointer to the message data
+
+**Returns** the deserialized message or `null`
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.SocketControlMessage` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -20,6 +20,20 @@ import { GtkCenterLayout } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkLayoutManager](.gtkx/reference/gtk/layout-manager.md) → **GtkCenterLayout**
 
+## Static methods
+
+Static methods are called on `Gtk.CenterLayout`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.LayoutManager
+```
+
+Creates a new `GtkCenterLayout`.
+
+**Returns** the newly created `GtkCenterLayout`
+
 ## Props
 
 `ref` receives the `Gtk.CenterLayout` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

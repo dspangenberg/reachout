@@ -17,6 +17,46 @@ import { AdwPropertyAnimationTarget } from "@gtkx/jsx/adw";
 
 [GObject](.gtkx/reference/gobject/object.md) → [AdwAnimationTarget](.gtkx/reference/adw/animation-target.md) → **AdwPropertyAnimationTarget**
 
+## Static methods
+
+Static methods are called on `Adw.PropertyAnimationTarget`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(object: GObject.Object, propertyName: string): Adw.AnimationTarget
+```
+
+Creates a new `AdwPropertyAnimationTarget` for the `property_name` property on
+`object`.
+
+**Parameters**
+
+- `object`: an object to be animated
+- `propertyName`: the name of the property on `object` to animate
+
+**Returns** the newly created `AdwPropertyAnimationTarget`
+
+_Available since 1.2._
+
+### `newForPspec`
+
+```ts
+newForPspec(object: GObject.Object, pspec: GObject.ParamSpec): Adw.AnimationTarget
+```
+
+Creates a new `AdwPropertyAnimationTarget` for the `pspec` property on
+`object`.
+
+**Parameters**
+
+- `object`: an object to be animated
+- `pspec`: the param spec of the property on `object` to animate
+
+**Returns** new newly created `AdwPropertyAnimationTarget`
+
+_Available since 1.2._
+
 ## Props
 
 `ref` receives the `Adw.PropertyAnimationTarget` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

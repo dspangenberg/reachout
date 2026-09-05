@@ -43,6 +43,25 @@ import { GtkSortListModel } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`, `GtkSectionModel`.
 
+## Static methods
+
+Static methods are called on `Gtk.SortListModel`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(model: Gio.ListModel | null, sorter: Gtk.Sorter | null): Gtk.SortListModel
+```
+
+Creates a new sort list model that uses the `sorter` to sort `model`.
+
+**Parameters**
+
+- `model`: the model to sort
+- `sorter`: the `GtkSorter` to sort `model` with,
+
+**Returns** a new `GtkSortListModel`
+
 ## Props
 
 `ref` receives the `Gtk.SortListModel` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -18,6 +18,53 @@ import { GSimpleAction } from "@gtkx/jsx/gio";
 
 Implements `GAction`.
 
+## Static methods
+
+Static methods are called on `Gio.SimpleAction`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(name: string, parameterType: GLib.VariantType | null): Gio.SimpleAction
+```
+
+Creates a new action.
+
+The created action is stateless. See `g_simple_action_new_stateful()` to create
+an action that has state.
+
+**Parameters**
+
+- `name`: the name of the action
+- `parameterType`: the type of parameter that will be passed to handlers for the `GSimpleAction.activate` signal, or `null` for no parameter
+
+**Returns** a new `GSimpleAction`
+
+_Available since 2.28._
+
+### `newStateful`
+
+```ts
+newStateful(name: string, parameterType: GLib.VariantType | null, state: GLib.Variant): Gio.SimpleAction
+```
+
+Creates a new stateful action.
+
+All future state values must have the same `GVariantType` as the initial
+`state`.
+
+If the `state` `GVariant` is floating, it is consumed.
+
+**Parameters**
+
+- `name`: the name of the action
+- `parameterType`: the type of the parameter that will be passed to handlers for the `GSimpleAction.activate` signal, or `null` for no parameter
+- `state`: the initial state of the action
+
+**Returns** a new `GSimpleAction`
+
+_Available since 2.28._
+
 ## Props
 
 `ref` receives the `Gio.SimpleAction` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

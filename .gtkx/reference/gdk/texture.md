@@ -41,6 +41,150 @@ import { GdkTexture } from "@gtkx/jsx/gdk";
 
 Implements `GdkPaintable`, `GIcon`, `GLoadableIcon`.
 
+## Static methods
+
+Static methods are called on `Gdk.Texture`, imported from `@gtkx/gi/gdk`.
+
+### `newForPixbuf`
+
+```ts
+newForPixbuf(pixbuf: GdkPixbuf.Pixbuf): Gdk.Texture
+```
+
+Creates a new texture object representing the `GdkPixbuf`.
+
+This function is threadsafe, so that you can e.g. use GTask
+and `Gio.Task.runInThread()` to avoid blocking the main
+thread while loading a big image.
+
+**Parameters**
+
+- `pixbuf`: a `GdkPixbuf`
+
+**Returns** a new `GdkTexture`
+
+> **Deprecated since 4.20.** Use e.g. libglycin, which can load many image formats into a `GdkTexture`
+
+### `newFromBytes`
+
+```ts
+newFromBytes(bytes: GLib.Bytes): Gdk.Texture
+```
+
+Creates a new texture by loading an image from memory,
+
+The file format is detected automatically. The supported formats
+are PNG, JPEG and TIFF, though more formats might be available.
+
+If `NULL` is returned, then `error` will be set.
+
+This function is threadsafe, so that you can e.g. use GTask
+and `Gio.Task.runInThread()` to avoid blocking the main thread
+while loading a big image.
+
+::: warning
+    Note that this function should not be used with untrusted data.
+    Use a proper image loading framework such as libglycin, which can
+    load many image formats into a `GdkTexture`.
+
+**Parameters**
+
+- `bytes`: a `GBytes` containing the data to load
+
+**Returns** A newly-created `GdkTexture`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 4.6._
+
+### `newFromFile`
+
+```ts
+newFromFile(file: Gio.File): Gdk.Texture
+```
+
+Creates a new texture by loading an image from a file.
+
+The file format is detected automatically. The supported formats
+are PNG, JPEG and TIFF, though more formats might be available.
+
+If `NULL` is returned, then `error` will be set.
+
+This function is threadsafe, so that you can e.g. use GTask
+and `Gio.Task.runInThread()` to avoid blocking the main thread
+while loading a big image.
+
+::: warning
+    Note that this function should not be used with untrusted data.
+    Use a proper image loading framework such as libglycin, which can
+    load many image formats into a `GdkTexture`.
+
+**Parameters**
+
+- `file`: `GFile` to load
+
+**Returns** A newly-created `GdkTexture`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+### `newFromFilename`
+
+```ts
+newFromFilename(path: string): Gdk.Texture
+```
+
+Creates a new texture by loading an image from a file.
+
+The file format is detected automatically. The supported formats
+are PNG, JPEG and TIFF, though more formats might be available.
+
+If `NULL` is returned, then `error` will be set.
+
+This function is threadsafe, so that you can e.g. use GTask
+and `Gio.Task.runInThread()` to avoid blocking the main thread
+while loading a big image.
+
+::: warning
+    Note that this function should not be used with untrusted data.
+    Use a proper image loading framework such as libglycin, which can
+    load many image formats into a `GdkTexture`.
+
+**Parameters**
+
+- `path`: the filename to load
+
+**Returns** A newly-created `GdkTexture`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 4.6._
+
+### `newFromResource`
+
+```ts
+newFromResource(resourcePath: string): Gdk.Texture
+```
+
+Creates a new texture by loading an image from a resource.
+
+The file format is detected automatically. The supported formats
+are PNG, JPEG and TIFF, though more formats might be available.
+
+It is a fatal error if `resource_path` does not specify a valid
+image resource and the program will abort if that happens.
+If you are unsure about the validity of a resource, use
+`Gdk.Texture.newFromFile()` to load it.
+
+This function is threadsafe, so that you can e.g. use GTask
+and `Gio.Task.runInThread()` to avoid blocking the main thread
+while loading a big image.
+
+**Parameters**
+
+- `resourcePath`: the path of the resource file
+
+**Returns** A newly-created `GdkTexture`
+
 ## Props
 
 `ref` receives the `Gdk.Texture` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -15,6 +15,49 @@ import { PangoFont } from "@gtkx/jsx/pango";
 
 [GObject](.gtkx/reference/gobject/object.md) → **PangoFont**
 
+## Static methods
+
+Static methods are called on `Pango.Font`, imported from `@gtkx/gi/pango`.
+
+### `descriptionsFree`
+
+```ts
+descriptionsFree(descs: Pango.FontDescription[] | null): void
+```
+
+Frees an array of font descriptions.
+
+**Parameters**
+
+- `descs`: a pointer to an array of `PangoFontDescription`, may be `null`
+
+> **Deprecated since 1.56.** Just use pango_font_description_free in a loop
+
+### `deserialize`
+
+```ts
+deserialize(context: Pango.Context, bytes: GLib.Bytes): Pango.Font | null
+```
+
+Loads data previously created via `Pango.Font.serialize()`.
+
+For a discussion of the supported format, see that function.
+
+Note: to verify that the returned font is identical to
+the one that was serialized, you can compare `bytes` to the
+result of serializing the font again.
+
+**Parameters**
+
+- `context`: a `PangoContext`
+- `bytes`: the bytes containing the data
+
+**Returns** a new `PangoFont`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 1.50._
+
 ## Props
 
 `ref` receives the `Pango.Font` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -169,8 +212,7 @@ output variables and returns.
 
 - `language`: language tag used to determine which script to get the metrics for, or `null` to indicate to get the metrics for the entire font.
 
-**Returns** a `PangoFontMetrics` object. The caller must call
-  `Pango.FontMetrics.unref()` when finished using the object.
+**Returns** a `PangoFontMetrics` object.
 
 ### `hasChar`
 

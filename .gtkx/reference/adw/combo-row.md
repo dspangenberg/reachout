@@ -6,8 +6,6 @@ description: "A Gtk.ListBoxRow used to choose from a list of items."
 
 A `Gtk.ListBoxRow` used to choose from a list of items.
 
-
-
 The `AdwComboRow` widget allows the user to choose from a list of valid
 choices. The row displays the selected choice. When activated, the row
 displays a popover which allows the user to make a new choice.
@@ -58,6 +56,20 @@ import { AdwComboRow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkListBoxRow](.gtkx/reference/gtk/list-box-row.md) → [AdwPreferencesRow](.gtkx/reference/adw/preferences-row.md) → [AdwActionRow](.gtkx/reference/adw/action-row.md) → **AdwComboRow**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ComboRow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwComboRow`.
+
+**Returns** the newly created `AdwComboRow`
 
 ## Props
 

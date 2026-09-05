@@ -6,8 +6,6 @@ description: "A box-like widget that can wrap into multiple lines."
 
 A box-like widget that can wrap into multiple lines.
 
-
-
 `AdwWrapBox` is similar to `Gtk.Box`, but can wrap lines when the
 widgets cannot fit otherwise. Unlike `Gtk.FlowBox`, the children aren't
 arranged into a grid and behave more like words in a wrapping label.
@@ -70,6 +68,22 @@ import { AdwWrapBox } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwWrapBox**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.WrapBox`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwWrapBox`.
+
+**Returns** the newly created `AdwWrapBox`
+
+_Available since 1.7._
 
 ## Props
 

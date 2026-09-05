@@ -33,9 +33,7 @@ If you construct an uninitialized `GDBusConnection`, such as via
 `Gio.AsyncInitable.initAsync()` before using its methods or properties.
 Calling methods or accessing properties on a `GDBusConnection` that has not
 completed initialization successfully is considered to be invalid, and leads
-to undefined behaviour. In particular, if initialization fails with a
-`GError`, the only valid thing you can do with that `GDBusConnection` is to
-free it with `GObject.Object.unref()`.
+to undefined behaviour.
 
 ### An example D-Bus server
 
@@ -68,6 +66,202 @@ import { GDBusConnection } from "@gtkx/jsx/gio";
 [GObject](.gtkx/reference/gobject/object.md) → **GDBusConnection**
 
 Implements `GAsyncInitable`, `GInitable`.
+
+## Static methods
+
+Static methods are called on `Gio.DBusConnection`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(stream: Gio.IOStream, guid: string | null, flags: Gio.DBusConnectionFlags, observer: Gio.DBusAuthObserver | null, cancellable?: Gio.Cancellable | null): Promise<Gio.DBusConnection>
+```
+
+Asynchronously sets up a D-Bus connection for exchanging D-Bus messages
+with the end represented by `stream`.
+
+If `stream` is a `GSocketConnection`, then the corresponding `GSocket`
+will be put into non-blocking mode.
+
+The D-Bus connection will interact with `stream` from a worker thread.
+As a result, the caller should not interact with `stream` after this
+method has been called.
+
+If `observer` is not `null` it may be used to control the
+authentication process.
+
+When the operation is finished, `callback` will be invoked. You can
+then call `g_dbus_connection_new_finish()` to get the result of the
+operation.
+
+This is an asynchronous failable constructor. See
+`g_dbus_connection_new_sync()` for the synchronous
+version.
+
+**Parameters**
+
+- `stream`: a `GIOStream`
+- `guid`: the GUID to use if authenticating as a server or `null`
+- `flags`: flags describing how to make the connection
+- `observer`: a `GDBusAuthObserver` or `null`
+- `cancellable`: a `GCancellable` or `null`
+
+**Returns** a `GDBusConnection` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newFinish`
+
+```ts
+newFinish(res: Gio.AsyncResult): Gio.DBusConnection
+```
+
+Finishes an operation started with `g_dbus_connection_new()`.
+
+**Parameters**
+
+- `res`: a `GAsyncResult` obtained from the `GAsyncReadyCallback` passed to `g_dbus_connection_new()`.
+
+**Returns** a `GDBusConnection` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newForAddress`
+
+```ts
+newForAddress(address: string, flags: Gio.DBusConnectionFlags, observer: Gio.DBusAuthObserver | null, cancellable?: Gio.Cancellable | null): Promise<Gio.DBusConnection>
+```
+
+Asynchronously connects and sets up a D-Bus client connection for
+exchanging D-Bus messages with an endpoint specified by `address`
+which must be in the
+[D-Bus address format](https://dbus.freedesktop.org/doc/dbus-specification.html#addresses).
+
+This constructor can only be used to initiate client-side
+connections - use `g_dbus_connection_new()` if you need to act as the
+server. In particular, `flags` cannot contain the
+`G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER`,
+`G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS` or
+`G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER` flags.
+
+When the operation is finished, `callback` will be invoked. You can
+then call `g_dbus_connection_new_for_address_finish()` to get the result of
+the operation.
+
+If `observer` is not `null` it may be used to control the
+authentication process.
+
+This is an asynchronous failable constructor. See
+`g_dbus_connection_new_for_address_sync()` for the synchronous
+version.
+
+**Parameters**
+
+- `address`: a D-Bus address
+- `flags`: flags describing how to make the connection
+- `observer`: a `GDBusAuthObserver` or `null`
+- `cancellable`: a `GCancellable` or `null`
+
+**Returns** a `GDBusConnection` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newForAddressFinish`
+
+```ts
+newForAddressFinish(res: Gio.AsyncResult): Gio.DBusConnection
+```
+
+Finishes an operation started with `g_dbus_connection_new_for_address()`.
+
+**Parameters**
+
+- `res`: a `GAsyncResult` obtained from the `GAsyncReadyCallback` passed to `g_dbus_connection_new()`
+
+**Returns** a `GDBusConnection` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newForAddressSync`
+
+```ts
+newForAddressSync(address: string, flags: Gio.DBusConnectionFlags, observer: Gio.DBusAuthObserver | null, cancellable: Gio.Cancellable | null): Gio.DBusConnection
+```
+
+Synchronously connects and sets up a D-Bus client connection for
+exchanging D-Bus messages with an endpoint specified by `address`
+which must be in the
+[D-Bus address format](https://dbus.freedesktop.org/doc/dbus-specification.html#addresses).
+
+This constructor can only be used to initiate client-side
+connections - use `g_dbus_connection_new_sync()` if you need to act
+as the server. In particular, `flags` cannot contain the
+`G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_SERVER`,
+`G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_ALLOW_ANONYMOUS` or
+`G_DBUS_CONNECTION_FLAGS_AUTHENTICATION_REQUIRE_SAME_USER` flags.
+
+This is a synchronous failable constructor. See
+`g_dbus_connection_new_for_address()` for the asynchronous version.
+
+If `observer` is not `null` it may be used to control the
+authentication process.
+
+**Parameters**
+
+- `address`: a D-Bus address
+- `flags`: flags describing how to make the connection
+- `observer`: a `GDBusAuthObserver` or `null`
+- `cancellable`: a `GCancellable` or `null`
+
+**Returns** a `GDBusConnection` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newSync`
+
+```ts
+newSync(stream: Gio.IOStream, guid: string | null, flags: Gio.DBusConnectionFlags, observer: Gio.DBusAuthObserver | null, cancellable: Gio.Cancellable | null): Gio.DBusConnection
+```
+
+Synchronously sets up a D-Bus connection for exchanging D-Bus messages
+with the end represented by `stream`.
+
+If `stream` is a `GSocketConnection`, then the corresponding `GSocket`
+will be put into non-blocking mode.
+
+The D-Bus connection will interact with `stream` from a worker thread.
+As a result, the caller should not interact with `stream` after this
+method has been called.
+
+If `observer` is not `null` it may be used to control the
+authentication process.
+
+This is a synchronous failable constructor. See
+`g_dbus_connection_new()` for the asynchronous version.
+
+**Parameters**
+
+- `stream`: a `GIOStream`
+- `guid`: the GUID to use if authenticating as a server or `null`
+- `flags`: flags describing how to make the connection
+- `observer`: a `GDBusAuthObserver` or `null`
+- `cancellable`: a `GCancellable` or `null`
+
+**Returns** a `GDBusConnection` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
 
 ## Props
 
@@ -245,13 +439,6 @@ dispatched anywhere else - not even the standard dispatch machinery
 message. Similarly, if a filter consumes an outgoing message, the
 message will not be sent to the other peer.
 
-If `user_data_free_func` is non-`null`, it will be called (in the
-thread-default main context of the thread you are calling this
-method from) at some point after `user_data` is no longer
-needed. (It is not guaranteed to be called synchronously when the
-filter is removed, and may be called after `connection` has been
-destroyed.)
-
 **Parameters**
 
 - `filterFunction`: a filter function
@@ -326,7 +513,7 @@ the `G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED` flag set.
 - `cancellable`: a `GCancellable` or `null`
 
 **Returns** `null` if `error` is set. Otherwise a non-floating
-    `GVariant` tuple with return values. Free with `g_variant_unref()`.
+    `GVariant` tuple with return values.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -345,7 +532,7 @@ Finishes an operation started with `g_dbus_connection_call()`.
 - `res`: a `GAsyncResult` obtained from the `GAsyncReadyCallback` passed to `g_dbus_connection_call()`
 
 **Returns** `null` if `error` is set. Otherwise a non-floating
-    `GVariant` tuple with return values. Free with `g_variant_unref()`.
+    `GVariant` tuple with return values.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -407,7 +594,7 @@ this method.
 - `cancellable`: a `GCancellable` or `null`
 
 **Returns** `null` if `error` is set. Otherwise a non-floating
-    `GVariant` tuple with return values. Free with `g_variant_unref()`.
+    `GVariant` tuple with return values.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -450,7 +637,7 @@ This method is only available on UNIX.
 
 **Returns** Tuple of:
 
-- `result`: `null` if `error` is set. Otherwise a non-floating `GVariant` tuple with return values. Free with `g_variant_unref()`.
+- `result`: `null` if `error` is set. Otherwise a non-floating `GVariant` tuple with return values.
 - `outFdList`: return location for a `GUnixFDList` or `null`
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
@@ -482,7 +669,7 @@ value of type `G_VARIANT_TYPE_HANDLE` in the body of the message.
 
 **Returns** Tuple of:
 
-- `result`: `null` if `error` is set. Otherwise a non-floating `GVariant` tuple with return values. Free with `g_variant_unref()`.
+- `result`: `null` if `error` is set. Otherwise a non-floating `GVariant` tuple with return values.
 - `outFdList`: return location for a `GUnixFDList` or `null`
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
@@ -516,7 +703,7 @@ This method is only available on UNIX.
 
 **Returns** Tuple of:
 
-- `result`: `null` if `error` is set. Otherwise a non-floating `GVariant` tuple with return values. Free with `g_variant_unref()`.
+- `result`: `null` if `error` is set. Otherwise a non-floating `GVariant` tuple with return values.
 - `outFdList`: return location for a `GUnixFDList` or `null`
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
@@ -822,8 +1009,7 @@ getGuid(): string
 The GUID of the peer performing the role of server when
 authenticating. See `GDBusConnection.guid` for more details.
 
-**Returns** The GUID. Do not free this string, it is owned by
-    `connection`.
+**Returns** The GUID.
 
 _Available since 2.26._
 
@@ -861,7 +1047,7 @@ each application is a client. So this method will always return
 `null` for message bus clients.
 
 **Returns** a `GCredentials` or `null` if not
-    available. Do not free this object, it is owned by `connection`.
+    available.
 
 _Available since 2.26._
 
@@ -892,8 +1078,7 @@ bus. This can also be used to figure out if `connection` is a
 message bus connection.
 
 **Returns** the unique name or `null` if `connection` is not a message
-    bus connection. Do not free this string, it is owned by
-    `connection`.
+    bus connection.
 
 _Available since 2.26._
 
@@ -1040,10 +1225,7 @@ Removes a filter.
 
 Note that since filters run in a different thread, there is a race
 condition where it is possible that the filter will be running even
-after calling `g_dbus_connection_remove_filter()`, so you cannot just
-free data that the filter might be using. Instead, you should pass
-a `GDestroyNotify` to `g_dbus_connection_add_filter()`, which will be
-called when it is guaranteed that the data is no longer needed.
+after calling `g_dbus_connection_remove_filter()`.
 
 **Parameters**
 
@@ -1275,26 +1457,6 @@ If one of `G_DBUS_SIGNAL_FLAGS_MATCH_ARG0_NAMESPACE` or
 interpreted as part of a namespace or path.  The first argument
 of a signal is matched against that part as specified by D-Bus.
 
-If `user_data_free_func` is non-`null`, it will be called (in the
-thread-default main context of the thread you are calling this
-method from) at some point after `user_data` is no longer
-needed. (It is not guaranteed to be called synchronously when the
-signal is unsubscribed from, and may be called after `connection`
-has been destroyed.)
-
-As `callback` is potentially invoked in a different thread from where it’s
-emitted, it’s possible for this to happen after
-`g_dbus_connection_signal_unsubscribe()` has been called in another thread.
-Due to this, `user_data` should have a strong reference which is freed with
-`user_data_free_func`, rather than pointing to data whose lifecycle is tied
-to the signal subscription. For example, if a `GObject` is used to store the
-subscription ID from `g_dbus_connection_signal_subscribe()`, a strong reference
-to that `GObject` must be passed to `user_data`, and `g_object_unref()` passed to
-`user_data_free_func`. You are responsible for breaking the resulting
-reference count cycle by explicitly unsubscribing from the signal when
-dropping the last external reference to the `GObject`. Alternatively, a weak
-reference may be used.
-
 It is guaranteed that if you unsubscribe from a signal using
 `g_dbus_connection_signal_unsubscribe()` from the same thread which made the
 corresponding `g_dbus_connection_signal_subscribe()` call, `callback` will not
@@ -1329,14 +1491,7 @@ Unsubscribes from signals.
 
 Note that there may still be D-Bus traffic to process (relating to this
 signal subscription) in the current thread-default `GMainContext` after this
-function has returned. You should continue to iterate the `GMainContext`
-until the `GDestroyNotify` function passed to
-`g_dbus_connection_signal_subscribe()` is called, in order to avoid memory
-leaks through callbacks queued on the `GMainContext` after it’s stopped being
-iterated.
-Alternatively, any idle source with a priority lower than `G_PRIORITY_DEFAULT`
-that was scheduled after unsubscription, also indicates that all resources
-of this subscription are released.
+function has returned.
 
 **Parameters**
 

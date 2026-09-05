@@ -23,6 +23,42 @@ import { GdkDrag } from "@gtkx/jsx/gdk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GdkDrag**
 
+## Static methods
+
+Static methods are called on `Gdk.Drag`, imported from `@gtkx/gi/gdk`.
+
+### `begin`
+
+```ts
+begin(surface: Gdk.Surface, device: Gdk.Device, content: Gdk.ContentProvider, actions: Gdk.DragAction, dx: number, dy: number): Gdk.Drag | null
+```
+
+Starts a drag and creates a new drag context for it.
+
+This function is called by the drag source. After this call, you
+probably want to set up the drag icon using the surface returned
+by `Gdk.Drag.getDragSurface()`.
+
+This function returns a reference to the `Gdk.Drag` object,
+but GTK keeps its own reference as well, as long as the DND operation
+is going on.
+
+Note: if `actions` include `GDK_ACTION_MOVE`, you need to listen for
+the `Gdk.Drag.dnd-finished` signal and delete the data at
+the source if `Gdk.Drag.getSelectedAction()` returns
+`GDK_ACTION_MOVE`.
+
+**Parameters**
+
+- `surface`: the source surface for this drag
+- `device`: the device that controls this drag
+- `content`: the offered content
+- `actions`: the actions supported by this drag
+- `dx`: the x offset to `device`'s position where the drag nominally started
+- `dy`: the y offset to `device`'s position where the drag nominally started
+
+**Returns** a newly created `GdkDrag`
+
 ## Props
 
 `ref` receives the `Gdk.Drag` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

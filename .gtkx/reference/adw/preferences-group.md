@@ -6,8 +6,6 @@ description: "A group of preference rows."
 
 A group of preference rows.
 
-
-
 An `AdwPreferencesGroup` represents a group or tightly related preferences,
 which in turn are represented by `PreferencesRow`.
 
@@ -47,6 +45,20 @@ import { AdwPreferencesGroup } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwPreferencesGroup**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.PreferencesGroup`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwPreferencesGroup`.
+
+**Returns** the newly created `AdwPreferencesGroup`
 
 ## Props
 

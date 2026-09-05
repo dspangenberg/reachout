@@ -17,8 +17,7 @@ possible.
 
 Each `GSocketAddressEnumerator` can only be enumerated once. Once
 `Gio.SocketAddressEnumerator.next()` has returned `NULL`, further
-enumeration with that `GSocketAddressEnumerator` is not possible, and it can
-be unreffed.
+enumeration with that `GSocketAddressEnumerator` is not possible.
 
 ```tsx
 import { GSocketAddressEnumerator } from "@gtkx/jsx/gio";
@@ -60,7 +59,7 @@ ignored.
 
 - `cancellable`: optional `GCancellable` object, `null` to ignore.
 
-**Returns** a `GSocketAddress` (owned by the caller), or `null` on
+**Returns** a `GSocketAddress` , or `null` on
     error (in which case `*error` will be set) or if there are no
     more addresses.
 
@@ -82,7 +81,7 @@ It is an error to call this multiple times before the previous callback has fini
 
 - `cancellable`: optional `GCancellable` object, `null` to ignore.
 
-**Returns** a `GSocketAddress` (owned by the caller), or `null` on
+**Returns** a `GSocketAddress` , or `null` on
     error (in which case `*error` will be set) or if there are no
     more addresses.
 
@@ -103,7 +102,7 @@ error handling.
 
 - `result`: a `GAsyncResult`
 
-**Returns** a `GSocketAddress` (owned by the caller), or `null` on
+**Returns** a `GSocketAddress` , or `null` on
     error (in which case `*error` will be set) or if there are no
     more addresses.
 

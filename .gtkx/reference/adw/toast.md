@@ -13,8 +13,6 @@ follows:
 adw_toast_overlay_add_toast (overlay, adw_toast_new (_("Simple Toast")));
 ```
 
-
-
 Toasts always have a close button. They emit the `Toast.dismissed`
 signal when disappearing.
 
@@ -41,8 +39,6 @@ adw_toast_set_action_name (toast, "win.example");
 
 adw_toast_overlay_add_toast (overlay, toast);
 ```
-
-
 
 ### Modifying toasts
 
@@ -122,6 +118,28 @@ import { AdwToast } from "@gtkx/jsx/adw";
 ## Hierarchy
 
 [GObject](.gtkx/reference/gobject/object.md) → **AdwToast**
+
+## Static methods
+
+Static methods are called on `Adw.Toast`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(title: string): Adw.Toast
+```
+
+Creates a new `AdwToast`.
+
+The toast will use `title` as its title.
+
+`title` can be marked up with the Pango text markup language.
+
+**Parameters**
+
+- `title`: the title to be displayed
+
+**Returns** the new created `AdwToast`
 
 ## Props
 

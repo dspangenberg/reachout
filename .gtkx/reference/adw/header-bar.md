@@ -6,8 +6,6 @@ description: "A title bar widget."
 
 A title bar widget.
 
-
-
 `AdwHeaderBar` is similar to `Gtk.HeaderBar`, but provides additional
 features compared to it. Refer to `GtkHeaderBar` for details. It is typically
 used as a top bar within `ToolbarView`.
@@ -105,6 +103,20 @@ import { AdwHeaderBar } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwHeaderBar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.HeaderBar`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwHeaderBar`.
+
+**Returns** the newly created `AdwHeaderBar`.
 
 ## Props
 

@@ -6,8 +6,6 @@ description: "A bottom sheet with an optional bottom bar."
 
 A bottom sheet with an optional bottom bar.
 
-
-
 `AdwBottomSheet` has three child widgets. `BottomSheet.content` is
 shown persistently. `BottomSheet.sheet` is displayed above it when
 it's open, and `BottomSheet.bottomBar` is displayed when it's not.
@@ -85,6 +83,22 @@ import { AdwBottomSheet } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwBottomSheet**
 
 Implements `AdwSwipeable`, `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.BottomSheet`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwBottomSheet`.
+
+**Returns** the new created `AdwBottomSheet`
+
+_Available since 1.6._
 
 ## Props
 

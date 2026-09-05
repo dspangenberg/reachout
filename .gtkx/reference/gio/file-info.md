@@ -49,6 +49,20 @@ import { GFileInfo } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GFileInfo**
 
+## Static methods
+
+Static methods are called on `Gio.FileInfo`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.FileInfo
+```
+
+Creates a new file info structure.
+
+**Returns** a `GFileInfo`.
+
 ## Props
 
 `ref` receives the `Gio.FileInfo` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -140,7 +154,6 @@ if (trash_orig_path_utf8 != NULL)
 
 **Returns** a UTF-8 string associated with the given `attribute`, or
    `null` if the attribute wasn’t set.
-   When you're done with the string it must be freed with `g_free()`.
 
 ### `getAttributeBoolean`
 
@@ -307,7 +320,7 @@ not contain a stringv, `null` will be returned.
 - `attribute`: a file attribute key.
 
 **Returns** the contents of the `attribute` value as a stringv,
-or `null` otherwise. Do not free. These returned strings are UTF-8.
+or `null` otherwise. These returned strings are UTF-8.
 
 _Available since 2.22._
 

@@ -28,6 +28,139 @@ import { GdkPixbufAnimation } from "@gtkx/jsx/gdkpixbuf";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GdkPixbufAnimation**
 
+## Static methods
+
+Static methods are called on `GdkPixbuf.PixbufAnimation`, imported from `@gtkx/gi/gdkpixbuf`.
+
+### `newFromFile`
+
+```ts
+newFromFile(filename: string): GdkPixbuf.PixbufAnimation | null
+```
+
+Creates a new animation by loading it from a file.
+
+The file format is detected automatically.
+
+If the file's format does not support multi-frame images, then an animation
+with a single frame will be created.
+
+Possible errors are in the `GDK_PIXBUF_ERROR` and `G_FILE_ERROR` domains.
+
+**Parameters**
+
+- `filename`: Name of file to load, in the GLib file name encoding
+
+**Returns** A newly-created animation
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+> **Deprecated since 2.44.** Use a different image loading library for animatable assets
+
+### `newFromResource`
+
+```ts
+newFromResource(resourcePath: string): GdkPixbuf.PixbufAnimation | null
+```
+
+Creates a new pixbuf animation by loading an image from an resource.
+
+The file format is detected automatically. If `NULL` is returned, then
+`error` will be set.
+
+**Parameters**
+
+- `resourcePath`: the path of the resource file
+
+**Returns** A newly-created animation
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+> **Deprecated since 2.44.** Use a different image loading library for animatable assets
+
+_Available since 2.28._
+
+### `newFromStream`
+
+```ts
+newFromStream(stream: Gio.InputStream, cancellable: Gio.Cancellable | null): GdkPixbuf.PixbufAnimation | null
+```
+
+Creates a new animation by loading it from an input stream.
+
+The file format is detected automatically.
+
+If `NULL` is returned, then `error` will be set.
+
+The `cancellable` can be used to abort the operation from another thread.
+If the operation was cancelled, the error `G_IO_ERROR_CANCELLED` will be
+returned. Other possible errors are in the `GDK_PIXBUF_ERROR` and
+`G_IO_ERROR` domains.
+
+The stream is not closed.
+
+**Parameters**
+
+- `stream`: a `GInputStream` to load the pixbuf from
+- `cancellable`: optional `GCancellable` object
+
+**Returns** A newly-created animation
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+> **Deprecated since 2.44.** Use a different image loading library for animatable assets
+
+_Available since 2.28._
+
+### `newFromStreamAsync`
+
+```ts
+newFromStreamAsync(stream: Gio.InputStream, cancellable?: Gio.Cancellable | null): Promise<GdkPixbuf.PixbufAnimation | null>
+```
+
+Creates a new animation by asynchronously loading an image from an input stream.
+
+For more details see `gdk_pixbuf_new_from_stream()`, which is the synchronous
+version of this function.
+
+When the operation is finished, `callback` will be called in the main thread.
+You can then call `gdk_pixbuf_animation_new_from_stream_finish()` to get the
+result of the operation.
+
+**Parameters**
+
+- `stream`: a `GInputStream` from which to load the animation
+- `cancellable`: optional `GCancellable` object
+
+**Returns** the newly created animation
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+> **Deprecated since 2.44.** Use a different image loading library for animatable assets
+
+_Available since 2.28._
+
+### `newFromStreamFinish`
+
+```ts
+newFromStreamFinish(asyncResult: Gio.AsyncResult): GdkPixbuf.PixbufAnimation | null
+```
+
+Finishes an asynchronous pixbuf animation creation operation started with
+`GdkPixbuf.PixbufAnimation.newFromStreamAsync()`.
+
+**Parameters**
+
+- `asyncResult`: a `GAsyncResult`
+
+**Returns** the newly created animation
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+> **Deprecated since 2.44.** Use a different image loading library for animatable assets
+
+_Available since 2.28._
+
 ## Props
 
 `ref` receives the `GdkPixbuf.PixbufAnimation` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

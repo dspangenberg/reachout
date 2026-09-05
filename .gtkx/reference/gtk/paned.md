@@ -6,8 +6,6 @@ description: "Arranges its children in two panes, horizontally or vertically."
 
 Arranges its children in two panes, horizontally or vertically.
 
-
-
 The division between the two panes is adjustable by the user
 by dragging a handle.
 
@@ -92,6 +90,24 @@ import { GtkPaned } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkPaned**
 
 Implements `GtkAccessible`, `GtkAccessibleRange`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.Paned`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(orientation: Gtk.Orientation): Gtk.Widget
+```
+
+Creates a new `GtkPaned` widget.
+
+**Parameters**
+
+- `orientation`: the paned’s orientation.
+
+**Returns** the newly created paned widget
 
 ## Props
 

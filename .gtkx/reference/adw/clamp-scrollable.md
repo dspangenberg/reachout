@@ -24,6 +24,20 @@ import { AdwClampScrollable } from "@gtkx/jsx/adw";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`, `GtkScrollable`.
 
+## Static methods
+
+Static methods are called on `Adw.ClampScrollable`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwClampScrollable`.
+
+**Returns** the newly created `AdwClampScrollable`
+
 ## Props
 
 `ref` receives the `Adw.ClampScrollable` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

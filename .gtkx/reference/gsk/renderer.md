@@ -23,6 +23,30 @@ import { GskRenderer } from "@gtkx/jsx/gsk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GskRenderer**
 
+## Static methods
+
+Static methods are called on `Gsk.Renderer`, imported from `@gtkx/gi/gsk`.
+
+### `newForSurface`
+
+```ts
+newForSurface(surface: Gdk.Surface): Gsk.Renderer | null
+```
+
+Creates an appropriate `GskRenderer` instance for the given surface.
+
+If the `GSK_RENDERER` environment variable is set, GSK will
+try that renderer first, before trying the backend-specific
+default. The ultimate fallback is the cairo renderer.
+
+The renderer will be realized before it is returned.
+
+**Parameters**
+
+- `surface`: a surface
+
+**Returns** the realized renderer
+
 ## Props
 
 `ref` receives the `Gsk.Renderer` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

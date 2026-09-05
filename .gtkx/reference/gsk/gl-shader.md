@@ -127,6 +127,42 @@ import { GskGLShader } from "@gtkx/jsx/gsk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GskGLShader**
 
+## Static methods
+
+Static methods are called on `Gsk.GLShader`, imported from `@gtkx/gi/gsk`.
+
+### `newFromBytes`
+
+```ts
+newFromBytes(sourcecode: GLib.Bytes): Gsk.GLShader
+```
+
+Creates a `GskGLShader` that will render pixels using the specified code.
+
+**Parameters**
+
+- `sourcecode`: GLSL sourcecode for the shader, as a `GBytes`
+
+**Returns** A new `GskGLShader`
+
+> **Deprecated since 4.16.** GTK's new Vulkan-focused rendering does not support this feature. Use [GtkGLArea](../gtk4/class.GLArea.html) for OpenGL rendering.
+
+### `newFromResource`
+
+```ts
+newFromResource(resourcePath: string): Gsk.GLShader
+```
+
+Creates a `GskGLShader` that will render pixels using the specified code.
+
+**Parameters**
+
+- `resourcePath`: path to a resource that contains the GLSL sourcecode for the shader
+
+**Returns** A new `GskGLShader`
+
+> **Deprecated since 4.16.** GTK's new Vulkan-focused rendering does not support this feature. Use [GtkGLArea](../gtk4/class.GLArea.html) for OpenGL rendering.
+
 ## Props
 
 `ref` receives the `Gsk.GLShader` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

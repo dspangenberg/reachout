@@ -42,6 +42,24 @@ import { GtkStringList } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`, `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Gtk.StringList`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(strings: string[] | null): Gtk.StringList
+```
+
+Creates a new `GtkStringList` with the given `strings`.
+
+**Parameters**
+
+- `strings`: The strings to put in the model
+
+**Returns** a new `GtkStringList`
+
 ## Props
 
 `ref` receives the `Gtk.StringList` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

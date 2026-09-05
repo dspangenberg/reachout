@@ -94,6 +94,37 @@ import { GTestDBus } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GTestDBus**
 
+## Static methods
+
+Static methods are called on `Gio.TestDBus`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(flags: Gio.TestDBusFlags): Gio.TestDBus
+```
+
+Create a new `GTestDBus` object.
+
+**Parameters**
+
+- `flags`: a `GTestDBusFlags`
+
+**Returns** a new `GTestDBus`.
+
+### `unset`
+
+```ts
+unset(): void
+```
+
+Unset DISPLAY and DBUS_SESSION_BUS_ADDRESS env variables to ensure the test
+won't use user's session bus.
+
+This is useful for unit tests that want to verify behaviour when no session
+bus is running. It is not necessary to call this if unit test already calls
+`g_test_dbus_up()` before acquiring the session bus.
+
 ## Props
 
 `ref` receives the `Gio.TestDBus` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

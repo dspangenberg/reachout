@@ -39,6 +39,35 @@ import { GtkShortcutAction } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkShortcutAction**
 
+## Static methods
+
+Static methods are called on `Gtk.ShortcutAction`, imported from `@gtkx/gi/gtk`.
+
+### `parseString`
+
+```ts
+parseString(string: string): Gtk.ShortcutAction | null
+```
+
+Tries to parse the given string into an action.
+
+On success, the parsed action is returned. When parsing
+failed, `null` is returned.
+
+The accepted strings are:
+
+- `nothing`, for `GtkNothingAction`
+- `activate`, for `GtkActivateAction`
+- `mnemonic-activate`, for `GtkMnemonicAction`
+- `action(NAME)`, for a `GtkNamedAction` for the action named `NAME`
+- `signal(NAME)`, for a `GtkSignalAction` for the signal `NAME`
+
+**Parameters**
+
+- `string`: the string to parse
+
+**Returns** a new `GtkShortcutAction`
+
 ## Props
 
 `ref` receives the `Gtk.ShortcutAction` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

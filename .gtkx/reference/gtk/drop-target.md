@@ -84,6 +84,29 @@ import { GtkDropTarget } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → **GtkDropTarget**
 
+## Static methods
+
+Static methods are called on `Gtk.DropTarget`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(type: bigint | AnyClass<TypedClass>, actions: Gdk.DragAction): Gtk.DropTarget
+```
+
+Creates a new `GtkDropTarget` object.
+
+If the drop target should support more than 1 type, pass
+`G_TYPE_INVALID` for `type` and then call
+`Gtk.DropTarget.setGtypes()`.
+
+**Parameters**
+
+- `type`: The supported type or `G_TYPE_INVALID`
+- `actions`: the supported actions
+
+**Returns** the new `GtkDropTarget`
+
 ## Props
 
 `ref` receives the `Gtk.DropTarget` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

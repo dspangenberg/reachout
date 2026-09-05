@@ -36,6 +36,22 @@ import { GtkCellAreaBox } from "@gtkx/jsx/gtk";
 
 Implements `GtkBuildable`, `GtkCellLayout`, `GtkOrientable`.
 
+## Static methods
+
+Static methods are called on `Gtk.CellAreaBox`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.CellArea
+```
+
+Creates a new `GtkCellAreaBox`.
+
+**Returns** a newly created `GtkCellAreaBox`
+
+> **Deprecated since 4.10.**
+
 ## Props
 
 `ref` receives the `Gtk.CellAreaBox` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -125,6 +125,34 @@ import { GtkText } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkAccessibleText`, `GtkBuildable`, `GtkConstraintTarget`, `GtkEditable`.
 
+## Static methods
+
+Static methods are called on `Gtk.Text`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkText`.
+
+**Returns** the new `GtkText`
+
+### `newWithBuffer`
+
+```ts
+newWithBuffer(buffer: Gtk.EntryBuffer): Gtk.Widget
+```
+
+Creates a new `GtkText` with the specified buffer.
+
+**Parameters**
+
+- `buffer`: the buffer to use
+
+**Returns** a new `GtkText`
+
 ## Props
 
 `ref` receives the `Gtk.Text` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

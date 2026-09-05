@@ -6,8 +6,6 @@ description: "Presents a bubble-like popup."
 
 Presents a bubble-like popup.
 
-
-
 It is primarily meant to provide context-dependent information
 or options. Popovers are attached to a parent widget. The parent widget
 must support popover children, as `Gtk.MenuButton` and
@@ -107,6 +105,20 @@ import { GtkPopover } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkPopover**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.Popover`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkPopover`.
+
+**Returns** the new `GtkPopover`
 
 ## Props
 

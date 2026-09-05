@@ -23,6 +23,24 @@ import { GMenu } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GMenuModel](.gtkx/reference/gio/menu-model.md) → **GMenu**
 
+## Static methods
+
+Static methods are called on `Gio.Menu`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.Menu
+```
+
+Creates a new `GMenu`.
+
+The new menu has no items.
+
+**Returns** a new `GMenu`
+
+_Available since 2.32._
+
 ## Props
 
 `ref` receives the `Gio.Menu` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -155,8 +173,6 @@ that is exactly the same as the one presently described by `item`.
 This means that `item` is essentially useless after the insertion
 occurs.  Any changes you make to it are ignored unless it is inserted
 again (at which point its updated values will be copied).
-
-You should probably just free `item` once you're done.
 
 There are many convenience functions to take care of common cases.
 See `g_menu_insert()`, `g_menu_insert_section()` and

@@ -18,6 +18,24 @@ import { GtkStringObject } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkStringObject**
 
+## Static methods
+
+Static methods are called on `Gtk.StringObject`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(string: string): Gtk.StringObject
+```
+
+Wraps a string in an object for use with `GListModel`.
+
+**Parameters**
+
+- `string`: The string to wrap
+
+**Returns** a new `GtkStringObject`
+
 ## Props
 
 `ref` receives the `Gtk.StringObject` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -91,6 +91,20 @@ import { GtkTreeExpander } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.TreeExpander`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkTreeExpander`
+
+**Returns** a new `GtkTreeExpander`
+
 ## Props
 
 `ref` receives the `Gtk.TreeExpander` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

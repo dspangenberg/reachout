@@ -6,8 +6,6 @@ description: "A widget with one child."
 
 A widget with one child.
 
-
-
 The `AdwBin` widget has only one child, set with the `Bin.child`
 property.
 
@@ -23,6 +21,20 @@ import { AdwBin } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwBin**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.Bin`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwBin`.
+
+**Returns** the new created `AdwBin`
 
 ## Props
 

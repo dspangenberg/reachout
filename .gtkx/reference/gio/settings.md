@@ -394,6 +394,219 @@ import { GSettings } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GSettings**
 
+## Static methods
+
+Static methods are called on `Gio.Settings`, imported from `@gtkx/gi/gio`.
+
+### `listRelocatableSchemas`
+
+```ts
+listRelocatableSchemas(): string[]
+```
+
+Deprecated.
+
+**Returns** a list of
+  relocatable `GSettings` schemas that are available, in no defined order.
+
+> **Deprecated since 2.40.** Use `g_settings_schema_source_list_schemas()` instead
+
+_Available since 2.28._
+
+### `listSchemas`
+
+```ts
+listSchemas(): string[]
+```
+
+Deprecated.
+
+**Returns** a list of
+  `GSettings` schemas that are available, in no defined order.
+
+> **Deprecated since 2.40.** Use `g_settings_schema_source_list_schemas()` instead. If you used `g_settings_list_schemas()` to check for the presence of a particular schema, use `g_settings_schema_source_lookup()` instead of your whole loop.
+
+_Available since 2.26._
+
+### `new`
+
+```ts
+new(schemaId: string): Gio.Settings
+```
+
+Creates a new `Gio.Settings` object with the schema specified by
+`schema_id`.
+
+It is an error for the schema to not exist: schemas are an
+essential part of a program, as they provide type information.
+If schemas need to be dynamically loaded (for example, from an
+optional runtime dependency), `Gio.SettingsSchemaSource.lookup()`
+can be used to test for their existence before loading them.
+
+Signals on the newly created `Gio.Settings` object will be dispatched
+via the thread-default `GLib.MainContext` in effect at the time of the
+call to `Gio.Settings.new()`.  The new `Gio.Settings` will hold a reference
+on the context.  See `GLib.MainContext.pushThreadDefault()`.
+
+**Parameters**
+
+- `schemaId`: the ID of the schema
+
+**Returns** a new `Gio.Settings` object
+
+_Available since 2.26._
+
+### `newFull`
+
+```ts
+newFull(schema: Gio.SettingsSchema, backend: Gio.SettingsBackend | null, path: string | null): Gio.Settings
+```
+
+Creates a new `Gio.Settings` object with a given schema, backend and
+path.
+
+It should be extremely rare that you ever want to use this function.
+It is made available for advanced use-cases (such as plugin systems
+that want to provide access to schemas loaded from custom locations,
+etc).
+
+At the most basic level, a `Gio.Settings` object is a pure composition of
+four things: a `Gio.SettingsSchema`, a `Gio.SettingsBackend`, a path within that
+backend, and a `GLib.MainContext` to which signals are dispatched.
+
+This constructor therefore gives you full control over constructing
+`Gio.Settings` instances.  The first 3 parameters are given directly as
+`schema`, `backend` and `path`, and the main context is taken from the
+thread-default (as per `Gio.Settings.new()`).
+
+If `backend` is `NULL` then the default backend is used.
+
+If `path` is `NULL` then the path from the schema is used.  It is an
+error if `path` is `NULL` and the schema has no path of its own or if
+`path` is non-`NULL` and not equal to the path that the schema does
+have.
+
+**Parameters**
+
+- `schema`: the schema describing the settings
+- `backend`: the settings backend to use
+- `path`: the path to use
+
+**Returns** a new `Gio.Settings` object
+
+_Available since 2.32._
+
+### `newWithBackend`
+
+```ts
+newWithBackend(schemaId: string, backend: Gio.SettingsBackend): Gio.Settings
+```
+
+Creates a new `Gio.Settings` object with the schema specified by
+`schema_id` and a given `Gio.SettingsBackend`.
+
+Creating a `Gio.Settings` object with a different backend allows accessing
+settings from a database other than the usual one. For example, it may make
+sense to pass a backend corresponding to the ‘defaults’ settings database on
+the system to get a settings object that modifies the system default
+settings instead of the settings for this user.
+
+**Parameters**
+
+- `schemaId`: the ID of the schema
+- `backend`: the settings backend to use
+
+**Returns** a new `Gio.Settings` object
+
+_Available since 2.26._
+
+### `newWithBackendAndPath`
+
+```ts
+newWithBackendAndPath(schemaId: string, backend: Gio.SettingsBackend, path: string): Gio.Settings
+```
+
+Creates a new `Gio.Settings` object with the schema specified by
+`schema_id` and a given `Gio.SettingsBackend` and path.
+
+This is a mix of `Gio.Settings.newWithBackend()` and
+`Gio.Settings.newWithPath()`.
+
+**Parameters**
+
+- `schemaId`: the ID of the schema
+- `backend`: the settings backend to use
+- `path`: the path to use
+
+**Returns** a new `Gio.Settings` object
+
+_Available since 2.26._
+
+### `newWithPath`
+
+```ts
+newWithPath(schemaId: string, path: string): Gio.Settings
+```
+
+Creates a new `Gio.Settings` object with the relocatable schema specified
+by `schema_id` and a given path.
+
+You only need to do this if you want to directly create a settings
+object with a schema that doesn’t have a specified path of its own.
+That’s quite rare.
+
+It is a programmer error to call this function for a schema that
+has an explicitly specified path.
+
+It is a programmer error if `path` is not a valid path.  A valid path
+begins and ends with `/` and does not contain two consecutive `/`
+characters.
+
+**Parameters**
+
+- `schemaId`: the ID of the schema
+- `path`: the path to use
+
+**Returns** a new `Gio.Settings` object
+
+_Available since 2.26._
+
+### `sync`
+
+```ts
+sync(): void
+```
+
+Ensures that all pending operations are complete for the default backend.
+
+Writes made to a `Gio.Settings` are handled asynchronously.  For this
+reason, it is very unlikely that the changes have it to disk by the
+time `Gio.Settings.set()` returns.
+
+This call will block until all of the writes have made it to the
+backend.  Since the main loop is not running, no change notifications
+will be dispatched during this call (but some may be queued by the
+time the call is done).
+
+### `unbind`
+
+```ts
+unbind(object: GObject.Object, property: string): void
+```
+
+Removes an existing binding for `property` on `object`.
+
+Note that bindings are automatically removed when the
+object is finalized, so it is rarely necessary to call this
+function.
+
+**Parameters**
+
+- `object`: the object with property to unbind
+- `property`: the property whose binding is removed
+
+_Available since 2.26._
+
 ## Props
 
 `ref` receives the `Gio.Settings` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -1164,9 +1377,6 @@ There is little reason to call this function from ‘normal’ code, since
 you should already know what children are in your schema. This function
 may still be useful there for introspection reasons, however.
 
-You should free the return value with `GLib.strfreev()` when you are done
-with it.
-
 **Returns** a list of the children
   on `settings`, in no defined order
 
@@ -1181,9 +1391,6 @@ Introspects the list of keys on `settings`.
 You should probably not be calling this function from ‘normal’ code
 (since you should already know what keys are in your schema).  This
 function is intended for introspection reasons.
-
-You should free the return value with `GLib.strfreev()` when you are done
-with it.
 
 **Returns** a list
   of the keys on `settings`, in no defined order

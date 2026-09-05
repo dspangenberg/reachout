@@ -52,6 +52,22 @@ import { GtkSignalListItemFactory } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkListItemFactory](.gtkx/reference/gtk/list-item-factory.md) → **GtkSignalListItemFactory**
 
+## Static methods
+
+Static methods are called on `Gtk.SignalListItemFactory`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.ListItemFactory
+```
+
+Creates a new `GtkSignalListItemFactory`.
+
+You need to connect signal handlers before you use it.
+
+**Returns** a new `GtkSignalListItemFactory`
+
 ## Props
 
 `ref` receives the `Gtk.SignalListItemFactory` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

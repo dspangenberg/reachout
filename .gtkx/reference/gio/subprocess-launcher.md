@@ -23,6 +23,28 @@ import { GSubprocessLauncher } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GSubprocessLauncher**
 
+## Static methods
+
+Static methods are called on `Gio.SubprocessLauncher`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(flags: Gio.SubprocessFlags): Gio.SubprocessLauncher
+```
+
+Creates a new `GSubprocessLauncher`.
+
+The launcher is created with the default options.  A copy of the
+environment of the calling process is made at the time of this call
+and will be used as the environment that the process is launched in.
+
+**Parameters**
+
+- `flags`: `GSubprocessFlags`
+
+_Available since 2.40._
+
 ## Props
 
 `ref` receives the `Gio.SubprocessLauncher` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

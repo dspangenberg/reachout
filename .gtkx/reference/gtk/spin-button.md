@@ -6,8 +6,6 @@ description: "Allows to enter or change numeric values."
 
 Allows to enter or change numeric values.
 
-
-
 Rather than having to directly type a number into a `GtkEntry`,
 `GtkSpinButton` allows the user to click on one of two arrows
 to increment or decrement the displayed value. A value can still be
@@ -131,6 +129,54 @@ import { GtkSpinButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkSpinButton**
 
 Implements `GtkAccessible`, `GtkAccessibleRange`, `GtkBuildable`, `GtkCellEditable`, `GtkConstraintTarget`, `GtkEditable`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.SpinButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(adjustment: Gtk.Adjustment | null, climbRate: number, digits: number): Gtk.Widget
+```
+
+Creates a new `GtkSpinButton`.
+
+**Parameters**
+
+- `adjustment`: the `GtkAdjustment` that this spin button should use
+- `climbRate`: specifies by how much the rate of change in the value will accelerate if you continue to hold down an up/down button or arrow key
+- `digits`: the number of decimal places to display
+
+**Returns** The new `GtkSpinButton`
+
+### `newWithRange`
+
+```ts
+newWithRange(min: number, max: number, step: number): Gtk.Widget
+```
+
+Creates a new `GtkSpinButton` with the given properties.
+
+This is a convenience constructor that allows creation
+of a numeric `GtkSpinButton` without manually creating
+an adjustment. The value is initially set to the minimum
+value and a page increment of 10 * `step` is the default.
+The precision of the spin button is equivalent to the
+precision of `step`.
+
+Note that the way in which the precision is derived works
+best if `step` is a power of ten. If the resulting precision
+is not suitable for your needs, use
+`Gtk.SpinButton.setDigits()` to correct it.
+
+**Parameters**
+
+- `min`: Minimum allowable value
+- `max`: Maximum allowable value
+- `step`: Increment added or subtracted by spinning the widget
+
+**Returns** The new `GtkSpinButton`
 
 ## Props
 

@@ -6,8 +6,6 @@ description: "Displays an image."
 
 Displays an image.
 
-
-
 Various kinds of object can be displayed as an image; most typically,
 you would load a `GdkTexture` from a file, using the convenience function
 `Gtk.Image.newFromFile()`, for instance:
@@ -53,6 +51,161 @@ import { GtkImage } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkImage**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.Image`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new empty `GtkImage` widget.
+
+**Returns** a newly created `GtkImage` widget.
+
+### `newFromFile`
+
+```ts
+newFromFile(filename: string): Gtk.Widget
+```
+
+Creates a new `GtkImage` displaying the file `filename`.
+
+If the file isn’t found or can’t be loaded, the resulting `GtkImage`
+will display a “broken image” icon. This function never returns `null`,
+it always returns a valid `GtkImage` widget.
+
+If you need to detect failures to load the file, use an
+image loading framework such as libglycin to load the file
+yourself, then create the `GtkImage` from the texture.
+
+The storage type (see `Gtk.Image.getStorageType()`)
+of the returned image is not defined, it will be whatever
+is appropriate for displaying the file.
+
+**Parameters**
+
+- `filename`: a filename
+
+**Returns** a new `GtkImage`
+
+### `newFromGicon`
+
+```ts
+newFromGicon(icon: Gio.Icon): Gtk.Widget
+```
+
+Creates a `GtkImage` displaying an icon from the current icon theme.
+
+If the icon name isn’t known, a “broken image” icon will be
+displayed instead. If the current icon theme is changed, the icon
+will be updated appropriately.
+
+**Parameters**
+
+- `icon`: an icon
+
+**Returns** a new `GtkImage` displaying the themed icon
+
+### `newFromIconName`
+
+```ts
+newFromIconName(iconName: string | null): Gtk.Widget
+```
+
+Creates a `GtkImage` displaying an icon from the current icon theme.
+
+If the icon name isn’t known, a “broken image” icon will be
+displayed instead. If the current icon theme is changed, the icon
+will be updated appropriately.
+
+**Parameters**
+
+- `iconName`: an icon name
+
+**Returns** a new `GtkImage` displaying the themed icon
+
+### `newFromPaintable`
+
+```ts
+newFromPaintable(paintable: Gdk.Paintable | null): Gtk.Widget
+```
+
+Creates a new `GtkImage` displaying `paintable`.
+
+The `GtkImage` does not assume a reference to the paintable. `GtkImage` will add its own
+reference rather than adopting yours.
+
+The `GtkImage` will track changes to the `paintable` and update
+its size and contents in response to it.
+
+Note that paintables are still subject to the icon size that is
+set on the image. If you want to display a paintable at its intrinsic
+size, use `Gtk.Picture` instead.
+
+If `paintable` is a `Gtk.SymbolicPaintable`, then it will be
+recolored with the symbolic palette from the theme.
+
+**Parameters**
+
+- `paintable`: a `GdkPaintable`
+
+**Returns** a new `GtkImage`
+
+### `newFromPixbuf`
+
+```ts
+newFromPixbuf(pixbuf: GdkPixbuf.Pixbuf | null): Gtk.Widget
+```
+
+Creates a new `GtkImage` displaying `pixbuf`.
+
+The `GtkImage` does not assume a reference to the pixbuf. `GtkImage` will add its own
+reference rather than adopting yours.
+
+This is a helper for `Gtk.Image.newFromPaintable()`, and you can't
+get back the exact pixbuf once this is called, only a texture.
+
+Note that this function just creates an `GtkImage` from the pixbuf.
+The `GtkImage` created will not react to state changes. Should you
+want that, you should use `Gtk.Image.newFromIconName()`.
+
+**Parameters**
+
+- `pixbuf`: a `GdkPixbuf`
+
+**Returns** a new `GtkImage`
+
+> **Deprecated since 4.12.** Use `Gtk.Image.newFromPaintable()` and `Gdk.Texture.newForPixbuf()` instead
+
+### `newFromResource`
+
+```ts
+newFromResource(resourcePath: string): Gtk.Widget
+```
+
+Creates a new `GtkImage` displaying the resource file `resource_path`.
+
+If the file isn’t found or can’t be loaded, the resulting `GtkImage` will
+display a “broken image” icon. This function never returns `null`,
+it always returns a valid `GtkImage` widget.
+
+If you need to detect failures to load the file, use an
+image loading framework such as libglycin to load the file
+yourself, then create the `GtkImage` from the texture.
+
+The storage type (see `Gtk.Image.getStorageType()`) of
+the returned image is not defined, it will be whatever is
+appropriate for displaying the file.
+
+**Parameters**
+
+- `resourcePath`: a resource path
+
+**Returns** a new `GtkImage`
 
 ## Props
 
@@ -162,8 +315,6 @@ Gets the icon name and size being displayed by the `GtkImage`.
 
 The storage type of the image must be `GTK_IMAGE_EMPTY` or
 `GTK_IMAGE_ICON_NAME` (see `Gtk.Image.getStorageType()`).
-The returned string is owned by the `GtkImage` and should not
-be freed.
 
 **Returns** the icon name
 

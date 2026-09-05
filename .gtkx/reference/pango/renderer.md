@@ -332,8 +332,7 @@ rendering.
 See `Pango.Renderer.setMatrix()`.
 
 **Returns** the matrix, or `null` if no matrix has
-  been set (which is the same as the identity matrix). The returned
-  matrix is owned by Pango and must not be modified or freed.
+  been set (which is the same as the identity matrix).
 
 _Available since 1.8._
 

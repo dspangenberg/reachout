@@ -6,8 +6,6 @@ description: "A window to present an application's preferences."
 
 A window to present an application's preferences.
 
-
-
 The `AdwPreferencesWindow` widget presents an application's preferences
 gathered into pages and groups. The preferences are searchable by the user.
 
@@ -27,6 +25,22 @@ import { AdwPreferencesWindow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → [AdwWindow](.gtkx/reference/adw/window.md) → **AdwPreferencesWindow**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Adw.PreferencesWindow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwPreferencesWindow`.
+
+**Returns** the newly created `AdwPreferencesWindow`
+
+> **Deprecated since 1.6.** Use `PreferencesDialog`.
 
 ## Props
 

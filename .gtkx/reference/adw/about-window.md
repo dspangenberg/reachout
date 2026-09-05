@@ -6,8 +6,6 @@ description: "A window showing information about the application."
 
 A window showing information about the application.
 
-
-
 An about window is typically opened when the user activates the `About …`
 item in the application's primary menu. All parts of the window are optional.
 
@@ -106,8 +104,6 @@ specified. To add a email address, use a string like
 `Edgar Allan Poe <edgar@poe.com>`. To specify a website with a title, use a
 string like `The GNOME Project https://www.gnome.org`:
 
-
-
 ### Legal
 
 The Legal page displays the copyright and licensing information for the
@@ -177,6 +173,63 @@ import { AdwAboutWindow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → [AdwWindow](.gtkx/reference/adw/window.md) → **AdwAboutWindow**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Adw.AboutWindow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwAboutWindow`.
+
+**Returns** the newly created `AdwAboutWindow`
+
+> **Deprecated since 1.6.** Use `AboutDialog`.
+
+_Available since 1.2._
+
+### `newFromAppdata`
+
+```ts
+newFromAppdata(resourcePath: string, releaseNotesVersion: string | null): Gtk.Widget
+```
+
+Creates a new `AdwAboutWindow` using AppStream metadata.
+
+This automatically sets the following properties with the following AppStream
+values:
+
+* `AboutWindow.applicationIcon` is set from the `<id>`
+* `AboutWindow.applicationName` is set from the `<name>`
+* `AboutWindow.developerName` is set from the `<name>` within
+     `<developer>`
+* `AboutWindow.version` is set from the version of the latest release
+* `AboutWindow.website` is set from the `<url type="homepage">`
+* `AboutWindow.supportUrl` is set from the `<url type="help">`
+* `AboutWindow.issueUrl` is set from the `<url type="bugtracker">`
+* `AboutWindow.licenseType` is set from the `<project_license>`.
+    If the license type retrieved from AppStream is not listed in
+    `Gtk.License`, it will be set to `Gtk.License.custom`.
+
+If `release_notes_version` is not `NULL`,
+`AboutWindow.releaseNotesVersion` is set to match it, while
+`AboutWindow.releaseNotes` is set from the AppStream release
+description for that version.
+
+**Parameters**
+
+- `resourcePath`: The resource to use
+- `releaseNotesVersion`: The version to retrieve release notes for
+
+**Returns** the newly created `AdwAboutWindow`
+
+> **Deprecated since 1.6.** Use `AboutDialog`.
+
+_Available since 1.4._
 
 ## Props
 

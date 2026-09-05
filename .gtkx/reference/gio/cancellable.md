@@ -18,6 +18,38 @@ import { GCancellable } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GCancellable**
 
+## Static methods
+
+Static methods are called on `Gio.Cancellable`, imported from `@gtkx/gi/gio`.
+
+### `getCurrent`
+
+```ts
+getCurrent(): Gio.Cancellable | null
+```
+
+Gets the top cancellable from the stack.
+
+**Returns** a `GCancellable` from the top
+of the stack, or `null` if the stack is empty.
+
+### `new`
+
+```ts
+new(): Gio.Cancellable
+```
+
+Creates a new `GCancellable` object.
+
+Applications that want to start one or more operations
+that should be cancellable should create a `GCancellable`
+and pass it to the operations.
+
+One `GCancellable` can be used in multiple consecutive
+operations or in multiple concurrent operations.
+
+**Returns** a `GCancellable`.
+
 ## Props
 
 `ref` receives the `Gio.Cancellable` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -74,7 +106,6 @@ An example of how to us this:
     g_cancellable_disconnect (cancellable, id);
 
     // cancelled_handler is never called after this, it is now safe
-    // to free the data
     my_data_free (my_data);
 ```
 
@@ -157,9 +188,7 @@ You are not supposed to read from the fd yourself, just check for
 readable status. Reading to unset the readable status is done
 with `g_cancellable_reset()`.
 
-After a successful return from this function, you should use
-`g_cancellable_release_fd()` to free up resources allocated for
-the returned file descriptor.
+After a successful return from this function.
 
 See also `g_cancellable_make_pollfd()`.
 
@@ -188,9 +217,7 @@ to `g_poll()` and used to poll for cancellation. This is useful both
 for unix systems without a native poll and for portability to
 windows.
 
-When this function returns `true`, you should use
-`g_cancellable_release_fd()` to free up resources allocated for the
-`pollfd`. After a `false` return, do not call `g_cancellable_release_fd()`.
+ After a `false` return, do not call `g_cancellable_release_fd()`.
 
 If this function returns `false`, either no `cancellable` was given or
 resource limits prevent this function from allocating the necessary

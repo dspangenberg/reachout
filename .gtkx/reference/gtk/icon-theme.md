@@ -45,6 +45,48 @@ import { GtkIconTheme } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkIconTheme**
 
+## Static methods
+
+Static methods are called on `Gtk.IconTheme`, imported from `@gtkx/gi/gtk`.
+
+### `getForDisplay`
+
+```ts
+getForDisplay(display: Gdk.Display): Gtk.IconTheme
+```
+
+Gets the icon theme object associated with `display`.
+
+If this function has not previously been called for the given
+display, a new icon theme object will be created and associated
+with the display. Icon theme objects are fairly expensive to create,
+so using this function is usually a better choice than calling
+`Gtk.IconTheme.new()` and setting the display yourself; by using
+this function a single icon theme object will be shared between users.
+
+**Parameters**
+
+- `display`: a `GdkDisplay`
+
+**Returns** A unique `GtkIconTheme` associated with
+  the given display. This icon theme is associated with the display
+  and can be used as long as the display is open.
+
+### `new`
+
+```ts
+new(): Gtk.IconTheme
+```
+
+Creates a new icon theme object.
+
+Icon theme objects are used to lookup up an icon by name
+in a particular icon theme. Usually, you’ll want to use
+`Gtk.IconTheme.getForDisplay()` rather than creating
+a new icon theme object for scratch.
+
+**Returns** the newly created `GtkIconTheme` object.
+
 ## Props
 
 `ref` receives the `Gtk.IconTheme` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -170,8 +212,7 @@ getIconNames(): string[]
 Lists the names of icons in the current icon theme.
 
 **Returns** a string array
-  holding the names of all the icons in the theme. You must
-  free the array using `g_strfreev()`.
+  holding the names of all the icons in the theme.
 
 ### `getIconSizes`
 
@@ -191,8 +232,7 @@ format. The array is zero-terminated.
 
 **Returns** A newly
   allocated array describing the sizes at which the icon is
-  available. The array should be freed with `g_free()` when it is no
-  longer needed.
+  available.
 
 ### `getResourcePath`
 
@@ -281,7 +321,7 @@ or you can get information such as the filename and size.
 - `flags`: flags modifying the behavior of the icon lookup
 
 **Returns** a `GtkIconPaintable` containing
-  information about the icon. Unref with `g_object_unref()`
+  information about the icon.
 
 ### `lookupIcon`
 

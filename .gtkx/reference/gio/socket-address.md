@@ -19,6 +19,29 @@ import { GSocketAddress } from "@gtkx/jsx/gio";
 
 Implements `GSocketConnectable`.
 
+## Static methods
+
+Static methods are called on `Gio.SocketAddress`, imported from `@gtkx/gi/gio`.
+
+### `newFromNative`
+
+```ts
+newFromNative(native: bigint, len: number): Gio.SocketAddress
+```
+
+Creates a `GSocketAddress` subclass corresponding to the native
+struct sockaddr `native`.
+
+**Parameters**
+
+- `native`: a pointer to a struct sockaddr
+- `len`: the size of the memory location pointed to by `native`
+
+**Returns** a new `GSocketAddress` if `native` could successfully
+    be converted, otherwise `null`
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.SocketAddress` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -80,6 +80,32 @@ import { GSubprocess } from "@gtkx/jsx/gio";
 
 Implements `GInitable`.
 
+## Static methods
+
+Static methods are called on `Gio.Subprocess`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(argv: string[], flags: Gio.SubprocessFlags): Gio.Subprocess
+```
+
+Create a new process with the given flags and argument list.
+
+The argument list is expected to be `null`-terminated.
+
+**Parameters**
+
+- `argv`: commandline arguments for the subprocess
+- `flags`: flags that define the behaviour of the subprocess
+
+**Returns** A newly created `GSubprocess`, or `null` on error (and `error`
+  will be set)
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.40._
+
 ## Props
 
 `ref` receives the `Gio.Subprocess` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

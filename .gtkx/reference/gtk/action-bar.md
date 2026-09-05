@@ -6,8 +6,6 @@ description: "Presents contextual actions."
 
 Presents contextual actions.
 
-
-
 `GtkActionBar` is expected to be displayed below the content and expand
 horizontally to fill the area.
 
@@ -52,6 +50,20 @@ import { GtkActionBar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkActionBar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.ActionBar`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new action bar widget.
+
+**Returns** a new `GtkActionBar`
 
 ## Props
 

@@ -6,9 +6,6 @@ description: "An adaptive container acting like a box or an overlay."
 
 An adaptive container acting like a box or an overlay.
 
-
-
-
 The `AdwFlap` widget can display its children like a `Gtk.Box` does or
 like a `Gtk.Overlay` does, according to the
 `Flap.foldPolicy` value.
@@ -67,6 +64,22 @@ import { AdwFlap } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwFlap**
 
 Implements `AdwSwipeable`, `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.Flap`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwFlap`.
+
+**Returns** the newly created `AdwFlap`
+
+> **Deprecated since 1.4.** See [the migration guide](migrating-to-breakpoints.html#replace-adwflap)
 
 ## Props
 

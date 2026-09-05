@@ -37,6 +37,28 @@ import { GtkDirectoryList } from "@gtkx/jsx/gtk";
 
 Implements `GListModel`.
 
+## Static methods
+
+Static methods are called on `Gtk.DirectoryList`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(attributes: string | null, file: Gio.File | null): Gtk.DirectoryList
+```
+
+Creates a new `GtkDirectoryList`.
+
+The `GtkDirectoryList` is querying the given `file`
+with the given `attributes`.
+
+**Parameters**
+
+- `attributes`: The attributes to query with
+- `file`: The file to query
+
+**Returns** a new `GtkDirectoryList`
+
 ## Props
 
 `ref` receives the `Gtk.DirectoryList` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -257,7 +279,6 @@ for changes.
 
 If monitoring is enabled, the ::items-changed signal will
 be emitted when the directory contents change.
-
 
 When monitoring is turned on after the initial creation
 of the directory list, the directory is reloaded to avoid

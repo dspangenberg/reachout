@@ -17,6 +17,29 @@ import { GCharsetConverter } from "@gtkx/jsx/gio";
 
 Implements `GConverter`, `GInitable`.
 
+## Static methods
+
+Static methods are called on `Gio.CharsetConverter`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(toCharset: string, fromCharset: string): Gio.CharsetConverter
+```
+
+Creates a new `GCharsetConverter`.
+
+**Parameters**
+
+- `toCharset`: destination charset
+- `fromCharset`: source charset
+
+**Returns** a new `GCharsetConverter` or `null` on error.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.24._
+
 ## Props
 
 `ref` receives the `Gio.CharsetConverter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

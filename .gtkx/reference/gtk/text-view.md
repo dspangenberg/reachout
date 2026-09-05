@@ -6,8 +6,6 @@ description: "Displays the contents of a Gtk.TextBuffer."
 
 Displays the contents of a `Gtk.TextBuffer`.
 
-
-
 You may wish to begin by reading the [conceptual overview](section-text-widget.html),
 which gives an overview of all the objects and data types related to the
 text widget and how they work together.
@@ -88,6 +86,44 @@ import { GtkTextView } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkAccessibleText`, `GtkBuildable`, `GtkConstraintTarget`, `GtkScrollable`.
 
+## Static methods
+
+Static methods are called on `Gtk.TextView`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkTextView`.
+
+If you don’t call `Gtk.TextView.setBuffer()` before using the
+text view, an empty default buffer will be created for you. Get the
+buffer with `Gtk.TextView.getBuffer()`. If you want to specify
+your own buffer, consider `Gtk.TextView.newWithBuffer()`.
+
+**Returns** a new `GtkTextView`
+
+### `newWithBuffer`
+
+```ts
+newWithBuffer(buffer: Gtk.TextBuffer): Gtk.Widget
+```
+
+Creates a new `GtkTextView` widget displaying the buffer `buffer`.
+
+One buffer can be shared among many widgets. `buffer` may be `null`
+to create a default buffer, in which case this function is equivalent
+to `Gtk.TextView.new()`. The text view adds its own reference count
+to the buffer; it does not take over an existing reference.
+
+**Parameters**
+
+- `buffer`: a `GtkTextBuffer`
+
+**Returns** a new `GtkTextView`.
+
 ## Props
 
 `ref` receives the `Gtk.TextView` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -121,6 +157,8 @@ The buffer which is displayed.
 `ReactNode`
 
 Elements attached to the element's default child slot, or its text for elements that hold text.
+
+This remains a React `ReactNode` slot, so fragments, arrays, conditionals, and nullish values work normally. Each GTKX element rendered into it must create [GtkTextBuffer](.gtkx/reference/gtk/text-buffer.md) or a subtype.
 
 ### `cursorVisible`
 
@@ -442,7 +480,6 @@ the viewport to be moved instead.
 Applications should not connect to it, but may emit it with
 `g_signal_emit_by_name()` if they need to control the cursor
 programmatically.
-
 
 The default bindings for this signal come in two variants,
 the variant with the <kbd>Shift</kbd> modifier extends the
@@ -1146,12 +1183,10 @@ getTabs(): Pango.TabArray | null
 Gets the default tabs for `text_view`.
 
 Tags in the buffer may override the defaults. The returned array
-will be `null` if “standard” (8-space) tabs are used. Free the
-return value with `Pango.TabArray.free()`.
+will be `null` if “standard” (8-space) tabs are used.
 
 **Returns** copy of default tab array,
-  or `null` if standard tabs are used; must be freed with
-  `Pango.TabArray.free()`.
+  or `null` if standard tabs are used.
 
 ### `getTopMargin`
 

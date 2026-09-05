@@ -14,6 +14,27 @@ import { GtkCustomSorter } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkSorter](.gtkx/reference/gtk/sorter.md) → **GtkCustomSorter**
 
+## Static methods
+
+Static methods are called on `Gtk.CustomSorter`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(sortFunc: ((a: GObject.Object | null, b: GObject.Object | null) => number) | null): Gtk.CustomSorter
+```
+
+Creates a new `GtkSorter` that works by calling
+`sort_func` to compare items.
+
+If `sort_func` is `null`, all items are considered equal.
+
+**Parameters**
+
+- `sortFunc`: the `GCompareDataFunc` to use for sorting
+
+**Returns** a new `GtkCustomSorter`
+
 ## Props
 
 `ref` receives the `Gtk.CustomSorter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

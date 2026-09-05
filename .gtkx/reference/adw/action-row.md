@@ -6,8 +6,6 @@ description: "A Gtk.ListBoxRow used to present actions."
 
 A `Gtk.ListBoxRow` used to present actions.
 
-
-
 The `AdwActionRow` widget can have a title, a subtitle and an icon. The row
 can receive additional widgets at its end, or prefix widgets at its start.
 
@@ -42,8 +40,6 @@ respectively the title label and subtitle label.
 style class to emphasize the row subtitle instead of the row title, which is
 useful for displaying read-only properties.
 
-
-
 When used together with the `.monospace` style class, only the subtitle
 becomes monospace, not the title or any extra widgets.
 
@@ -56,6 +52,20 @@ import { AdwActionRow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkListBoxRow](.gtkx/reference/gtk/list-box-row.md) → [AdwPreferencesRow](.gtkx/reference/adw/preferences-row.md) → **AdwActionRow**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ActionRow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwActionRow`.
+
+**Returns** the newly created `AdwActionRow`
 
 ## Props
 

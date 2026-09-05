@@ -407,6 +407,36 @@ import { GtkWidget } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.Widget`, imported from `@gtkx/gi/gtk`.
+
+### `getDefaultDirection`
+
+```ts
+getDefaultDirection(): Gtk.TextDirection
+```
+
+Obtains the default reading direction.
+
+See `Gtk.Widget.setDefaultDirection()`.
+
+**Returns** the current default direction
+
+### `setDefaultDirection`
+
+```ts
+setDefaultDirection(dir: Gtk.TextDirection): void
+```
+
+Sets the default reading direction for widgets.
+
+See `Gtk.Widget.setDirection()`.
+
+**Parameters**
+
+- `dir`: the new default direction, either `Gtk.TextDirection.ltr` or `Gtk.TextDirection.rtl`
+
 ## Props
 
 `ref` receives the `Gtk.Widget` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -496,13 +526,13 @@ How to distribute horizontal space if widget gets extra space.
 
 ### `hasDefault`
 
-`boolean` · default `false` · read-only, observe with `onNotifyHasDefault` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyHasDefault` · instance read with `GObject.getProperty`
 
 Whether the widget is the default widget.
 
 ### `hasFocus`
 
-`boolean` · default `false` · read-only, observe with `onNotifyHasFocus` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyHasFocus` · instance read with `GObject.getProperty`
 
 Whether the widget has the input focus.
 
@@ -1495,8 +1525,7 @@ Gets the first ancestor of the widget with type `widget_type`.
 
 For example, `gtk_widget_get_ancestor (widget, GTK_TYPE_BOX)`
 gets the first `GtkBox` that’s an ancestor of `widget`. No
-reference will be added to the returned widget; it should
-not be unreferenced.
+reference will be added to the returned widget.
 
 Note that unlike `Gtk.Widget.isAncestor()`, this function
 considers `widget` to be an ancestor of itself.
@@ -1652,8 +1681,7 @@ This function can only be called after the widget has been
 added to a widget hierarchy with a `GtkRoot` at the top.
 
 In general, you should only create display-specific
-resources when a widget has been realized, and you should
-free those resources when the widget is unrealized.
+resources when a widget has been realized.
 
 **Returns** the display for this widget
 
@@ -2735,10 +2763,6 @@ Typically, these widgets will be labels. See, for example,
 `Gtk.Label.setMnemonicWidget()`.
 
 The widgets in the list are not individually referenced.
-If you want to iterate through the list and perform actions
-involving callbacks that might destroy the widgets, you
-must call `g_list_foreach (result, (GFunc)g_object_ref, NULL)`
-first, and then unref all the widgets afterwards.
 
 **Returns** the list
   of mnemonic labels

@@ -26,6 +26,24 @@ import { GtkMountOperation } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GMountOperation](.gtkx/reference/gio/mount-operation.md) → **GtkMountOperation**
 
+## Static methods
+
+Static methods are called on `Gtk.MountOperation`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(parent: Gtk.Window | null): Gio.MountOperation
+```
+
+Creates a new `GtkMountOperation`.
+
+**Parameters**
+
+- `parent`: transient parent of the window
+
+**Returns** a new `GtkMountOperation`
+
 ## Props
 
 `ref` receives the `Gtk.MountOperation` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -38,7 +56,7 @@ The display where dialogs will be shown.
 
 ### `isShowing`
 
-`boolean` · default `false` · read-only, observe with `onNotifyIsShowing` · instance read with `GObject.getObjectProperty`
+`boolean` · default `false` · read-only, observe with `onNotifyIsShowing` · instance read with `GObject.getProperty`
 
 Whether a dialog is currently shown.
 

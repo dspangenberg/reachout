@@ -37,6 +37,30 @@ import { GtkScaleButton } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkAccessibleRange`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
 
+## Static methods
+
+Static methods are called on `Gtk.ScaleButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(min: number, max: number, step: number, icons: string[] | null): Gtk.Widget
+```
+
+Creates a `GtkScaleButton`.
+
+The new scale button has a range between `min` and `max`,
+with a stepping of `step`.
+
+**Parameters**
+
+- `min`: the minimum value of the scale (usually 0)
+- `max`: the maximum value of the scale (usually 100)
+- `step`: the stepping of value when a scroll-wheel event, or up/down arrow event occurs (usually 2)
+- `icons`: a `null`-terminated array of icon names, or `null` if you want to set the list later with `gtk_scale_button_set_icons()`
+
+**Returns** a new `GtkScaleButton`
+
 ## Props
 
 `ref` receives the `Gtk.ScaleButton` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

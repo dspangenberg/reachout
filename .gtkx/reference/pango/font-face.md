@@ -36,8 +36,7 @@ variant, weight and stretch of the face, but its size field
 will be unset.
 
 **Returns** a newly-created `PangoFontDescription` structure
-  holding the description of the face. Use `Pango.FontDescription.free()`
-  to free the result.
+  holding the description of the face.
 
 ### `getFaceName`
 
@@ -51,8 +50,7 @@ Note that a font family may contain multiple faces
 with the same name (e.g. a variable and a non-variable
 face for the same style).
 
-**Returns** the face name for the face. This string is
-  owned by the face object and must not be modified or freed.
+**Returns** the face name for the face.
 
 ### `getFamily`
 
@@ -95,7 +93,6 @@ This is only applicable to bitmap fonts. For scalable fonts, stores
 to by `n_sizes`. The sizes returned are in Pango units and are sorted
 in ascending order.
 
-**Returns** location to store a pointer to an array of int. This array
-  should be freed with `g_free()`.
+**Returns** location to store a pointer to an array of int.
 
 _Available since 1.4._

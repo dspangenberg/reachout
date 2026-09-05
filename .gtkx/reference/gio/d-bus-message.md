@@ -17,6 +17,104 @@ import { GDBusMessage } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GDBusMessage**
 
+## Static methods
+
+Static methods are called on `Gio.DBusMessage`, imported from `@gtkx/gi/gio`.
+
+### `bytesNeeded`
+
+```ts
+bytesNeeded(blob: Uint8Array | number[]): number
+```
+
+Utility function to calculate how many bytes are needed to
+completely deserialize the D-Bus message stored at `blob`.
+
+**Parameters**
+
+- `blob`: A blob representing a binary D-Bus message.
+
+**Returns** Number of bytes needed or -1 if `error` is set (e.g. if
+`blob` contains invalid data or not enough data is available to
+determine the size).
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `new`
+
+```ts
+new(): Gio.DBusMessage
+```
+
+Creates a new empty `GDBusMessage`.
+
+**Returns** A `GDBusMessage`.
+
+_Available since 2.26._
+
+### `newFromBlob`
+
+```ts
+newFromBlob(blob: Uint8Array | number[], capabilities: Gio.DBusCapabilityFlags): Gio.DBusMessage
+```
+
+Creates a new `GDBusMessage` from the data stored at `blob`. The byte
+order that the message was in can be retrieved using
+`g_dbus_message_get_byte_order()`.
+
+If the `blob` cannot be parsed, contains invalid fields, or contains invalid
+headers, `G_IO_ERROR_INVALID_ARGUMENT` will be returned.
+
+**Parameters**
+
+- `blob`: A blob representing a binary D-Bus message.
+- `capabilities`: A `GDBusCapabilityFlags` describing what protocol features are supported.
+
+**Returns** A new `GDBusMessage` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newMethodCall`
+
+```ts
+newMethodCall(name: string | null, path: string, interface_: string | null, method: string): Gio.DBusMessage
+```
+
+Creates a new `GDBusMessage` for a method call.
+
+**Parameters**
+
+- `name`: A valid D-Bus name or `null`.
+- `path`: A valid object path.
+- `interface_`: A valid D-Bus interface name or `null`.
+- `method`: A valid method name.
+
+**Returns** A `GDBusMessage`.
+
+_Available since 2.26._
+
+### `newSignal`
+
+```ts
+newSignal(path: string, interface_: string, signal: string): Gio.DBusMessage
+```
+
+Creates a new `GDBusMessage` for a signal emission.
+
+**Parameters**
+
+- `path`: A valid object path.
+- `interface_`: A valid D-Bus interface name.
+- `signal`: A valid signal name.
+
+**Returns** A `GDBusMessage`.
+
+_Available since 2.26._
+
 ## Props
 
 `ref` receives the `Gio.DBusMessage` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -43,7 +141,6 @@ This operation can fail if e.g. `message` contains file descriptors
 and the per-process or system-wide open files limit is reached.
 
 **Returns** A new `GDBusMessage` or `null` if `error` is set.
-    Free with `g_object_unref()`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -89,7 +186,7 @@ getBody(): GLib.Variant | null
 Gets the body of a message.
 
 **Returns** A `GVariant` or `null` if the body is
-empty. Do not free, it is owned by `message`.
+empty.
 
 _Available since 2.26._
 
@@ -155,7 +252,7 @@ matches what is expected.
 - `headerField`: A 8-bit unsigned integer (typically a value from the `GDBusMessageHeaderField` enumeration)
 
 **Returns** A `GVariant` with the value if the header was found, `null`
-otherwise. Do not free, it is owned by `message`.
+otherwise.
 
 _Available since 2.26._
 
@@ -169,7 +266,7 @@ Gets an array of all header fields on `message` that are set.
 
 **Returns** An array of header fields
 terminated by `G_DBUS_MESSAGE_HEADER_FIELD_INVALID`.  Each element
-is a `guchar`. Free with `g_free()`.
+is a `guchar`.
 
 _Available since 2.26._
 
@@ -314,7 +411,7 @@ to the file descriptor that can be accessed by
 `g_unix_fd_list_get (list, 5, ...)`.
 
 **Returns** A `GUnixFDList` or `null` if no file descriptors are
-associated. Do not free, this object is owned by `message`.
+associated.
 
 _Available since 2.26._
 
@@ -341,7 +438,7 @@ Creates a new `GDBusMessage` that is an error reply to `method_call_message`.
 - `errorName`: A valid D-Bus error name.
 - `errorMessage`: The D-Bus error message.
 
-**Returns** A `GDBusMessage`. Free with `g_object_unref()`.
+**Returns** A `GDBusMessage`.
 
 _Available since 2.26._
 
@@ -353,7 +450,7 @@ newMethodReply(): Gio.DBusMessage
 
 Creates a new `GDBusMessage` that is a reply to `method_call_message`.
 
-**Returns** `GDBusMessage`. Free with `g_object_unref()`.
+**Returns** `GDBusMessage`.
 
 _Available since 2.26._
 
@@ -400,7 +497,7 @@ UNIX File Descriptors:
 
 - `indent`: Indentation level.
 
-**Returns** A string that should be freed with `GLib.free()`.
+**Returns** A string.
 
 _Available since 2.26._
 
@@ -661,7 +758,7 @@ Serializes `message` to a blob. The byte order returned by
 
 **Returns** A pointer to a
 valid binary D-Bus message of `out_size` bytes generated by `message`
-or `null` if `error` is set. Free with `g_free()`.
+or `null` if `error` is set.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 

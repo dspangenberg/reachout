@@ -48,7 +48,6 @@ that all signals (e.g. `Gio.DBusProxy.g-signal`,
 context (see `GLib.MainContext.pushThreadDefault()`) of the thread
 where the instance was constructed.
 
-
 ### A watch proxy example
 An example using a proxy for a well-known name can be found in
 [`gdbus-example-watch-proxy.c`](https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gdbus-example-watch-proxy.c).
@@ -64,6 +63,193 @@ import { GDBusProxy } from "@gtkx/jsx/gio";
 [GObject](.gtkx/reference/gobject/object.md) → **GDBusProxy**
 
 Implements `GAsyncInitable`, `GDBusInterface`, `GInitable`.
+
+## Static methods
+
+Static methods are called on `Gio.DBusProxy`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, objectPath: string, interfaceName: string, cancellable?: Gio.Cancellable | null): Promise<Gio.DBusProxy>
+```
+
+Creates a proxy for accessing `interface_name` on the remote object
+at `object_path` owned by `name` at `connection` and asynchronously
+loads D-Bus properties unless the
+`G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES` flag is used. Connect to
+the `GDBusProxy.g-properties-changed` signal to get notified about
+property changes.
+
+If the `G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS` flag is not set, also sets up
+match rules for signals. Connect to the `GDBusProxy.g-signal` signal
+to handle signals from the remote object.
+
+If both `G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES` and
+`G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS` are set, this constructor is
+guaranteed to complete immediately without blocking.
+
+If `name` is a well-known name and the
+`G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START` and `G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION`
+flags aren't set and no name owner currently exists, the message bus
+will be requested to launch a name owner for the name.
+
+This is a failable asynchronous constructor - when the proxy is
+ready, `callback` will be invoked and you can use
+`g_dbus_proxy_new_finish()` to get the result.
+
+See `g_dbus_proxy_new_sync()` and for a synchronous version of this constructor.
+
+`GDBusProxy` is used in this [example]`Gio.DBusProxy#a-watch-proxy-example`.
+
+**Parameters**
+
+- `connection`: A `GDBusConnection`.
+- `flags`: Flags used when constructing the proxy.
+- `info`: A `GDBusInterfaceInfo` specifying the minimal interface that `proxy` conforms to or `null`.
+- `name`: A bus name (well-known or unique) or `null` if `connection` is not a message bus connection.
+- `objectPath`: An object path.
+- `interfaceName`: A D-Bus interface name.
+- `cancellable`: A `GCancellable` or `null`.
+
+**Returns** A `GDBusProxy` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newFinish`
+
+```ts
+newFinish(res: Gio.AsyncResult): Gio.DBusProxy
+```
+
+Finishes creating a `GDBusProxy`.
+
+**Parameters**
+
+- `res`: A `GAsyncResult` obtained from the `GAsyncReadyCallback` function passed to `g_dbus_proxy_new()`.
+
+**Returns** A `GDBusProxy` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newForBus`
+
+```ts
+newForBus(busType: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, objectPath: string, interfaceName: string, cancellable?: Gio.Cancellable | null): Promise<Gio.DBusProxy>
+```
+
+Like `g_dbus_proxy_new()` but takes a `GBusType` instead of a `GDBusConnection`.
+
+`GDBusProxy` is used in this [example]`Gio.DBusProxy#a-watch-proxy-example`.
+
+**Parameters**
+
+- `busType`: A `GBusType`.
+- `flags`: Flags used when constructing the proxy.
+- `info`: A `GDBusInterfaceInfo` specifying the minimal interface that `proxy` conforms to or `null`.
+- `name`: A bus name (well-known or unique).
+- `objectPath`: An object path.
+- `interfaceName`: A D-Bus interface name.
+- `cancellable`: A `GCancellable` or `null`.
+
+**Returns** A `GDBusProxy` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newForBusFinish`
+
+```ts
+newForBusFinish(res: Gio.AsyncResult): Gio.DBusProxy
+```
+
+Finishes creating a `GDBusProxy`.
+
+**Parameters**
+
+- `res`: A `GAsyncResult` obtained from the `GAsyncReadyCallback` function passed to `g_dbus_proxy_new_for_bus()`.
+
+**Returns** A `GDBusProxy` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newForBusSync`
+
+```ts
+newForBusSync(busType: Gio.BusType, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string, objectPath: string, interfaceName: string, cancellable: Gio.Cancellable | null): Gio.DBusProxy
+```
+
+Like `g_dbus_proxy_new_sync()` but takes a `GBusType` instead of a `GDBusConnection`.
+
+`GDBusProxy` is used in this [example]`Gio.DBusProxy#a-watch-proxy-example`.
+
+**Parameters**
+
+- `busType`: A `GBusType`.
+- `flags`: Flags used when constructing the proxy.
+- `info`: A `GDBusInterfaceInfo` specifying the minimal interface that `proxy` conforms to or `null`.
+- `name`: A bus name (well-known or unique).
+- `objectPath`: An object path.
+- `interfaceName`: A D-Bus interface name.
+- `cancellable`: A `GCancellable` or `null`.
+
+**Returns** A `GDBusProxy` or `null` if error is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
+### `newSync`
+
+```ts
+newSync(connection: Gio.DBusConnection, flags: Gio.DBusProxyFlags, info: Gio.DBusInterfaceInfo | null, name: string | null, objectPath: string, interfaceName: string, cancellable: Gio.Cancellable | null): Gio.DBusProxy
+```
+
+Creates a proxy for accessing `interface_name` on the remote object
+at `object_path` owned by `name` at `connection` and synchronously
+loads D-Bus properties unless the
+`G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES` flag is used.
+
+If the `G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS` flag is not set, also sets up
+match rules for signals. Connect to the `GDBusProxy.g-signal` signal
+to handle signals from the remote object.
+
+If both `G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES` and
+`G_DBUS_PROXY_FLAGS_DO_NOT_CONNECT_SIGNALS` are set, this constructor is
+guaranteed to return immediately without blocking.
+
+If `name` is a well-known name and the
+`G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START` and `G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START_AT_CONSTRUCTION`
+flags aren't set and no name owner currently exists, the message bus
+will be requested to launch a name owner for the name.
+
+This is a synchronous failable constructor. See `g_dbus_proxy_new()`
+and `g_dbus_proxy_new_finish()` for the asynchronous version.
+
+`GDBusProxy` is used in this [example]`Gio.DBusProxy#a-watch-proxy-example`.
+
+**Parameters**
+
+- `connection`: A `GDBusConnection`.
+- `flags`: Flags used when constructing the proxy.
+- `info`: A `GDBusInterfaceInfo` specifying the minimal interface that `proxy` conforms to or `null`.
+- `name`: A bus name (well-known or unique) or `null` if `connection` is not a message bus connection.
+- `objectPath`: An object path.
+- `interfaceName`: A D-Bus interface name.
+- `cancellable`: A `GCancellable` or `null`.
+
+**Returns** A `GDBusProxy` or `null` if error is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
 
 ## Props
 
@@ -288,7 +474,7 @@ the `G_DBUS_MESSAGE_FLAGS_NO_REPLY_EXPECTED` flag set.
 - `cancellable`: A `GCancellable` or `null`.
 
 **Returns** `null` if `error` is set. Otherwise a `GVariant` tuple with
-return values. Free with `g_variant_unref()`.
+return values.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -307,7 +493,7 @@ Finishes an operation started with `g_dbus_proxy_call()`.
 - `res`: A `GAsyncResult` obtained from the `GAsyncReadyCallback` passed to `g_dbus_proxy_call()`.
 
 **Returns** `null` if `error` is set. Otherwise a `GVariant` tuple with
-return values. Free with `g_variant_unref()`.
+return values.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -363,7 +549,7 @@ then the return value is checked against the return type.
 - `cancellable`: A `GCancellable` or `null`.
 
 **Returns** `null` if `error` is set. Otherwise a `GVariant` tuple with
-return values. Free with `g_variant_unref()`.
+return values.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -390,7 +576,7 @@ This method is only available on UNIX.
 
 **Returns** Tuple of:
 
-- `result`: `null` if `error` is set. Otherwise a `GVariant` tuple with return values. Free with `g_variant_unref()`.
+- `result`: `null` if `error` is set. Otherwise a `GVariant` tuple with return values.
 - `outFdList`: Return location for a `GUnixFDList` or `null`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
@@ -411,7 +597,7 @@ Finishes an operation started with `g_dbus_proxy_call_with_unix_fd_list()`.
 
 **Returns** Tuple of:
 
-- `result`: `null` if `error` is set. Otherwise a `GVariant` tuple with return values. Free with `g_variant_unref()`.
+- `result`: `null` if `error` is set. Otherwise a `GVariant` tuple with return values.
 - `outFdList`: Return location for a `GUnixFDList` or `null`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
@@ -439,7 +625,7 @@ This method is only available on UNIX.
 
 **Returns** Tuple of:
 
-- `result`: `null` if `error` is set. Otherwise a `GVariant` tuple with return values. Free with `g_variant_unref()`.
+- `result`: `null` if `error` is set. Otherwise a `GVariant` tuple with return values.
 - `outFdList`: Return location for a `GUnixFDList` or `null`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
@@ -465,7 +651,7 @@ it, then `value` is checked against the type of the property.
 
 **Returns** A reference to the `GVariant` instance
    that holds the value for `property_name` or `null` if the value is not in
-   the cache. The returned reference must be freed with `g_variant_unref()`.
+   the cache.
 
 _Available since 2.26._
 
@@ -479,8 +665,7 @@ Gets the names of all cached properties on `proxy`.
 
 **Returns** A
          `null`-terminated array of strings or `null` if
-         `proxy` has no cached properties. Free the returned array with
-         `g_strfreev()`.
+         `proxy` has no cached properties.
 
 _Available since 2.26._
 
@@ -492,7 +677,7 @@ getConnection(): Gio.DBusConnection
 
 Gets the connection `proxy` is for.
 
-**Returns** A `GDBusConnection` owned by `proxy`. Do not free.
+**Returns** A `GDBusConnection` owned by `proxy`.
 
 _Available since 2.26._
 
@@ -535,7 +720,6 @@ that `proxy` conforms to. See the `GDBusProxy.gInterfaceInfo`
 property for more details.
 
 **Returns** A `GDBusInterfaceInfo` or `null`.
-   Do not unref the returned object, it is owned by `proxy`.
 
 _Available since 2.26._
 
@@ -547,7 +731,7 @@ getInterfaceName(): string
 
 Gets the D-Bus interface name `proxy` is for.
 
-**Returns** A string owned by `proxy`. Do not free.
+**Returns** A string owned by `proxy`.
 
 _Available since 2.26._
 
@@ -563,7 +747,7 @@ When connected to a message bus, this will usually be non-`null`.
 However, it may be `null` for a proxy that communicates using a peer-to-peer
 pattern.
 
-**Returns** A string owned by `proxy`. Do not free.
+**Returns** A string owned by `proxy`.
 
 _Available since 2.26._
 
@@ -579,7 +763,7 @@ no-one currently owns that name. You may connect to the
 `GDBusProxy.gNameOwner` property.
 
 **Returns** The name owner or `null` if no name
-   owner exists. Free with `g_free()`.
+   owner exists.
 
 _Available since 2.26._
 
@@ -591,7 +775,7 @@ getObjectPath(): string
 
 Gets the object path `proxy` is for.
 
-**Returns** A string owned by `proxy`. Do not free.
+**Returns** A string owned by `proxy`.
 
 _Available since 2.26._
 

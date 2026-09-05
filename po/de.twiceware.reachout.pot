@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-04 11:00+0200\n"
+"POT-Creation-Date: 2026-09-05 18:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,10 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-
-#: src/components/about.tsx:10
-msgid "Contact manager"
-msgstr ""
 
 #: src/components/about.tsx:21
 msgid "GTKX Contributors"
@@ -72,8 +68,7 @@ msgstr ""
 msgid "About Reach Out"
 msgstr ""
 
-#: src/components/new-list-dialog.tsx:21 src/components/window.tsx:66
-#: src/components/window.tsx:73
+#: src/components/new-list-dialog.tsx:21 src/components/window.tsx:67
 msgid "New List"
 msgstr ""
 
@@ -81,11 +76,11 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-#: src/components/new-list-dialog.tsx:35
+#: src/components/new-list-dialog.tsx:34
 msgid "List name"
 msgstr ""
 
-#: src/components/new-list-dialog.tsx:47
+#: src/components/new-list-dialog.tsx:43
 msgid "Color {{color}}"
 msgstr ""
 
@@ -150,11 +145,11 @@ msgstr ""
 msgid "Search (Ctrl+F)"
 msgstr ""
 
-#: src/components/section-nav.tsx:8 src/components/window.tsx:165
+#: src/components/section-nav.tsx:8 src/components/window.tsx:154
 msgid "Contacts"
 msgstr ""
 
-#: src/components/section-nav.tsx:9 src/components/window.tsx:173
+#: src/components/section-nav.tsx:9 src/components/window.tsx:162
 msgid "Projects"
 msgstr ""
 
@@ -215,11 +210,11 @@ msgstr ""
 msgid "Notes"
 msgstr ""
 
-#: src/components/task-detail.tsx:134
+#: src/components/task-detail.tsx:128
 msgid "Created"
 msgstr ""
 
-#: src/components/task-detail.tsx:140
+#: src/components/task-detail.tsx:132
 msgid "Completed"
 msgstr ""
 
@@ -267,15 +262,15 @@ msgstr ""
 msgid "Reach Out"
 msgstr ""
 
-#: src/components/window.tsx:90
+#: src/components/window.tsx:82
 msgid "New Task (Ctrl+N)"
 msgstr ""
 
-#: src/components/window.tsx:166
+#: src/components/window.tsx:155
 msgid "Contact management is coming soon"
 msgstr ""
 
-#: src/components/window.tsx:174
+#: src/components/window.tsx:163
 msgid "Project management is coming soon"
 msgstr ""
 
@@ -325,68 +320,68 @@ msgstr ""
 msgid "Welcome to Tasks"
 msgstr ""
 
-#: src/store/seed.ts:43
+#: src/store/seed.ts:42
 msgid ""
 "This is your first task. Tick the checkbox to complete it, or open it to add "
 "notes and a due date."
 msgstr ""
 
-#: src/store/seed.ts:49
+#: src/store/seed.ts:47
 msgid "Water the plants"
 msgstr ""
 
-#: src/store/seed.ts:54
+#: src/store/seed.ts:52
 msgid "Prepare the weekly report"
 msgstr ""
 
-#: src/store/seed.ts:55
+#: src/store/seed.ts:53
 msgid "Review pull requests"
 msgstr ""
 
-#: src/store/seed.ts:56
+#: src/store/seed.ts:54
 msgid "Buy oat milk"
 msgstr ""
 
-#: src/store/seed.ts:60
+#: src/store/seed.ts:58
 msgid "Order birthday gift"
 msgstr ""
 
-#: src/store/selectors.ts:109
+#: src/store/selectors.ts:104
 msgid "No Tasks Yet"
 msgstr ""
 
-#: src/store/selectors.ts:110
+#: src/store/selectors.ts:105
 msgid "Add a task above to get started"
 msgstr ""
 
-#: src/store/selectors.ts:114
+#: src/store/selectors.ts:109
 msgid "Nothing Due Today"
 msgstr ""
 
-#: src/store/selectors.ts:115
+#: src/store/selectors.ts:110
 msgid "Tasks due today appear here"
 msgstr ""
 
-#: src/store/selectors.ts:119
+#: src/store/selectors.ts:114
 msgid "No Important Tasks"
 msgstr ""
 
-#: src/store/selectors.ts:120
+#: src/store/selectors.ts:115
 msgid "Star a task to find it here"
 msgstr ""
 
-#: src/store/selectors.ts:124
+#: src/store/selectors.ts:119
 msgid "Trash Is Empty"
 msgstr ""
 
-#: src/store/selectors.ts:125
+#: src/store/selectors.ts:120
 msgid "Deleted tasks appear here"
 msgstr ""
 
-#: src/store/selectors.ts:133
+#: src/store/selectors.ts:128
 msgid "No Results"
 msgstr ""
 
-#: src/store/selectors.ts:134
+#: src/store/selectors.ts:129
 msgid "No tasks match “{{query}}”"
 msgstr ""

@@ -87,6 +87,72 @@ import { GSocket } from "@gtkx/jsx/gio";
 
 Implements `GDatagramBased`, `GInitable`.
 
+## Static methods
+
+Static methods are called on `Gio.Socket`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(family: Gio.SocketFamily, type: Gio.SocketType, protocol: Gio.SocketProtocol): Gio.Socket
+```
+
+Creates a new `GSocket` with the defined family, type and protocol.
+If `protocol` is 0 (`G_SOCKET_PROTOCOL_DEFAULT`) the default protocol type
+for the family and type is used.
+
+The `protocol` is a family and type specific int that specifies what
+kind of protocol to use. `GSocketProtocol` lists several common ones.
+Many families only support one protocol, and use 0 for this, others
+support several and using 0 means to use the default protocol for
+the family and type.
+
+The protocol id is passed directly to the operating
+system, so you can use protocols not listed in `GSocketProtocol` if you
+know the protocol number used for it.
+
+**Parameters**
+
+- `family`: the socket family to use, e.g. `G_SOCKET_FAMILY_IPV4`.
+- `type`: the socket type to use.
+- `protocol`: the id of the protocol to use, or 0 for default.
+
+**Returns** a `GSocket` or `null` on error.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.22._
+
+### `newFromFd`
+
+```ts
+newFromFd(fd: number): Gio.Socket
+```
+
+Creates a new `GSocket` from a native file descriptor
+or winsock SOCKET handle.
+
+This reads all the settings from the file descriptor so that
+all properties should work. Note that the file descriptor
+will be set to non-blocking mode, independent on the blocking
+mode of the `GSocket`.
+
+On success, the returned `GSocket` takes ownership of `fd`. On failure, the
+caller must close `fd` themselves.
+
+Since GLib 2.46, it is no longer a fatal error to call this on a non-socket
+descriptor.  Instead, a GError will be set with code `G_IO_ERROR_FAILED`
+
+**Parameters**
+
+- `fd`: a native socket file descriptor.
+
+**Returns** a `GSocket` or `null` on error.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.Socket` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -229,7 +295,6 @@ To be notified of an incoming connection, wait for the `G_IO_IN` condition.
 - `cancellable`: a `GCancellable` or `null`
 
 **Returns** a new `GSocket`, or `null` on error.
-    Free the returned object with `g_object_unref()`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -554,8 +619,7 @@ Other ways to obtain credentials from a foreign peer includes the
 `g_unix_connection_send_credentials()` /
 `g_unix_connection_receive_credentials()` functions.
 
-**Returns** `null` if `error` is set, otherwise a `GCredentials` object
-that must be freed with `g_object_unref()`.
+**Returns** `null` if `error` is set, otherwise a `GCredentials` object.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -626,7 +690,6 @@ useful if the socket has been bound to a local address,
 either explicitly or implicitly when connecting.
 
 **Returns** a `GSocketAddress` or `null` on error.
-    Free the returned object with `g_object_unref()`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -716,7 +779,6 @@ Try to get the remote address of a connected socket. This is only
 useful for connection oriented sockets that have been connected.
 
 **Returns** a `GSocketAddress` or `null` on error.
-    Free the returned object with `g_object_unref()`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -974,8 +1036,6 @@ a `GLib.Bytes` rather than a plain buffer.
 If `address` is non-`null` then `address` will be set equal to the
 source address of the received packet.
 
-The `address` is owned by the caller.
-
 Pass `-1` to `timeout_us` to block indefinitely until data is received (or
 the connection is closed, or there is an error). Pass `0` to use the default
 timeout from `Gio.Socket.timeout`, or pass a positive number to wait
@@ -1008,7 +1068,6 @@ Receive data from a socket.  For receiving multiple messages, see
 
 If `address` is non-`null` then `address` will be set equal to the
 source address of the received packet.
-`address` is owned by the caller.
 
 `vector` must point to an array of `GInputVector` structs and
 `num_vectors` must be the length of this array.  These structs
@@ -1025,9 +1084,7 @@ single '\0' byte for the purposes of transferring ancillary data.
 array of `GSocketControlMessage` instances or `null` if no such
 messages was received. These correspond to the control messages
 received from the kernel, one `GSocketControlMessage` per message
-from the kernel. This array is `null`-terminated and must be freed
-by the caller using `g_free()` after calling `g_object_unref()` on each
-element. If `messages` is `null`, any control messages received will
+from the kernel. If `messages` is `null`, any control messages received will
 be discarded.
 
 `num_messages`, if non-`null`, will be set to the number of control

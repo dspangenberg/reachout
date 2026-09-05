@@ -6,9 +6,6 @@ description: "A layout manager constraining its children to a given size."
 
 A layout manager constraining its children to a given size.
 
-
-
-
 `AdwClampLayout` constraints the size of the widgets it contains to a given
 maximum size. It will constrain the width if it is horizontal, or the height
 if it is vertical. The expansion of the children from their minimum to their
@@ -31,6 +28,20 @@ import { AdwClampLayout } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GtkLayoutManager](.gtkx/reference/gtk/layout-manager.md) → **AdwClampLayout**
 
 Implements `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Adw.ClampLayout`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.LayoutManager
+```
+
+Creates a new `AdwClampLayout`.
+
+**Returns** the newly created `AdwClampLayout`
 
 ## Props
 

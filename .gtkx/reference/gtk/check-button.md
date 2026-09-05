@@ -6,8 +6,6 @@ description: "Places a label next to an indicator."
 
 Places a label next to an indicator.
 
-
-
 A `GtkCheckButton` is created by calling either `Gtk.CheckButton.new()`
 or `Gtk.CheckButton.newWithLabel()`.
 
@@ -34,8 +32,6 @@ another one will switch the currently toggled one off.
 
 Grouped check buttons use a different indicator, and are commonly referred
 to as *radio buttons*.
-
-
 
 To add a `GtkCheckButton` to a group, use `Gtk.CheckButton.setGroup()`.
 
@@ -77,6 +73,48 @@ import { GtkCheckButton } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkCheckButton**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.CheckButton`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkCheckButton`.
+
+**Returns** a new `GtkCheckButton`
+
+### `newWithLabel`
+
+```ts
+newWithLabel(label: string | null): Gtk.Widget
+```
+
+Creates a new `GtkCheckButton` with the given text.
+
+**Parameters**
+
+- `label`: the text for the check button.
+
+**Returns** a new `GtkCheckButton`
+
+### `newWithMnemonic`
+
+```ts
+newWithMnemonic(label: string | null): Gtk.Widget
+```
+
+Creates a new `GtkCheckButton` with the given text and a mnemonic.
+
+**Parameters**
+
+- `label`: The text of the button, with an underscore in front of the mnemonic character
+
+**Returns** a new `GtkCheckButton`
 
 ## Props
 

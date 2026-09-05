@@ -83,7 +83,7 @@ the lookup operation asynchronously.
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a newly allocated
-`GTlsCertificate`, or `null`. Use `g_object_unref()` to release the certificate.
+`GTlsCertificate`, or `null`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -106,7 +106,6 @@ Asynchronously look up a certificate by its handle in the database. See
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a newly allocated `GTlsCertificate` object.
-Use `g_object_unref()` to release the certificate.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -129,7 +128,6 @@ this database, then `null` will be returned.
 - `result`: a `GAsyncResult`.
 
 **Returns** a newly allocated `GTlsCertificate` object.
-Use `g_object_unref()` to release the certificate.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -170,7 +168,7 @@ decisions about TLS certificates.
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a newly allocated issuer `GTlsCertificate`,
-or `null`. Use `g_object_unref()` to release the certificate.
+or `null`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -193,7 +191,7 @@ Asynchronously look up the issuer of `certificate` in the database. See
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a newly allocated issuer `GTlsCertificate`,
-or `null`. Use `g_object_unref()` to release the certificate.
+or `null`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -213,7 +211,7 @@ Finish an asynchronous lookup issuer operation. See
 - `result`: a `GAsyncResult`.
 
 **Returns** a newly allocated issuer `GTlsCertificate`,
-or `null`. Use `g_object_unref()` to release the certificate.
+or `null`.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -238,7 +236,7 @@ the lookup operation asynchronously.
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a newly allocated list of `GTlsCertificate`
-objects. Use `g_object_unref()` on each certificate, and `g_list_free()` on the release the list.
+objects.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -265,7 +263,7 @@ this time.
 - `cancellable`: a `GCancellable`, or `null`
 
 **Returns** a newly allocated list of `GTlsCertificate`
-objects. Use `g_object_unref()` on each certificate, and `g_list_free()` on the release the list.
+objects.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 
@@ -285,7 +283,7 @@ Finish an asynchronous lookup of certificates. See
 - `result`: a `GAsyncResult`.
 
 **Returns** a newly allocated list of `GTlsCertificate`
-objects. Use `g_object_unref()` on each certificate, and `g_list_free()` on the release the list.
+objects.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 

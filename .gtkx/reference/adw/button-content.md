@@ -6,8 +6,6 @@ description: "A helper widget for creating buttons."
 
 A helper widget for creating buttons.
 
-
-
 `AdwButtonContent` is a box-like widget with an icon and a label.
 
 It's intended to be used as a direct child of `Gtk.Button`,
@@ -58,6 +56,20 @@ import { AdwButtonContent } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **AdwButtonContent**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ButtonContent`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwButtonContent`.
+
+**Returns** the new created `AdwButtonContent`
 
 ## Props
 

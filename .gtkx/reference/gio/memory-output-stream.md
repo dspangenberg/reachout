@@ -20,6 +20,21 @@ import { GMemoryOutputStream } from "@gtkx/jsx/gio";
 
 Implements `GPollableOutputStream`, `GSeekable`.
 
+## Static methods
+
+Static methods are called on `Gio.MemoryOutputStream`, imported from `@gtkx/gi/gio`.
+
+### `newResizable`
+
+```ts
+newResizable(): Gio.OutputStream
+```
+
+Creates a new `GMemoryOutputStream`, using `g_realloc()` and `g_free()`
+for memory allocation.
+
+_Available since 2.36._
+
 ## Props
 
 `ref` receives the `Gio.MemoryOutputStream` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -123,9 +138,7 @@ stealData(): bigint | null
 ```
 
 Gets any loaded data from the `ostream`. Ownership of the data
-is transferred to the caller; when no longer needed it must be
-freed using the free function set in `ostream`'s
-`GMemoryOutputStream.destroyFunction` property.
+is transferred to the caller.
 
 `ostream` must be closed before calling this function.
 

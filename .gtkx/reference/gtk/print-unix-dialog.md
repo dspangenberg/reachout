@@ -7,8 +7,6 @@ description: "A print dialog for platforms which don’t provide a native print 
 A print dialog for platforms which don’t provide a native
 print dialog, like Unix.
 
-
-
 It can be used very much like any other GTK dialog, at the cost of
 the portability offered by the high-level printing API with
 `Gtk.PrintOperation`.
@@ -70,6 +68,25 @@ import { GtkPrintUnixDialog } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → [GtkDialog](.gtkx/reference/gtk/dialog.md) → **GtkPrintUnixDialog**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.PrintUnixDialog`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(title: string | null, parent: Gtk.Window | null): Gtk.Widget
+```
+
+Creates a new `GtkPrintUnixDialog`.
+
+**Parameters**
+
+- `title`: Title of the dialog
+- `parent`: Transient parent of the dialog
+
+**Returns** a new `GtkPrintUnixDialog`
 
 ## Props
 
@@ -219,8 +236,7 @@ getSettings(): Gtk.PrintSettings
 Gets a new `GtkPrintSettings` object that represents the
 current values in the print dialog.
 
-Note that this creates a new object, and you need to unref
-it if don’t want to keep it.
+Note that this creates a new object.
 
 **Returns** a new `GtkPrintSettings` object with the values from `dialog`
 

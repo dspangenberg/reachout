@@ -17,6 +17,20 @@ import { GtkGestureStylus } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → [GtkGesture](.gtkx/reference/gtk/gesture.md) → [GtkGestureSingle](.gtkx/reference/gtk/gesture-single.md) → **GtkGestureStylus**
 
+## Static methods
+
+Static methods are called on `Gtk.GestureStylus`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Gesture
+```
+
+Creates a new `GtkGestureStylus`.
+
+**Returns** a newly created stylus gesture
+
 ## Props
 
 `ref` receives the `Gtk.GestureStylus` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

@@ -37,6 +37,51 @@ import { GDBusServer } from "@gtkx/jsx/gio";
 
 Implements `GInitable`.
 
+## Static methods
+
+Static methods are called on `Gio.DBusServer`, imported from `@gtkx/gi/gio`.
+
+### `newSync`
+
+```ts
+newSync(address: string, flags: Gio.DBusServerFlags, guid: string, observer: Gio.DBusAuthObserver | null, cancellable: Gio.Cancellable | null): Gio.DBusServer
+```
+
+Creates a new D-Bus server that listens on the first address in
+`address` that works.
+
+Once constructed, you can use `g_dbus_server_get_client_address()` to
+get a D-Bus address string that clients can use to connect.
+
+To have control over the available authentication mechanisms and
+the users that are authorized to connect, it is strongly recommended
+to provide a non-`null` `GDBusAuthObserver`.
+
+Connect to the `GDBusServer.new-connection` signal to handle
+incoming connections.
+
+The returned `GDBusServer` isn't active - you have to start it with
+`g_dbus_server_start()`.
+
+`GDBusServer` is used in this [example](https://gitlab.gnome.org/GNOME/glib/-/blob/HEAD/gio/tests/gdbus-example-peer.c).
+
+This is a synchronous failable constructor. There is currently no
+asynchronous version.
+
+**Parameters**
+
+- `address`: A D-Bus address.
+- `flags`: Flags from the `GDBusServerFlags` enumeration.
+- `guid`: A D-Bus GUID.
+- `observer`: A `GDBusAuthObserver` or `null`.
+- `cancellable`: A `GCancellable` or `null`.
+
+**Returns** A `GDBusServer` or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.26._
+
 ## Props
 
 `ref` receives the `Gio.DBusServer` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -147,8 +192,7 @@ string that can be used by clients to connect to `server`.
 
 This is valid and non-empty if initializing the `GDBusServer` succeeded.
 
-**Returns** A D-Bus address string. Do not free, the string is owned
-by `server`.
+**Returns** A D-Bus address string.
 
 _Available since 2.26._
 
@@ -172,7 +216,7 @@ getGuid(): string
 
 Gets the GUID for `server`, as provided to `g_dbus_server_new_sync()`.
 
-**Returns** A D-Bus GUID. Do not free this string, it is owned by `server`.
+**Returns** A D-Bus GUID.
 
 _Available since 2.26._
 

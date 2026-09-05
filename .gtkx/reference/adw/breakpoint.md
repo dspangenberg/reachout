@@ -63,6 +63,26 @@ import { AdwBreakpoint } from "@gtkx/jsx/adw";
 
 Implements `GtkBuildable`.
 
+## Static methods
+
+Static methods are called on `Adw.Breakpoint`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(condition: Adw.BreakpointCondition): Adw.Breakpoint
+```
+
+Creates a new `AdwBreakpoint` with `condition`.
+
+**Parameters**
+
+- `condition`: the condition
+
+**Returns** the newly created `AdwBreakpoint`
+
+_Available since 1.4._
+
 ## Props
 
 `ref` receives the `Adw.Breakpoint` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

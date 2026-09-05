@@ -43,6 +43,20 @@ import { GtkFixedLayout } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkLayoutManager](.gtkx/reference/gtk/layout-manager.md) → **GtkFixedLayout**
 
+## Static methods
+
+Static methods are called on `Gtk.FixedLayout`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.LayoutManager
+```
+
+Creates a new `GtkFixedLayout`.
+
+**Returns** the newly created `GtkFixedLayout`
+
 ## Props
 
 `ref` receives the `Gtk.FixedLayout` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

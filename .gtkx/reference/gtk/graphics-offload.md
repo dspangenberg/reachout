@@ -52,6 +52,26 @@ import { GtkGraphicsOffload } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.GraphicsOffload`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(child: Gtk.Widget | null): Gtk.Widget
+```
+
+Creates a new GtkGraphicsOffload widget.
+
+**Parameters**
+
+- `child`: the child widget
+
+**Returns** the new widget
+
+_Available since 4.14._
+
 ## Props
 
 `ref` receives the `Gtk.GraphicsOffload` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

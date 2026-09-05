@@ -16,6 +16,44 @@ import { GtkTextChildAnchor } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkTextChildAnchor**
 
+## Static methods
+
+Static methods are called on `Gtk.TextChildAnchor`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.TextChildAnchor
+```
+
+Creates a new `GtkTextChildAnchor`.
+
+Usually you would then insert it into a `GtkTextBuffer` with
+`Gtk.TextBuffer.insertChildAnchor()`. To perform the
+creation and insertion in one step, use the convenience
+function `Gtk.TextBuffer.createChildAnchor()`.
+
+**Returns** a new `GtkTextChildAnchor`
+
+### `newWithReplacement`
+
+```ts
+newWithReplacement(character: string): Gtk.TextChildAnchor
+```
+
+Creates a new `GtkTextChildAnchor` with the given replacement character.
+
+Usually you would then insert it into a `GtkTextBuffer` with
+`Gtk.TextBuffer.insertChildAnchor()`.
+
+**Parameters**
+
+- `character`: a replacement character
+
+**Returns** a new `GtkTextChildAnchor`
+
+_Available since 4.6._
+
 ## Props
 
 `ref` receives the `Gtk.TextChildAnchor` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -44,12 +82,6 @@ getDeleted(): boolean
 
 Determines whether a child anchor has been deleted from
 the buffer.
-
-Keep in mind that the child anchor will be unreferenced
-when removed from the buffer, so you need to hold your own
-reference (with `g_object_ref()`) if you plan to use this
-function — otherwise all deleted child anchors will also
-be finalized.
 
 **Returns** `true` if the child anchor has been deleted from its buffer
 

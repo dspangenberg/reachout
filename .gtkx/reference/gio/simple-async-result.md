@@ -181,6 +181,86 @@ import { GSimpleAsyncResult } from "@gtkx/jsx/gio";
 
 Implements `GAsyncResult`.
 
+## Static methods
+
+Static methods are called on `Gio.SimpleAsyncResult`, imported from `@gtkx/gi/gio`.
+
+### `isValid`
+
+```ts
+isValid(result: Gio.AsyncResult, source: GObject.Object | null, sourceTag: bigint | null): boolean
+```
+
+Ensures that the data passed to the _finish function of an async
+operation is consistent.  Three checks are performed.
+
+First, `result` is checked to ensure that it is really a
+`GSimpleAsyncResult`.  Second, `source` is checked to ensure that it
+matches the source object of `result`.  Third, `source_tag` is
+checked to ensure that it is equal to the `source_tag` argument given
+to `g_simple_async_result_new()` (which, by convention, is a pointer
+to the _async function corresponding to the _finish function from
+which this function is called).  (Alternatively, if either
+`source_tag` or `result`'s source tag is `null`, then the source tag
+check is skipped.)
+
+**Parameters**
+
+- `result`: the `GAsyncResult` passed to the _finish function.
+- `source`: the `GObject` passed to the _finish function.
+- `sourceTag`: the asynchronous function.
+
+**Returns** `TRUE` if all checks passed or `FALSE` if any failed.
+
+> **Deprecated since 2.46.** Use `GTask` and `g_task_is_valid()` instead.
+
+_Available since 2.20._
+
+### `new`
+
+```ts
+new(sourceObject: GObject.Object | null, callback: Gio.AsyncReadyCallback | null, sourceTag: bigint | null): Gio.SimpleAsyncResult
+```
+
+Creates a `GSimpleAsyncResult`.
+
+The common convention is to create the `GSimpleAsyncResult` in the
+function that starts the asynchronous operation and use that same
+function as the `source_tag`.
+
+If your operation supports cancellation with `GCancellable` (which it
+probably should) then you should provide the user's cancellable to
+`g_simple_async_result_set_check_cancellable()` immediately after
+this function returns.
+
+**Parameters**
+
+- `sourceObject`: a `GObject`, or `null`.
+- `callback`: a `GAsyncReadyCallback`.
+- `sourceTag`: the asynchronous function.
+
+**Returns** a `GSimpleAsyncResult`.
+
+> **Deprecated since 2.46.** Use `g_task_new()` instead.
+
+### `newFromError`
+
+```ts
+newFromError(sourceObject: GObject.Object | null, callback: Gio.AsyncReadyCallback | null, error: GLib.Error): Gio.SimpleAsyncResult
+```
+
+Creates a `GSimpleAsyncResult` from an error condition.
+
+**Parameters**
+
+- `sourceObject`: a `GObject`, or `null`.
+- `callback`: a `GAsyncReadyCallback`.
+- `error`: a `GError`
+
+**Returns** a `GSimpleAsyncResult`.
+
+> **Deprecated since 2.46.** Use `g_task_new()` and `g_task_return_error()` instead.
+
 ## Props
 
 `ref` receives the `Gio.SimpleAsyncResult` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

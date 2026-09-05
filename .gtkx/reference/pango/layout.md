@@ -25,8 +25,6 @@ There are a number of parameters to adjust the formatting of a
 `PangoLayout`. The following image shows adjustable parameters
 (on the left) and font metrics (on the right):
 
-
-
 The following images demonstrate the effect of alignment and
 justification on the layout of text:
 
@@ -35,7 +33,6 @@ justification on the layout of text:
 | ![align=left](align-left.png) | ![align=left, justify](align-left-justify.png) |
 | ![align=center](align-center.png) | ![align=center, justify](align-center-justify.png) |
 | ![align=right](align-right.png) | ![align=right, justify](align-right-justify.png) |
-
 
 It is possible, as well, to ignore the 2-D setup,
 and simply treat the results of a `PangoLayout` as a list of lines.
@@ -47,6 +44,51 @@ import { PangoLayout } from "@gtkx/jsx/pango";
 ## Hierarchy
 
 [GObject](.gtkx/reference/gobject/object.md) → **PangoLayout**
+
+## Static methods
+
+Static methods are called on `Pango.Layout`, imported from `@gtkx/gi/pango`.
+
+### `deserialize`
+
+```ts
+deserialize(context: Pango.Context, bytes: GLib.Bytes, flags: Pango.LayoutDeserializeFlags): Pango.Layout | null
+```
+
+Loads data previously created via `Pango.Layout.serialize()`.
+
+For a discussion of the supported format, see that function.
+
+Note: to verify that the returned layout is identical to
+the one that was serialized, you can compare `bytes` to the
+result of serializing the layout again.
+
+**Parameters**
+
+- `context`: a `PangoContext`
+- `bytes`: the bytes containing the data
+- `flags`: `PangoLayoutDeserializeFlags`
+
+**Returns** a new `PangoLayout`
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 1.50._
+
+### `new`
+
+```ts
+new(context: Pango.Context): Pango.Layout
+```
+
+Create a new `PangoLayout` object with attributes initialized to
+default values for a particular `PangoContext`.
+
+**Parameters**
+
+- `context`: a `PangoContext`
+
+**Returns** the newly allocated `PangoLayout`
 
 ## Props
 
@@ -190,16 +232,12 @@ strong and weak cursors if the insertion point is at that index.
 The position of each cursor is stored as a zero-width rectangle
 with the height of the run extents.
 
-
-
 The strong cursor location is the location where characters of the
 directionality equal to the base direction of the layout are inserted.
 The weak cursor location is the location where characters of the
 directionality opposite to the base direction of the layout are inserted.
 
 The following example shows text with both a strong and a weak cursor.
-
-
 
 The strong cursor has a little arrow pointing to the right, the weak
 cursor to the left. Typing a 'c' in this situation will insert the
@@ -456,7 +494,6 @@ Retrieves an array of logical attributes for each character in
 the `layout`.
 
 **Returns** location to store a pointer to an array of logical attributes.
-  This value must be freed with `g_free()`.
 
 ### `getLogAttrsReadonly`
 
@@ -589,8 +626,6 @@ Gets the current `PangoTabArray` used by this layout.
 If no `PangoTabArray` has been set, then the default tabs are
 in use and `null` is returned. Default tabs are every 8 spaces.
 
-The return value should be freed with `Pango.TabArray.free()`.
-
 **Returns** a copy of the tabs for this layout
 
 ### `getText`
@@ -600,8 +635,6 @@ getText(): string
 ```
 
 Gets the text in the layout.
-
-The returned text should not be freed or modified.
 
 **Returns** the text in the `layout`
 
@@ -800,7 +833,7 @@ setAttributes(attrs: Pango.AttrList | null): void
 
 Sets the text attributes for a layout object.
 
-References `attrs`, so the caller can unref its reference.
+References `attrs`.
 
 **Parameters**
 
@@ -1121,8 +1154,7 @@ Sets the tabs to use for `layout`, overriding the default tabs.
 whenever it meets a Tab character (U+0009).
 
 By default, tabs are every 8 spaces. If `tabs` is `null`, the
-default tabs are reinstated. `tabs` is copied into the layout;
-you must free your copy of `tabs` yourself.
+default tabs are reinstated. `tabs` is copied into the layout.
 
 Note that tabs and justification conflict with each other:
 Justification will move content away from its tab-aligned

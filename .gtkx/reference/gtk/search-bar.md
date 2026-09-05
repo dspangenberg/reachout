@@ -6,8 +6,6 @@ description: "Reveals a search entry when search is started."
 
 Reveals a search entry when search is started.
 
-
-
 It can also contain additional widgets, such as drop-down menus,
 or buttons.  The search bar would appear when a search is started
 through typing on the keyboard, or the application’s search mode
@@ -64,6 +62,23 @@ import { GtkSearchBar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkSearchBar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.SearchBar`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a `GtkSearchBar`.
+
+You will need to tell it about which widget is going to be your text
+entry using `Gtk.SearchBar.connectEntry()`.
+
+**Returns** a new `GtkSearchBar`
 
 ## Props
 

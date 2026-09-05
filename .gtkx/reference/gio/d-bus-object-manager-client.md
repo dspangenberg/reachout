@@ -95,6 +95,160 @@ import { GDBusObjectManagerClient } from "@gtkx/jsx/gio";
 
 Implements `GAsyncInitable`, `GDBusObjectManager`, `GInitable`.
 
+## Static methods
+
+Static methods are called on `Gio.DBusObjectManagerClient`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(connection: Gio.DBusConnection, flags: Gio.DBusObjectManagerClientFlags, name: string, objectPath: string, getProxyTypeFunc: Gio.DBusProxyTypeFunc | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
+```
+
+Asynchronously creates a new `GDBusObjectManagerClient` object.
+
+This is an asynchronous failable constructor. When the result is
+ready, `callback` will be invoked in the thread-default main context
+(see `GLib.MainContext.pushThreadDefault()`)
+of the thread you are calling this method from. You can then call
+`g_dbus_object_manager_client_new_finish()` to get the result. See
+`g_dbus_object_manager_client_new_sync()` for the synchronous version.
+
+**Parameters**
+
+- `connection`: A `GDBusConnection`.
+- `flags`: Zero or more flags from the `GDBusObjectManagerClientFlags` enumeration.
+- `name`: The owner of the control object (unique or well-known name).
+- `objectPath`: The object path of the control object.
+- `getProxyTypeFunc`: A `GDBusProxyTypeFunc` function or `null` to always construct `GDBusProxy` proxies.
+- `cancellable`: A `GCancellable` or `null`
+- `callback`: A `GAsyncReadyCallback` to call when the request is satisfied.
+
+_Available since 2.30._
+
+### `newFinish`
+
+```ts
+newFinish(res: Gio.AsyncResult): Gio.DBusObjectManagerClient
+```
+
+Finishes an operation started with `g_dbus_object_manager_client_new()`.
+
+**Parameters**
+
+- `res`: A `GAsyncResult` obtained from the `GAsyncReadyCallback` passed to `g_dbus_object_manager_client_new()`.
+
+**Returns** A
+  `GDBusObjectManagerClient` object or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.30._
+
+### `newForBus`
+
+```ts
+newForBus(busType: Gio.BusType, flags: Gio.DBusObjectManagerClientFlags, name: string, objectPath: string, getProxyTypeFunc: Gio.DBusProxyTypeFunc | null, cancellable: Gio.Cancellable | null, callback: Gio.AsyncReadyCallback | null): void
+```
+
+Like `g_dbus_object_manager_client_new()` but takes a `GBusType` instead of a
+`GDBusConnection`.
+
+This is an asynchronous failable constructor. When the result is
+ready, `callback` will be invoked in the thread-default main context
+(see `GLib.MainContext.pushThreadDefault()`)
+of the thread you are calling this method from. You can
+then call `g_dbus_object_manager_client_new_for_bus_finish()` to get the result. See
+`g_dbus_object_manager_client_new_for_bus_sync()` for the synchronous version.
+
+**Parameters**
+
+- `busType`: A `GBusType`.
+- `flags`: Zero or more flags from the `GDBusObjectManagerClientFlags` enumeration.
+- `name`: The owner of the control object (unique or well-known name).
+- `objectPath`: The object path of the control object.
+- `getProxyTypeFunc`: A `GDBusProxyTypeFunc` function or `null` to always construct `GDBusProxy` proxies.
+- `cancellable`: A `GCancellable` or `null`
+- `callback`: A `GAsyncReadyCallback` to call when the request is satisfied.
+
+_Available since 2.30._
+
+### `newForBusFinish`
+
+```ts
+newForBusFinish(res: Gio.AsyncResult): Gio.DBusObjectManagerClient
+```
+
+Finishes an operation started with `g_dbus_object_manager_client_new_for_bus()`.
+
+**Parameters**
+
+- `res`: A `GAsyncResult` obtained from the `GAsyncReadyCallback` passed to `g_dbus_object_manager_client_new_for_bus()`.
+
+**Returns** A
+  `GDBusObjectManagerClient` object or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.30._
+
+### `newForBusSync`
+
+```ts
+newForBusSync(busType: Gio.BusType, flags: Gio.DBusObjectManagerClientFlags, name: string, objectPath: string, getProxyTypeFunc: Gio.DBusProxyTypeFunc | null, cancellable: Gio.Cancellable | null): Gio.DBusObjectManagerClient
+```
+
+Like `g_dbus_object_manager_client_new_sync()` but takes a `GBusType` instead
+of a `GDBusConnection`.
+
+This is a synchronous failable constructor - the calling thread is
+blocked until a reply is received. See `g_dbus_object_manager_client_new_for_bus()`
+for the asynchronous version.
+
+**Parameters**
+
+- `busType`: A `GBusType`.
+- `flags`: Zero or more flags from the `GDBusObjectManagerClientFlags` enumeration.
+- `name`: The owner of the control object (unique or well-known name).
+- `objectPath`: The object path of the control object.
+- `getProxyTypeFunc`: A `GDBusProxyTypeFunc` function or `null` to always construct `GDBusProxy` proxies.
+- `cancellable`: A `GCancellable` or `null`
+
+**Returns** A
+  `GDBusObjectManagerClient` object or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.30._
+
+### `newSync`
+
+```ts
+newSync(connection: Gio.DBusConnection, flags: Gio.DBusObjectManagerClientFlags, name: string | null, objectPath: string, getProxyTypeFunc: Gio.DBusProxyTypeFunc | null, cancellable: Gio.Cancellable | null): Gio.DBusObjectManagerClient
+```
+
+Creates a new `GDBusObjectManagerClient` object.
+
+This is a synchronous failable constructor - the calling thread is
+blocked until a reply is received. See `g_dbus_object_manager_client_new()`
+for the asynchronous version.
+
+**Parameters**
+
+- `connection`: A `GDBusConnection`.
+- `flags`: Zero or more flags from the `GDBusObjectManagerClientFlags` enumeration.
+- `name`: The owner of the control object (unique or well-known name), or `null` when not using a message bus connection.
+- `objectPath`: The object path of the control object.
+- `getProxyTypeFunc`: A `GDBusProxyTypeFunc` function or `null` to always construct `GDBusProxy` proxies.
+- `cancellable`: A `GCancellable` or `null`
+
+**Returns** A
+  `GDBusObjectManagerClient` object or `null` if `error` is set.
+
+**Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
+
+_Available since 2.30._
+
 ## Props
 
 `ref` receives the `Gio.DBusObjectManagerClient` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -321,8 +475,7 @@ getConnection(): Gio.DBusConnection
 
 Gets the `GDBusConnection` used by `manager`.
 
-**Returns** A `GDBusConnection` object. Do not free,
-  the object belongs to `manager`.
+**Returns** A `GDBusConnection` object.
 
 _Available since 2.30._
 
@@ -348,8 +501,7 @@ getName(): string
 Gets the name that `manager` is for, or `null` if not a message bus
 connection.
 
-**Returns** A unique or well-known name. Do not free, the string
-belongs to `manager`.
+**Returns** A unique or well-known name.
 
 _Available since 2.30._
 
@@ -365,6 +517,6 @@ no-one currently owns that name. You can connect to the
 `GDBusObjectManagerClient.nameOwner` property.
 
 **Returns** The name owner or `null` if no name owner
-exists. Free with `g_free()`.
+exists.
 
 _Available since 2.30._

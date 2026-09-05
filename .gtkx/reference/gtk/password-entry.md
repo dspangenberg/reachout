@@ -6,8 +6,6 @@ description: "A single-line text entry widget for entering passwords and other s
 
 A single-line text entry widget for entering passwords and other secrets.
 
-
-
 It does not show its contents in clear text, does not allow to copy it
 to the clipboard, and it shows a warning when Caps Lock is engaged. If
 the underlying platform allows it, `GtkPasswordEntry` will also place
@@ -46,6 +44,20 @@ import { GtkPasswordEntry } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkPasswordEntry**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkEditable`.
+
+## Static methods
+
+Static methods are called on `Gtk.PasswordEntry`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a `GtkPasswordEntry`.
+
+**Returns** a new `GtkPasswordEntry`
 
 ## Props
 

@@ -49,6 +49,20 @@ import { GtkColorChooserWidget } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkColorChooser`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.ColorChooserWidget`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkColorChooserWidget`.
+
+**Returns** a new `GtkColorChooserWidget`
+
 ## Props
 
 `ref` receives the `Gtk.ColorChooserWidget` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

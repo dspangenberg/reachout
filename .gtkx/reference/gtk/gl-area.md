@@ -6,8 +6,6 @@ description: "Allows drawing with OpenGL."
 
 Allows drawing with OpenGL.
 
-
-
 `GtkGLArea` sets up its own `Gdk.GLContext`, and creates a custom
 GL framebuffer that the widget will do GL rendering onto. It also ensures
 that this framebuffer is the default GL rendering target when rendering.
@@ -127,6 +125,20 @@ import { GtkGLArea } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkGLArea**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.GLArea`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `GtkGLArea` widget.
+
+**Returns** a new `GtkGLArea`
 
 ## Props
 

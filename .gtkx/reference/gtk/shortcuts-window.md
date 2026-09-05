@@ -25,8 +25,6 @@ its children directly.
 
 ## A simple example:
 
-
-
 This example has as single section. As you can see, the shortcut groups
 are arranged in columns, and spread across several pages if there are too
 many to find on a single page.
@@ -35,16 +33,12 @@ The .ui file for this example can be found [here](https://gitlab.gnome.org/GNOME
 
 ## An example with multiple views:
 
-
-
 This example shows a `GtkShortcutsWindow` that has been configured to show only
 the shortcuts relevant to the “Stopwatch” view.
 
 The .ui file for this example can be found [here](https://gitlab.gnome.org/GNOME/gtk/tree/main/demos/gtk-demo/shortcuts-clocks.ui).
 
 ## An example with multiple sections:
-
-
 
 This example shows a `GtkShortcutsWindow` with two sections, “Editor Shortcuts”
 and “Terminal Shortcuts”.

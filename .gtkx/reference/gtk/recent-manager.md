@@ -69,6 +69,40 @@ import { GtkRecentManager } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkRecentManager**
 
+## Static methods
+
+Static methods are called on `Gtk.RecentManager`, imported from `@gtkx/gi/gtk`.
+
+### `getDefault`
+
+```ts
+getDefault(): Gtk.RecentManager
+```
+
+Gets a unique instance of `GtkRecentManager` that you can share
+in your application without caring about memory management.
+
+**Returns** A unique `GtkRecentManager`.
+
+### `new`
+
+```ts
+new(): Gtk.RecentManager
+```
+
+Creates a new recent manager object.
+
+Recent manager objects are used to handle the list of recently used
+resources. A `GtkRecentManager` object monitors the recently used
+resources list, and emits the `Gtk.RecentManager.changed`
+signal each time something inside the list changes.
+
+`GtkRecentManager` objects are expensive: be sure to create them
+only when needed. You should use `Gtk.RecentManager.getDefault()`
+instead.
+
+**Returns** A newly created `GtkRecentManager` object
+
 ## Props
 
 `ref` receives the `Gtk.RecentManager` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -174,9 +208,7 @@ getItems(): Gtk.RecentInfo[]
 Gets the list of recently used resources.
 
 **Returns** a list of
-  newly allocated `GtkRecentInfo objects`. Use
-  `Gtk.RecentInfo.unref()` on each item inside the list, and then
-  free the list itself using `g_list_free()`.
+  newly allocated `GtkRecentInfo objects`.
 
 ### `hasItem`
 
@@ -209,8 +241,7 @@ like its MIME type, or its display name.
 
 **Returns** a `GtkRecentInfo` containing information
   about the resource pointed by `uri`, or `null` if the URI was
-  not registered in the recently used resources list. Free with
-  `Gtk.RecentInfo.unref()`.
+  not registered in the recently used resources list.
 
 **Throws** A `GLib.Error` carrying the failing operation's domain, code, and message.
 

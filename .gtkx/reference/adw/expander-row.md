@@ -6,8 +6,6 @@ description: "A Gtk.ListBoxRow used to reveal widgets."
 
 A `Gtk.ListBoxRow` used to reveal widgets.
 
-
-
 The `AdwExpanderRow` widget allows the user to reveal or hide widgets below
 it. It also allows the user to enable the expansion of the row, allowing to
 disable all that the row contains.
@@ -48,6 +46,20 @@ import { AdwExpanderRow } from "@gtkx/jsx/adw";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkListBoxRow](.gtkx/reference/gtk/list-box-row.md) → [AdwPreferencesRow](.gtkx/reference/adw/preferences-row.md) → **AdwExpanderRow**
 
 Implements `GtkAccessible`, `GtkActionable`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Adw.ExpanderRow`, imported from `@gtkx/gi/adw`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new `AdwExpanderRow`.
+
+**Returns** the newly created `AdwExpanderRow`
 
 ## Props
 

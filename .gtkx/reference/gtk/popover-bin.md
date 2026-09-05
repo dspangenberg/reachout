@@ -30,6 +30,22 @@ import { GtkPopoverBin } from "@gtkx/jsx/gtk";
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
 
+## Static methods
+
+Static methods are called on `Gtk.PopoverBin`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.Widget
+```
+
+Creates a new popover bin widget.
+
+**Returns** the newly created popover bin
+
+_Available since 4.22._
+
 ## Props
 
 `ref` receives the `Gtk.PopoverBin` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

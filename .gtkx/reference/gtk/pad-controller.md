@@ -66,6 +66,38 @@ import { GtkPadController } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkEventController](.gtkx/reference/gtk/event-controller.md) → **GtkPadController**
 
+## Static methods
+
+Static methods are called on `Gtk.PadController`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(group: Gio.ActionGroup, pad: Gdk.Device | null): Gtk.PadController
+```
+
+Creates a new `GtkPadController` that will associate events from `pad` to
+actions.
+
+A `null` pad may be provided so the controller manages all pad devices
+generically, it is discouraged to mix `GtkPadController` objects with
+`null` and non-`null` `pad` argument on the same toplevel window, as execution
+order is not guaranteed.
+
+The `GtkPadController` is created with no mapped actions. In order to
+map pad events to actions, use `Gtk.PadController.setActionEntries()`
+or `Gtk.PadController.setAction()`.
+
+Be aware that pad events will only be delivered to `GtkWindow`s, so adding
+a pad controller to any other type of widget will not have an effect.
+
+**Parameters**
+
+- `group`: `GActionGroup` to trigger actions from
+- `pad`: A `GDK_SOURCE_TABLET_PAD` device, or `null` to handle all pads
+
+**Returns** A newly created `GtkPadController`
+
 ## Props
 
 `ref` receives the `Gtk.PadController` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

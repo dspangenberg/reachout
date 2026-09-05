@@ -18,6 +18,20 @@ import { GtkIMMulticontext } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkIMContext](.gtkx/reference/gtk/im-context.md) → **GtkIMMulticontext**
 
+## Static methods
+
+Static methods are called on `Gtk.IMMulticontext`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(): Gtk.IMContext
+```
+
+Creates a new `GtkIMMulticontext`.
+
+**Returns** a new `GtkIMMulticontext`.
+
 ## Props
 
 `ref` receives the `Gtk.IMMulticontext` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

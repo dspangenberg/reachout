@@ -14,6 +14,29 @@ import { GtkCustomFilter } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GtkFilter](.gtkx/reference/gtk/filter.md) → **GtkCustomFilter**
 
+## Static methods
+
+Static methods are called on `Gtk.CustomFilter`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(matchFunc: Gtk.CustomFilterFunc | null): Gtk.CustomFilter
+```
+
+Creates a new filter using the given function to filter items.
+
+If `match_func` is `NULL`, the filter matches all items.
+
+If the filter func changes its filtering behavior,
+`Gtk.Filter.changed()` needs to be called.
+
+**Parameters**
+
+- `matchFunc`: function to filter items
+
+**Returns** a new `GtkCustomFilter`
+
 ## Props
 
 `ref` receives the `Gtk.CustomFilter` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

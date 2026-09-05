@@ -30,6 +30,24 @@ import { GSocketListener } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GSocketListener**
 
+## Static methods
+
+Static methods are called on `Gio.SocketListener`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(): Gio.SocketListener
+```
+
+Creates a new `GSocketListener` with no sockets to listen for.
+New listeners can be added with e.g. `g_socket_listener_add_address()`
+or `g_socket_listener_add_inet_port()`.
+
+**Returns** a new `GSocketListener`.
+
+_Available since 2.22._
+
 ## Props
 
 `ref` receives the `Gio.SocketListener` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -247,8 +265,7 @@ different things depending on what address is connected to.
 If successful and `effective_address` is non-`null` then it will
 be set to the address that the binding actually occurred at.  This
 is helpful for determining the port number that was used for when
-requesting a binding to port 0 (ie: "any port").  This address, if
-requested, belongs to the caller and must be freed.
+requesting a binding to port 0 (ie: "any port").
 
 Call `g_socket_listener_close()` to stop listening on `address`; this will not
 be done automatically when you drop your final reference to `listener`, as

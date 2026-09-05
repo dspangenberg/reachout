@@ -29,6 +29,27 @@ import { GIPv6TclassMessage } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GSocketControlMessage](.gtkx/reference/gio/socket-control-message.md) → **GIPv6TclassMessage**
 
+## Static methods
+
+Static methods are called on `Gio.IPv6TclassMessage`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(dscp: number, ecn: Gio.EcnCodePoint): Gio.SocketControlMessage
+```
+
+Creates a new traffic class message with given DSCP and ECN values.
+
+**Parameters**
+
+- `dscp`: the DSCP value of the message
+- `ecn`: the ECN value of the message
+
+**Returns** a new traffic class message
+
+_Available since 2.88._
+
 ## Props
 
 `ref` receives the `Gio.IPv6TclassMessage` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

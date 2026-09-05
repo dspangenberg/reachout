@@ -26,6 +26,26 @@ import { GtkFileLauncher } from "@gtkx/jsx/gtk";
 
 [GObject](.gtkx/reference/gobject/object.md) → **GtkFileLauncher**
 
+## Static methods
+
+Static methods are called on `Gtk.FileLauncher`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(file: Gio.File | null): Gtk.FileLauncher
+```
+
+Creates a new `GtkFileLauncher` object.
+
+**Parameters**
+
+- `file`: the file to open
+
+**Returns** the new `GtkFileLauncher`
+
+_Available since 4.10._
+
 ## Props
 
 `ref` receives the `Gtk.FileLauncher` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

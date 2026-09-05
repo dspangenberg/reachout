@@ -6,8 +6,6 @@ description: "GtkAppChooserDialog shows a GtkAppChooserWidget inside a GtkDialog
 
 `GtkAppChooserDialog` shows a `GtkAppChooserWidget` inside a `GtkDialog`.
 
-
-
 Note that `GtkAppChooserDialog` does not have any interesting methods
 of its own. Instead, you should get the embedded `GtkAppChooserWidget`
 using `Gtk.AppChooserDialog.getWidget()` and call its methods if
@@ -33,6 +31,50 @@ import { GtkAppChooserDialog } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → [GtkWindow](.gtkx/reference/gtk/window.md) → [GtkDialog](.gtkx/reference/gtk/dialog.md) → **GtkAppChooserDialog**
 
 Implements `GtkAccessible`, `GtkAppChooser`, `GtkBuildable`, `GtkConstraintTarget`, `GtkNative`, `GtkRoot`, `GtkShortcutManager`.
+
+## Static methods
+
+Static methods are called on `Gtk.AppChooserDialog`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(parent: Gtk.Window | null, flags: Gtk.DialogFlags, file: Gio.File): Gtk.Widget
+```
+
+Creates a new `GtkAppChooserDialog` for the provided `GFile`.
+
+The dialog will show applications that can open the file.
+
+**Parameters**
+
+- `parent`: a `GtkWindow`
+- `flags`: flags for this dialog
+- `file`: a `GFile`
+
+**Returns** a newly created `GtkAppChooserDialog`
+
+> **Deprecated since 4.10.** This widget will be removed in GTK 5
+
+### `newForContentType`
+
+```ts
+newForContentType(parent: Gtk.Window | null, flags: Gtk.DialogFlags, contentType: string): Gtk.Widget
+```
+
+Creates a new `GtkAppChooserDialog` for the provided content type.
+
+The dialog will show applications that can open the content type.
+
+**Parameters**
+
+- `parent`: a `GtkWindow`
+- `flags`: flags for this dialog
+- `contentType`: a content type string
+
+**Returns** a newly created `GtkAppChooserDialog`
+
+> **Deprecated since 4.10.** This widget will be removed in GTK 5
 
 ## Props
 

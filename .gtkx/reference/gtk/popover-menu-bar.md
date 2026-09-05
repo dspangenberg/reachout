@@ -6,8 +6,6 @@ description: "Presents a horizontal bar of items that pop up menus when clicked.
 
 Presents a horizontal bar of items that pop up menus when clicked.
 
-
-
 The only way to create instances of `GtkPopoverMenuBar` is
 from a `GMenuModel`.
 
@@ -42,6 +40,24 @@ import { GtkPopoverMenuBar } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkPopoverMenuBar**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`.
+
+## Static methods
+
+Static methods are called on `Gtk.PopoverMenuBar`, imported from `@gtkx/gi/gtk`.
+
+### `newFromModel`
+
+```ts
+newFromModel(model: Gio.MenuModel | null): Gtk.Widget
+```
+
+Creates a `GtkPopoverMenuBar` from a `GMenuModel`.
+
+**Parameters**
+
+- `model`: a `GMenuModel`
+
+**Returns** a new `GtkPopoverMenuBar`
 
 ## Props
 

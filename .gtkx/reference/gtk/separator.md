@@ -6,8 +6,6 @@ description: "Draws a horizontal or vertical line to separate other widgets."
 
 Draws a horizontal or vertical line to separate other widgets.
 
-
-
 A `GtkSeparator` can be used to group the widgets within a window.
 It displays a line with a shadow to make it appear sunken into the
 interface.
@@ -30,6 +28,24 @@ import { GtkSeparator } from "@gtkx/jsx/gtk";
 [GObject](.gtkx/reference/gobject/object.md) → [GInitiallyUnowned](.gtkx/reference/gobject/initially-unowned.md) → [GtkWidget](.gtkx/reference/gtk/widget.md) → **GtkSeparator**
 
 Implements `GtkAccessible`, `GtkBuildable`, `GtkConstraintTarget`, `GtkOrientable`.
+
+## Static methods
+
+Static methods are called on `Gtk.Separator`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(orientation: Gtk.Orientation): Gtk.Widget
+```
+
+Creates a new `GtkSeparator` with the given orientation.
+
+**Parameters**
+
+- `orientation`: the separator’s orientation.
+
+**Returns** a new `GtkSeparator`.
 
 ## Props
 

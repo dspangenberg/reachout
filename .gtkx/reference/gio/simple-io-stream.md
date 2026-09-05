@@ -25,6 +25,28 @@ import { GSimpleIOStream } from "@gtkx/jsx/gio";
 
 [GObject](.gtkx/reference/gobject/object.md) → [GIOStream](.gtkx/reference/gio/io-stream.md) → **GSimpleIOStream**
 
+## Static methods
+
+Static methods are called on `Gio.SimpleIOStream`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(inputStream: Gio.InputStream, outputStream: Gio.OutputStream): Gio.IOStream
+```
+
+Creates a new `GSimpleIOStream` wrapping `input_stream` and `output_stream`.
+See also `GIOStream`.
+
+**Parameters**
+
+- `inputStream`: a `GInputStream`.
+- `outputStream`: a `GOutputStream`.
+
+**Returns** a new `GSimpleIOStream` instance.
+
+_Available since 2.44._
+
 ## Props
 
 `ref` receives the `Gio.SimpleIOStream` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

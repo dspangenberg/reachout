@@ -21,6 +21,30 @@ import { PangoContext } from "@gtkx/jsx/pango";
 
 [GObject](.gtkx/reference/gobject/object.md) → **PangoContext**
 
+## Static methods
+
+Static methods are called on `Pango.Context`, imported from `@gtkx/gi/pango`.
+
+### `new`
+
+```ts
+new(): Pango.Context
+```
+
+Creates a new `PangoContext` initialized to default values.
+
+This function is not particularly useful as it should always
+be followed by a `Pango.Context.setFontMap()` call, and the
+function `Pango.FontMap.createContext()` does these two steps
+together and hence users are recommended to use that.
+
+If you are using Pango as part of a higher-level system,
+that system may have it's own way of create a `PangoContext`.
+For instance, the GTK toolkit has, among others,
+`gtk_widget_get_pango_context()`. Use those instead.
+
+**Returns** the newly allocated `PangoContext`.
+
 ## Props
 
 `ref` receives the `Pango.Context` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
@@ -80,7 +104,7 @@ getFontDescription(): Pango.FontDescription | null
 Retrieve the default font description for the context.
 
 **Returns** a pointer to the context's default font
-  description. This value must not be modified or freed.
+  description.
 
 ### `getFontMap`
 
@@ -91,8 +115,6 @@ getFontMap(): Pango.FontMap | null
 Gets the `PangoFontMap` used to look up fonts for this context.
 
 **Returns** the font map for the.
-  `PangoContext` This value is owned by Pango and should not be
-  unreferenced.
 
 _Available since 1.6._
 
@@ -150,8 +172,6 @@ See `Pango.Context.setMatrix()`.
 
 **Returns** the matrix, or `null` if no
   matrix has been set (which is the same as the identity matrix).
-  The returned matrix is owned by Pango and must not be modified
-  or freed.
 
 _Available since 1.6._
 
@@ -178,8 +198,7 @@ for the individual families.
 - `desc`: a `PangoFontDescription` structure. `null` means that the font description from the context will be used.
 - `language`: language tag used to determine which script to get the metrics for. `null` means that the language tag from the context will be used. If no language tag is set on the context, metrics for the default language (as determined by `Pango.Language.getDefault()` will be returned.
 
-**Returns** a `PangoFontMetrics` object. The caller must call
-  `Pango.FontMetrics.unref()` when finished using the object.
+**Returns** a `PangoFontMetrics` object.
 
 ### `getRoundGlyphPositions`
 
@@ -224,8 +243,7 @@ listFamilies(): Pango.FontFamily[]
 List all families for a context.
 
 **Returns** location
-  to store a pointer to an array of `PangoFontFamily`. This array should
-  be freed with `g_free()`.
+  to store a pointer to an array of `PangoFontFamily`.
 
 ### `loadFont`
 

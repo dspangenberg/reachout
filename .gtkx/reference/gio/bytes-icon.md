@@ -19,6 +19,30 @@ import { GBytesIcon } from "@gtkx/jsx/gio";
 
 Implements `GIcon`, `GLoadableIcon`.
 
+## Static methods
+
+Static methods are called on `Gio.BytesIcon`, imported from `@gtkx/gi/gio`.
+
+### `new`
+
+```ts
+new(bytes: GLib.Bytes): Gio.BytesIcon
+```
+
+Creates a new icon for a bytes.
+
+This cannot fail, but loading and interpreting the bytes may fail later on
+(for example, if `g_loadable_icon_load()` is called) if the image is invalid.
+
+**Parameters**
+
+- `bytes`: a `GBytes`.
+
+**Returns** a `GIcon` for the given
+  `bytes`.
+
+_Available since 2.38._
+
 ## Props
 
 `ref` receives the `Gio.BytesIcon` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.

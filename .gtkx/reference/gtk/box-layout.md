@@ -28,6 +28,24 @@ import { GtkBoxLayout } from "@gtkx/jsx/gtk";
 
 Implements `GtkOrientable`.
 
+## Static methods
+
+Static methods are called on `Gtk.BoxLayout`, imported from `@gtkx/gi/gtk`.
+
+### `new`
+
+```ts
+new(orientation: Gtk.Orientation): Gtk.LayoutManager
+```
+
+Creates a new `GtkBoxLayout`.
+
+**Parameters**
+
+- `orientation`: the orientation for the new layout
+
+**Returns** a new box layout
+
 ## Props
 
 `ref` receives the `Gtk.BoxLayout` instance. Every mutable property also has an `onNotify<Prop>` handler prop called with the new value when the property changes. Props inherited from ancestor elements are documented on their own pages.
