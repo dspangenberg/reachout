@@ -61,8 +61,17 @@ jobs:
           flatpak remote-add --user --if-not-exists flathub \
             https://flathub.org/repo/flathub.flatpakrepo
 
-      - name: Install headless display dependencies
-        run: dnf install -y weston dbus util-linux
+      - name: Provide setpriv shim (missing in freedesktop-sdk runtime)
+        run: |
+          set -eu
+          mkdir -p "$RUNNER_TEMP/bin"
+          cat > "$RUNNER_TEMP/bin/setpriv" <<'EOF'
+          #!/bin/sh
+          if [ "$1" = "--pdeathsig" ] && [ "$#" -ge 3 ]; then shift 2; fi
+          exec "$@"
+          EOF
+          chmod +x "$RUNNER_TEMP/bin/setpriv"
+          echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
 
       - name: Lint
         run: pnpm lint
