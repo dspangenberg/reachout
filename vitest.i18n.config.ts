@@ -10,9 +10,9 @@ export default defineConfig({
     bail: 1,
     env: {
       GTKX_LOCALE_DIR: resolve(import.meta.dirname, 'dist/locale'),
-      LANG: 'fr_FR.UTF-8',
+      LANG: process.env.GTKX_I18N_LANG ?? 'fr_FR.UTF-8',
       LANGUAGE: 'fr',
-      LC_ALL: 'fr_FR.UTF-8'
+      LC_ALL: process.env.GTKX_I18N_LC_ALL ?? 'fr_FR.UTF-8'
     }
   }
 })

@@ -91,8 +91,8 @@ jobs:
           echo "LD_LIBRARY_PATH=${LIB}:/app/lib:${LD_LIBRARY_PATH:+$LD_LIBRARY_PATH}" >> "$GITHUB_ENV"
 
       - name: Tests
-        run: |
-          localedef -i fr_FR -f UTF-8 fr_FR.UTF-8
-          pnpm test
+        run: pnpm test
         env:
           GTKX_COMPOSITOR: weston
+          GTKX_I18N_LANG: en_US.utf8
+          GTKX_I18N_LC_ALL: en_US.utf8
