@@ -1,9 +1,9 @@
 {
-  "name": "gtkx-reachout",
+  "name": "gtkx-outreach",
   "version": "0.0.2",
   "private": true,
   "license": "EUPL-1.2",
-  "description": "Reach Out – Contact manager",
+  "description": "Outreach – Contact manager",
   "type": "module",
   "engines": {
     "node": ">=26.7.0"

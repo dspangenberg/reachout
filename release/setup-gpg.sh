@@ -16,7 +16,7 @@ set -eu
 #
 # WICHTIG: Der so erzeugte private Key muss gesichert werden. Exporte ihn z. B.
 # nach dem Erzeugen mit:
-#   gpg --export-secret-keys --armor <KEYID> > ~/reachout-signing-key.asc
+#   gpg --export-secret-keys --armor <KEYID> > ~/outreach-signing-key.asc
 # Bewahre die Datei offline auf; verlierst du den privaten Key, können spätere
 # Updates der Quelle nicht mehr signiert werden.
 
@@ -43,7 +43,7 @@ ensure_key() {
     echo "No signing key configured. Creating a new GPG key (no passphrase)…"
     mkdir -p "$KEY_HOMEDIR"
     KEYID=$(gpg --homedir "$KEY_HOMEDIR" --batch --passphrase '' \
-        --quick-gen-key "Reach Out Release <danny.spangenberg@twiceware.de>" rsa4096 sign 0 \
+        --quick-gen-key "Outreach Release <danny.spangenberg@twiceware.de>" rsa4096 sign 0 \
         | grep -o '[0-9A-F]\{40\}' | head -1)
     [ -n "$KEYID" ] || { echo "error: could not determine new key id" >&2; exit 1; }
 }
@@ -65,4 +65,4 @@ echo "Signing key saved to $KEY_FILE"
 echo "  fingerprint: $FPR"
 echo ""
 echo "Exportieren und sichern (einmalig, offline aufbewahren):"
-echo "  gpg --export-secret-keys --armor $FPR > ~/reachout-signing-key.asc"
+echo "  gpg --export-secret-keys --armor $FPR > ~/outreach-signing-key.asc"

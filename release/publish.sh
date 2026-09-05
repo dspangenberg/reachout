@@ -14,13 +14,13 @@ set -eu
 # `release/repo`). Den gesamten Inhalt dieses Ordners hochladen (inkl. `config`,
 # `summary`, `summaries/`, `objects/`, `keyring`).
 
-APP_ID="de.twiceware.reachout"
+APP_ID="de.twiceware.outreach"
 BRANCH="stable"
 OUT_REPO="release/repo"
 BUILD_DIR="build/targets/flatpak/build"
 # Basis-URL, unter der das Repo gehostet wird (Pages-Root, kein /repo-Suffix,
 # da der Workflow den Inhalt von release/repo flach in die Pages-Root ablegt).
-REPO_URL="${REPO_URL:-https://dspangenberg.github.io/reachout/}"
+REPO_URL="${REPO_URL:-https://dspangenberg.github.io/outreach/}"
 
 case "${1:-}" in
     --repo) OUT_REPO="$2"; shift 2 ;;
@@ -71,31 +71,31 @@ gpg --homedir "$GTKX_GPG_HOMEDIR" --export "$SIGNING_KEY" > "$OUT_REPO/keyring"
 
 # --- 3b. .flatpakrepo / .flatpakref erzeugen (Schlüssel eingebettet) ---------
 # Eine .flatpakrepo-Datei erspart den Nutzern das manuelle --gpg-import:
-#   flatpak remote-add --if-not-exists reachout <UEB >/reachout.flatpakrepo
+#   flatpak remote-add --if-not-exists outreach https://dspangenberg.github.io/outreach/outreach.flatpakrepo
 # Der GPG-Key wird automatisch importiert und die Commit-Signaturen verifiziert.
 GPG_KEY_B64="$(gpg --homedir "$GTKX_GPG_HOMEDIR" --export "$SIGNING_KEY" | base64 --wrap=0)"
 
-cat > "$OUT_REPO/reachout.flatpakrepo" <<EOF
+cat > "$OUT_REPO/outreach.flatpakrepo" <<EOF
 [Flatpak Repo]
-Title=Reach Out
-Name=reachout
+Title=Outreach
+Name=outreach
 Url=$REPO_URL
-Homepage=https://github.com/dspangenberg/reachout
-Comment=Reach Out – Contact manager
-Description=Reach Out, ein Kontakt- und Aufgabenmanager für GNOME
+Homepage=https://github.com/dspangenberg/outreach
+Comment=Outreach – Contact manager
+Description=Outreach, ein Kontakt- und Aufgabenmanager für GNOME
 GPGKey=$GPG_KEY_B64
 EOF
 
 # .flatpakref für den 1-Klick-Install einer einzelnen App (flatpak install --from).
-cat > "$OUT_REPO/reachout.flatpakref" <<EOF
+cat > "$OUT_REPO/outreach.flatpakref" <<EOF
 [Flatpak Ref]
-Title=Reach Out
+Title=Outreach
 Name=$APP_ID
 Branch=$BRANCH
 Url=$REPO_URL
-Homepage=https://github.com/dspangenberg/reachout
-Icon=$REPO_URL/icons/de.twiceware.reachout.png
-RuntimeRepo=$REPO_URL/reachout.flatpakrepo
+Homepage=https://github.com/dspangenberg/outreach
+Icon=$REPO_URL/icons/de.twiceware.outreach.png
+RuntimeRepo=$REPO_URL/outreach.flatpakrepo
 IsRuntime=false
 GPGKey=$GPG_KEY_B64
 EOF
@@ -121,7 +121,7 @@ cat > "$OUT_REPO/index.html" <<EOF
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reach Out</title>
+<title>Outreach</title>
 <style>
   :root { color-scheme: light dark; }
   * { box-sizing: border-box; }
@@ -159,8 +159,8 @@ cat > "$OUT_REPO/index.html" <<EOF
 <body>
 <main>
   <div class="hero">
-    <img src="$REPO_URL/icons/$APP_ID.svg" alt="Reach Out" width="96" height="96">
-    <h1>Reach Out</h1>
+    <img src="$REPO_URL/icons/$APP_ID.svg" alt="Outreach" width="96" height="96">
+    <h1>Outreach</h1>
     <p class="tag">Kontakt- und Aufgabenmanager für GNOME</p>
     <p class="meta">Version $APP_VERSION &middot; Build $BUILD_DATE</p>
   </div>
@@ -168,19 +168,19 @@ cat > "$OUT_REPO/index.html" <<EOF
   <div class="box">
     <h2>Installation</h2>
     <p>Füge dieses Repository als Quelle hinzu und installiere die App:</p>
-    <pre>flatpak remote-add --if-not-exists reachout \\
-  $REPO_URL/reachout.flatpakrepo
-flatpak install --user reachout $APP_ID</pre>
+    <pre>flatpak remote-add --if-not-exists outreach \\
+  $REPO_URL/outreach.flatpakrepo
+flatpak install --user outreach $APP_ID</pre>
     <p>Oder 1-Klick-Installation über die Referenzdatei:</p>
-    <pre><a href="$REPO_URL/reachout.flatpakref">$REPO_URL/reachout.flatpakref</a></pre>
+    <pre><a href="$REPO_URL/outreach.flatpakref">$REPO_URL/outreach.flatpakref</a></pre>
   </div>
 
   <div class="box">
     <h2>Links</h2>
     <ul>
-      <li><a href="$REPO_URL/reachout.flatpakrepo">reachout.flatpakrepo</a> – Repo als Quelle hinzufügen</li>
-      <li><a href="$REPO_URL/reachout.flatpakref">reachout.flatpakref</a> – Install-Referenz</li>
-      <li><a href="https://github.com/dspangenberg/reachout">Quellcode auf GitHub</a></li>
+      <li><a href="$REPO_URL/outreach.flatpakrepo">outreach.flatpakrepo</a> – Repo als Quelle hinzufügen</li>
+      <li><a href="$REPO_URL/outreach.flatpakref">outreach.flatpakref</a> – Install-Referenz</li>
+      <li><a href="https://github.com/dspangenberg/outreach">Quellcode auf GitHub</a></li>
     </ul>
   </div>
   <p class="meta" style="text-align:center">GPG-signiertes, selbst-gehostetes Flatpak-Repository.</p>
@@ -200,16 +200,16 @@ echo ""
 echo "==> Fertig. Veröffentlichtes Repo: $OUT_REPO"
 echo ""
 echo "Hosten: Inhalt von '$OUT_REPO' (inkl. config, summary, summaries/,"
-echo "objects/, keyring, reachout.flatpakrepo, reachout.flatpakref, index.html,"
+echo "objects/, keyring, outreach.flatpakrepo, outreach.flatpakref, index.html,"
 echo "icons/) auf einen statischen HTTP-Server legen, z. B.:"
-echo "  rsync -av release/repo/ meinserver:/var/www/reachout/repo/"
+echo "  rsync -av release/repo/ meinserver:/var/www/outreach/repo/"
 echo ""
 echo "Einbinden als externe Quelle (Schlüssel wird automatisch importiert):"
-echo "  flatpak remote-add --if-not-exists reachout $REPO_URL/reachout.flatpakrepo"
-echo "  flatpak install --user reachout $APP_ID"
+echo "  flatpak remote-add --if-not-exists outreach $REPO_URL/outreach.flatpakrepo"
+echo "  flatpak install --user outreach $APP_ID"
 echo ""
 echo "Oder 1-Klick-Install der App über die .flatpakref-Datei:"
-echo "  flatpak install --from $REPO_URL/reachout.flatpakref"
+echo "  flatpak install --from $REPO_URL/outreach.flatpakref"
 echo ""
 echo "Für GNOME Software: die .flatpakrepo-Datei bereitstellen (siehe"
 echo "RELEASING.md, Abschnitt 'Eigene Quelle in Software einrichten')."

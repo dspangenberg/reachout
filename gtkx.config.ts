@@ -1,13 +1,11 @@
 import { defineConfig } from '@gtkx/config'
-import pkg from './package.json' with { type: 'json' }
-
 export default defineConfig({
-  applicationId: 'de.twiceware.reachout',
+  applicationId: 'de.twiceware.outreach',
   applicationIcon: 'data/icons',
   deploy: {
-    name: 'Reach Out',
+    name: 'Outreach',
     genericName: 'Contact manager',
-    binaryName: 'reachout',
+    binaryName: 'outreach',
     summary: 'Manage your tasks and to-dos',
     description: [
       'A task manager built with GTKX, demonstrating how to build React-based GTK4 and Adwaita ' +
@@ -18,10 +16,10 @@ export default defineConfig({
     categories: ['Office', 'ProjectManagement'],
     keywords: ['Task', 'Tasks', 'Todo', 'To-do', 'Checklist'],
     developer: { id: 'de.twiceware', name: 'Danny Spangenberg', email: 'danny.spangenberg@twiceware.de' },
-    homepage: 'https://dspangenberg.github.io/reachout',
+    homepage: 'https://dspangenberg.github.io/outreach',
     urls: {
-      bugtracker: 'https://github.com/dspangenberg/reachout/issues',
-      'vcs-browser': 'https://dspangenberg.github.io/reachout/'
+      bugtracker: 'https://github.com/dspangenberg/outreach/issues',
+      'vcs-browser': 'https://dspangenberg.github.io/outreach/'
     },
     screenshots: [
       { file: 'assets/screenshot.png', caption: 'Browsing task lists in the sidebar', isDefault: true },
@@ -29,7 +27,7 @@ export default defineConfig({
     ],
     releases: [
       {
-        version: pkg.version,
+        version: '0.0.2',
         date: '2026-09-05',
         notes: [
           'Persist data to a local SQLite database (Drizzle ORM) with automatic migrations.',
@@ -39,7 +37,7 @@ export default defineConfig({
           'Enforce standard JavaScript style via Biome.'
         ]
       },
-      { version: '0.0.1', date: '2026-07-13', notes: ['Initial release.'] }
+      { version: '0.0.1', date: '2026-09-04', notes: ['Initial release.'] }
     ],
     branding: { light: '#3584e4', dark: '#1a5fb4' },
     contentRating: {},

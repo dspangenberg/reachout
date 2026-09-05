@@ -5,12 +5,12 @@ import pkg from '../../package.json' with { type: 'json' }
 export const About = ({ onClose }: { onClose: () => void }) => (
   <AdwAboutDialog
     onClosed={onClose}
-    applicationName="Reach Out"
-    applicationIcon="de.twiceware.reachout"
+    applicationName="Outreach"
+    applicationIcon="de.twiceware.outreach"
     version={pkg.version}
     developerName="Danny Spangenberg"
-    website="https://dspangenberg.github.io/reachout"
-    issueUrl="https://github.com/dspangenberg/reachout/issues"
+    website="https://dspangenberg.github.io/outreach"
+    issueUrl="https://github.com/dspangenberg/outreach/issues"
     copyright="© 2026 Danny Spangenberg"
     license={
       'This application is licensed under the European Union Public Licence (EUPL), version 1.2.\n' +

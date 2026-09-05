@@ -17,7 +17,7 @@ export const MainMenu = () => (
               { label: t('Keyboard Shortcuts'), action: 'win.shortcuts' }
             ]
           },
-          { section: [{ label: t('About Reach Out'), action: 'win.about' }] }
+          { section: [{ label: t('About Outreach'), action: 'win.about' }] }
         ]}
       />
     }

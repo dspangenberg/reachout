@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <enum id="de.twiceware.reachout.SortOrder">
+  <enum id="de.twiceware.outreach.SortOrder">
     <value nick="manual" value="0"/>
     <value nick="due-date" value="1"/>
     <value nick="title" value="2"/>
     <value nick="created" value="3"/>
   </enum>
-  <schema id="de.twiceware.reachout" path="/de/twiceware/reachout/">
-    <key name="sort-order" enum="de.twiceware.reachout.SortOrder">
+  <schema id="de.twiceware.outreach" path="/de/twiceware/outreach/">
+    <key name="sort-order" enum="de.twiceware.outreach.SortOrder">
       <default>'manual'</default>
       <summary>Sort order</summary>
       <description>How tasks are ordered in the list</description>

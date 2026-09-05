@@ -3,7 +3,7 @@ import { t } from '@gtkx/i18n'
 import { AdwPreferencesDialog, AdwPreferencesGroup, AdwPreferencesPage, AdwSpinRow } from '@gtkx/jsx/adw'
 import { GtkAdjustment } from '@gtkx/jsx/gtk'
 import { useSetting } from '@gtkx/react'
-import schema from '../../data/de.twiceware.reachout.gschema.xml'
+import schema from '../../data/de.twiceware.outreach.gschema.xml'
 import { useSortOrder } from '../hooks/use-sort-order.js'
 
 type Scheme = 'default' | 'light' | 'dark'

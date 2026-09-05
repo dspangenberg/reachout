@@ -14,4 +14,4 @@ npm run dev
 From the repository root, `pnpm tutorial` publishes the working packages to a local registry and validates the example against them. See [desktop integration](https://gtkx.dev/tutorial/actions-menus-shortcuts) and [packaging](https://gtkx.dev/tutorial/packaging).
 
 
-flatpak install --from https://dspangenberg.github.io/reachout/reachout.flatpakref
+flatpak install --from https://dspangenberg.github.io/outreach/outreach.flatpakref

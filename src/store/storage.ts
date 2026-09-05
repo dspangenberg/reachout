@@ -9,7 +9,7 @@ import { contactsRelations } from './schema.js'
 
 const directory = join(
   process.env.XDG_DATA_HOME ?? join(homedir(), '.local', 'share'),
-  'de.twiceware.reachout',
+  'de.twiceware.outreach',
   import.meta.env.DEV ? 'dev' : ''
 )
 const dbFile = join(directory, 'tasks.db')

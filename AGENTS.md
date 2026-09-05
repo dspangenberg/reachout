@@ -1,6 +1,6 @@
 <!-- BEGIN:gtkx-agent-rules -->
 
-# GTKX
+## GTKX
 
 This is not the GTK you have seen before. Most GTK code in your training data is C, PyGObject, Vala or GJS, and almost none of it is valid here. Check the rules below against what you are about to write.
 
