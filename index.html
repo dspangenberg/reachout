@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Outreach</title>
+<style>
+  :root { color-scheme: light dark; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    background: #f6f5f4; color: #241f31; line-height: 1.55; padding: 3rem 1rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    body { background: #24292f; color: #e6e6e6; }
+    code { background: #1f2429; }
+  }
+  main { max-width: 720px; margin: 0 auto; }
+  .hero { text-align: center; margin-bottom: 2rem; }
+  .hero img { width: 96px; height: 96px; }
+  h1 { margin: .5rem 0 .2rem; font-size: 2.2rem; }
+  .tag { color: #77767b; margin: 0 0 1.2rem; }
+  @media (prefers-color-scheme: dark) { .tag { color: #9a9996; } }
+  .box {
+    background: #fff; border: 1px solid #deddda; border-radius: 12px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1.25rem;
+  }
+  @media (prefers-color-scheme: dark) { .box { background: #1c2126; border-color: #3a4147; } }
+  code { background: #f0efec; padding: .15em .4em; border-radius: 6px; font-size: .95em; }
+  @media (prefers-color-scheme: dark) { code { background: #1f2429; } }
+  pre {
+    background: #2c3136; color: #e6e6e6; padding: 1rem; border-radius: 10px;
+    overflow-x: auto; font-size: .95em;
+  }
+  a { color: #3584e4; }
+  ul { margin: .5rem 0; padding-left: 1.3rem; }
+  .meta { color: #77767b; font-size: .9em; }
+  @media (prefers-color-scheme: dark) { .meta { color: #9a9996; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="hero">
+    <img src="https://dspangenberg.github.io/outreach/icons/de.twiceware.outreach.svg" alt="Outreach" width="96" height="96">
+    <h1>Outreach</h1>
+    <p class="tag">Kontakt- und Aufgabenmanager für GNOME</p>
+    <p class="meta">Version 0.0.3 &middot; Build 2026-09-05</p>
+  </div>
+
+  <div class="box">
+    <h2>Installation</h2>
+    <p>Füge dieses Repository als Quelle hinzu und installiere die App:</p>
+    <pre>flatpak remote-add --if-not-exists outreach \
+  https://dspangenberg.github.io/outreach/outreach.flatpakrepo
+flatpak install --user outreach de.twiceware.outreach</pre>
+    <p>Oder 1-Klick-Installation über die Referenzdatei:</p>
+    <pre><a href="https://dspangenberg.github.io/outreach/outreach.flatpakref">https://dspangenberg.github.io/outreach/outreach.flatpakref</a></pre>
+  </div>
+
+  <div class="box">
+    <h2>Links</h2>
+    <ul>
+      <li><a href="https://dspangenberg.github.io/outreach/outreach.flatpakrepo">outreach.flatpakrepo</a> – Repo als Quelle hinzufügen</li>
+      <li><a href="https://dspangenberg.github.io/outreach/outreach.flatpakref">outreach.flatpakref</a> – Install-Referenz</li>
+      <li><a href="https://github.com/dspangenberg/outreach">Quellcode auf GitHub</a></li>
+    </ul>
+  </div>
+  <p class="meta" style="text-align:center">GPG-signiertes, selbst-gehostetes Flatpak-Repository.</p>
+</main>
+</body>
+</html>

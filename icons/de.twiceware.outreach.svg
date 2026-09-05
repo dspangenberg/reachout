@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg height="128px" viewBox="0 0 128 128" width="128px" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background rounded square -->
+    <rect x="12" y="12" width="104" height="104" rx="26" fill="#3584e4"/>
+    <rect x="12" y="12" width="104" height="104" rx="26" fill="none" stroke="#1a5fb4" stroke-width="2"/>
+
+    <!-- Tasks checklist (right side) -->
+    <rect x="80" y="30" width="24" height="30" rx="6" fill="#1a5fb4"/>
+    <rect x="85" y="37" width="8" height="8" rx="2" fill="#ffffff"/>
+    <path d="m 86.5 41 l 2 2 l 4 -4" fill="none" stroke="#62a0ea" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <rect x="95" y="39" width="6" height="4" rx="2" fill="#62a0ea"/>
+    <rect x="85" y="49" width="8" height="8" rx="2" fill="#ffffff"/>
+    <path d="m 86.5 53 l 2 2 l 4 -4" fill="none" stroke="#62a0ea" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+    <rect x="95" y="51" width="6" height="4" rx="2" fill="#62a0ea"/>
+
+    <!-- Contact person: head -->
+    <circle cx="56" cy="52" r="18" fill="#ffffff"/>
+
+    <!-- Contact person: shoulders -->
+    <path d="m 30 98 c 0 -16 11.6 -26 26 -26 c 14.4 0 26 10 26 26 z" fill="#ffffff"/>
+</svg>
