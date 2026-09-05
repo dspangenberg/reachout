@@ -27,6 +27,15 @@ export default defineConfig({
     ],
     releases: [
       {
+        version: '0.0.3',
+        date: '2026-09-05',
+        notes: [
+          'Rename the app to Outreach (GNOME-convention noun) with app id de.twiceware.outreach.',
+          'Move development to a protected develop → main pull-request workflow with PR-only CI.',
+          'Add CodeRabbit AI review for pull requests.'
+        ]
+      },
+      {
         version: '0.0.2',
         date: '2026-09-05',
         notes: [
