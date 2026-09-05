@@ -1,7 +1,7 @@
 [Flatpak Repo]
 Title=Outreach
 Name=outreach
-Url=https://dspangenberg.github.io/outreach/
+Url=https://dspangenberg.github.io/outreach
 Homepage=https://github.com/dspangenberg/outreach
 Comment=Outreach – Contact manager
 Description=Outreach, ein Kontakt- und Aufgabenmanager für GNOME
