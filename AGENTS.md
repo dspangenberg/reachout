@@ -24,3 +24,10 @@ Never call UI work done without looking at the running app. With `gtkx dev` up, 
 This block is written by `gtkx codegen`. Anything outside the markers is yours and is left alone, and committing the block with your work keeps the tree clean.
 
 <!-- END:gtkx-agent-rules -->
+
+# Development workflow
+
+- Default branch is `develop`; `main` is protected and only receives merges via pull request (CI must be green).
+- Day-to-day changes go to `develop`. Nothing runs CI on `develop` pushes.
+- To ship: open a pull request `develop` → `main`, let CI and CodeRabbit review, then merge.
+- Versions/releases are cut with a tag on `main` (triggers the flatpak publish workflow).

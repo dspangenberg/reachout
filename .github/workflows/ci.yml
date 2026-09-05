@@ -1,13 +1,13 @@
 name: CI
 
-# Checkt bei jedem Push/PR: Lint (Biome), Typecheck (tsgo) und Tests (Vitest).
+# Checkt bei Pull-Requests nach main: Lint (Biome), Typecheck (tsgo) und Tests (Vitest).
+# Pushes auf develop laufen nicht durch CI; main wird nur per PR befüllt.
 # Läuft im selben GNOME-50-Container wie das Flatpak-Release, damit die
 # GIR-Versionen exakt denen des Publish-Workflows entsprechen.
 
 on:
-  push:
-    branches: [main]
   pull_request:
+    branches: [main]
 
 permissions:
   contents: read
