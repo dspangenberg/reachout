@@ -1,0 +1,71 @@
+name: CI
+
+# Checkt bei jedem Push/PR: Lint (Biome), Typecheck (tsgo) und Tests (Vitest).
+# Läuft im selben GNOME-50-Container wie das Flatpak-Release, damit die
+# GIR-Versionen exakt denen des Publish-Workflows entsprechen.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/flathub-infra/flatpak-github-actions:gnome-50
+      options: --privileged
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 26
+
+      - name: Enable pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Provide GIR files for codegen
+        run: |
+          set -eu
+          # 'gtkx codegen' braucht die GIR-Dateien am Host-Standardpfad
+          # (/usr/share/gir-1.0). Im Flathub-Container liegen sie nur in der
+          # installierten org.gnome.Sdk-Runtime. Wir KOPIEREN sie daher dorthin
+          # (echte Dateien, keine dangling Symlinks).
+          DEST="/usr/share/gir-1.0"
+          mkdir -p "$DEST"
+          PROBE="$(find / -name 'Gtk-4.0.gir' -type f 2>/dev/null | head -n1)"
+          if [ -n "$PROBE" ]; then
+            SRC="$(dirname "$PROBE")"
+            cp -f "$SRC"/*.gir "$DEST/" 2>/dev/null || true
+          fi
+          if [ ! -f "$DEST/Gtk-4.0.gir" ]; then
+            echo "error: Gtk-4.0.gir fehlt in $DEST (Probe: '${PROBE:-leer}')" >&2
+            exit 1
+          fi
+          echo "GIR files bereitgestellt: $(find "$DEST" -maxdepth 1 -name '*.gir' | wc -l) .gir unter $DEST"
+
+      - name: Add flathub remote for SDK resolution
+        run: |
+          set -eu
+          flatpak remote-add --user --if-not-exists flathub \
+            https://flathub.org/repo/flathub.flatpakrepo
+
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Tests
+        run: pnpm test
