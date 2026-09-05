@@ -1,12 +1,13 @@
 import { t } from '@gtkx/i18n'
 import { AdwAboutDialog } from '@gtkx/jsx/adw'
+import pkg from '../../package.json' with { type: 'json' }
 
 export const About = ({ onClose }: { onClose: () => void }) => (
   <AdwAboutDialog
     onClosed={onClose}
     applicationName="Reach Out"
     applicationIcon="de.twiceware.reachout"
-    version="0.0.1"
+    version={pkg.version}
     developerName="Danny Spangenberg"
     website="https://dspangenberg.github.io/reachout"
     issueUrl="https://github.com/dspangenberg/reachout/issues"

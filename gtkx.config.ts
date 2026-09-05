@@ -1,4 +1,5 @@
 import { defineConfig } from '@gtkx/config'
+import pkg from './package.json' with { type: 'json' }
 
 export default defineConfig({
   applicationId: 'de.twiceware.reachout',
@@ -27,9 +28,8 @@ export default defineConfig({
       { file: 'assets/screenshot-editor.png', caption: 'Editing a task' }
     ],
     releases: [
-      { version: '0.0.1', date: '2026-07-13', notes: ['Initial release.'] },
       {
-        version: '0.0.2',
+        version: pkg.version,
         date: '2026-09-05',
         notes: [
           'Persist data to a local SQLite database (Drizzle ORM) with automatic migrations.',
@@ -38,7 +38,8 @@ export default defineConfig({
           'Split the data layer into per-domain repositories and Zustand slices.',
           'Enforce standard JavaScript style via Biome.'
         ]
-      }
+      },
+      { version: '0.0.1', date: '2026-07-13', notes: ['Initial release.'] }
     ],
     branding: { light: '#3584e4', dark: '#1a5fb4' },
     contentRating: {},

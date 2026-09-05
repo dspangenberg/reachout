@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gCRM 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-05 18:08+0200\n"
+"POT-Creation-Date: 2026-09-05 18:35+0200\n"
 "PO-Revision-Date: 2026-08-26 23:34+0200\n"
 "Last-Translator: GTKX contributors\n"
 "Language-Team: French\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: src/components/about.tsx:21
+#: src/components/about.tsx:22
 msgid "GTKX Contributors"
 msgstr "Contributeurs GTKX"
 
