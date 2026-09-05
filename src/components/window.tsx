@@ -6,7 +6,7 @@ import { GtkButton } from '@gtkx/jsx/gtk'
 import { NavigationContainer } from '@gtkx/navigation'
 import { quit, useApplication, useBindSetting, useSetting } from '@gtkx/react'
 import { useCallback, useEffect, useRef } from 'react'
-import schema from '../../data/de.twiceware.reachout.gschema.xml'
+import schema from '../../data/de.twiceware.outreach.gschema.xml'
 import { useReminders } from '../hooks/use-reminders.js'
 import { ALL_TASKS, navigationRef, Split } from '../navigation.js'
 import { buildReminder } from '../notifications.js'
@@ -59,7 +59,7 @@ const TasksSection = () => {
           name="Lists"
           component={Sidebar}
           options={{
-            title: t('Reach Out'),
+            title: t('Outreach'),
             headerEnd: <MainMenu />,
             headerStart: (
               <GtkButton
@@ -131,7 +131,7 @@ export const Window = () => {
     <ToastProvider overlayRef={toastOverlayRef}>
       <AdwApplicationWindow
         ref={windowRef}
-        title="Reach Out"
+        title="Outreach"
         widthRequest={360}
         heightRequest={294}
         onCloseRequest={() => quit()}

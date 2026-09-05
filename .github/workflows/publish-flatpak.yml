@@ -1,7 +1,7 @@
 name: Publish Flatpak (GitHub Pages)
 
 # Veröffentlicht bei jedem Git-Tag ein eigenes, GPG-signiertes Flatpak-Repo
-# auf GitHub Pages (https://dspangenberg.github.io/reachout/). Beachte: der
+# auf GitHub Pages (https://dspangenberg.github.io/outreach/). Beachte: der
 # Workflow legt den Inhalt von release/repo flach in die Pages-Root ab, d. h.
 # das Repo selbst liegt unter der Pages-Root-URL (kein /repo-Suffix).
 #

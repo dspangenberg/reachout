@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gCRM 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-09-05 18:35+0200\n"
+"POT-Creation-Date: 2026-09-05 20:01+0200\n"
 "PO-Revision-Date: 2026-08-26 23:34+0200\n"
 "Last-Translator: GTKX contributors\n"
 "Language-Team: Deutsch\n"
@@ -64,7 +64,7 @@ msgid "Keyboard Shortcuts"
 msgstr "Tastenkürzel"
 
 #: src/components/main-menu.tsx:20
-msgid "About Reach Out"
+msgid "About Outreach"
 msgstr ""
 
 #: src/components/new-list-dialog.tsx:21 src/components/window.tsx:67
@@ -258,7 +258,7 @@ msgid "Pick a list or a smart view in the sidebar"
 msgstr "Wählen Sie in der Seitenleiste eine Liste oder eine intelligente Ansicht"
 
 #: src/components/window.tsx:62
-msgid "Reach Out"
+msgid "Outreach"
 msgstr ""
 
 #: src/components/window.tsx:82
