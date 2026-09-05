@@ -20,7 +20,9 @@ OUT_REPO="release/repo"
 BUILD_DIR="build/targets/flatpak/build"
 # Basis-URL, unter der das Repo gehostet wird (Pages-Root, kein /repo-Suffix,
 # da der Workflow den Inhalt von release/repo flach in die Pages-Root ablegt).
-REPO_URL="${REPO_URL:-https://dspangenberg.github.io/outreach/}"
+# Ohne abschließenden Slash, damit die Joins unten keine doppelten Slashes erzeugen.
+REPO_URL="${REPO_URL:-https://dspangenberg.github.io/outreach}"
+REPO_URL="${REPO_URL%/}"
 
 case "${1:-}" in
     --repo) OUT_REPO="$2"; shift 2 ;;
